@@ -13,3 +13,8 @@ jobs:
         with:
             name: HTML
             path: book/_build/html/ # or path/to/artifact
+      - name: Publish to GitHub pages
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: book/_build/html
