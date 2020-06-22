@@ -1,0 +1,7 @@
+# Book settings
+title: Dive into Data Science
+author: Parker Addison and Justin Eldridge
+
+latex:
+  latex_documents:
+    targetname: book.tex

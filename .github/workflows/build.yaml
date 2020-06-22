@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  build-html:
+    runs-on: ubuntu-latest
+    name: Build HTML
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build HTML version of book
+        run: make html IMAGE_TAG=github-action
+      - uses: actions/upload-artifact@v2
+        with:
+            name: HTML
+            path: book/_build/html/ # or path/to/artifact
