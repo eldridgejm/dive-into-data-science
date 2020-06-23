@@ -2,25 +2,6 @@
 title: Dive into Data Science
 author: Parker Addison and Justin Eldridge
 
-sphinx:
-  extra_extensions:
-    - Sphinx_ext.htmlform
-    - Sphinx_ext.eqt
-  config:
-    html_static_path:
-      - ../extensions/reauthoring/_static/dynsite.js
-      - ../extensions/reauthoring/_static/Correct_20x20.png
-      - ../extensions/reauthoring/_static/Incorrect_20x20.png
-      - ../extensions/reauthoring/_static/customstyle.css
-    html_js_files:
-      - dynsite.js
-    html_css_files:
-      - customstyle.css
-    html_theme: sphinx_book_theme
-    templates_path:
-      - _templates
-
-
 latex:
   latex_documents:
     targetname: book.tex
