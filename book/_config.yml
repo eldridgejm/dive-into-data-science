@@ -9,3 +9,4 @@ latex:
 sphinx:
   extra_extensions:
   - sphinx_tabs.tabs
+  - helloworld

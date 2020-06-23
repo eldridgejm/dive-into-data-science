@@ -3,6 +3,7 @@ IMAGE_TAG=latest
 define build_book
 	docker run \
 		--mount type=bind,src=$(shell pwd),target=/document \
+		-e PYTHONPATH=/document/extensions \
 		dive_into_data_science:${IMAGE_TAG} \
 		/home/runner/env/bin/jupyter-book \
 		build \
