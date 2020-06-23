@@ -5,3 +5,7 @@ author: Parker Addison and Justin Eldridge
 latex:
   latex_documents:
     targetname: book.tex
+
+sphinx:
+  extra_extensions:
+  - sphinx_tabs.tabs

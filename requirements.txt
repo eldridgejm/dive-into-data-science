@@ -1,3 +1,4 @@
 jupyter-book==0.7
 matplotlib
+sphinx-tabs
 git+git://github.com/babypandas-dev/babypandas
