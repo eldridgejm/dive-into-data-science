@@ -1,0 +1,435 @@
+/*
+ * Generic style file for Learning Resources
+ *
+ * Copyright (C) 2008 Abelardo Pardo, The University of Sydney
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor
+ * Boston, MA  02110-1301, USA.
+ *
+ * Author: Abelardo Pardo (abelardo.pardo@sydney.edu.au)
+ *
+ */
+@import url('css/theme.css');
+@import url('math.css');
+
+.centered
+{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+ }
+
+/* Center logo and title */
+div.logobgn {
+    text-align: center;
+}
+
+/* HR separating breadcrumbs with smaller margin */
+div.rst-content > div[role=navigation] > hr {
+    margin: 0px 0px;
+}
+
+/* Reduce separation of content box */
+div.wy-nav-content {
+  padding-top: 0.5em;
+}
+
+/* ------------------------------------------------------------ */
+/*                                                              */
+/* Matrix of topics                                             */
+/*                                                              */
+/* ------------------------------------------------------------ */
+table.topic-matrix
+{
+  border-collapse: collapse;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.topic-matrix td,
+table.topic-matrix th
+{
+  padding: 2px;
+  height: 100%;
+}
+
+button.topic-matrix
+{
+  text-align: center;
+  width:100%;
+  height:100%;
+  font-size: 95%;
+  font-weight: bold;
+}
+
+button.topic-matrix p
+{
+  margin: unset;
+}
+
+label { color: #222; }
+
+div.instructor-guide {
+  text-align: center;
+  background-color: red;
+  color: black;
+ }
+
+/* Instructor guide and "framed" goes in a frame! */
+div.iguide,
+div.framed {
+    border: 1px solid black;
+    padding: 3px;
+ }
+
+.wy-side-nav-search {
+    margin-bottom: 0px;
+ }
+
+/* Admonition background */
+div.admonition-iguide,
+div.admonition-solution,
+div.admonition-example,
+div.admonition.example,
+div.admonition.important,
+div.admonition.instruction,
+div.admonition-important {
+    background-color: #EEEEEE;
+}
+
+.wy-alert-title, .rst-content .admonition-title
+{
+  margin: 0px;
+ }
+
+th.head {
+    text-align: center;
+}
+
+p.admonition-title:after {
+    content: "";
+ }
+
+p.admonition-title {
+    display: block;
+}
+
+/* Images */
+.float-left {
+   float: left;
+   padding-right: 1em;
+ }
+
+.float-right {
+   float: right;
+   padding-left: 1em;
+ }
+
+/* Image captions */
+div.float-right p.caption {
+   text-align: right;
+ }
+
+div.float-left p.caption {
+   text-align: right;
+ }
+
+div.reference p.caption {
+   font-size: 70%;
+}
+
+p.caption {
+   margin-bottom: 0px;
+ }
+
+.rst-content div.figure {
+  margin-bottom: 10px;
+}
+
+/* Activity title goes centered */
+div.lecture  h1,
+div.activity  h2,
+div.activity  h3 {
+    color: #12416C;
+ }
+
+div.activity > h2,
+div.activity > h3 {
+    text-align: center;
+ }
+
+/* Activity resources, workplan, objectives, assessment, review */
+div.objectives > h3,
+div.objectives > h2 {
+    background-image: url("target.png");
+}
+
+div.resources > h3,
+div.resources > h2 {
+    background-image: url("computer.png");
+}
+
+div.workplan > h3,
+div.workplan > h2 {
+    background-image: url("desktop.png");
+}
+
+div.assessment > h3,
+div.assessment > h2 {
+    background-image: url("correct.png");
+}
+
+div.review > h3,
+div.review > h2 {
+    background-image: url("magnifying_glass.png");
+}
+
+div.objectives > h3,
+div.objectives > h2,
+div.assessment > h3,
+div.assessment > h2,
+div.workplan > h3,
+div.workplan > h2,
+div.resources > h3,
+div.resources > h2,
+div.review > h3,
+div.review > h2 {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+/*****************************************************
+ * document - toggleable sections
+ *****************************************************/
+
+.html-toggle-button
+{
+    position: relative;
+}
+
+.html-toggle-button:hover
+{
+    /* give a little bit of hint that this is clickable */
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #003469;
+    -moz-box-shadow: 2px 2px 2px #003469;
+    -webkit-box-shadow: 2px 2px 2px #003469;
+}
+
+div.body div.section:not(.emphasize-children) > div.section:not(.emphasized) > h3.html-toggle-button:hover,
+div.body h2.html-toggle-button:hover,
+div.body h4.html-toggle-button:hover
+{
+    background: #92BCDE;
+    box-shadow: 0 0  2px #003469;
+    -moz-box-shadow: 0 0 2px #003469;
+    -webkit-box-shadow: 0 0 2px #003469;
+}
+
+.activity.collapsed > .html-toggle-button
+{
+    margin-bottom: 1em;
+}
+
+/* .activity.collapsed > .html-toggle-button:before */
+.activity.collapsed > .html-toggle-button,
+.section.collapsed > .html-toggle-button
+{
+    background-image: url("jean_victor_balin_add_blue.png");
+    padding-left: 34px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+/* .activity.expanded > .html-toggle-button:before */
+.activity.expanded > .html-toggle-button,
+.section.expanded > .html-toggle-button
+{
+    background-image: url("jean_victor_balin_remove_blue.png");
+    padding-left: 34px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.html-toggle-button:hover a.headerlink:not(:hover) { opacity: 0; }
+
+/*****************************************************
+  DURATION
+*****************************************************/
+div.reauthoring_duration_select {
+   text-align: right;
+ }
+
+/*****************************************************
+  XY Click
+*****************************************************/
+div.xy_click {
+  text-align: center;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+div.xy_click > div.xy_click_title {
+  padding: 0.5em;
+}
+
+/*****************************************************
+EMBEDED QUIZ
+*****************************************************/
+div.reauthoring_embedded_quiz,
+div.reauthoring_embedded_quiz-mc,
+div.reauthoring_embedded_quiz-fib
+{
+    border: 1px solid black;
+    margin-top: 0.5em;
+    padding: 0.5em;
+ }
+
+ol.eqt-answer-list
+{
+    padding: 10px;
+}
+
+div.reauthoring_embedded_quiz-fib .reauthoring_embedded_quiz-fib-answer
+{
+  margin: 0.5em 0 0.5em 0;
+ }
+
+.tip.expl {
+  display: none;
+}
+
+.eqt-answer-list .tip.expl {
+  margin-top: 10px;
+}
+/*****************************************************
+contents:: directive
+*****************************************************/
+div.contents
+{
+  border: solid 1px black;
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* top banner with my name */
+.logobgn
+{
+  background-image: url("logo.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-color: #12416c;
+  text-align: left;
+  padding-left: 106px;
+ }
+
+.wy-side-nav-search {
+  background-color: #12416c;
+}
+
+div[role = search]
+{
+  text-align: center;
+ }
+
+div.rst-content h1,
+div.rst-content h2,
+div.rst-content h3,
+div.rst-content h4,
+div.rst-content h5,
+div.rst-content h6 {
+    background-color: #BED4EB;
+    margin: 10px 0px 10px 0px;
+    text-shadow: 0px 1px 0 white
+}
+
+div.week > h1,
+div.rst-content div.week div.todo > h2,
+div.rst-content div.week div.toknow > h2,
+div.rst-content div.week div.sessions > h2,
+div.lecture.inclass > h1,
+div.lecture.previous > h1,
+div.laboratory.previous > h1,
+div.laboratory.inclass > h1 {
+    background-position: left center;
+    background-repeat: no-repeat;
+ }
+
+div.rst-content div.week > h1 {
+    background-image: url("calendar.png");
+    padding-left: 45px;
+ }
+
+div.rst-content div.week div.todo > h2 {
+    background-image: url("todo.png");
+    padding-left: 55px;
+ }
+
+div.rst-content div.week div.toknow > h2 {
+    background-image: url("toknow.png");
+    padding-left: 40px;
+ }
+
+#to-do,
+#to-know,
+div.lecture,
+div.tutorial,
+div.laboratory {
+  margin-top: 1em;
+  border: 1px solid black;
+}
+
+#to-do > h2,
+#to-know > h2,
+div.lecture > h2,
+div.tutorial > h2,
+div.laboratory > h2 {
+    margin-top: 0px;
+}
+
+#table-course-assessment td {
+    text-align: center;
+ }
+
+span.brown {
+    color: brown;
+}
+span.orange {
+    color: orange;
+}
+span.gold {
+    color: gold;
+}
+span.red {
+    color: red;
+}
+
+button[disabled] label {
+    color: #999999;
+    cursor: default;
+}
+
+iframe.reauthoring {
+    width: 100%;
+    border: 1px solid black;
+}
+
+/* Style for printing */
+@media print {
+}
+

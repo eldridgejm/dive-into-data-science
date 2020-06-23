@@ -1,0 +1,11 @@
+.reauthoring_embedded_quiz {
+    border: 1px solid #0003;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1.5em 0;
+}
+
+.reauthoring_embedded_quiz .admonition.expl {
+    border-color: var(--teal);
+}
+
