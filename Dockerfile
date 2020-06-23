@@ -1,18 +1,6 @@
-FROM debian:buster
+FROM eldridgejm/dive_into_data_science-base:latest
 
 ARG USER_ID=1000
-
-RUN apt-get update && apt-get install -y \
-    git \
-    python3 \
-    python3-venv \
-    make
-
-RUN apt-get update && apt-get install -y \
-    texlive-latex-recommended \
-    texlive-latex-extra \
-    texlive-fonts-recommended \
-    latexmk
 
 RUN useradd -u ${USER_ID} -ms /bin/bash runner
 USER runner

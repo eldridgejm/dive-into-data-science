@@ -3,7 +3,7 @@ IMAGE_TAG=latest
 define build_book
 	docker run \
 		--mount type=bind,src=$(shell pwd),target=/document \
-		eldridgejm/dive_into_data_science:${IMAGE_TAG} \
+		dive_into_data_science:${IMAGE_TAG} \
 		/home/runner/env/bin/jupyter-book \
 		build \
 		$(1) \
@@ -39,11 +39,21 @@ docker:
 	# is not 1000. In that case, `make docker` will create an
 	# image using the appropriate user ID.
 	docker build --build-arg USER_ID=$(shell id -u) . \
-		-t eldridgejm/dive_into_data_science:${IMAGE_TAG}
+		-t dive_into_data_science:${IMAGE_TAG}
 
 
 .PHONY: jupyter
 jupyter:
+	# start a jupyter notebook server within the docker container
+	# used to build the textbook
 	docker run -it -p 8888:8888 \
 		--mount type=bind,src=$(shell pwd),target=/home/runner/host \
-		eldridgejm/dive_into_data_science:${IMAGE_TAG} ./env/bin/jupyter notebook --ip=0.0.0.0
+		dive_into_data_science:${IMAGE_TAG} ./env/bin/jupyter notebook --ip=0.0.0.0
+
+
+.PHONY: shell
+shell:
+	# start a shell within the docker container used to build the textbook
+	docker run -it \
+		--mount type=bind,src=$(shell pwd),target=/home/runner/host \
+		dive_into_data_science:${IMAGE_TAG}
