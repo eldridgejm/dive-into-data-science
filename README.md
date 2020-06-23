@@ -1,7 +1,7 @@
 Dive into Data Science
 ======================
 
-**Dive into Data Science** is an introductory textbook which develops the core
+*Dive into Data Science* is an introductory textbook which develops the core
 ideas of statistics via programming and simulation instead of the manipulation
 of mathematical formulae. At the same time, textbook does not assume that the
 reader has any experience in programming; instead, we learn "just enough"
