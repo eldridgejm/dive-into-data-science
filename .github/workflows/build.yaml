@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Build Docker image
+        run: make docker
       - name: Build HTML version of book
         run: make html IMAGE_TAG=github-action
       - uses: actions/upload-artifact@v2
