@@ -19,6 +19,7 @@ novice data scientist in mind.
     - [Project Structure](#project-structure)
     - [Extensions](#extensions)
     - [Reader-Friendly Jupyter Notebooks](#reader-friendly-jupyter-notebooks)
+    - [Git Hooks](git-hooks)
 
 
 Building
