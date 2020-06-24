@@ -7,3 +7,5 @@ docker run \
     cd /document/book && \
     /home/runner/env/bin/python \
     /document/scripts/clear_notebook_outputs.py"
+
+git add .
