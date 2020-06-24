@@ -19,3 +19,11 @@ are needed.
 
 To build the HTML version, run `make html` in the repository's root. To build a
 PDF of the book, run `make pdf`.
+
+
+Developing
+----------
+
+Before working on the book, run `make init` in the project's root. This will
+build the docker container used for compiling the textbook, install git commit
+hooks, etc.
