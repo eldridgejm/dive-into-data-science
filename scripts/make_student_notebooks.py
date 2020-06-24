@@ -2,6 +2,8 @@
 Given a path to a directory containing Jupyter notebooks, copies all of the
 notebooks to the current working directory, removing cells tagged "remove_cell"
 in the process.
+
+This script is invoked by the `notebooks` target in the Makefile at the root of the directory.
 """
 
 import argparse
