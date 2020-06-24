@@ -31,7 +31,15 @@ def remove_cells(src_notebook):
     return notebook
 
 
-def replicate_source_without_cells(src, dst):
+def clear_cell_toolbar(notebook_code):
+    notebook_node = nbformat.reads(notebook_code, as_version=4)
+    if 'celltoolbar' in notebook_node['metadata']:
+        del notebook_node['metadata']['celltoolbar']
+    notebook_code, resources = NotebookExporter().from_notebook_node(notebook_node)
+    return notebook_code
+
+
+def make_student_notebooks(src, dst):
     """Replicate the source directory notebooks, but filtering out cells.
 
     Arguments
@@ -44,12 +52,14 @@ def replicate_source_without_cells(src, dst):
     """
     for src_notebook in source_notebooks(src):
         notebook_code = remove_cells(src_notebook)
+        notebook_code = clear_cell_toolbar(notebook_code)
+
         dst_notebook = dst / (src_notebook.relative_to(src))
 
         dst_notebook.parent.mkdir(parents=True, exist_ok=True)
 
         with dst_notebook.open('w') as fileobj:
-            fileobj.write(notebook_code)
+            fileobj.write(str(notebook_code))
 
 
 if __name__ == '__main__':
@@ -57,4 +67,4 @@ if __name__ == '__main__':
     parser.add_argument('src', type=pathlib.Path)
     args = parser.parse_args()
 
-    replicate_source_without_cells(args.src, pathlib.Path.cwd())
+    make_student_notebooks(args.src, pathlib.Path.cwd())

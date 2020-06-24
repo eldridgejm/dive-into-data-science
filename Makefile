@@ -35,7 +35,7 @@ notebooks: docker
 		bash -c " \
 		cd /document/notebooks && \
 		/home/runner/env/bin/python \
-		/document/scripts/remove_cells.py \
+		/document/scripts/make_student_notebooks.py \
 		/document/book"
 
 
