@@ -130,7 +130,7 @@ This conversion occurs only if the directive is the only content of the cell.
 See `./scripts/make_reader_friendly_notebooks.py` for more information.
 
 
-### Hiddenanswer Cells
+#### Hiddenanswer Cells
 
 Cells containing a hidden answer directive, such as
 
