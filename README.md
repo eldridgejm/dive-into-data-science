@@ -103,12 +103,60 @@ HTML by the build process. Readers can click the rocket icon to launch the
 notebook version of the given page in a JupyterHub session.
 
 However, the Jupyter notebooks used as source documents may include directives
-and other content that might confuse readers. These cells can be hidden by
-tagging them with `hide`. During the build, the Jupyter notebooks used
-to buiild the textbook are processed in order to remove any such cells. The
-resulting notebooks are stored in `notebooks/` in a file hierarchy mimicking
-that of `book/`. These are the notebooks that are served to the reader upon
-clicking the rocket icon to launch a JupyterHub instance.
+and other content that might confuse readers. Therefore, as part of the build
+process, the source notebooks are transformed into "reader-friendly" notebooks
+and stored in the `notebooks/` directory (these are the notebooks that are
+launched when the user clicks the rocket link to interact with a page). The
+notebooks are made "reader-friendly" by several mechanisms:
+
+
+#### Admonition Cells
+
+Cells containing an admonition, such as
+
+    ````
+    ```{warning}
+
+    This is a warning.
+    ```
+    ````
+
+are automatically-identified and converted to Markdown:
+
+    **Warning**
+
+    This is a warning.
+
+
+This conversion occurs only if the directive is the only content of the cell.
+See `./scripts/make_reader_friendly_notebooks.py` for more information.
+
+
+### Hiddenanswer Cells
+
+Cells containing a hidden answer directive, such as
+
+    ````
+    ```{Hiddenanswer}
+    ---
+    question: This is the question
+    answer: This is the answer
+    ```
+    ````
+
+are automatically-identified and converted to Markdown:
+
+    **Question**: This is the question
+    **Answer**: This is the answer
+
+This conversion occurs only if the directive is the only content of the cell.
+See `./scripts/make_reader_friendly_notebooks.py` for more information.
+
+
+#### Hiding Cells
+
+Cells can be hidden in the reader-friendly version by adding a
+`hide-from-reader` tag to the cell.
 
 ### Git Hooks
 
