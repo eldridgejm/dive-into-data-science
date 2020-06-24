@@ -6,6 +6,15 @@ latex:
   latex_documents:
     targetname: book.tex
 
+launch_buttons:
+    notebook_interface: classic
+    jupyterhub_url: "https://datahub.ucsd.edu"
+
+repository:
+    url: https://github.com/eldridgejm/dive_into_data_science
+    path_to_book: book
+    branch: master
+
 sphinx:
   extra_extensions:
   - sphinx_tabs.tabs

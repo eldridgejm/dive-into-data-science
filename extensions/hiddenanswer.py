@@ -30,18 +30,20 @@ class HiddenAnswerDirective(SphinxDirective):
     def run(self):
         node = hiddenanswer()
 
+        print(self.options)
+
         s = f"""
-````{{tabs}}
-```{{tab}} Question
+```````{{tabs}}
+``````{{tab}} Question
 
 {self.options['question']}
-```
-```{{tab}} Answer
+``````
+``````{{tab}} Answer
 
 {self.options['answer']}
-```
+``````
 
-````
+```````
         """
 
         self.content = [s]
