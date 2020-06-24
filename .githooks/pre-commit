@@ -1,3 +1,9 @@
 #!/bin/sh
 
-echo "hello"
+docker run \
+    --mount type=bind,src=$(pwd),target=/document \
+    dive_into_data_science:latest \
+    bash -c " \
+    cd /document/book && \
+    /home/runner/env/bin/python \
+    /document/scripts/clear_notebook_outputs.py"
