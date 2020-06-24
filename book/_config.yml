@@ -10,3 +10,4 @@ sphinx:
   extra_extensions:
   - sphinx_tabs.tabs
   - jupytertips
+  - hiddenanswer
