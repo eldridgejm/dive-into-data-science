@@ -1,3 +1,15 @@
+"""Create a question along with a hidden answer.
+
+Use
+---
+
+```{hiddenanswer}
+---
+question: This is the question.
+answer: This is the answer.
+```
+
+"""
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
