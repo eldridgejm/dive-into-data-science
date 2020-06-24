@@ -13,7 +13,7 @@ endef
 
 
 .PHONY: html
-html: docker
+html: docker notebooks
 	# build the HTML version of the textbook
 	$(call build_book,--builder html)
 
@@ -25,9 +25,24 @@ pdf: docker
 	cd book/_build/latex && make
 
 
-.PHONY: clean
-clean:
-	rm -rf book/_build
+.PHONY: notebooks
+notebooks: docker
+	# take the notebooks used as source documents and remove tagged cells,
+	# placing them in the notebooks/ directory.
+	docker run \
+		--mount type=bind,src=$(shell pwd),target=/document \
+		dive_into_data_science:${IMAGE_TAG} \
+		bash -c " \
+		cd /document/notebooks && \
+		/home/runner/env/bin/python \
+		/document/scripts/remove_cells.py \
+		/document/book"
+
+
+.PHONY: docker
+init: docker
+	# intialize the repository for development
+	git config --local core.hooksPath .githooks/
 
 
 .PHONY: docker
@@ -58,3 +73,8 @@ shell:
 	docker run -it \
 		--mount type=bind,src=$(shell pwd),target=/home/runner/host \
 		dive_into_data_science:${IMAGE_TAG}
+
+
+.PHONY: clean
+clean:
+	rm -rf book/_build
