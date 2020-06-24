@@ -2,6 +2,10 @@
 title: Dive into Data Science
 author: Parker Addison and Justin Eldridge
 
+html:
+    use_repository_button: true
+    use_issues_button: true
+
 latex:
   latex_documents:
     targetname: book.tex
@@ -12,7 +16,7 @@ launch_buttons:
 
 repository:
     url: https://github.com/eldridgejm/dive_into_data_science
-    path_to_book: book
+    path_to_book: notebooks
     branch: master
 
 sphinx:
