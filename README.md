@@ -11,6 +11,16 @@ opinionated proper subset of the popular `pandas` package designed with the
 novice data scientist in mind.
 
 
+#### Table of Contents
+
+- [Building](#building)
+- [Developing](#developing)
+    - [Getting Started](#getting-started)
+    - [Project Structure](#project-structure)
+    - [Extensions](#extensions)
+    - [Reader-Friendly Jupyter Notebooks](#reader-friendly-jupyter-notebooks)
+
+
 Building
 --------
 
@@ -96,7 +106,7 @@ Example:
     the notebook's cells from top to bottom.
     ```
 
-### Textbook Pages as Jupyter Notebooks
+### Reader-Friendly Jupyter Notebooks
 
 Much of the textbook is written in Jupyter Notebooks which are then converted to
 HTML by the build process. Readers can click the rocket icon to launch the
