@@ -19,9 +19,3 @@ are needed.
 
 To build the HTML version, run `make html` in the repository's root. To build a
 PDF of the book, run `make pdf`.
-
-The Makefile assumes that you are running on a Unix-like operating system, and
-that your UID is 1000 (this can be checked by running `id -u` in a terminal). If
-this is not the case, you will need to rebuild the Docker image in order to
-avoid permissions issues. This can be done by issuing `make docker` once. After
-this image is built, you will not need to build it again.

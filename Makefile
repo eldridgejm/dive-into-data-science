@@ -13,13 +13,13 @@ endef
 
 
 .PHONY: html
-html:
+html: docker
 	# build the HTML version of the textbook
 	$(call build_book,--builder html)
 
 
 .PHONY: pdf
-pdf:
+pdf: docker
 	# build the PDF version using LaTeX
 	$(call build_book,--builder pdflatex)
 	cd book/_build/latex && make
