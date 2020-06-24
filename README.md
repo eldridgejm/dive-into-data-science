@@ -114,12 +114,10 @@ notebooks are made "reader-friendly" by several mechanisms:
 
 Cells containing an admonition, such as
 
-    ````
     ```{warning}
 
     This is a warning.
     ```
-    ````
 
 are automatically-identified and converted to Markdown:
 
@@ -136,13 +134,11 @@ See `./scripts/make_reader_friendly_notebooks.py` for more information.
 
 Cells containing a hidden answer directive, such as
 
-    ````
     ```{Hiddenanswer}
     ---
     question: This is the question
     answer: This is the answer
     ```
-    ````
 
 are automatically-identified and converted to Markdown:
 
