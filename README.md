@@ -87,3 +87,32 @@ Long answers or code can be included using the proper YAML syntax:
 The `jupytertip` directive creates an admonition box intended to display a tip
 related to Jupyter notebooks. The `jupytertiplist` directive creates list of
 all of the tips.
+
+Example:
+
+    ```{jupytertip}
+
+    Select `Kernel -> Restart and Run All` to restart the kernel and run all of
+    the notebook's cells from top to bottom.
+    ```
+
+### Textbook Pages as Jupyter Notebooks
+
+Much of the textbook is written in Jupyter Notebooks which are then converted to
+HTML by the build process. Readers can click the rocket icon to launch the
+notebook version of the given page in a JupyterHub session.
+
+However, the Jupyter notebooks used as source documents may include directives
+and other content that might confuse readers. These cells can be hidden by
+tagging them with `hide`. During the build, the Jupyter notebooks used
+to buiild the textbook are processed in order to remove any such cells. The
+resulting notebooks are stored in `notebooks/` in a file hierarchy mimicking
+that of `book/`. These are the notebooks that are served to the reader upon
+clicking the rocket icon to launch a JupyterHub instance.
+
+### Git Hooks
+
+To install the Git hooks, run `make init` in the repository root.
+
+The pre-commit hook removes the output of every cell in every notebook in
+`book/`. This makes for more meaningful diffs.
