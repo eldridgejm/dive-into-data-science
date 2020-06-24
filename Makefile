@@ -13,7 +13,7 @@ endef
 
 
 .PHONY: html
-html: docker notebooks
+html: docker
 	# build the HTML version of the textbook
 	$(call build_book,--builder html)
 

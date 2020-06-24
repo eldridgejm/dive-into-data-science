@@ -14,7 +14,7 @@ from nbconvert.exporters import NotebookExporter
 import nbformat
 
 
-REMOVE_CELL_TAG = 'remove_cell'
+REMOVE_CELL_TAG = 'hide'
 
 
 def source_notebooks(src):
