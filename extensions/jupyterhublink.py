@@ -47,7 +47,7 @@ class JupyterHubLinkDirective(SphinxDirective):
                 self.arguments[0]
                 )
 
-        link = f"<a href=\"{url}\">Launch in JupyterHub</a>"
+        link = f"<a href=\"{url}\" target=\"_blank\">Launch in JupyterHub</a>"
 
         self.content = [link]
         self.state.nested_parse(self.content, 0, node)
