@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Basics of Python &#8212; Dive into Data Science</title>
+    <title>Tools of the Trade &#8212; Dive into Data Science</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,10 +13,6 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -29,8 +25,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/mystnb.js"></script>
-    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
-    <script src="../_static/sphinx_tabs/tabs.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -74,7 +68,7 @@
 <p class="margin-caption">Getting Started</p>
 </li>
   <li class="active">
-    <a href="">Basics of Python</a>
+    <a href="">Tools of the Trade</a>
   </li>
 </ul>
 </nav>
@@ -113,9 +107,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/start/tools.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/start/tools.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -148,43 +142,11 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/start/tools.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#learning-a-new-language" class="nav-link">Learning a New Language</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#expressions" class="nav-link">Expressions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#when-things-go-wrong" class="nav-link">When Things Go Wrong</a>
-        </li>
     
     </ul>
 </nav>
@@ -197,131 +159,78 @@
         
               <div>
                 
-  <div class="section" id="basics-of-python">
-<h1>Basics of Python<a class="headerlink" href="#basics-of-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="learning-a-new-language">
-<h2>Learning a New Language<a class="headerlink" href="#learning-a-new-language" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="tools-of-the-trade">
+<h1>Tools of the Trade<a class="headerlink" href="#tools-of-the-trade" title="Permalink to this headline">¶</a></h1>
+<p>It 2019 it was estimated<a class="footnote-reference brackets" href="#domo" id="id1">1</a> that, in any given minute,
+188 million emails are sent, 55 thousand images are posted to Instagram, and
+4.5 million YouTube videos are watched. All of this digital activity generates
+massive amounts of data, and it’s a data scientist’s job to analyze it.
+Of course, any data set of moderate size cannot be analyzed with pencil and
+paper alone; instead, we turn to computers to do the heavy lifting. In this
+textbook, we will learn several of the most important tools used by working data
+scientists <em>today</em>.</p>
+<p>In order to utilize the full power of a computer to run an analysis, we’ll need
+to know the basics of a good programming language. By far, the most popular
+programming language among data scientists<a class="footnote-reference brackets" href="#kaggle" id="id2">2</a> is
+<a class="reference external" href="http://www.python.org">Python</a>. While other languages tend to be verbose and
+formal, Python is relatively easy-going. In this textbook, we’ll learn just
+enough Python to do interesting things with data.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/python-logo.png"><img alt="../_images/python-logo.png" src="../_images/python-logo.png" style="height: 100px;" /></a>
 </div>
-<div class="section" id="expressions">
-<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
-<p>Python is a powerful programming language that can be used to create intricate pieces of software, but let’s start by using it as a basic calculator. Python can add two numbers together:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">30</span> <span class="o">+</span> <span class="mi">12</span>
-</pre></div>
+<p>The type of computer programming done by data scientists is quite different from
+that done by a software engineer building the latest and greatest word
+processor. We write code in order to explore data sets in a process that is
+anything but linear. For instance, given a data set listing the salary of every
+city employee, our first question is probably: What is the highest salary? We’ll
+soon see that this can be answered with a short piece of Python code. Next, we
+might ask <em>who</em> has the highest salary This, too, is answered by a small piece
+of code. And so on. We ask a question, write some code, and interpret the
+result. Our next question depends on the answer to the last.  We use a computer
+like it is a very powerful calculator.</p>
+<p>Because the type of programming done by data scientists is unique, we use a
+unique tool to write and run our code: <a class="reference external" href="https://jupyter.org/">Jupyter
+notebooks</a>. A Jupyter notebook is a mosaic of code, text,
+HTML, images, videos and more that can be edited and executed <em>right in the
+browser</em>.  Notebooks are like advanced calculators, in the sense that the user
+can write a piece of code, run it, and see the result below. Many of the pages
+in this textbook are written in Jupyter Notebooks, and you will be able to click
+a button to open the notebook and interact with the code on the page (even
+editing it, if you want).</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/jupyter-logo.svg"><img alt="../_images/jupyter-logo.svg" height="150px" src="../_images/jupyter-logo.svg" /></a>
 </div>
+<p>Python is a powerful <em>general purpose</em> programming language, meaning that it
+isn’t designed for data science in particular. In fact, Python is popularly used
+for writing web applications (the behind-the-scenes code that runs Reddit is
+entirely written in Python). By itself, Python doesn’t come with the
+functionality that data scientists need. Luckily, Python – like all major
+programming languages – can be extended by installing <strong>packages</strong> which
+provide additional capabilities.</p>
+<p>Without a doubt, the most important Python package used by data scientists is
+<a class="reference external" href="http://pandas.pydata.org">pandas</a>. Pandas is an immensely powerful tool for
+exploring and manipulating large data sets.  But with great power comes great
+complexity. There are several ways to perform even the simplest tasks using
+Pandas, making it a difficult tool to learn.</p>
+<p>For this reason, we have designed a simplified version of pandas, which
+we are calling <em>babypandas</em>. Babypandas is a <em>subset</em> of pandas, meaning that we
+have carefully taken some of the pieces of pandas, but left out much of it.
+We’ll be using babypandas throughout this book. Remember: learning how to use
+babypandas is actually learning how to use pandas, and all of the code you see
+in this textbook uses the same tools that working data scientists are using
+every day.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/babypandas-logo.jpg"><img alt="../_images/babypandas-logo.jpg" src="../_images/babypandas-logo.jpg" style="height: 150px;" /></a>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
-</pre></div>
-</div>
-</div>
-</div>
-<p>It can also subtract, multiply, divide, and exponentiate:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span> <span class="o">-</span> <span class="mf">3.5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>6.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>15
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">/</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>8.4
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">**</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>49
-</pre></div>
-</div>
-</div>
-</div>
-<p>You’ll notice that to multiply two numbers together, we write <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span></code>, and not, for instance, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">5</span></code>. We say that the asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>) is the <strong>multiplication operator</strong>. Likewise, a forward-slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) is the <strong>division operator</strong> (not to be confused with the backslash, <code class="docutils literal notranslate"><span class="pre">\</span></code>). The <strong>exponentiation operator</strong> is <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
-<p>These pieces of code are examples of <strong>expressions</strong>. An expression is a bit of code that can be <strong>evaluated</strong> to produce a <strong>value</strong>. For example, <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">+</span> <span class="pre">12</span></code> is evaluated to produce a number: 42. But Python expressions aren’t limited to producing only numbers, as we’ll soon see.</p>
-<p>Expressions can be combined to build more complex expressions:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">30</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>175
-</pre></div>
-</div>
-</div>
-</div>
-<p>Python follows the same order of operations you learned in kindergarten: arithmetic expressions within parenthesis are evaluated first, then exponentiation, multiplication, division, addition, and subtraction.</p>
-<div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-0-0 docutils container">
-<div class="docutils container">
-<p>Question</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-0-1 docutils container">
-<div class="docutils container">
-<p>Answer</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<p>this is a question</p>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">thing</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">42</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>SOmething else.</p>
-</div>
-<div class="jupytertip admonition" id="jupytertip-0">
-<p class="admonition-title">Jupyter Tip</p>
-<p>another test</p>
-<p>Does this even work?</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Don’t delete this cell’s tag!</p>
-</div>
-</div>
-<div class="section" id="when-things-go-wrong">
-<h2>When Things Go Wrong<a class="headerlink" href="#when-things-go-wrong" title="Permalink to this headline">¶</a></h2>
-</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="domo"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a href="https://www.domo.com/learn/data-never-sleeps-7" target="_blank">https://www.domo.com/learn/data-never-sleeps-7</a></p>
+</dd>
+<dt class="label" id="kaggle"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><a href="https://www.kaggle.com/kaggle/kaggle-survey-2018" target="_blank">https://www.kaggle.com/kaggle/kaggle-survey-2018</a></p>
+</dd>
+</dl>
 </div>
 
 

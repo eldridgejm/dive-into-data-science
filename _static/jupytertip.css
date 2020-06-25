@@ -1,16 +1,3 @@
-:root {
-    --jupyter-rgb: 239, 108, 0;
-}
-
 .jupytertip {
-    border-color: rgb(var(--jupyter-rgb));
-}
-
-.jupytertip .admonition-title {
-    background-color: rgba(var(--jupyter-rgb), 0.1);
-}
-
-.jupytertip .admonition-title::before {
-    content: url("jupyter-favicon.svg");
-    margin-top: 0.2rem;
+    background-color: orange;
 }
