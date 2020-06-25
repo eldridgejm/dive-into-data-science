@@ -85,13 +85,22 @@ Clicking on the second tab shows the answer.
 
 Long answers or code can be included using the proper YAML syntax:
 
-    ```{hiddenanswer}
+    ````{hiddenanswer}
     ---
-    question: This is the question.
+    question: |
+        This is the question,
+        which will be
+        1. Parsed *as* [MyST](#)
+        2. With paragraph breaks preserved
+
+        Like this.
     answer: |
+        ```
         def func(arg):
             return 42
-    ```
+        ```
+    ````
+(note that an additional backtick is used in the directive code fence to allow us to nest a code block in the answer)
 
 #### The "jupytertip" and "jupytertiplist" directives
 
@@ -154,6 +163,7 @@ Cells containing a hidden answer directive, such as
 are automatically-identified and converted to Markdown:
 
     **Question**: This is the question
+
     **Answer**: This is the answer
 
 This conversion occurs only if the directive is the only content of the cell.
