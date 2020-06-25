@@ -42,8 +42,6 @@ class HiddenAnswerDirective(SphinxDirective):
     def run(self):
         node = hiddenanswer()
 
-        print(self.options)
-
         s = f"""
 ```````{{tabs}}
 ``````{{tab}} Question
