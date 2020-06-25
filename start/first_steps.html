@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>First Steps with Python &#8212; Dive into Data Science</title>
+    <title>First Steps with Notebooks &#8212; Dive into Data Science</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -31,6 +31,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Expressions" href="expressions.html" />
     <link rel="prev" title="Tools of the Trade" href="tools.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +72,10 @@
     <a href="tools.html">Tools of the Trade</a>
   </li>
   <li class="active">
-    <a href="">First Steps with Python</a>
+    <a href="">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="expressions.html">Expressions</a>
   </li>
 </ul>
 </nav>
@@ -110,9 +114,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/start/first_steps.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/start/first_steps.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -145,28 +149,22 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/start/first_steps.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
     <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#code-cells" class="nav-link">Code Cells</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#markdown-cells" class="nav-link">Markdown Cells</a>
+        </li>
     
     </ul>
 </nav>
@@ -179,9 +177,106 @@
         
               <div>
                 
-  <div class="section" id="first-steps-with-python">
-<h1>First Steps with Python<a class="headerlink" href="#first-steps-with-python" title="Permalink to this headline">¶</a></h1>
-<p><a href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/out_of_tree/blank_notebook.ipynb">Launch in JupyterHub</a></p>
+  <div class="section" id="first-steps-with-notebooks">
+<h1>First Steps with Notebooks<a class="headerlink" href="#first-steps-with-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will explore the basic functionality of Jupyter notebooks,
+and write our first few lines of Python. As we explore, we highly recommend that
+you follow along in your own Jupyter notebook. You can launch a notebook by
+clicking the link below:</p>
+<p><a href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/out_of_tree/blank_notebook.ipynb" target="_blank">Launch in JupyterHub</a></p>
+<p>Clicking this link will open a new tab containing a Jupyter notebook.  All of
+the code you write in this notebook will be executed “in the cloud” – that is,
+the code is run on a remote server called a <em>JupyterHub</em>, and the result is
+transmitted to your browser over the internet.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You do <strong>not</strong> need to install Python, Jupyter, babypandas, or anything else to use
+these Jupyter notebooks!  All of the necessary software is installed on the
+remote server.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you have any previous experience with Python, you might be wondering if you
+<em>need</em> to run Jupyter through the cloud, or whether you can just install and run
+it on your own machine. The answer is “yes, you can, but be careful!”. This textbook is
+using specific versions of Python, babypandas, and other packages. If you
+install these packages on your own machine, you’ll need to guarantee that you’re
+installing the same versions – otherwise, the output of your code might be
+slightly different.</p>
+</div>
+<div class="section" id="code-cells">
+<h2>Code Cells<a class="headerlink" href="#code-cells" title="Permalink to this headline">¶</a></h2>
+<p>A Jupyter notebook consists of a sequence of <strong>cells</strong>. Cells come in several
+flavors. First, and most important, are <strong>code cells</strong>; this is where you can
+write Python code.
+There is already an empty code cell in the notebook we have opened – let’s use it
+to perform a basic computation. Click inside the cell to select it, and type <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">8</span></code>, as shown below:</p>
+<p>Congratulations! You’ve written your first piece of python code. You can
+run your code in one of two ways:</p>
+<ul class="simple">
+<li><p>By clicking the “Run” button in the toolbar. This will run the cell that is
+currently selected (and only that cell).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you do not see the toolbar, select “View -&gt; Toggle Toolbar” in the menu at
+the top of the notebook.</p>
+</div>
+<ul class="simple">
+<li><p>By pressing <kbd class="kbd docutils literal notranslate">Shift + Return</kbd>. This is our preferred way, since it is
+faster than reaching for the mouse.</p></li>
+</ul>
+<p>Upon running the cell, you’ll see the answer appear directly below.
+Additionally, a new empty code cell has been created for us. Go ahead and write
+some arithmetic in the new cell:</p>
+<p>Code cells can be changed after they are executed. Suppose that we made a
+mistake when writing out first code cell, and that we really meant to compute
+<code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">+</span> <span class="pre">8</span></code> instead of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">8</span></code>. Select the first code cell, change the text to read
+<code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">+</span> <span class="pre">8</span></code>, and run it again. You’ll notice that the output is replaced by the new
+correct result.</p>
+</div>
+<div class="section" id="markdown-cells">
+<h2>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter notebooks can also include rich text cells. These are useful for writing
+explanations to go along with your code. The text in these cells can be
+formatted by using <em>Markdown</em>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Markdown</p>
+<p>If you’ve ever written something like <code class="docutils literal notranslate"><span class="pre">**hello**</span></code> to make “hello” bold, you’ve
+used Markdown. Comments on Reddit, for instance, can be written in Markdown.</p>
+</div>
+<p>Create a new cell by clicking the “+”
+button in the toolbar, or by selecting “Insert -&gt; Insert Cell Below” from the
+menu. Then, with the new cell selected, select “Markdown” from the dropdown box
+shown in the toolbar.</p>
+<div class="jupytertip admonition" id="jupytertip-0">
+<p class="admonition-title">Jupyter Tip</p>
+<p>There are plenty of keyboard shortcuts to use with Jupyter notebooks. One of the
+most useful is <kbd class="kbd docutils literal notranslate">Ctrl-m a</kbd>, which creates a new cell. Another useful
+shortcut is <kbd class="kbd docutils literal notranslate">dd</kbd>, which deletes the selected cell. Select “Help -&gt; Keyboard
+shortcuts” to see all of them.</p>
+</div>
+<p>Now copy and paste the below directly into the new cell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># This is a header
+
+I can make words **bold** with two asterisks!
+
+This is a [link](www.google.com).
+
+And this is some advanced math:
+    
+$$
+e^{\pi i} = -1
+$$
+</pre></div>
+</div>
+<p>“Run” the cell. You’ll notice that the text is now nicely formatted, complete
+with a header, bold text, a link, and even some nicely-displayed mathematical
+notation.</p>
+<p>You will not be asked to use Markdown in the rest of the textbook, but text
+cells are very useful part of Jupyter notebooks – and any introduction to them
+should discuss Markdown!</p>
+</div>
 </div>
 
 
@@ -194,6 +289,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="tools.html" title="previous page">Tools of the Trade</a>
+    <a class='right-next' id="next-link" href="expressions.html" title="next page">Expressions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
