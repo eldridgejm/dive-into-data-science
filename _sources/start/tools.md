@@ -7,12 +7,13 @@ It 2019 it was estimated[^domo] that, in any given minute,
 massive amounts of data, and it's a data scientist's job to analyze it.
 Of course, any data set of moderate size cannot be analyzed with pencil and
 paper alone; instead, we turn to computers to do the heavy lifting. In this
-textbook, we will learn several of the most important tools used by working data
-scientists *today*.
+textbook, we will learn several of the most important computational tools used
+by working data scientists *today*: *Python*, *Jupyter notebooks*, and the *Pandas*
+data science package.
 
 In order to utilize the full power of a computer to run an analysis, we'll need
-to know the basics of a good programming language. By far, the most popular
-programming language among data scientists[^kaggle] is
+to know the basics of a good programming language. By far, the most popular[^kaggle]
+programming language among data scientists is
 [Python](http://www.python.org). While other languages tend to be verbose and
 formal, Python is relatively easy-going. In this textbook, we'll learn just
 enough Python to do interesting things with data.
