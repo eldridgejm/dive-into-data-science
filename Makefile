@@ -33,7 +33,7 @@ notebooks: docker
 		--mount type=bind,src=$(shell pwd),target=/document \
 		dive_into_data_science:${IMAGE_TAG} \
 		bash -c " \
-		cd /document/notebooks && \
+		cd /document/notebooks/book_pages && \
 		/home/runner/env/bin/python \
 		/document/scripts/make_reader_friendly_notebooks.py \
 		/document/book"

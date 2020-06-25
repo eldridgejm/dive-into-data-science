@@ -16,11 +16,12 @@ launch_buttons:
 
 repository:
     url: https://github.com/eldridgejm/dive_into_data_science
-    path_to_book: notebooks
+    path_to_book: notebooks/book_pages # link to the reader-friendly notebooks
     branch: master
 
 sphinx:
   extra_extensions:
   - sphinx_tabs.tabs
   - jupytertips
+  - jupyterhublink
   - hiddenanswer

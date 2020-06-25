@@ -116,18 +116,36 @@ Example:
     the notebook's cells from top to bottom.
     ```
 
+#### The "jupyterhublink" directive
+
+Sometimes it is useful to place a link to open a notebook in JupyterHub within
+the text. This can be done with the "jupyterhublink" directive:
+
+    ```{jupyterhublink} path/to/notebook/relative/to/repo/root.ipynb
+    ```
+
 ### Reader-Friendly Jupyter Notebooks
+
+This `notebooks` directory contains the reader-friendly Jupyter notebooks
+displayed to the user when they click the link to launch the current page in
+JupyterHub.
 
 Much of the textbook is written in Jupyter Notebooks which are then converted to
 HTML by the build process. Readers can click the rocket icon to launch the
 notebook version of the given page in a JupyterHub session.
-
 However, the Jupyter notebooks used as source documents may include directives
 and other content that might confuse readers. Therefore, as part of the build
 process, the source notebooks are transformed into "reader-friendly" notebooks
-and stored in the `notebooks/` directory (these are the notebooks that are
-launched when the user clicks the rocket link to interact with a page). The
-notebooks are made "reader-friendly" by several mechanisms:
+and stored in the `notebooks/book_pages` directory (these are the notebooks that
+are launched when the user clicks the rocket link to interact with a page). The
+notebooks are made "reader-friendly" by several mechanisms described below.
+
+`notebooks/out_of_tree/` contains various other Jupyter notebooks that should be
+available for interaction, but which are not themselves pages in the textbook.
+They are not automatically generated.
+
+Below, several mechanisms are described for creating "friendly" Jupyter
+notebooks from book page source notebooks.
 
 
 #### Admonition Cells
