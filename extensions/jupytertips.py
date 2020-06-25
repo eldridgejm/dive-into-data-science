@@ -39,10 +39,12 @@ class JupyterTipDirective(SphinxDirective):
 
         jupytertip_node = jupytertip('\n'.join(self.content))
         jupytertip_node += nodes.title(_('Jupyter Tip'), _('Jupyter Tip'))
+        jupytertip_node.set_class('jupytertip')
         self.state.nested_parse(self.content, self.content_offset, jupytertip_node)
 
         if not hasattr(self.env, 'jupytertip_all_jupytertips'):
             self.env.jupytertip_all_jupytertips = []
+
 
         self.env.jupytertip_all_jupytertips.append({
             'docname': self.env.docname,
