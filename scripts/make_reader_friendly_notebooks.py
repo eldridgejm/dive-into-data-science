@@ -200,7 +200,7 @@ def transform_hiddenanswer_directive(directive, cell):
     """
     source = remove_directive_markup(cell['source'])
     content = yaml.load(source, Loader=yaml.Loader)
-    cell['source'] = f"**Question**:\n {content['question']}\n\n**Answer**:\n {content['answer']}"
+    cell['source'] = f"**Question**:\n {content['question']}\n\n<details><summary><b>Answer</b>:</summary>{content['answer']}</details>"
 
 
 # i/o
