@@ -1,0 +1,27 @@
+/* Override narrow user interface.
+
+Line width should be kept narrow, but navigation/interface should be pushed to
+the sides of the page.
+*/
+.container-xl {
+    max-width: none;
+}
+
+.bd-content .section {
+    max-width: 48em; /* A nice reading width */
+    margin: auto;
+}
+
+/* Make buttons lighter
+
+We don't want to change the tooltips, only the icons, thus >
+*/
+#navbar-toggler,
+.topbar .topbar-main button.topbarbtn > * {
+    color: #ddd;
+}
+
+#navbar-toggler:hover,
+.topbar .topbar-main button.topbarbtn:hover > * {
+    color: #556;
+}
