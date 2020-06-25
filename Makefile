@@ -13,7 +13,7 @@ endef
 
 
 .PHONY: html
-html: docker
+html: docker notebooks
 	# build the HTML version of the textbook
 	$(call build_book,--builder html)
 
@@ -29,6 +29,7 @@ pdf: docker
 notebooks: docker
 	# take the notebooks used as source documents and remove tagged cells,
 	# placing them in the notebooks/ directory.
+	mkdir -p notebooks/book_pages
 	docker run \
 		--mount type=bind,src=$(shell pwd),target=/document \
 		dive_into_data_science:${IMAGE_TAG} \
@@ -78,3 +79,4 @@ shell:
 .PHONY: clean
 clean:
 	rm -rf book/_build
+	rm -rf notebooks/book_pages
