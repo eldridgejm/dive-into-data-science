@@ -5,4 +5,6 @@
 - file: start/first_steps
 - file: start/expressions
 - file: start/variables
+- file: start/functions
+- file: start/data_types
 - file: start/sequences
