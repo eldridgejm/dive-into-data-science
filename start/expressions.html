@@ -89,6 +89,9 @@
     <a href="variables.html">Variables</a>
   </li>
   <li class="">
+    <a href="functions.html">Functions and Imports</a>
+  </li>
+  <li class="">
     <a href="data_types.html">Data Types</a>
   </li>
   <li class="">
@@ -193,7 +196,11 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#arithmetic" class="nav-link">Arithmetic</a>
+            <a href="#python-as-a-calculator" class="nav-link">Python as a Calculator</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#example" class="nav-link">Example</a>
         </li>
     
     </ul>
@@ -210,8 +217,13 @@
   <div class="section" id="expressions">
 <h1>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h1>
 <p>Now that we know the basics of Jupyter notebooks, we can start exploring Python itself. Before we do, it might interest you to know that most of the pages in this textbook were actually written as Jupyter notebooks – including this page! In fact, you can see the notebook version of this page by hovering over the rocket icon above and selecting “JupyterHub”. This will open the current page as a notebook on JupyterHub. Feel free to experiment by changing the notebook’s code cells and running them. Don’t worry: the changes will only appear in your notebook, and won’t affect the textbook.</p>
-<div class="section" id="arithmetic">
-<h2>Arithmetic<a class="headerlink" href="#arithmetic" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind the philosophy of this book: we’ll learn only as much Python as necessary to do data science. This chapter will discuss the absolute basics, and we’ll introduce other Python features later in the book when they become necessary.</p>
+</div>
+<div class="section" id="python-as-a-calculator">
+<h2>Python as a Calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="tools.html"><span class="doc">Tools of the Trade</span></a>, we mentioned that data scientists use computers as if they are advanced calculators. As such, we’ll start our exploration of Python by doing some basic mathematical calculations. At first it might seem like Python isn’t any more useful than the calculator app on your phone, but by the end of this chapter you’ll start to see why it is such a powerful tool.</p>
 <p>In the last section, we saw how to add two numbers with Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -352,6 +364,36 @@ In particular, arithmetic expressions can be combined just as you might imagine.
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
 <p>67</p>
+</div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>How many seconds are in one year? There are 60 seconds in a minute, 60 minutes in an hour, 24 hours in a day, and 365 days in a year, for a total of</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>31536000
+</pre></div>
+</div>
+</div>
+</div>
+<p>seconds in a normal year.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It is sometimes useful to include a <strong>comment</strong> alongside your code, explaining what it does. In Python, a line starting with <code class="docutils literal notranslate"><span class="pre">#</span></code> is treated as a comment, and is effectively ignored. For instance:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># (seconds in a minute) * (minutes in an hour) * (hours in a day) * (days in a year)
+60 * 60 * 24 * 365
+</pre></div>
+</div>
+<p>It is good to comment your code, but don’t go overboard – it is possible to have too many comments! For example, the comment below probably doesn’t help:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># multiply three and five
+3 * 5
+</pre></div>
 </div>
 </div>
 </div>

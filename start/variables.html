@@ -39,7 +39,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data Types" href="data_types.html" />
+    <link rel="next" title="Functions and Imports" href="functions.html" />
     <link rel="prev" title="Expressions" href="expressions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,6 +87,9 @@
   </li>
   <li class="active">
     <a href="">Variables</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions and Imports</a>
   </li>
   <li class="">
     <a href="data_types.html">Data Types</a>
@@ -193,7 +196,7 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#giving-names-to-values" class="nav-link">Giving Names to Values</a>
+            <a href="#assigning-names" class="nav-link">Assigning Names</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -217,19 +220,19 @@
                 
   <div class="section" id="variables">
 <h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
-<p>So far, everything we have done in Python could have been done with the calculator on your phone. Now let’s see how Python can do something that your phone’s calculator probably can’t do: save the result of an expression and recall it for use later.</p>
+<p>When performing a long computation, it is often useful to store the result of a calculation so that we can do this later. In most programming languages, we can do this by giving a <em>name</em> to the result of an expression.</p>
 <p>As always, remember that you can follow along by clicking the link under the rocket icon at the top of the page to launch the Jupyter notebook version of this page!</p>
-<div class="section" id="giving-names-to-values">
-<h2>Giving Names to Values<a class="headerlink" href="#giving-names-to-values" title="Permalink to this headline">¶</a></h2>
-<p>Values can be given names using <code class="docutils literal notranslate"><span class="pre">=</span></code>. For example:</p>
+<div class="section" id="assigning-names">
+<h2>Assigning Names<a class="headerlink" href="#assigning-names" title="Permalink to this headline">¶</a></h2>
+<p>The result of an expression can be given a name using <code class="docutils literal notranslate"><span class="pre">=</span></code>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the_answer_to_everything</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the_answer_to_everything</span> <span class="o">=</span> <span class="mi">21</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This line of code stores the number <code class="docutils literal notranslate"><span class="pre">42</span></code> in a <strong>variable</strong> named <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>. We can later reference these values by name in expressions contained in other cells:</p>
+<p>This line of code stores the number <code class="docutils literal notranslate"><span class="pre">42</span></code> in a <strong>variable</strong> named <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>. We can later reference this values by name in expressions contained in other cells:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the_answer_to_everything</span> <span class="o">+</span> <span class="mi">12</span>
@@ -268,17 +271,17 @@
 <p>Notice that a cell containing only an assignment has no output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_seconds_in_a_year</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seconds_in_a_year</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>This might seem strange: in the previous section, the result of our expressions was displayed as the cell’s output. What gives?</p>
-<p>The reason we see no output is because the code <code class="docutils literal notranslate"><span class="pre">number_of_seconds_in_a_year</span> <span class="pre">=</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">365</span></code> is not an <strong>expression</strong>, it is a <strong>statement</strong>. While expressions have values, statements do not. When a notebook cell is run, the value of the last line in the cell is used as the output. But since an assignment statement has no value, there is no value to print.</p>
+<p>The reason we see no output is because the code <code class="docutils literal notranslate"><span class="pre">seconds_in_a_year</span> <span class="pre">=</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">60</span> <span class="pre">*</span> <span class="pre">24</span> <span class="pre">*</span> <span class="pre">365</span></code> is not an <strong>expression</strong>, it is a <strong>statement</strong>. While expressions have values, statements do not. When a notebook cell is run, the value of the last line in the cell is used as the output. But since an assignment statement has no value, there is no value to print.</p>
 <p>However, the line of code consisting only of a variable’s name <em>is</em> an expression – its value is the value of the variable. For instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_seconds_in_a_year</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seconds_in_a_year</span>
 </pre></div>
 </div>
 </div>
@@ -300,8 +303,8 @@ number_of_seconds_in_a_year
 <p>Testing it out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_seconds_in_a_year</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
-<span class="n">number_of_seconds_in_a_year</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seconds_in_a_year</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<span class="n">seconds_in_a_year</span>
 </pre></div>
 </div>
 </div>
@@ -389,17 +392,11 @@ number_of_seconds_in_a_year
 </div>
 <p>Now suppose that something makes you realize that you got the formula for the area of a triangle wrong. You go back and fix the cell and re-run it. The question is: which value of <code class="docutils literal notranslate"><span class="pre">height</span></code> is used? The value 4, from above the cell? Or the value 6 from below (calculated from 72 / 12)? Try it and see!’ You’ll find that the new value of <code class="docutils literal notranslate"><span class="pre">height</span></code> is what is used when re-computing the area. This is obviously not what we wanted.</p>
 <p>It turns out that it isn’t the order of the cells within the notebook that matters, it is the order in which they are executed. Typically, cells are executed in the order in which they appear in the notebook, but there are many instances where the cells are executed out-of-order. In such instances, weird “bugs” can occur, such as the one described above.</p>
-<p>Luckily there is a simple fix to this problem. Select “Kernel -&gt; Restart and Run All” from the menu. This will restart the kernel, causing it to forget the value of all variables it currently knows. There kernel will then run the entire notebook from to top to bottom.</p>
-<p>Here we see that Python has complained about a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, since <code class="docutils literal notranslate"><span class="pre">foo</span></code> is not defined. Now let’s create a new cell in which we define <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="mi">42</span>
-</pre></div>
+<p>Luckily there is a simple fix to this problem. Select “Kernel -&gt; Restart and Run All” from the menu. This will restart the kernel, causing it to forget the value of all variables it currently knows. All of the cells will also be re-run, from top to bottom. Restarting a kernel like this is like pushing “reset”.</p>
+<div class="jupytertip admonition" id="jupytertip-1">
+<p class="admonition-title">Jupyter Tip</p>
+<p>If you notice strange behavior while working with a Jupyter notebook, remember the number one rule of debugging: try turning it off and then back on. The equivalent of this with a Jupyter notebook is selecting “Kernel -&gt; Restart and Run All” from the top menu.</p>
 </div>
-</div>
-</div>
-<p>Now go back and re-run the original cell containing <code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">+</span> <span class="pre">3</span></code>. When you do, you’ll see that the cell no longer results in an error. Instead, it outputs the value 5.</p>
-<p>What this demonstrates is</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
@@ -410,40 +407,15 @@ number_of_seconds_in_a_year
 <li><p>The Earth is 93 million miles away from the sun</p></li>
 </ol>
 <p>Here’s our strategy: we’ll first calculate how long a lightyear is in miles, then we’ll divide 93 million miles by this number to find how many lightyears are between the Sun and the Earth.</p>
-<p>So how long is a lightyear, in miles? That is, how far does light travel in one year. Well, it travels 186,000 miles per second. There are 3600 seconds in an hour, so light travels</p>
+<p>So how long is a lightyear, in miles? That is, how far does light travel in one year. Well, it travels 186,000 miles per second. We have already calculated the number of seconds in a year above, and stored the result in a variable called <code class="docutils literal notranslate"><span class="pre">seconds_in_a_year</span></code>. Therefore, light travels:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>The underscore in <code class="docutils literal notranslate"><span class="pre">186_000</span></code> does nothing – Python ignores it. But it makes it easier for us humans to see how large the number is. If you’d like, you can omit it entirely.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">186_000</span> <span class="o">*</span> <span class="mi">3600</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>669600000
-</pre></div>
-</div>
-</div>
-</div>
-<p>miles in an hour. Since there are 24 hours in a day, light travels</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">186_000</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">*</span> <span class="mi">24</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>16070400000
-</pre></div>
-</div>
-</div>
-</div>
 <p>hours in one day. And since there are 365 days in a (normal) year, light travels</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">186_000</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">186_000</span> <span class="o">*</span> <span class="n">seconds_in_a_year</span>
 </pre></div>
 </div>
 </div>
@@ -467,20 +439,10 @@ number_of_seconds_in_a_year
 </div>
 </div>
 <p>The result is a relatively small number expressed in scientific notation. Remember that <code class="docutils literal notranslate"><span class="pre">1.585e-5</span></code> is shorthand for <span class="math notranslate nohighlight">\(1.585 \times 10^{-5}\)</span>.</p>
-<p>Now suppose we want to calculate the distance from La Jolla to Berkeley in lightyears. We don’t need to repeat the whole process above: we can just take the distance in miles (roughly 480 miles) and divide it by <code class="docutils literal notranslate"><span class="pre">5865696000000</span></code>. We get:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">580</span> <span class="o">/</span> <span class="mi">5865696000000</span>
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Giving names to variables makes your code easier to understand. It’s often a good idea to break a long calculation up into intermediate steps and give names to the result of each part.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>9.887999650851323e-11
-</pre></div>
-</div>
-</div>
-</div>
-<p>Notice that we keep reusing this number, <code class="docutils literal notranslate"><span class="pre">5865696000000</span></code>, when performing our conversion.</p>
 </div>
 </div>
 
@@ -494,7 +456,7 @@ number_of_seconds_in_a_year
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="expressions.html" title="previous page">Expressions</a>
-    <a class='right-next' id="next-link" href="data_types.html" title="next page">Data Types</a>
+    <a class='right-next' id="next-link" href="functions.html" title="next page">Functions and Imports</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
