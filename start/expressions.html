@@ -36,8 +36,10 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Variables" href="variables.html" />
     <link rel="prev" title="First Steps with Notebooks" href="first_steps.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,6 +84,12 @@
   </li>
   <li class="active">
     <a href="">Expressions</a>
+  </li>
+  <li class="">
+    <a href="variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="sequences.html">Collections of Data: Sequences</a>
   </li>
 </ul>
 </nav>
@@ -268,8 +276,8 @@
 </div>
 </div>
 </div>
-<p>This angry message is called an <strong>exception</strong>. In this case, the exception is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. This is Python’s way of telling us that we’ve written some code that it doesn’t understand. Remember, a human might understand what is meant by <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">8</span></code>, but Python doesn’t. We have to be careful to use the precise <em>syntax</em> that Python expects when writing code. We’ll see more about exceptions later.</p>
-<p>Two other arithmetic operators might be useful to you. To exponential a number (raise it to a power), use <code class="docutils literal notranslate"><span class="pre">**</span></code>:</p>
+<p>This angry message is called an <strong>exception</strong>. In this case, the exception is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. This is Python’s way of telling us that we’ve written some code that it doesn’t understand. Remember, a human might understand what is meant by <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">8</span></code>, but Python doesn’t. We have to be careful to use the precise <em>syntax</em> that Python expects when writing code – in this case, it’s as simple as writing <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">8</span></code> instead of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">x</span> <span class="pre">8</span></code>. We’ll see more about exceptions later.</p>
+<p>Two other arithmetic operators might be useful to you. To exponentiate a number (raise it to a power), use <code class="docutils literal notranslate"><span class="pre">**</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">**</span><span class="mi">2</span>
@@ -356,6 +364,7 @@ In particular, arithmetic expressions can be combined just as you might imagine.
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="first_steps.html" title="previous page">First Steps with Notebooks</a>
+    <a class='right-next' id="next-link" href="variables.html" title="next page">Variables</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
