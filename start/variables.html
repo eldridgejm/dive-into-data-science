@@ -39,7 +39,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Collections of Data: Sequences" href="sequences.html" />
+    <link rel="next" title="Data Types" href="data_types.html" />
     <link rel="prev" title="Expressions" href="expressions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,6 +87,9 @@
   </li>
   <li class="active">
     <a href="">Variables</a>
+  </li>
+  <li class="">
+    <a href="data_types.html">Data Types</a>
   </li>
   <li class="">
     <a href="sequences.html">Collections of Data: Sequences</a>
@@ -194,7 +197,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#notebook-state" class="nav-link">Notebook State</a>
+            <a href="#the-kernel-the-brains-of-a-notebook" class="nav-link">The Kernel: The “Brains” of a Notebook</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -355,9 +358,48 @@ number_of_seconds_in_a_year
 </div>
 </div>
 </div>
-<div class="section" id="notebook-state">
-<h2>Notebook State<a class="headerlink" href="#notebook-state" title="Permalink to this headline">¶</a></h2>
-<p>A notebook</p>
+<div class="section" id="the-kernel-the-brains-of-a-notebook">
+<h2>The Kernel: The “Brains” of a Notebook<a class="headerlink" href="#the-kernel-the-brains-of-a-notebook" title="Permalink to this headline">¶</a></h2>
+<p>When we define a new variable, we expect the notebook to remember its value. But where is this value kept, precisely?</p>
+<p>It might help to understand a little more about how notebooks work. When you launch a Jupyter notebook, an instance of Python called a <strong>kernel</strong> is started on a remote server. When you run a cell, the code is sent over the internet to the kernel, which then evaluates the code and sends back the result for display in our browser. In this way, the kernel is the “brain” of the notebook, since it not only does the calculations, but also remembers the values of the variables we have defined.</p>
+<p>Just knowing that the kernel exists can help us better understand how notebooks work, and therefore avoid some common mistakes. Consider the following problematic situation. You need to calculate the area of a triangle, so your first define variables <code class="docutils literal notranslate"><span class="pre">base</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> as such:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You then use the formula for the area of a triangle, but make a mistake: you forget to multiple by 1/2:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unfortunately, you don’t recognize your mistake immediately. You continue on, creating new code cells and executing them. At some point, you write a piece of code that converts a person’s height to feet from inches:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">height</span> <span class="o">=</span> <span class="mi">72</span> <span class="o">/</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now suppose that something makes you realize that you got the formula for the area of a triangle wrong. You go back and fix the cell and re-run it. The question is: which value of <code class="docutils literal notranslate"><span class="pre">height</span></code> is used? The value 4, from above the cell? Or the value 6 from below (calculated from 72 / 12)? Try it and see!’ You’ll find that the new value of <code class="docutils literal notranslate"><span class="pre">height</span></code> is what is used when re-computing the area. This is obviously not what we wanted.</p>
+<p>It turns out that it isn’t the order of the cells within the notebook that matters, it is the order in which they are executed. Typically, cells are executed in the order in which they appear in the notebook, but there are many instances where the cells are executed out-of-order. In such instances, weird “bugs” can occur, such as the one described above.</p>
+<p>Luckily there is a simple fix to this problem. Select “Kernel -&gt; Restart and Run All” from the menu. This will restart the kernel, causing it to forget the value of all variables it currently knows. There kernel will then run the entire notebook from to top to bottom.</p>
+<p>Here we see that Python has complained about a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, since <code class="docutils literal notranslate"><span class="pre">foo</span></code> is not defined. Now let’s create a new cell in which we define <code class="docutils literal notranslate"><span class="pre">foo</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now go back and re-run the original cell containing <code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">+</span> <span class="pre">3</span></code>. When you do, you’ll see that the cell no longer results in an error. Instead, it outputs the value 5.</p>
+<p>What this demonstrates is</p>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
@@ -452,7 +494,7 @@ number_of_seconds_in_a_year
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="expressions.html" title="previous page">Expressions</a>
-    <a class='right-next' id="next-link" href="sequences.html" title="next page">Collections of Data: Sequences</a>
+    <a class='right-next' id="next-link" href="data_types.html" title="next page">Data Types</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
