@@ -213,7 +213,7 @@
                 
   <div class="section" id="collections-of-data-sequences">
 <h1>Collections of Data: Sequences<a class="headerlink" href="#collections-of-data-sequences" title="Permalink to this headline">¶</a></h1>
-<p>Now that we know how individual data values are stored as data types, it makes sense to figure out how we can work with more than one value of data at a time – and start heading towards the notion of a ‘data set’. We can start to achieve this by creating collections of values.</p>
+<p>Now that we know a decent amount about individual data values, it makes sense to figure out how we can work with more than one value of data at a time – and start heading towards the notion of a ‘data set’. We can start to achieve this by creating collections of values.</p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
 <p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. What are the ‘items’ we’re talking about? They can be almost anything!</p>
@@ -230,7 +230,7 @@
 </div>
 </div>
 </div>
-<p>The end result is an ordered sequence of items that we can read from beginning to end, and we can reference it anywhere we want now that we’ve assigned the collection to a variable name.</p>
+<p>The end result is an ordered sequence of items that we can read from beginning to end.</p>
 <p>Now that your amazing list is created, you could even add, remove, reorder, and search for items in the list!</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -238,7 +238,7 @@
 </div>
 <div class="section" id="functions-on-lists">
 <h3>Functions on lists<a class="headerlink" href="#functions-on-lists" title="Permalink to this headline">¶</a></h3>
-<p>Collections are handy because they allow us to perform calculations that require multiple pieces of data to by computed.</p>
+<p>Collections are handy because they allow us to perform calculations that require multiple pieces of data to be computed.</p>
 <p>For instance, if you’ve been keeping track of the hours of sleep you get each night for the past week, you might be interested in the shortest and longest amount of time you slept.  Neither of these calculations can be done easily with simple expressions, but they can be done easily using <em>call expressions</em> on a list!</p>
 <p>Let’s start by creating our collection of data and assigning it to a meaningful name.</p>
 <div class="cell docutils container">
@@ -248,8 +248,8 @@
 </div>
 </div>
 </div>
-<p>Some functions are specifically designed to perform calculations on collections of values. For example, <code class="docutils literal notranslate"><span class="pre">max()</span></code> and <code class="docutils literal notranslate"><span class="pre">min()</span></code> are functions that will find the largest or smallest item in a list, respectively.</p>
-<p>If we’re curious what the longest number of hours you slept last week was, we can pass our list into the <code class="docutils literal notranslate"><span class="pre">max()</span></code> function.</p>
+<p>Some functions are specifically designed to perform calculations on collections of values. For example, <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> are functions that will find the largest or smallest item in a list, respectively.</p>
+<p>If we’re curious what the longest number of hours you slept last week was, we can pass our list into the <code class="docutils literal notranslate"><span class="pre">max</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -262,8 +262,7 @@
 </div>
 </div>
 </div>
-<p>And if we want to find the shortest number of hours you slept, then we can use the <code class="docutils literal notranslate"><span class="pre">min()</span></code> function on our list.</p>
-<p>It was tedious to type out all the hours when we calculated the max, so let’s take the smarter route and just use the variable name of our collection instead.</p>
+<p>And if we want to find the shortest number of hours you slept, then we can use the <code class="docutils literal notranslate"><span class="pre">min</span></code> function on our list. It was tedious to type out all the hours when we calculated the max, so let’s take the smarter route and just use the variable name of our collection instead.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="n">hours_slept</span><span class="p">)</span>
@@ -276,7 +275,7 @@
 </div>
 </div>
 </div>
-<p>We can also calculate the total number of hours we slept last week by using <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, and we can find out the number of items in a list by using <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+<p>We can also calculate the total number of hours we slept last week by using <code class="docutils literal notranslate"><span class="pre">sum</span></code>, and we can find out the number of items in a list by using <code class="docutils literal notranslate"><span class="pre">len</span></code>. Feel free to play with these functions in the interactive notebook!</p>
 <div class="sphinx-tabs docutils container">
 <div class="ui top attached tabular menu sphinx-menu docutils container">
 <div class="active item sphinx-data-tab-0-0 docutils container">
@@ -291,7 +290,7 @@
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<p>Using <code class="docutils literal notranslate"><span class="pre">sum()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code> how would you write an expression that calculates the average number of hours you slept last week?</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">len</span></code> how would you write an expression that calculates the average number of hours you slept last week?</p>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">hours_slept</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">hours_slept</span><span class="p">)</span>
@@ -311,7 +310,7 @@ Include (?)
 </div>
 <div class="section" id="arrays">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
-<p>Python’s lists are very useful and easy to work with, but can be slow. As data scientists, we will be working with sequences of millions, if not billions, of entries – so speed is of the essence. Additionally, a lot of the calculations we’ve seen above aren’t going to work if our list contains mixed types! After all, have you ever tried calculating the sum of <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">'orange'</span></code>?</p>
+<p>Python’s lists are useful and easy to work with, but can be slow. As data scientists, we will eventually be working with sequences of millions, if not billions, of entries – so speed is of the essence. Additionally, a lot of the calculations we’ve seen above aren’t going to work if our list contains mixed types! After all, have you ever tried calculating the sum of <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">'orange'</span></code>?</p>
 <p>The numerical analysis library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> fixes this by introducing a new type of sequence: <em>arrays</em>. Let’s import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library (calling it <code class="docutils literal notranslate"><span class="pre">np</span></code> for short) and get started!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -321,7 +320,7 @@ Include (?)
 </div>
 </div>
 <p>Arrays are stricter than lists – they can only contain one type of data, and once they’re created we cannot add or remove items from them – but they offer incredible power and speed. Because of their power, NumPy arrays are one of the most commonly used collections when working with data.</p>
-<p>A lot of the same concepts of lists apply to arrays, in fact we create an array by passing in a list to the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function.</p>
+<p>A lot of the same concepts from lists apply to arrays, in fact we create an array by passing in a list to the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -348,11 +347,9 @@ Include (?)
 </div>
 </div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If we try to make an array that contains numbers and strings, all of our numbers will be turned into strings.</p>
-<p>Try it!</p>
-</div>
+<p>[Recall what happened when we evaluated expressions that contained ints and floats: cast] [same thing will happen if we try to make an array containing ints and floats] [interestingly, numpy will also ‘cast’ other types.]</p>
+<p>[try making an array of numbers and strings and see what happens]</p>
+<p>[explanation of dtype]</p>
 <div class="section" id="functions-on-arrays">
 <h3>Functions on Arrays<a class="headerlink" href="#functions-on-arrays" title="Permalink to this headline">¶</a></h3>
 <p>The functions we looked at that can be used on lists can also be used on arrays, but NumPy comes full of additional functions that perform a vast amount of useful calculations on arrays.</p>
