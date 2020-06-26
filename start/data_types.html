@@ -187,15 +187,55 @@
     <ul class="nav section-nav flex-column">
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#numbers" class="nav-link">Numbers</a>
+            <a href="#primitives" class="nav-link">Primitives</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#numbers-ints-and-floats" class="nav-link">Numbers - Ints and Floats</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#when-int-and-float-mix" class="nav-link">When int and float mix</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#a-note-on-precision" class="nav-link">A note on precision</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#text-strings" class="nav-link">Text - Strings</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#single-vs-double-quotes" class="nav-link">Single vs. double quotes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#string-arithmetic" class="nav-link">String arithmetic</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#true-false-booleans" class="nav-link">True/False - Booleans</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#conditional-statements" class="nav-link">Conditional statements</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#converting-between-primitives" class="nav-link">Converting between primitives</a>
+        </li>
+    
+            </ul>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#strings" class="nav-link">Strings</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#booleans" class="nav-link">Booleans</a>
+            <a href="#other-data-types" class="nav-link">Other data types</a>
         </li>
     
     </ul>
@@ -211,7 +251,12 @@
                 
   <div class="section" id="data-types">
 <h1>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
-<p>In Python, <em>everything</em> is considered to be some type of ‘object’. We can easily figure out what type of object something is by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
+<p>In Python, everything is considered to be some <em>type</em> of object.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>An <strong>object</strong> is just Python’s way of saying “a thing”. And everything is data to a computer, so we call the types of these objects as ‘data types’.</p>
+</div>
+<p>We can easily figure out what type of object something is by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -248,7 +293,7 @@
 </div>
 </div>
 </div>
-<p>Even functions, like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, are a type of object. Really, an object is just Python’s way of saying “a thing”.</p>
+<p>Even functions, like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, are a type of object! We’ll talk about this at the end.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
@@ -261,11 +306,22 @@
 </div>
 </div>
 </div>
-<p>Specifically, there are a handful of basic types of <em>data</em> that we see most frequently: numbers, strings, and booleans.</p>
-<div class="section" id="numbers">
-<h2>Numbers<a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h2>
-<p>Turns out, there’s actually a few different types of numbers in Python, with the two main types being <em>integers</em> and <em>real numbers</em>.</p>
-<p>Integers have the type <code class="docutils literal notranslate"><span class="pre">int</span></code>, and must be whole values without any decimals or fractions.</p>
+<div class="section" id="primitives">
+<h2>Primitives<a class="headerlink" href="#primitives" title="Permalink to this headline">¶</a></h2>
+<p>Some objects are really basic, you could even call them “primitive”.</p>
+<p>The four primitive data types are:</p>
+<ul class="simple">
+<li><p>Integers</p></li>
+<li><p>Floats</p></li>
+<li><p>Strings</p></li>
+<li><p>Booleans</p></li>
+</ul>
+<p>and they correspond to the types of data we see most often: numbers, text, and true/false.</p>
+<p>These objects essentially have intrinsic value – they are raw data.</p>
+<div class="section" id="numbers-ints-and-floats">
+<h3>Numbers - Ints and Floats<a class="headerlink" href="#numbers-ints-and-floats" title="Permalink to this headline">¶</a></h3>
+<p>Turns out, there’s actually a distinction between two main types of numbers <strong>integers</strong> and <strong>floats</strong>.</p>
+<p>Just like in math class, <strong>integers</strong> must be whole numbers without any decimals or fractions. These can be big, small, positive, negative, or zero.  Integers have the type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -302,11 +358,12 @@
 </div>
 </div>
 </div>
-<p>Real numbers have the type <code class="docutils literal notranslate"><span class="pre">float</span></code>, and can represent numbers with decimal precision.</p>
+<p>Real numbers are called <strong>floats</strong>, and are basically any number with a decimal point. These the type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>The term ‘float’ comes from “floating point number”. These numbers are essentially represented by storing a value (e.g. 12345) and the position of a decimal point (e.g. position 2), so the decimal point can float to any position in the number, (producing 12.345)</p>
 </div>
+<p>When these get really big or really small, they might be printed in scientific notation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
@@ -333,7 +390,19 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">12345678909876654321.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.2345678909876654e+19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -343,17 +412,106 @@
 </div>
 </div>
 </div>
-<p>Did you catch what just happened in the last code cell above?</p>
-<p>We didn’t call <code class="docutils literal notranslate"><span class="pre">type</span></code> function on a number, we actually called it on an expression, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">2</span></code>.  Remember, whenever we call a function on an expression, that expression will be evaluated and the function will be called on the result. But wouldn’t we expect that any number divided by itself is just 1… an integer?</p>
-<p>[python will convert ints to floats if they both show up, or if there’s a division]</p>
+<p>Did you catch the strange thing that happened in the last code cell?</p>
+<div class="section" id="when-int-and-float-mix">
+<h4>When <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> mix<a class="headerlink" href="#when-int-and-float-mix" title="Permalink to this headline">¶</a></h4>
+<p>Remember from {LINK}EXPRESSIONS that expressions within parenthesis will be evaluated first, so the <code class="docutils literal notranslate"><span class="pre">type</span></code> function is actually being called on the result of the expression <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">1</span></code>.  But, wouldn’t we expect that any number divided by itself is just 1… an integer?</p>
+<p>Python will always return a float if an expression involves a float, or if integers are being divided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mf">2.0</span>
+</pre></div>
 </div>
-<div class="section" id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
-<p>[strings are what we call text]</p>
 </div>
-<div class="section" id="booleans">
-<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>[coerce to int or float with <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> functions]</p>
+</div>
+<div class="section" id="a-note-on-precision">
+<h4>A note on precision<a class="headerlink" href="#a-note-on-precision" title="Permalink to this headline">¶</a></h4>
+<p>[integers can be any size and remain precise, but floats may lose precision after calculations]</p>
+</div>
+</div>
+<div class="section" id="text-strings">
+<h3>Text - Strings<a class="headerlink" href="#text-strings" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strings</strong> are what most programming languages call text. In Python, once text is surrounded by single <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or double quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> then it’s treated as a string. Strings have the type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Word&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;More than one word, and punc-tu-a-tion!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens if you don’t put anything inside of the quotes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is fine! We call it an empty string.</p>
+<div class="section" id="single-vs-double-quotes">
+<h4>Single vs. double quotes<a class="headerlink" href="#single-vs-double-quotes" title="Permalink to this headline">¶</a></h4>
+<p>So, when does it matter if we use single quotes versus double quotes?</p>
+</div>
+<div class="section" id="string-arithmetic">
+<h4>String arithmetic<a class="headerlink" href="#string-arithmetic" title="Permalink to this headline">¶</a></h4>
+<p>[Did you know that you can add multiple strings together?]</p>
+</div>
+</div>
+<div class="section" id="true-false-booleans">
+<h3>True/False - Booleans<a class="headerlink" href="#true-false-booleans" title="Permalink to this headline">¶</a></h3>
 <p>[booleans are simply True or False] [they’re the result of comparisons between two expressions]</p>
+<div class="section" id="conditional-statements">
+<h4>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="converting-between-primitives">
+<h3>Converting between primitives<a class="headerlink" href="#converting-between-primitives" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="other-data-types">
+<h2>Other data types<a class="headerlink" href="#other-data-types" title="Permalink to this headline">¶</a></h2>
+<p>[once we move away from primitives, things get a little more complex. we saw at the beginning of this page that functions are a type of object] [besides functions, the most common types of objects we’ll see act more like containers for values.] [some examples include lists and arrays, as well as tables]</p>
 </div>
 </div>
 
