@@ -230,7 +230,7 @@
 <p>Now that we know a decent amount about individual data values, it makes sense to figure out how we can work with more than one value of data at a time – and start heading towards the notion of a ‘data set’. We can start to achieve this by creating collections of values.</p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
-<p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. What are the ‘items’ we’re talking about? They can be almost anything!</p>
+<p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. You can put any data type inside a list!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_amazing_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">]</span>
@@ -244,8 +244,20 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_amazing_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
 <p>The end result is an ordered sequence of items that we can read from beginning to end.</p>
-<p>Now that your amazing list is created, you could even add, remove, reorder, and search for items in the list!</p>
+<p>Now that your amazing list is created, you could even add, remove, reorder, and search for items in the list.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>If we can alter the contents of a collection, then the collection is called ‘mutable’ (it can mutate!)</p>
