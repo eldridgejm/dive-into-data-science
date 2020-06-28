@@ -201,6 +201,10 @@
             <a href="#functions-on-lists" class="nav-link">Functions on lists</a>
         </li>
     
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#selecting-items-from-a-list" class="nav-link">Selecting items from a list</a>
+        </li>
+    
             </ul>
         </li>
     
@@ -212,7 +216,11 @@
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#array-operations" class="nav-link">Array operations</a>
+            <a href="#selecting-items-from-arrays" class="nav-link">Selecting items from arrays</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#element-wise-arithmetic" class="nav-link">Element-wise arithmetic</a>
         </li>
     
             </ul>
@@ -223,7 +231,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#selecting-items-from-a-sequence" class="nav-link">Selecting items from a sequence</a>
+            <a href="#summary" class="nav-link">Summary</a>
         </li>
     
     </ul>
@@ -243,16 +251,16 @@
 <p>We can start heading towards the notion of a ‘data set’ by learning how to create collections of values.</p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
-<p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. You can put any data type inside a list (including other lists)!</p>
+<p>In Python, the simplest way to make a collection is by creating a list. You can do this by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. Any data type is allowed inside a list (including other lists)!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_amazing_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">5.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_amazing_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mf">5.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="n">my_amazing_list</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, True, &#39;three&#39;, [4.0]]
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;one&#39;, True, 3, [4.0]]
 </pre></div>
 </div>
 </div>
@@ -269,16 +277,20 @@
 </div>
 </div>
 </div>
-<p>The end result is an ordered sequence of items that we can read from beginning to end.</p>
+<p>The end result is an ordered sequence of items that we can read from beginning to end. Each item has a position, called an <strong>index</strong> which starts at <strong>0</strong>. So the in the list above which as four elements, the first element has index 0 and the last element has index 3.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The index of items in a sequence starts at <strong>0</strong>. I know I just said it, but I wanted to say it again!</p>
+</div>
 <p>Now that your amazing list is created, you could even add, remove, reorder, and search for items in the list.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>If we can alter the contents of a collection, then the collection is called ‘mutable’ (it can mutate!)</p>
+<p>If we can alter the contents of a collection, then the collection is often considered ‘mutable’ (it can mutate!)</p>
 </div>
 <div class="section" id="functions-on-lists">
 <h3>Functions on lists<a class="headerlink" href="#functions-on-lists" title="Permalink to this headline">¶</a></h3>
 <p>Collections are handy because they allow us to perform calculations that require multiple pieces of data to be computed.</p>
-<p>For instance, if you’ve been keeping track of the hours of sleep you get each night for the past week, you might be interested in the shortest and longest amount of time you slept.  Neither of these calculations can be done easily with simple expressions, but they can be done easily calling a function on a list!</p>
+<p>For instance, if you’ve been keeping track of the hours of sleep you get each night for the past week (Monday to Sunday), you might be interested in the shortest and longest amount of time you slept.  Neither of these calculations can be done easily with simple expressions, but they can be done easily calling a function on a list!</p>
 <p>Let’s start by creating our collection of data and assigning it to a meaningful name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -393,11 +405,73 @@
 </div>
 </div>
 </div>
+<div class="section" id="selecting-items-from-a-list">
+<h3>Selecting items from a list<a class="headerlink" href="#selecting-items-from-a-list" title="Permalink to this headline">¶</a></h3>
+<p>Recall that every item in a sequence has an <strong>index</strong> – this is how the computer stores its position in the sequence. Indexing starts at 0.</p>
+<p>To grab a specific item from a list, we can use square brackets containing the index of the item we want.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Monday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Wednesday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Thursday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Friday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Saturday&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Sunday&#39;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Monday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">days_of_the_week</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Sunday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that if we try to select an item from an index that’s outside of the list, we’ll get a helpful <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_the_week</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">ad9f9dc75797</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">days_of_the_week</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="arrays">
 <h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
 <p>Python’s lists are useful and easy to work with, but can be slow. As data scientists, we will eventually be working with sequences of millions, if not billions, of entries – so speed is of the essence. Additionally, a lot of the calculations we’ve seen above aren’t going to work if our list contains mixed types! After all, have you ever tried calculating the sum of <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">'orange'</span></code>?</p>
-<p>The numerical analysis library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> fixes this by introducing a new type of sequence: <em>arrays</em>. Let’s import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library (calling it <code class="docutils literal notranslate"><span class="pre">np</span></code> for short) and get started!</p>
+<p>The numerical analysis library <code class="docutils literal notranslate"><span class="pre">numpy</span></code> fixes this by introducing a new type of sequence: <em>arrays</em>. Let’s import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library (calling it <code class="docutils literal notranslate"><span class="pre">np</span></code> just to make it quicker to type) and get started!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -407,7 +481,8 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Avoid the embrassment – it’s pronounced <strong>“num-pie”</strong> <small>(not “num-pee”)</small></p>
+<p>Avoid the embrassment – it’s pronounced <strong>“num-pie”</strong><br />
+<small>(not “num-pee”)</small></p>
 </div>
 <p>Arrays are stricter than lists, with two main restrictions that are instantly noticeable:</p>
 <ol class="simple">
@@ -475,17 +550,265 @@
 </div>
 <div class="section" id="functions-on-arrays">
 <h3>Functions on Arrays<a class="headerlink" href="#functions-on-arrays" title="Permalink to this headline">¶</a></h3>
-<p>The functions we looked at that can be used on lists can also be used on arrays, but NumPy comes full of additional functions and methods that perform a vast amount of useful calculations on arrays.</p>
+<p>The functions we looked at that can be used on lists can also be used on arrays, but NumPy also comes full of additional functions and methods that perform a vast amount of useful calculations on arrays.</p>
+<p>The NumPy functions can be called just like we called the math functions. Once we’ve imported the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library (abbreviated as <code class="docutils literal notranslate"><span class="pre">np</span></code>) we can just type <code class="docutils literal notranslate"><span class="pre">np.</span></code> followed by a function name to access the function.</p>
+<p>The same functions we used to find the shortest, longest, and total amount of time slept can also be used on arrays. At a basic level, NumPy also offers their own version of these functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="array-operations">
-<h3>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what’s the fun in that? NumPy also offers tons of functions that <em>aren’t</em> built in the Python. For instance, you can use the <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> function to calculate the average value of a sequence – a metric which is extremely useful and common in data analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">example_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are loads of more complex calculations, such as the <code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code> function which calculates the ‘cumulative sum’ of a sequence – a running total of the sum of the sequence at each point along the sequence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">example_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  4,  7, 10])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like strings and lists, arrays also own special methods that can perform calculations! All of the NumPy functions we’ve looked at so far can also be called using the same dot notation that we used with string and list methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  4,  7, 10])
+</pre></div>
+</div>
+</div>
+</div>
+<p>A reference of common NumPy functions may be included at a later date.</p>
+</div>
+<div class="section" id="selecting-items-from-arrays">
+<h3>Selecting items from arrays<a class="headerlink" href="#selecting-items-from-arrays" title="Permalink to this headline">¶</a></h3>
+<p>You can select specific items from arrays the exact same way you did with lists, using square brackets and the index of the item you want to select.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_week_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">days_of_the_week</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_week_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Monday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_week_array</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">days_of_week_array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Sunday&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_of_week_array</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="mi">09</span><span class="n">d3cdd12db8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">days_of_week_array</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: index 7 is out of bounds for axis 0 with size 7
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="element-wise-arithmetic">
+<h3>Element-wise arithmetic<a class="headerlink" href="#element-wise-arithmetic" title="Permalink to this headline">¶</a></h3>
+<p>The power of arrays really starts to shine when math is involved. Arrays have the power to quickly perform operations over each element they contain.</p>
+<p>For instance, we can convert an entire array of temperatures measured in Fahrenheit to Celsius by writing a single expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">71.6</span><span class="p">,</span> <span class="mf">212.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">temperatures_f</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-17.5,   0. ,  22. , 100. ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, first <code class="docutils literal notranslate"><span class="pre">(temperatures_f</span> <span class="pre">-</span> <span class="pre">32)</span></code> is evaluated and produces an array with 32 subtracted from every temperature. Then <code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">/</span> <span class="pre">9)</span></code> is evaluated. Then then every element in the new array is multiplied by 5/9, producing the final output array.</p>
+<p>[array operations between multiple arrays]</p>
 </div>
 </div>
 <div class="section" id="ranges">
 <h2>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h2>
+<p>[compare to indices – start at zero, exclude the last]
+[np.arange for element-wise arithmetic or floats]</p>
 </div>
-<div class="section" id="selecting-items-from-a-sequence">
-<h2>Selecting items from a sequence<a class="headerlink" href="#selecting-items-from-a-sequence" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>To get multiple pieces of data in one place, we create a <strong>collection</strong>. If the collection has an order then it is a <strong>sequence</strong>.</p>
+<p>Each item in a sequence has an <strong>index</strong> – its position, starting at zero.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>…</p></th>
+<th class="head"><p>n-1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sequence (length n)</p></td>
+<td><p>[item,</p></td>
+<td><p>item,</p></td>
+<td><p>item,</p></td>
+<td><p>…</p></td>
+<td><p>item]</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lists</strong> are the most basic sequence, and are created by surrounding a group of items with square brackets and separating each item by commas: <code class="docutils literal notranslate"><span class="pre">[item,</span> <span class="pre">item,</span> <span class="pre">...]</span></code></p>
+<p>Any data type is allowed inside of lists, and the items can have different types.</p>
+<p>Some functions can be called on lists to perform calculations, such as <code class="docutils literal notranslate"><span class="pre">min</span></code> <code class="docutils literal notranslate"><span class="pre">max</span></code> <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<p>Lists own a handful of <strong>methods</strong> – functions that belong solely to the data type of lists.</p>
+<p>Methods are called using <strong>dot notation</strong>, by placing a dot after a list or variable name of a list, then calling the function: <code class="docutils literal notranslate"><span class="pre">my_list.function_name(arguments,</span> <span class="pre">...)</span></code></p>
+<p>Some list methods allow you to add and remove items from lists.</p>
+<p>An item can be selected from a sequence by using brackets with the index of the item: <code class="docutils literal notranslate"><span class="pre">my_list[index]</span></code></p>
+<p><strong>Arrays</strong> are a sequence from the NumPy library, and are created by passing a list into the <code class="docutils literal notranslate"><span class="pre">np.array</span></code> function: <code class="docutils literal notranslate"><span class="pre">np.array([item,</span> <span class="pre">item,</span> <span class="pre">...])</span></code> <code class="docutils literal notranslate"><span class="pre">np.array(my_list)</span></code></p>
+<p>All items in an array must have the same data type.</p>
+<p>Functions that can be called on lists can also be called on arrays.</p>
+<p>NumPy offers lots of additional functions that can be called on sequences. These can be accessed using <code class="docutils literal notranslate"><span class="pre">np.function_name(arguments,</span> <span class="pre">...)</span></code>.</p>
+<p>Arrays own a handful of methods, called using dot notation.</p>
+<p>Some array methods allow you to perform calculations on the array.</p>
+<p>An item can be selected from an array the same way as any sequence, by using brackets with the index of the item: <code class="docutils literal notranslate"><span class="pre">my_array[index]</span></code></p>
+<p>Arrays support <strong>element-wise arithmetic</strong>, such as adding or multiplying all elements by a single number.</p>
+<p>Arrays of the same length support element-wise arithmetic between the two arrays, such as adding or multiplying each element in one array with each element in the same position of another array.</p>
+<p>A sequence of numbers with constant spacing can be easily constructed using a <strong>range</strong>: <code class="docutils literal notranslate"><span class="pre">range(endpoint)</span></code> <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">endpoint)</span></code> <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">endpoint,</span> <span class="pre">stepsize)</span></code></p>
+<p>By default, ranges will start at 0 and have a step size of 1.</p>
+<p>A range will always <em>exclude</em> the endpoint – so <code class="docutils literal notranslate"><span class="pre">range(3)</span></code> will count <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span> <span class="pre">2</span></code>.</p>
+<p>NumPy’s <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> function creates an array containing a range, with the same arguments and defaults: <code class="docutils literal notranslate"><span class="pre">np.arange(endpoint)</span></code> <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">endpoint)</span></code> <code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">endpoint,</span> <span class="pre">stepsize)</span></code></p>
+<p>If you want to use a range for element-wise arithmetic or if you want a range of floats, you should use <code class="docutils literal notranslate"><span class="pre">np.arange</span></code>.</p>
 </div>
 </div>
 

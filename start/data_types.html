@@ -251,6 +251,10 @@
             <a href="#other-data-types" class="nav-link">Other data types</a>
         </li>
     
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#summary" class="nav-link">Summary</a>
+        </li>
+    
     </ul>
 </nav>
 
@@ -267,7 +271,7 @@
 <p>In Python, everything is considered to be some <em>type</em> of object.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>An <strong>object</strong> is just Python’s way of saying “a thing”. And everything is data to a computer, so we call the types of these objects ‘data types’.</p>
+<p>An <strong>object</strong> is just Python’s way of saying “a thing”. Since everything is data in a computer’s eyes we call the types of these objects ‘data types’.</p>
 </div>
 <p>We can easily figure out what type of object something is by using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function.</p>
 <div class="cell docutils container">
@@ -371,12 +375,12 @@
 </div>
 </div>
 </div>
-<p>Real numbers are called <strong>floats</strong>, and are basically any number with a decimal point. These the type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>Real numbers are called <strong>floats</strong>, and are basically any number with a decimal point. Real numbers have the type the type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>The term ‘float’ comes from “floating point number”. These numbers are essentially represented by storing a value (e.g. 12345) and the position of a decimal point (e.g. position 2), so the decimal point can float to any position in the number, (producing 12.345)</p>
+<p>The term ‘float’ comes from “floating point number”, since they’re respented by the computer as a value and the position of the decimal point – so the decimal point can ‘float’ to any position in the value.</p>
 </div>
-<p>When these get really big or really small, they might be printed in scientific notation.</p>
+<p>When floats get really big or really small they might be printed in scientific notation. You can write floats in scientific notation, too.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">4.0</span><span class="p">)</span>
@@ -409,6 +413,18 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-1.2345678909876654e+19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1e-10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>float
 </pre></div>
 </div>
 </div>
@@ -575,7 +591,7 @@
 </div>
 </div>
 </div>
-<p>This also means that something something that <em>should</em> be zero, doesn’t seem to be zero but instead appears to be a super small number.</p>
+<p>This also means that sometimes something that <em>should</em> be zero doesn’t seem to be zero, but instead appears to be a super small number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">3.0</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.6</span>
@@ -592,7 +608,7 @@
 </div>
 <div class="section" id="text-strings">
 <h3>Text - Strings<a class="headerlink" href="#text-strings" title="Permalink to this headline">¶</a></h3>
-<p><strong>Strings</strong> are what most programming languages call text. In Python, once text is surrounded by single <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or double quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> then it’s treated as a string. Strings have the type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p><strong>Strings</strong> are what most programming languages call text. In Python, once text is surrounded by single quotes <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code> or double quotes <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> then it’s treated as a string. Strings have the type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;Word&#39;</span><span class="p">)</span>
@@ -637,7 +653,7 @@
 <blockquote>
 <div><p>I’m having a great day</p>
 </div></blockquote>
-<p>Notice that the text itself includes a single quote (an apostrophe), so trying to wrap it in single quotes won’t work. Notice how the string ends the moment a second single quote is found.</p>
+<p>Notice that the text itself includes a single quote (an apostrophe), so trying to wrap it in single quotes won’t work. Python things that the string ends the moment a second single quote is found.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;He asked if I&#39;</span><span class="n">d</span> <span class="n">like</span> <span class="n">to</span> <span class="n">use</span> <span class="n">an</span> <span class="n">apostrophe</span><span class="s1">&#39;</span>
@@ -645,7 +661,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-27-3927d23c8021&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-28-3927d23c8021&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s1">&#39;He asked if I&#39;</span><span class="n">d</span> <span class="n">like</span> <span class="n">to</span> <span class="n">use</span> <span class="n">an</span> <span class="n">apostrophe</span><span class="s1">&#39;</span>
                    <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -661,7 +677,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-28-2538568ac88d&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-29-2538568ac88d&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s2">&quot;He said a &quot;</span><span class="n">double</span><span class="o">-</span><span class="n">quote</span><span class="s2">&quot; was fine to use&quot;</span>
                      <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -671,7 +687,7 @@
 </div>
 <p>There are two ways we can fix these issues.</p>
 <ol class="simple">
-<li><p>We can use whichever quotation mark <em>doesn’t</em> show up in our text. Often times people use strings with double quotes since it common for apostrophes to show up in text.</p></li>
+<li><p>We can use whichever quotation mark <em>doesn’t</em> show up in our text. Often times people wrap strings with double quotes since its common for apostrophes to show up in text.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -698,7 +714,7 @@
 </div>
 </div>
 <ol>
-<li><p>We can ‘escape’ the character by prefixing it with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>.  This will tell Python to treat the character differently than it normally would.</p>
+<li><p>We can ‘escape’ the character by prefixing it with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>.  This will tell Python to treat the character differently than it normally would – in this case, it tells Python not to end the string.</p>
 <p>This is most helpful when both single quotes <em>and</em> double quotes appear in the string!</p>
 </li>
 </ol>
@@ -748,7 +764,7 @@
 </div>
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<p>Given the following variables, write an expression that concatenates the two strings and adds a space in between.</p>
+<p>Given the following variables, write an expression that concatenates the two strings and adds a space in between. The output should be <code class="docutils literal notranslate"><span class="pre">'red</span> <span class="pre">fish</span> <span class="pre">blue</span> <span class="pre">fish'</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s2">&quot;red fish&quot;</span>
 <span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;blue fish&quot;</span>
 </pre></div>
@@ -846,16 +862,17 @@
 <p>Since the string methods we’ve looked at return more strings, we can even call more string methods on the result!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;started with a word&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;started with words&#39;</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;started&#39;</span><span class="p">,</span> <span class="s1">&#39;ended&#39;</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;sentence&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;a sentence&#39;</span><span class="p">)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-<span class="n">v</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+<span class="n">w</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Ended with a sentence&#39;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Ended with a sentence.&#39;
 </pre></div>
 </div>
 </div>
@@ -889,16 +906,15 @@
 <li><p>Equal <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
 <li><p>Not equal <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
 </ul>
-<p>though the equal comparison operator distinguishes itself from the assignment operator by using <em>two</em> equal signs.</p>
+<p>Notice that the equal comparison operator distinguishes itself from the assignment operator by using <em>two</em> equal signs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># One is not equal to zero</span>
-<span class="mi">1</span> <span class="o">!=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -906,7 +922,7 @@
 <p>Any expressions to the left or right of the comparison operator will be evaluated before the comparison is carried out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
@@ -941,8 +957,8 @@
 </div>
 </div>
 </div>
-<p>Since <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;=</span> <span class="pre">2</span></code> is False, the above expression is False.</p>
-<p>We can use comparison operators on all sorts of things! For example, we can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> to check if any objects are equal in value.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;=</span> <span class="pre">2</span></code> is False, the above expression evaluates to False.</p>
+<p>We can use comparison operators on all sorts of things! For example, we can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> to check if <em>any</em> objects are equal in value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Ronaldo&#39;</span> <span class="o">==</span> <span class="s1">&#39;Waldo&#39;</span>
@@ -967,7 +983,19 @@
 </div>
 </div>
 </div>
-<p>And a string is less than or greater than another string based on alphabetical order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">==</span> <span class="nb">sum</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>And many objects support greater than/less than comparison too. For instance, a string is less than or greater than another string based on alphabetical order.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Technically, string comparisons compare using <strong>lexicographical</strong> order, which just means that text including numbers and symbols is also ordered.</p>
@@ -1024,7 +1052,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="n">a11677f986f5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">52</span><span class="o">-</span><span class="n">a11677f986f5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -1043,7 +1071,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">51</span><span class="o">-</span><span class="n">c944a1d25078</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">53</span><span class="o">-</span><span class="n">c944a1d25078</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
@@ -1061,7 +1089,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">52</span><span class="o">-</span><span class="mf">89e6924807</span><span class="n">db</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">54</span><span class="o">-</span><span class="mf">89e6924807</span><span class="n">db</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;2&#39;</span> <span class="o">-</span> <span class="s1">&#39;2&#39;</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;
@@ -1069,7 +1097,7 @@
 </div>
 </div>
 </div>
-<p>Sometimes, we’ll get a type error when using a function call on an object of the wrong type too. For example, if we try using a math function on a string.</p>
+<p>Sometimes we’ll get a type error when using a function call on an object of the wrong type, too. For example, if we try using a math function on a string.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -1080,7 +1108,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">53</span><span class="o">-</span><span class="mi">7</span><span class="n">a945c393574</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">55</span><span class="o">-</span><span class="mi">7</span><span class="n">a945c393574</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
 
@@ -1099,6 +1127,27 @@
 <p>Once we move past primitives, our objects start getting more complex!</p>
 <p>Remember, everything has a type. We saw at the beginning of this page that even functions are a type of object.</p>
 <p>Besides functions, the most common types of objects we’ll observe will act mostly like containers for raw data. Examples of these container-like data types include lists, arrays, and tables – all of which are extremely useful and you’ll soon know!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Everything in Python has a type – these are called <strong>data types</strong>.</p>
+<p>We can find the type of an object by calling <code class="docutils literal notranslate"><span class="pre">type</span></code> function on an object or expression.</p>
+<p>There are four <strong>primitive</strong> types that represent raw data:</p>
+<ul class="simple">
+<li><p><strong>Integers</strong> <code class="docutils literal notranslate"><span class="pre">int</span></code> are whole numbers</p></li>
+<li><p><strong>Floats</strong> <code class="docutils literal notranslate"><span class="pre">float</span></code> are numbers with decimals</p></li>
+<li><p><strong>Strings</strong> <code class="docutils literal notranslate"><span class="pre">str</span></code> are text</p></li>
+<li><p><strong>Booleans</strong> <code class="docutils literal notranslate"><span class="pre">bool</span></code> are True/False</p></li>
+</ul>
+<p>When faced with division or an expression that involves any floats, the end result will be a float.</p>
+<p>Multiple strings can be glued together using <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<p>Strings own a handful of <strong>methods</strong> – functions that belong solely to the data type of strings.</p>
+<p>Methods are called using <strong>dot notation</strong>, by placing a dot after a string or variable name of a string, then calling the function: <code class="docutils literal notranslate"><span class="pre">my_string.function_name(arguments,</span> <span class="pre">...)</span></code></p>
+<p>Some string methods allow you to create new strings that change capitalization or find and replace snippets of text.</p>
+<p>Lots of objects can be compared using <strong>comparison operators</strong>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> <code class="docutils literal notranslate"><span class="pre">==</span></code> <code class="docutils literal notranslate"><span class="pre">!=</span></code>, which will return a boolean value.</p>
+<p>Trying to perform an operation on data types that don’t support that operation will often result in a <strong>TypeError</strong>.</p>
+<p>Most other data types that aren’t primitive are either functions or act like containers for primitive types.</p>
 </div>
 </div>
 
