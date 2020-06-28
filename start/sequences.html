@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Collections of Data: Sequences &#8212; Dive into Data Science</title>
+    <title>Collections of Data - Sequences &#8212; Dive into Data Science</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
@@ -94,7 +94,7 @@
     <a href="data_types.html">Data Types</a>
   </li>
   <li class="active">
-    <a href="">Collections of Data: Sequences</a>
+    <a href="">Collections of Data - Sequences</a>
   </li>
 </ul>
 </nav>
@@ -211,7 +211,19 @@
             <a href="#functions-on-arrays" class="nav-link">Functions on Arrays</a>
         </li>
     
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#array-operations" class="nav-link">Array operations</a>
+        </li>
+    
             </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ranges" class="nav-link">Ranges</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#selecting-items-from-a-sequence" class="nav-link">Selecting items from a sequence</a>
         </li>
     
     </ul>
@@ -226,20 +238,21 @@
               <div>
                 
   <div class="section" id="collections-of-data-sequences">
-<h1>Collections of Data: Sequences<a class="headerlink" href="#collections-of-data-sequences" title="Permalink to this headline">¶</a></h1>
-<p>Now that we know a decent amount about individual data values, it makes sense to figure out how we can work with more than one value of data at a time – and start heading towards the notion of a ‘data set’. We can start to achieve this by creating collections of values.</p>
+<h1>Collections of Data - Sequences<a class="headerlink" href="#collections-of-data-sequences" title="Permalink to this headline">¶</a></h1>
+<p>Now we have a decent understanding of individual data values in Python. But, as a data scientist you’ll need to work with an entire set of data values – not just one!</p>
+<p>We can start heading towards the notion of a ‘data set’ by learning how to create collections of values.</p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
-<p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. You can put any data type inside a list!</p>
+<p>In Python, the simplest way to make a collection is by creating a list. A list is created by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>. You can put any data type inside a list (including other lists)!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_amazing_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_amazing_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">5.0</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">]]</span>
 <span class="n">my_amazing_list</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, True, &#39;three&#39;, 4.0]
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, True, &#39;three&#39;, [4.0]]
 </pre></div>
 </div>
 </div>
@@ -265,7 +278,7 @@
 <div class="section" id="functions-on-lists">
 <h3>Functions on lists<a class="headerlink" href="#functions-on-lists" title="Permalink to this headline">¶</a></h3>
 <p>Collections are handy because they allow us to perform calculations that require multiple pieces of data to be computed.</p>
-<p>For instance, if you’ve been keeping track of the hours of sleep you get each night for the past week, you might be interested in the shortest and longest amount of time you slept.  Neither of these calculations can be done easily with simple expressions, but they can be done easily using <em>call expressions</em> on a list!</p>
+<p>For instance, if you’ve been keeping track of the hours of sleep you get each night for the past week, you might be interested in the shortest and longest amount of time you slept.  Neither of these calculations can be done easily with simple expressions, but they can be done easily calling a function on a list!</p>
 <p>Let’s start by creating our collection of data and assigning it to a meaningful name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -325,12 +338,59 @@
 <p>7.857142857142857</p>
 </div>
 </div>
-<div class="highlight-todo notranslate"><div class="highlight"><pre><span></span>Finally, lists also have a handful of their own methods, which you can call by 
-
-.count
-
-Include (?)
+<p>Finally, just like strings had their own set of special functions (called methods), lists have their own set of methods.</p>
+<p>These methods allow us to do things like add (append) an item to the end of a list, or find and remove an item from a list. Just like with string methods, list methods are called by placing a dot after a list or the variable name of a list, and then calling a method name as a function.</p>
+<p>A lot of these methods don’t return any value, but instead just modify the list directly – so, we need to show the list again to see what the effect of the method was. If this is confusing, that’s fine! We’ll go over these methods at a later chapter when we learn about ‘loops’, but for now feel free to just play around with list methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="n">hours_slept</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[8, 7, 7, 8, 5, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[8, 7, 7, 8, 5, 8, 9, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[7, 7, 8, 5, 8, 9, 3]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -345,8 +405,17 @@ Include (?)
 </div>
 </div>
 </div>
-<p>Arrays are stricter than lists – they can only contain one type of data, and once they’re created we cannot add or remove items from them – but they offer incredible power and speed. Because of their power, NumPy arrays are one of the most commonly used collections when working with data.</p>
-<p>A lot of the same concepts from lists apply to arrays, in fact we create an array by passing in a list to the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Avoid the embrassment – it’s pronounced <strong>“num-pie”</strong> <small>(not “num-pee”)</small></p>
+</div>
+<p>Arrays are stricter than lists, with two main restrictions that are instantly noticeable:</p>
+<ol class="simple">
+<li><p>They can only contain one type of data</p></li>
+<li><p>One created, we cannot directly add or remove items</p></li>
+</ol>
+<p>However, NumPy arrays offer incredible power and speed which have made them one of the most commonly used collections in data science.</p>
+<p>A lot of the same concepts from lists carry over when trying to understand arrays. In fact, to create an array we pass in a list to the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
@@ -360,7 +429,7 @@ Include (?)
 </div>
 </div>
 </div>
-<p>Arrays can also contain other types of data, like strings, but remember that a single array can only contain a single type of data.</p>
+<p>Arrays can also contain other types of data, like strings or bools or other arrays, <em>but</em> remember that a single array can only contain a single type of data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;also&#39;</span><span class="p">,</span> <span class="s1">&#39;fine&#39;</span><span class="p">])</span>
@@ -373,19 +442,50 @@ Include (?)
 </div>
 </div>
 </div>
-<p>[Recall what happened when we evaluated expressions that contained ints and floats: cast] [same thing will happen if we try to make an array containing ints and floats] [interestingly, numpy will also ‘cast’ other types.]</p>
-<p>[try making an array of numbers and strings and see what happens]</p>
-<p>[explanation of dtype]</p>
+<p>Remember what happened when we evaluated expressions that contained both ints and float? The result was always a float. The same thing will happen if we try to make an array containing ints and float – remember, only one data type can be contained by an array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1., 2., 3.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>If possible, NumPy will always try to convert everything you give it to the same type. That means if you give it strings and numbers, it’ll turn everything into strings!</p>
+<p>Why is this? Because you can always convert a number into a string (just place quotes around it!), but there are only a handful some strings that can be reliably converted into a number. For the sake of consistency, NumPy turns it all into strings.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>No need to be worried about the weird looking “dtype” – that just tells us that the data type it contains are stored as unicode strings (<code class="docutils literal notranslate"><span class="pre">U</span></code>) with a maximum possible length of 21 characters (<code class="docutils literal notranslate"><span class="pre">21</span></code>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;1&#39;, &#39;2&#39;, &#39;3&#39;], dtype=&#39;&lt;U21&#39;)
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="functions-on-arrays">
 <h3>Functions on Arrays<a class="headerlink" href="#functions-on-arrays" title="Permalink to this headline">¶</a></h3>
-<p>The functions we looked at that can be used on lists can also be used on arrays, but NumPy comes full of additional functions that perform a vast amount of useful calculations on arrays.</p>
-<div class="highlight-todo notranslate"><div class="highlight"><pre><span></span>### Array operations
-</pre></div>
+<p>The functions we looked at that can be used on lists can also be used on arrays, but NumPy comes full of additional functions and methods that perform a vast amount of useful calculations on arrays.</p>
 </div>
-<div class="highlight-todo notranslate"><div class="highlight"><pre><span></span>## Ranges
-</pre></div>
+<div class="section" id="array-operations">
+<h3>Array operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
+<div class="section" id="ranges">
+<h2>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="selecting-items-from-a-sequence">
+<h2>Selecting items from a sequence<a class="headerlink" href="#selecting-items-from-a-sequence" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
