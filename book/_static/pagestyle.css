@@ -25,3 +25,15 @@ We don't want to change the tooltips, only the icons, thus >
 .topbar .topbar-main button.topbarbtn:hover > * {
     color: #556;
 }
+
+/* Modify the look of `code`.
+
+Inline code is too hard to see!
+*/
+code {
+    padding: 4px 4px 2px;
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 0 2px;
+}
