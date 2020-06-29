@@ -39,6 +39,15 @@ write Python code.
 There is already an empty code cell in the notebook we have opened -- let's use it
 to perform a basic computation. Click inside the cell to select it, and type `3 + 8`, as shown below:
 
+```{figure} ../images/notebook-first_cell.gif
+---
+height: 400px
+name: notebook-first_cell
+---
+Running a code cell in a notebook.
+
+```
+
 Congratulations! You've written your first piece of python code. You can
   run your code in one of two ways:
 
@@ -56,13 +65,21 @@ the top of the notebook.
 
 Upon running the cell, you'll see the answer appear directly below.
 Additionally, a new empty code cell has been created for us. Go ahead and write
-some arithmetic in the new cell:
+some arithmetic in the new cell and run it.
 
 Code cells can be changed after they are executed. Suppose that we made a
 mistake when writing out first code cell, and that we really meant to compute
 `30 + 8` instead of `3 + 8`. Select the first code cell, change the text to read
 `30 + 8`, and run it again. You'll notice that the output is replaced by the new
 correct result.
+
+```{jupytertip}
+
+Any changes you make to the notebook will be automatically saved at regular
+intervals, but you can save them immediately by selecting "File -> Save and
+Checkpoint".
+
+```
 
 ## Markdown Cells
 
@@ -107,6 +124,16 @@ $$
 with a header, bold text, a link, and even some nicely-displayed mathematical
 notation.
 
+```{figure} ../images/notebook-markdown.gif
+---
+height: 400px
+name: notebook-markdown
+---
+Running a markdown cell in a notebook.
+
+```
+
+You can double-click the cell to see and edit its Markdown source once again.
+
 You will not be asked to use Markdown in the rest of the textbook, but text
-cells are very useful part of Jupyter notebooks -- and any introduction to them
-should discuss Markdown!
+cells are very useful part of Jupyter notebooks.
