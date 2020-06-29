@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Clearing notebook outputs..."
+
 docker run \
     --mount type=bind,src=$(pwd),target=/document \
     dive_into_data_science:latest \
