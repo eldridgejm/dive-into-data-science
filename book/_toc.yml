@@ -8,3 +8,8 @@
 - file: start/functions
 - file: start/data_types
 - file: start/sequences
+
+- header: Reference
+- file: dterms
+- file: glossary
+- file: genindex
