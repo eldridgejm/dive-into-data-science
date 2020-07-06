@@ -6,7 +6,8 @@
 - file: 01-getting_started/expressions
 - file: 01-getting_started/variables
 - file: 01-getting_started/functions
-- file: 01-getting_started/data_types
+- file: 01-getting_started/data_types-numeric
+- file: 01-getting_started/data_types-strings
 - file: 01-getting_started/sequences
 
 - header: Reference
