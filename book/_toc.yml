@@ -11,10 +11,10 @@
     - file: 01-getting_started/data_types-numeric
     - file: 01-getting_started/data_types-strings
     - file: 01-getting_started/data_types-bool
-- file: 01-getting_started/sequences
 
-- header: Tabular Data
-- file: 02-tabular_data/sequences
+- header: NumPy and Babypandas
+- file: 02-data_sets/arrays
+  # - file: 02-data_sets/series
 
 - header: Reference
 - file: dterms
