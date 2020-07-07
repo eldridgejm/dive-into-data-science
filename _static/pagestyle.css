@@ -37,3 +37,19 @@ code {
     border-radius: 4px;
     margin: 0 2px;
 }
+
+/* If something is targeted, make it highlighted */
+* :target,
+span.highlighted,
+:target[id^="index"] + * {
+    background-color: #ffdf00;
+}
+
+/* Make sure that terms jumped to via index links aren't covered by the header.
+
+The should be part way down the page (since they're highlighted ^ easy to see)
+*/
+span[id^="index"] {
+    position: relative;
+    top: -6em;
+}

@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Strings &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Booleans" href="data_types-bool.html" />
+    <link rel="prev" title="Numbers" href="data_types-numeric.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Getting Started</p>
+</li>
+  <li class="">
+    <a href="tools.html">Tools of the Trade</a>
+  </li>
+  <li class="">
+    <a href="first_steps.html">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="expressions.html">Expressions</a>
+  </li>
+  <li class="">
+    <a href="variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="functions.html">Functions and Imports</a>
+  </li>
+  <li class="active">
+    <a href="data_types.html">Data Types</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="data_types-numeric.html">Numbers</a>
+    </li>
+    <li class="active">
+      <a href="">Strings</a>
+    </li>
+    <li class="">
+      <a href="data_types-bool.html">Booleans</a>
+    </li>
+  </ul>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">NumPy and Babypandas</p>
+</li>
+  <li class="">
+    <a href="../02-data_sets/arrays.html">Arrays</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Reference</p>
+</li>
+  <li class="">
+    <a href="../dterms.html">An example of the dterm role</a>
+  </li>
+  <li class="">
+    <a href="../glossary.html">Glossary</a>
+  </li>
+  <li class="">
+    <a href="../genindex.html">Index</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/01-getting_started/data_types-strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F01-getting_started/data_types-strings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/01-getting_started/data_types-strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#creating-strings" class="nav-link">Creating Strings</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#more-on-single-vs-double-quotes" class="nav-link">More on single vs. double quotes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#string-methods" class="nav-link">String Methods</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#conversion" class="nav-link">Conversion</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#summary" class="nav-link">Summary</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<p>Think about the type of data that you’re likely to see as a data scientist. Does it only contain numbers? Of course not! Much of the data you’ll see comes in the form of <em>text</em>. Most programming languages have a special data type for storing text, called <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-strings">strings</a></strong>. In this section, we’ll move beyond using Python as a simple calculator and use it to do some simple text analysis.</p>
+<div class="section" id="creating-strings">
+<h2>Creating Strings<a class="headerlink" href="#creating-strings" title="Permalink to this headline">¶</a></h2>
+<p>To create a string in Python, write some text surrounded by quotation marks: <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Word&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Word&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;More than one word, and punc-tu-a-tion!&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;More than one word, and punc-tu-a-tion!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># not a number, since we&#39;re using quotes!</span>
+<span class="s2">&quot;3&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that Python displays our string with single quotes around it – this is its way of letting us know that it is indeed a string.
+As before, we can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to check what type Python believes these pieces of data to be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Word&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Of course, <code class="docutils literal notranslate"><span class="pre">str</span></code> is short for “string”.</p>
+<p>As with numbers, we can use variables to store strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Hello world!&quot;</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Hello world!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you don’t like double-quotes, you’re in luck: you can write strings using single quote marks just the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Word&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Word&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;More than one word, and punc-tu-a-tion!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;More than one word, and punc-tu-a-tion!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unlike in other languages, there is no difference between using single quotes and double quotes in Python.</p>
+<p>What happens if you don’t put anything inside of the quotes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is fine! We call it an <em>empty string</em>.</p>
+</div>
+<div class="section" id="more-on-single-vs-double-quotes">
+<h2>More on single vs. double quotes<a class="headerlink" href="#more-on-single-vs-double-quotes" title="Permalink to this headline">¶</a></h2>
+<p>We said above that there is no real difference between using single quotes and double quotes to create strings, but there are instances where one is preferable over the other.</p>
+<p>For instance, what if we wanted to turn the following piece of text into a string?</p>
+<blockquote>
+<div><p>JavaScript is a “real” programming language.</p>
+</div></blockquote>
+<p>Notice that the text itself includes quotation marks. If we try to wrap the whole piece of text with double-quotes, Python will get upset:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;JavaScript is a &quot;</span><span class="n">real</span><span class="s2">&quot; programming language.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-10-ade98fcf1a7a&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="s2">&quot;JavaScript is a &quot;</span><span class="n">real</span><span class="s2">&quot; programming language.</span>
+                         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>When Python sees the first <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, it thinks to itself: OK, this is a string. It continues reading until it find the second <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, right before <code class="docutils literal notranslate"><span class="pre">real</span></code>. It then thinks the string is over – but it isn’t.</p>
+<p>To avoid confusing Python, we can instead use single-quotes to delineate the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;JavaScript is a &quot;real&quot; programming language&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;JavaScript is a &quot;real&quot; programming language&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, single-quotes were preferable, but that’s not always the case. For instance, suppose we want to represent the string:</p>
+<blockquote>
+<div><p>Python: a data scientist’s best friend.</p>
+</div></blockquote>
+<p>We can’t use single quotes here because of the apostrophe in “scientist’s”. So we surround the string with double quotes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Python: a data scientist&#39;s best friend&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;Python: a data scientist&#39;s best friend&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is another way we can handle strings containing single- and double-quotes: We can “escape” the character by prefixing it with a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>.  This will tell Python to treat the character differently than it normally would – in this case, it tells Python not to end the string.
+This is very helpful when both single quotes <em>and</em> double quotes appear in the string!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;They said, &quot;escaping isn</span><span class="se">\&#39;</span><span class="s1">t so bad,&quot; and I believe them!&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;They said, &quot;escaping isn\&#39;t so bad,&quot; and I believe them!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-methods">
+<h2>String Methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h2>
+<p>What are some things you might want to do with strings? For one, you might want to combine two strings into one longer string. Doing so in Python is easy: we can simply use <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;Science&#39;</span>
+<span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;DataScience&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Combining two strings in this way is called <em>concatenation</em>.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>Given the following variables, write an expression that concatenates the two strings and adds a space in between. The output should be <code class="docutils literal notranslate"><span class="pre">'red</span> <span class="pre">fish</span> <span class="pre">blue</span> <span class="pre">fish'</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s2">&quot;red fish&quot;</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;blue fish&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">string2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What else might you want to do with a string? Capitilizing a string seems like a common task. Luckily, Python provides a function to do just this. However, unlike the functions we have seen so far (like <code class="docutils literal notranslate"><span class="pre">abs()</span></code> and <code class="docutils literal notranslate"><span class="pre">round()</span></code>), the <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> function is <em>attached to the string itself</em>. We call it in a slightly different way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;data science is awesome&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Data science is awesome&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Functions that are attached to the things they operate on are called <em>methods</em> – but don’t worry too much about the difference in name. Just remember that methods are by placing a dot after the string, and then writing the function name.</p>
+<p>Methods can be called directly on a string, or the variable name of a string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;data science is awesome&#39;</span>
+<span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Data science is awesome&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the string method does not <em>change</em> the string itself, but rather creates a new string. We can see this by printing out <code class="docutils literal notranslate"><span class="pre">s</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;data science is awesome&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We observe that this is the original value of <code class="docutils literal notranslate"><span class="pre">s</span></code> as it was before we called the method. If we wanted instead to save the result, we would need to give it a name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Data science is awesome&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could also <em>overwrite</em> <code class="docutils literal notranslate"><span class="pre">s</span></code> with the new value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Data science is awesome&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings have plenty of methods – you can see them by typing “‘some string’.” and hitting tab. Here are a few examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;why am i yelling?&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;WHY AM I YELLING?&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;THIS IS A LIBRARY PLEASE BE QUIET&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;this is a library please be quiet&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dive into data science&quot;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Dive Into Data Science&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="jupytertip admonition" id="jupytertip-0">
+<p class="admonition-title">Jupyter Tip</p>
+<p>You can see all of Python’s string methods by typing <code class="docutils literal notranslate"><span class="pre">&quot;some</span> <span class="pre">string&quot;.</span></code> then hitting <kbd class="kbd docutils literal notranslate">Tab</kbd>.</p>
+</div>
+<p>In particular, the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method is extremely powerful, since it allows us to find and replace sections of a string. The previous string methods we looked at took no arguments, but the <code class="docutils literal notranslate"><span class="pre">replace</span></code> methods takes two arguments: <em>the text to find</em>, and <em>the text to replace it with</em> (in that order).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;found you&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;you&#39;</span><span class="p">,</span> <span class="s1">&#39;Waldo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;found Waldo&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember the empty string <code class="docutils literal notranslate"><span class="pre">''</span></code>? It’s used a lot with <code class="docutils literal notranslate"><span class="pre">replace</span></code> in order to get rid of parts of text entirely! Notice that the text must match <em>exactly</em>, and is case sensitive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello, my name is **SNEEZE** Justin&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;**SNEEZE** &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Hello, my name is Justin&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;where</span><span class="se">\&#39;</span><span class="s1">s Waldo&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;here&#39;s Waldo&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since the string methods we’ve looked at return more strings, we can even call more string methods on the result!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;started with words&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;started&#39;</span><span class="p">,</span> <span class="s1">&#39;ended&#39;</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;a sentence&#39;</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Ended with a sentence&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But here’s a shortcut: we don’t need to assign each result to intermediate variables. We can do it “all at once” with <em>method chaining</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;started with words&#39;</span>
+<span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;started&#39;</span><span class="p">,</span> <span class="s1">&#39;ended&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;words&#39;</span><span class="p">,</span> <span class="s1">&#39;a sentence&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Ended with a sentence&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conversion">
+<h2>Conversion<a class="headerlink" href="#conversion" title="Permalink to this headline">¶</a></h2>
+<p>Data scientists sometimes get their data by <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-web-scraping">scraping</a></strong> a webpage. For instance, suppose we want to know the water temperature in La Jolla (either to study the effects of climate change, or to know whether the water is nice for surfing). We can find the information we want on <a class="reference external" href="https://www.ndbc.noaa.gov/station_page.php?station=ljac1">the NOAA’s website</a>. We can write some code to download this webpage and extract the data we need.
+There’s just one problem: webpages are just globs of text (that is, they are strings), but we want the temperature as a <em>number</em> (preferably a float). Luckily, converting back and forth between these types is easy.</p>
+<p>Suppose we have a isolated the current ocean temperature as a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ocean_temp</span> <span class="o">=</span> <span class="s1">&#39;72.8&#39;</span>
+<span class="n">ocean_temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;72.8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>While this might look like a number, notice the quotation marks: this means that Python thinks of it as a piece of text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">ocean_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a result, we can’t do math with the ocean temperature:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ocean_temp</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="mi">1</span><span class="n">a7aa799b66f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ocean_temp</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, Python has complained with a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. Python is saying that it doesn’t know how to combine objects of these types: <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code>. To do the arithmetic, we need to convert the string to a float. We can do so with the <code class="docutils literal notranslate"><span class="pre">float</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">ocean_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>72.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">ocean_temp</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>74.8
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also convert a string to an integer using <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">days_since_last_beach_visit</span> <span class="o">=</span> <span class="s1">&#39;4&#39;</span>
+<span class="n">days_since_last_beach_visit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;4&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">days_since_last_beach_visit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Be careful, though – if you try to convert a string that doesn’t look like an integer using <code class="docutils literal notranslate"><span class="pre">int</span></code>, Python will yell at you:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">1456603</span><span class="n">af047</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;3.14&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we <em>really</em> wanted to convert <code class="docutils literal notranslate"><span class="pre">'3.14'</span></code> to an integer, we would need to convert it to a float first:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Multiple strings can be glued together using <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+<li><p>Strings own a handful of <strong>methods</strong> – functions that belong solely to the data type of strings.</p></li>
+<li><p>String methods are called using <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-dot-notation">dot notation</a></strong>, by placing a dot after a string or variable name of a string, then calling the function: <code class="docutils literal notranslate"><span class="pre">my_string.function_name(arguments,</span> <span class="pre">...)</span></code></p></li>
+<li><p>Some string methods allow you to create new strings that change capitalization or find and replace snippets of text.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="data_types-numeric.html" title="previous page">Numbers</a>
+    <a class='right-next' id="next-link" href="data_types-bool.html" title="next page">Booleans</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

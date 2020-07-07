@@ -1,0 +1,901 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrays &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="An example of the dterm role" href="../dterms.html" />
+    <link rel="prev" title="Booleans" href="../01-getting_started/data_types-bool.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Getting Started</p>
+</li>
+  <li class="">
+    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/expressions.html">Expressions</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/functions.html">Functions and Imports</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/data_types.html">Data Types</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">NumPy and Babypandas</p>
+</li>
+  <li class="active">
+    <a href="">Arrays</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Reference</p>
+</li>
+  <li class="">
+    <a href="../dterms.html">An example of the dterm role</a>
+  </li>
+  <li class="">
+    <a href="../glossary.html">Glossary</a>
+  </li>
+  <li class="">
+    <a href="../genindex.html">Index</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/arrays.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/arrays.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/arrays.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#lists" class="nav-link">Lists</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id1" class="nav-link">Arrays</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#array-methods" class="nav-link">Array Methods</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#accessing-array-items" class="nav-link">Accessing array items</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#element-wise-operations" class="nav-link">Element-wise operations</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#ranges" class="nav-link">Ranges</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#summary" class="nav-link">Summary</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="arrays">
+<h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h1>
+<p>The first step in doing data science is to collect a <em>data set</em>. That is, if we want to answer a question – such as, “How much money does the average data scientist make per year?” – we don’t go out and ask only one person, we survey a <em>lot</em> of people and analyze the results. As such, we need ways of working with large <em>collections</em> of data. In this section, we’ll see two data types – lists and arrays – which enable us to work with sequential data.</p>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>In Python, the simplest way to make a collection of data is by creating a <em>list</em>. You can do this by surrounding a group of items with square brackets, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code>, and separating each item with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salaries</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110_000</span><span class="p">,</span> <span class="mi">95_000</span><span class="p">,</span> <span class="mi">100_000</span><span class="p">]</span>
+<span class="n">salaries</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[110000, 95000, 100000]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lists are their own data type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>Any type of data is allowed inside a list (including other lists), and you can include variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">random_stuff</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;oranges&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="n">random_stuff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;oranges&#39;, 42, True, [1, 2, 3]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python’s lists are versatile and easy to use, but they have a big problem: they are slow. As data scientists, we will be working with sequences of millions, if not billions, of entries – so speed is of the essence. Therefore, will use another type of collection to store our sequential data: the <em>array</em>.</p>
+</div>
+<div class="section" id="id1">
+<h2>Arrays<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Arrays are like lists, but optimized for the types of heavy calculations done in data science. They are blazing fast, and memory-efficient.</p>
+<p>Arrays aren’t included with Python, however.
+Remember that Python wasn’t originally designed specifically for data scientists. Instead, it is a <em>general purpose</em> language, used by web developers, software engineers, and artists, too. So in order to give Python what it needs – a way of efficiently working with large sequences of numbers – a group of scientists independently developed an extension to Python called <a class="reference external" href="https://numpy.org/">NumPy</a> (short for “numeric python”).</p>
+<div class="figure align-default" id="my-figure">
+<a class="reference internal image-reference" href="../_images/numpy-logo.svg"><img alt="../_images/numpy-logo.svg" height="150px" src="../_images/numpy-logo.svg" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The <em>NumPy</em> logo.</span><a class="headerlink" href="#my-figure" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Avoid the embarassment – it’s pronounced “num-pie”<br />
+<small>(not “num-pee”)</small></p>
+</div>
+<p>To get access to arrays, we’ll need to import <em>NumPy</em>, just as we did with the <code class="docutils literal notranslate"><span class="pre">math</span></code> module in the previous chapter:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note that while the <code class="docutils literal notranslate"><span class="pre">math</span></code> module is included with Python, <em>NumPy</em> is not (it has to be installed separately). But we import them the same way.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The notation <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">np</span></code> means that we are giving <code class="docutils literal notranslate"><span class="pre">numpy</span></code> a new, shorter name that will be faster to type. Whenever we want to use function in the package, we’ll write <code class="docutils literal notranslate"><span class="pre">np.</span></code> instead of <code class="docutils literal notranslate"><span class="pre">numpy.</span></code>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>You could change <code class="docutils literal notranslate"><span class="pre">numpy</span></code>’s name to whatever you want, for instance: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">my_favorite_library</span></code>. However importing it as <code class="docutils literal notranslate"><span class="pre">np</span></code> is a <em>de facto</em> standard in data science. Don’t import it as anything else unless you have a good reason.</p>
+</div>
+<p>Let’s create an array. We do so by calling the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function with a list of data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hours_slept_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="n">hours_slept_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([8, 7, 7, 8, 5, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the square brackets! If you try to create an array without them, you’ll see an error.</p>
+</div>
+<p>Arrays can also contain other types of data, like strings or bools. <em>But</em> in order to maximize their efficience, a single array should only contain a single type of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;also&#39;</span><span class="p">,</span> <span class="s1">&#39;fine&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;this&#39;, &#39;is&#39;, &#39;also&#39;, &#39;fine&#39;], dtype=&#39;&lt;U4&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember what happened when we evaluated expressions that contained both ints and float? The result was always a float. The same thing will happen if we try to make an array containing ints and float:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([1., 2., 3.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>If possible, NumPy will always try to convert everything you give it to the same type. That means if you give it strings and numbers, it’ll turn everything into strings!</p>
+<p>Why is this? Because you can always convert a number into a string (just place quotes around it!), but there are only a handful some strings that can be reliably converted into a number. For the sake of consistency, NumPy turns it all into strings.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>No need to be worried about the weird looking “dtype” – that just tells us that the data type it contains are stored as <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">unicode</a> strings (<code class="docutils literal notranslate"><span class="pre">U</span></code>) with a maximum possible length of 21 characters (<code class="docutils literal notranslate"><span class="pre">21</span></code>).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;1&#39;, &#39;2&#39;, &#39;3&#39;], dtype=&#39;&lt;U21&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes it is useful to know how many elements are in an array. We can determine this with the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="array-methods">
+<h2>Array Methods<a class="headerlink" href="#array-methods" title="Permalink to this headline">¶</a></h2>
+<p>NumPy comes full of additional functions and methods that perform a vast amount of useful calculations on arrays. Better yet: these functions and methods are <em>fast</em>.</p>
+<p>The NumPy functions can be called just like we called the math functions. Once we’ve imported the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library (abbreviated as <code class="docutils literal notranslate"><span class="pre">np</span></code>) we can just type <code class="docutils literal notranslate"><span class="pre">np.</span></code> followed by a function name to access the function. For instance, you can use the <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> function to calculate the average value of a sequence:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">example_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are loads of more complex functions, such as the <code class="docutils literal notranslate"><span class="pre">np.diff</span></code> function which calculates the difference between each consecutive pair of elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">example_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like strings, arrays also own special methods that can perform calculations. A few useful ones are shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">example_array</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Don’t worry, you don’t need to memorize all of the different functions/methods (there are a lot!) – we’ll include references when necessary.</p>
+<div class="section" id="accessing-array-items">
+<h3>Accessing array items<a class="headerlink" href="#accessing-array-items" title="Permalink to this headline">¶</a></h3>
+<p>An array is an <em>ordered sequence</em> of items that has a beginning and an end. We can retrieve an element by specifying its <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-index">index</a></strong>. The index of the first item in an array is zero, the index of the second item is one, and so on. For example, let’s say we have an array with three elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;Xanthippe&#39;</span><span class="p">,</span> <span class="s1">&#39;Yvonne&#39;</span><span class="p">,</span> <span class="s1">&#39;Zelda&#39;</span><span class="p">])</span>
+<span class="n">names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;Xanthippe&#39;, &#39;Yvonne&#39;, &#39;Zelda&#39;], dtype=&#39;&lt;U9&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the first element out of the array, we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Xanthippe&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the second, we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Yvonne&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>And to get the third (i.e., last) element, we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Zelda&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s a useful trick: if you use a negative number to retrieve an element, Python starts counting from the <em>back</em> of the array. So, for instance, to retrieve the last element we can also write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Zelda&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The array above has only three things in it, and their indices are 0, 1, and 2. What happens if we try to access the list at an index that doesn’t exist, such as 99?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">db3f0aeffdb7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">names</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: index 99 is out of bounds for axis 0 with size 3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="element-wise-operations">
+<h2>Element-wise operations<a class="headerlink" href="#element-wise-operations" title="Permalink to this headline">¶</a></h2>
+<p>The power of arrays really starts to shine when math is involved. Arrays have the power to quickly perform operations over each element they contain. To begin, let’s create a simple array of numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To subtract 3 from all of these numbers, we can simply write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">-</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-2, -1,  0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>To multiply each of the numbers by 2, we would write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([2, 4, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<p>And so on. In practice this means we could do something like convert an entire array of temperatures measured in Fahrenheit to Celsius by writing a single expression:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">71.6</span><span class="p">,</span> <span class="mf">212.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that the formu
+la for converting a measurement in Fahrenheit to Celsius is <span class="math notranslate nohighlight">\(C = (F - 32) * (5/9)\)</span>. Therefore:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperatures_f</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">temperatures_c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-17.5,   0. ,  22. , 100. ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, first <code class="docutils literal notranslate"><span class="pre">(temperatures_f</span> <span class="pre">-</span> <span class="pre">32)</span></code> is evaluated and produces an array with 32 subtracted from every temperature. Then <code class="docutils literal notranslate"><span class="pre">(5</span> <span class="pre">/</span> <span class="pre">9)</span></code> is evaluated. Then then every element in the new array is multiplied by 5/9, producing the final output array.</p>
+<p>We can also do element-wise operations between pairs of data from two arrays.</p>
+<p>For this to work, both arrays must have the same size. The arrays are then lined up next to eachother, and the operation is performed between every corresponding pair of elements. This is best demonstrated with some examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">*</span> <span class="n">array2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 2,  8, 18])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">-</span> <span class="n">array2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-1, -2, -3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span><span class="o">**</span><span class="n">array2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([  1,  16, 729])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Both paired element-wise operations and standalone element-wise operations can be used in the same expression, since we’re always producing another array as a result of each expression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array1</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">array2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Watch out for the new errors you might encounter! Let’s see what happens if our other array isn’t the same size.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array_short</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">array1</span> <span class="o">*</span> <span class="n">array_short</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="n">bb60a55f36b1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">array_short</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">array1</span> <span class="o">*</span> <span class="n">array_short</span>
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (3,) (2,) 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The error message is a little cryptic – what is this about “broadcasting”? Nevertheless, we can kind of understand that there is some issue with the “shape” of the two arrays not being compatible.
+In fact, this error is telling us that the first array has three elements but the other only has two, so the two arrays couldn’t be pushed into the same shape.</p>
+</div>
+<div class="section" id="ranges">
+<h2>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h2>
+<p>Often times it’s useful to create an array of consecutive numbers, such as:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rather than write this array by hand, we can use the <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> function to do it for us:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that just like indices, ranges will start at zero by default and exclude the last number. So calling <code class="docutils literal notranslate"><span class="pre">np.arange(12)</span></code>, for instance, will create an array with eleven elements whose first entry is 0 and whose last element is 11.</p>
+<p>While we saw an example of the range function being called with one argument, it can be called with one, two, or three arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(endpoint)</span></code> Consecutive integers from 1 to endpoint (exclusive)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">endpoint)</span></code> Consecutive numbers from start to endpoint (exclusive), increasing by 1 each step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">endpoint,</span> <span class="pre">stepsize)</span></code> Consecutive numbers from start to endpoint (exclusive), changing by stepsize each step.</p></li>
+</ul>
+<p>Some example might make this clearer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([5.5, 6.5, 7.5, 8.5, 9.5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([0. , 0.2, 0.4, 0.6, 0.8])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([], dtype=int64)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([-1, -2, -3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result of <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> is an array like any other, so we can write things like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([3, 4, 5, 6, 7])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>How would you use <code class="docutils literal notranslate"><span class="pre">np.arange</span></code> to create the array containing the first 6 powers of 2: 1, 2, 4, 8, 16, and 32?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">2**np.arange(6)</span></code></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To get multiple pieces of data in one place, we create a <strong>collection</strong>. If the collection is ordered then it is a <strong>sequence</strong>.</p></li>
+<li><p>Each item in a sequence has an <strong>index</strong> – its position, starting at zero.</p></li>
+<li><p><strong>Lists</strong> are the most basic sequence, and are created by surrounding a group of items with square brackets and separating each item by commas: <code class="docutils literal notranslate"><span class="pre">[item,</span> <span class="pre">item,</span> <span class="pre">...]</span></code></p></li>
+<li><p><strong>Arrays</strong> are a sequence type from the NumPy library, and are created by passing a list into the <code class="docutils literal notranslate"><span class="pre">np.array</span></code> function: <code class="docutils literal notranslate"><span class="pre">np.array([item,</span> <span class="pre">item,</span> <span class="pre">...])</span></code> <code class="docutils literal notranslate"><span class="pre">np.array(my_list)</span></code></p></li>
+<li><p>NumPy offers lots of additional functions that can be called on sequences. These can be accessed using <code class="docutils literal notranslate"><span class="pre">np.function_name(arguments,</span> <span class="pre">...)</span></code>.</p></li>
+<li><p>An item can be selected from an array by using brackets with the index of the item: <code class="docutils literal notranslate"><span class="pre">my_array[index]</span></code></p></li>
+<li><p>Arrays support <strong>element-wise operations</strong>, such as adding or multiplying all elements by a single number.</p></li>
+<li><p>Arrays of the same length support paired element-wise operations between the two arrays, such as adding or multiplying each element in one array with each element in the same position of another array.</p></li>
+<li><p>An array of numbers with constant spacing can be easily constructed using <code class="docutils literal notranslate"><span class="pre">np.arange</span></code></p></li>
+<li><p>A range will always <em>exclude</em> the endpoint – so <code class="docutils literal notranslate"><span class="pre">np.arange(3)</span></code> will count <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1</span> <span class="pre">2</span></code>.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../01-getting_started/data_types-bool.html" title="previous page">Booleans</a>
+    <a class='right-next' id="next-link" href="../dterms.html" title="next page">An example of the dterm role</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
