@@ -1,0 +1,2828 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>DataFrames &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="prev" title="Arrays" href="arrays.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Getting Started</p>
+</li>
+  <li class="">
+    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/expressions.html">Expressions</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/functions.html">Functions and Imports</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/data_types.html">Data Types</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">NumPy and Babypandas</p>
+</li>
+  <li class="">
+    <a href="arrays.html">Arrays</a>
+  </li>
+  <li class="active">
+    <a href="">DataFrames</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Reference</p>
+</li>
+  <li class="">
+    <a href="../how_to_read.html">How To Read This Book</a>
+  </li>
+  <li class="">
+    <a href="../glossary.html">Glossary</a>
+  </li>
+  <li class="">
+    <a href="../genindex.html">Index</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/dataframes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/dataframes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pandas-dataframes" class="nav-link">Pandas DataFrames</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#the-index" class="nav-link">The Index</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#series" class="nav-link">Series</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#getting-a-column-with-get" class="nav-link">Getting a column with .get</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#arithmetic" class="nav-link">Arithmetic</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#series-methods-mean-max-describe" class="nav-link">Series methods: .mean, .max, .describe</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#adding-and-removing-columns" class="nav-link">Adding and removing columns</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#adding-a-column-with-assign" class="nav-link">Adding a column with .assign</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#removing-a-column-with-drop" class="nav-link">Removing a column with .drop</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#renaming-columns" class="nav-link">Renaming columns</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#reading-csv-files" class="nav-link">Reading CSV files</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dataframes">
+<h1>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">¶</a></h1>
+<p>Most of the data sets that we are interested in are more complex that simple lists of numbers. For instance, consider a data set containing information about California wildfires. It might contain multiple pieces of data about each fire, including its name, size, location, and cause.</p>
+<p>How would we store and analyze such a data set? While we could use NumPy arrays – one holding the fire’s name, another holding the size, etc. – there is a much better way: We will use a <em>table</em> to contain the data, like this:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>CAMP</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>BUTTE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>KING</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>ROUGH</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>MEGRAM</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>DAY</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>MATILIJA</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>THOMAS</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>SIMI FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>COUNTY</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="section" id="pandas-dataframes">
+<h2>Pandas DataFrames<a class="headerlink" href="#pandas-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>Like NumPy arrays, tables are provided by a third-party extension. The Python package which provides tables is called <a class="reference external" href="https://pandas.pydata.org/">pandas</a>. Pandas is <em>the</em> tool for doing data science in Python, and it is immensely popular – as of Summer 2020, it was downloaded nearly <em>1 million</em> times per day. It is without a doubt a powerful tool, and you’ll need to know how to use it if you want to do serious data science. But there’s a problem: pandas is complicated. There are numerous ways to do even the simplest tasks. This makes it hard to learn, especially if you’re new to programming.</p>
+<p>This leaves us in an interesting situation. On one hand, we want to learn pandas, because it is <em>the</em> tool used by actual data scientists. On the other hand, we don’t want to be thrown into the deep end. The solution? We’ll take pandas and remove everything that isn’t absolutely necessary, resulting in something simpler and easier to learn. What’s left is still <em>pandas</em> – just not all of it. Because this new package is a smaller (and cuter) version of pandas, we’re calling it <em>babypandas</em>.</p>
+<p>To get access to the functionality that <em>babypandas</em> provides, we’ll need to import it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Remember that the syntax <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">something</span> <span class="pre">as</span> <span class="pre">new_name</span></code> imports the package named <code class="docutils literal notranslate"><span class="pre">something</span></code>, giving it the new name <code class="docutils literal notranslate"><span class="pre">new_name</span></code>.
+It is a convention among data scientists to rename <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to <code class="docutils literal notranslate"><span class="pre">pd</span></code> by writing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, so we will rename <code class="docutils literal notranslate"><span class="pre">babypandas</span></code> to <code class="docutils literal notranslate"><span class="pre">bpd</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’re going to be using <em>babypandas</em> in the rest of this book, but it should be stressed that <em>babypandas</em> is <em>pandas</em>, just a smaller version of it. So if someone asks if you have experience working with <em>pandas</em> (during a job interview, for instance), you’ll be able to say “yes!”.</p>
+</div>
+<p>In <em>babypandas</em> (and <em>pandas</em>), a table is called a <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-dataframe">DataFrame</a></strong> (though we’ll use the two terms interchangeably). Since DataFrames are often used to store very large data sets, they are not typically created by typing their entries one by one – instead, they are usually read from a file. We’ll see how to do that in a moment, but for now we assume that we have already loaded a DataFrame into a variable called <code class="docutils literal notranslate"><span class="pre">fires</span></code>. If we type <code class="docutils literal notranslate"><span class="pre">fires</span></code> in our Jupyter notebook cell and execute it, it will display the table with nice formatting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>CAMP</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>BUTTE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>KING</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>ROUGH</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>MEGRAM</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>DAY</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>MATILIJA</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>THOMAS</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>SIMI FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>COUNTY</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>If we ask for the <code class="docutils literal notranslate"><span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">fires</span></code>, Python will tell us that it is a DataFrame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>A DataFrame consists of <em>columns</em> and <em>rows</em>. Almost always, a row represents a single thing – in this case, a fire – and the columns provide different pieces of information about that thing. In this case, we have a column describing the name of the fire, another describing the cause, and so on.</p>
+<p>We can get the number of rows and columns in a <em>DataFrame</em> by asking for its <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-shape">shape</a></strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(50, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This tells us that there are 50 rows and 9 columns. If for whatever reason we just wanted the number of rows, we could ask for the first element of this pair:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Every row and column in a DataFrame has a <em>label</em>. We will use the row and column labels to refer to particular parts of the table and retrieve information from within it. The columns of the above DataFrame are labeled “year”, “month”, “cause”, and so on. The rows of the above table are simply labeled <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so forth.</p>
+</div>
+<div class="section" id="the-index">
+<h2>The Index<a class="headerlink" href="#the-index" title="Permalink to this headline">¶</a></h2>
+<p>Together, the row labels are called the <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-table-index">table index</a></strong>.
+By default, a table’s rows are labeled by numbering them. However, in many cases it makes more sense to label the rows in some other way. For example, each row in our current data set is a single fire. Perhaps it makes more sense to use the fire’s name as its row label. We can ask <em>babypandas</em> to use a particular column as the row labels with the <code class="docutils literal notranslate"><span class="pre">.set_index</span></code> method:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>You might know that NumPy arrays can be two-dimensional, too, so they <em>could</em> be used to store tables. But NumPy arrays do not have an <em>index</em>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.set_index</span></code> method accepts one argument: the label of the column that should be used as the index. It then creates a <em>new</em> DataFrame in which the index has been replaced with the information from this column; the old DataFrame is not changed. In order to save the results, we’ll need to assign the new table to a variable, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span> <span class="o">=</span> <span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="n">fires_by_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Notice that the fire names have been moved all the way to the left, and have been made bold – this is <em>babypandas</em>’ way of showing that these names are now the index.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The index is <em>not</em> a column – it is it’s own separate thing. When we use <code class="docutils literal notranslate"><span class="pre">.set_index</span></code>, the old index is thrown out and number of columns decreases by one.</p>
+</div>
+<p>Since we will later use row labels to refer to specific rows by name, the labels should be unique. In this case, that means that every fire should have a unique name. In this case, every fire is uniquely named, and it is fine to use the fire name as the index. Later, we’ll see a larger version of this data set in which there are multiple fires with the same name. In that case, the name should probably not be used as the index.</p>
+<p>A table’s index is essentially an array. We can get the index by writing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Index([&#39;CAMP&#39;, &#39;BUTTE&#39;, &#39;KING&#39;, &#39;ROUGH&#39;, &#39;MEGRAM&#39;, &#39;RANCH&#39;, &#39;VALLEY &#39;,
+       &#39;ROCKY  &#39;, &#39;FORK&#39;, &#39;RUSH&#39;, &#39;RAVENNA&#39;, &#39;WOOLSEY&#39;, &#39;STATION&#39;, &#39;FERGUSON&#39;,
+       &#39;DETWILER&#39;, &#39;SCARFACE&#39;, &#39;SOBERANES&#39;, &#39;INDIANS&#39;, &#39;KIRK&#39;, &#39;BASIN COMPLEX&#39;,
+       &#39;MARBLE-CONE&#39;, &#39;CHIPS&#39;, &#39;OLD&#39;, &#39;HARRIS 2&#39;, &#39;CEDAR&#39;, &#39;WITCH&#39;, &#39;LAGUNA&#39;,
+       &#39;LAS PILITAS&#39;, &#39;HIGHWAY 58&#39;, &#39;ZACA&#39;, &#39;REFUGIO&#39;, &#39;LA BREA&#39;, &#39;CARR &#39;,
+       &#39;OAK&#39;, &#39;FRYING PAN&#39;, &#39;GLASS MOUNTAIN&#39;, &#39;KINCADE&#39;, &#39;CAMPBELL&#39;,
+       &#39;SKINNER MILL&#39;, &#39;HAPPY&#39;, &#39;MANTER&#39;, &#39;MCNALLY&#39;, &#39;RIM&#39;, &#39;CLAMPITT FIRE&#39;,
+       &#39;WHEELER #2&#39;, &#39;DAY&#39;, &#39;MATILIJA&#39;, &#39;THOMAS&#39;, &#39;SIMI FIRE&#39;, &#39;COUNTY&#39;],
+      dtype=&#39;object&#39;, name=&#39;name&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then access individual elements of the index using the same notation as used with arrays, remembering that Python starts counting from zero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first element</span>
+<span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CAMP&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the second element</span>
+<span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;BUTTE&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the last element</span>
+<span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;COUNTY&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-a-column-with-get">
+<h3>Getting a column with <code class="docutils literal notranslate"><span class="pre">.get</span></code><a class="headerlink" href="#getting-a-column-with-get" title="Permalink to this headline">¶</a></h3>
+<p>We can retrieve a particular column from the table with the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method. For instance, to get the column labeled “acres”, we would write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+CAMP         153335.562500
+BUTTE         70846.531250
+KING          97684.546875
+ROUGH        151546.812500
+MEGRAM       125072.531250
+                 ...      
+DAY          161815.656250
+MATILIJA     219999.281250
+THOMAS       281790.875000
+SIMI FIRE    107570.398438
+COUNTY        89831.148438
+Name: acres, Length: 50, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result might look like a DataFrame with one column, but it’s actually a new type of object called a <em>Series</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <em>Series</em> is basically an array, but with an index. A <em>Series</em> represents a column in a <em>DataFrame</em>. This means that we can think of the columns of a DataFrame as being arrays (more or less).</p>
+</div>
+<div class="section" id="arithmetic">
+<h3>Arithmetic<a class="headerlink" href="#arithmetic" title="Permalink to this headline">¶</a></h3>
+<p>Because a Series is like an array, we can do similar things with it. For instance, we can perform elementwise arithmetic with a Series. Let’s try it out by converting the fire sizes from acres to square miles. Each acre is 0.0015625 square miles, so we can do the conversion with a simple multiplication:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+CAMP         239.586816
+BUTTE        110.697705
+KING         152.632104
+ROUGH        236.791895
+MEGRAM       195.425830
+                ...    
+DAY          252.836963
+MATILIJA     343.748877
+THOMAS       440.298242
+SIMI FIRE    168.078748
+COUNTY       140.361169
+Name: acres, Length: 50, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also perform arithmetic with two series, assuming that they are the same size.</p>
+</div>
+<div class="section" id="series-methods-mean-max-describe">
+<h3>Series methods: <code class="docutils literal notranslate"><span class="pre">.mean</span></code>, <code class="docutils literal notranslate"><span class="pre">.max</span></code>, <code class="docutils literal notranslate"><span class="pre">.describe</span></code><a class="headerlink" href="#series-methods-mean-max-describe" title="Permalink to this headline">¶</a></h3>
+<p><em>Series</em> objects also come with a bunch of useful methods attached, like <code class="docutils literal notranslate"><span class="pre">.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">.max</span></code>. For example, the average size of a fire in this data set is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>135919.636875
+</pre></div>
+</div>
+</div>
+</div>
+<p>The northernmost fire (i.e., the fire with the largest latitude) had latitude:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>41.735693277673136
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the earliest fire in the data set was in the year:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1910
+</pre></div>
+</div>
+</div>
+</div>
+<p>A very useful <em>Series</em> method is <code class="docutils literal notranslate"><span class="pre">.describe</span></code>. It gives us a quick look at the basic statistics of the data in a particular column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count      50.000000
+mean     1998.840000
+std        25.220141
+min      1910.000000
+25%      1996.000000
+50%      2007.500000
+75%      2015.000000
+max      2019.000000
+Name: year, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>From this, we can see that there are 50 fires in the data set, the earliest from 1910 and the latest from 2019. The 25%, 50%, and 75% refer to <em>percentiles</em>. That is, 25% of the fires occurred during or before 1996, and half occurred during or before 2007. This also means that half occurred between 2007 and 2019!</p>
+<p>We will see more Series methods throughout this textbook, but only when we need to use them.</p>
+<div class="jupytertip admonition" id="jupytertip-0">
+<p class="admonition-title">Jupyter Tip</p>
+<p>You can ask Jupyter for some information on all of the Series methods available by writing <code class="docutils literal notranslate"><span class="pre">help(bpd.Series)</span></code>. The methods starting with two underscores (<code class="docutils literal notranslate"><span class="pre">__</span></code>) are called “dunder” methods, and implement special behavior. You’re not meant to call them direcly, so you can pretty much ignore them.</p>
+</div>
+</div>
+</div>
+<div class="section" id="adding-and-removing-columns">
+<h2>Adding and removing columns<a class="headerlink" href="#adding-and-removing-columns" title="Permalink to this headline">¶</a></h2>
+<p>Above, we saw that we could convert the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column to square miles using a little bit of array math. But doing so doesn’t change the table. What if we want to add this column to our table?</p>
+<div class="section" id="adding-a-column-with-assign">
+<h3>Adding a column with <code class="docutils literal notranslate"><span class="pre">.assign</span></code><a class="headerlink" href="#adding-a-column-with-assign" title="Permalink to this headline">¶</a></h3>
+<p>Adding a column can be done with the <code class="docutils literal notranslate"><span class="pre">.assign</span></code> method, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sqmiles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>sqmiles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>There’s a lot going on here, so let’s break it down. First, the assign method takes a single argument: a series that will become the new column. But the way that we pass this argument is new. Instead of simply passing the argument itself, we also give the argument a name by writing <code class="docutils literal notranslate"><span class="pre">sqmiles=</span></code>. This will be the column’s label. Arguments written in the form <code class="docutils literal notranslate"><span class="pre">argument_name=argument_value</span></code> are called <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-keyword-argument">keyword arguments</a></strong>.</p>
+<p>We can call the column anything we like, as long as it is a valid python variable name. This means that the variable name cannot contain spaces, or start with a number. If you try, you’ll get a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square</span> <span class="n">miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-21-546d28f7098c&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square</span> <span class="n">miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+                                    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of spaces, we can use underscores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>The second thing to note is that <code class="docutils literal notranslate"><span class="pre">.assign</span></code> creates an entirely new table containing the new column. It does not change the old table, as we can verify by recalling the value of <code class="docutils literal notranslate"><span class="pre">fires_by_name</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 7 columns</p>
+</div></div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wherever possible, DataFrame and Series methods return <em>new</em> objects instead of modifying existing ones. Creating copies like this results in code that is easier to reason about helps prevent strange bugs in your code.</p>
+</div>
+<p>In order to permanently add the column to the table, we need to save the result of <code class="docutils literal notranslate"><span class="pre">.assign</span></code> to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span> <span class="o">=</span> <span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sqmiles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+<span class="n">fires_with_sqmiles</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>sqmiles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="removing-a-column-with-drop">
+<h3>Removing a column with <code class="docutils literal notranslate"><span class="pre">.drop</span></code><a class="headerlink" href="#removing-a-column-with-drop" title="Permalink to this headline">¶</a></h3>
+<p>Columns can be removed using the <code class="docutils literal notranslate"><span class="pre">.drop</span></code> method. It accepts one keyword argument: <code class="docutils literal notranslate"><span class="pre">columns</span></code>. The argument can either be the label of a single column as a string, or a list of column labels. As with <code class="docutils literal notranslate"><span class="pre">.assign</span></code>, the result is a new DataFrame (a copy).</p>
+<p>For example, to get rid of the <code class="docutils literal notranslate"><span class="pre">'sqmiles'</span></code> column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>If we didn’t want the latitude and longitude:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>sqmiles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Note that the argument name (<code class="docutils literal notranslate"><span class="pre">columns</span></code>) is not something we can change, unlike the keyword argument name used in <code class="docutils literal notranslate"><span class="pre">.assign</span></code>. We <em>must</em> use <code class="docutils literal notranslate"><span class="pre">columns=...</span></code>, or else Python will not understand us. And if you don’t use the keyword name, Python will be upset:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="n">bea9118708aa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: drop() takes 1 positional argument but 2 were given
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="renaming-columns">
+<h3>Renaming columns<a class="headerlink" href="#renaming-columns" title="Permalink to this headline">¶</a></h3>
+<p>How do we rename a column? Suppose we want to rename <code class="docutils literal notranslate"><span class="pre">sqmiles</span></code> to <code class="docutils literal notranslate"><span class="pre">square_miles</span></code>. To do so, we:</p>
+<ol class="simple">
+<li><p>Add a new column with the desired name by copying the old column.</p></li>
+<li><p>Drop the old column</p></li>
+</ol>
+<p>For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_new_name</span> <span class="o">=</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">))</span>
+<span class="n">fires_with_new_name</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>We can also do this in a single line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>This trick of applying two methods, one after the other, in one line of code is called <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-method-chaining">method chaining</a></strong>. It works because the result of <code class="docutils literal notranslate"><span class="pre">.assign</span></code> is itself a table. When Python evalautes the expression, it first evaluates the <code class="docutils literal notranslate"><span class="pre">.assign</span></code>, then uses this table during the call to <code class="docutils literal notranslate"><span class="pre">.drop</span></code>.</p>
+<p>Method chaining is useful and can save us some typing, but it can be overused. It is sometimes better to save intermediate results.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your method-chaining code isn’t working as you’d expect, break apart the code and save intermediate variables. Print out the values of these variables to do some debugging.</p>
+</div>
+</div>
+</div>
+<div class="section" id="reading-csv-files">
+<h2>Reading CSV files<a class="headerlink" href="#reading-csv-files" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned above, DataFrames are not typically created by typing their entries by hand, one-by-one. Instead, we usually download a data set in a standard format and read it from disk. One such standard format is <span class="target" id="index-5"></span><strong><a class="reference external" href="../glossary.html#term-csv">CSV</a></strong>, or <em>comma-separated values</em>.</p>
+<p>A CSV file is simply a text file in a certain format. Here are the first few lines of the CSV file containing our wildfire data:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>year,month,name,cause,acres,county,longitude,latitude
+2018,11,CAMP,11 - Powerline,153335.5625,Butte County,-121.55911931604462,39.75163181892352
+2015,9,BUTTE,14 - Unknown / Unidentified,70846.53125,Calaveras County,-120.59498919511628,38.26400337865449
+2014,9,KING,7 - Arson,97684.546875,El Dorado County,-120.53128071068107,38.9008861450767
+2015,7,ROUGH,1 - Lightning,151546.8125,Fresno County,-118.92203760158033,36.840937927564624
+1999,8,MEGRAM,1 - Lightning,125072.53125,Humboldt County,-123.43606538294354,41.048103009542395
+2018,7,RANCH,14 - Unknown / Unidentified,410202.46875,Lake County,-122.768016366197,39.287256744184425
+2015,9,VALLEY ,14 - Unknown / Unidentified,76084.8359375,Lake County,-122.62426879359931,38.787643352540094
+2015,7,ROCKY  ,9 - Miscellaneous,69438.1640625,Lake County,-122.45488018738592,38.94577913831215
+1996,8,FORK,7 - Arson,83056.9453125,Lake County,-122.74375218837721,39.20253268961674
+</pre></div>
+</div>
+</div>
+</div>
+<p>As it’s name suggests, a CSV file consists of values, separated by commas. The first line of the file usually contains the column labels. CSV is a widely-used format, and can be read by many pieces of software, including Excel and Google Sheets.</p>
+<p>We can read a CSV file into a <em>babypandas</em> DataFrame using the <code class="docutils literal notranslate"><span class="pre">bpd.read_csv</span></code> function. We give this function a string containing the filepath to the CSV file we want to read. For example, our wildfire data exists in a file called <code class="docutils literal notranslate"><span class="pre">calfire.csv</span></code> contained in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory. We can read it into a DataFrame as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire.csv&#39;</span><span class="p">)</span>
+<span class="n">calfire</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018</td>
+      <td>11</td>
+      <td>CAMP</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+      <td>-121.559119</td>
+      <td>39.751632</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>9</td>
+      <td>BUTTE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+      <td>-120.594989</td>
+      <td>38.264003</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>9</td>
+      <td>KING</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+      <td>-120.531281</td>
+      <td>38.900886</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015</td>
+      <td>7</td>
+      <td>ROUGH</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+      <td>-118.922038</td>
+      <td>36.840938</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>MEGRAM</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+      <td>-123.436065</td>
+      <td>41.048103</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2006</td>
+      <td>9</td>
+      <td>DAY</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+      <td>-118.969598</td>
+      <td>34.614926</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>1932</td>
+      <td>9</td>
+      <td>MATILIJA</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+      <td>-119.241715</td>
+      <td>34.536820</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>THOMAS</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+      <td>-119.286856</td>
+      <td>34.450254</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>2003</td>
+      <td>10</td>
+      <td>SIMI FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+      <td>-118.792189</td>
+      <td>34.335361</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>COUNTY</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+      <td>-122.167104</td>
+      <td>38.661059</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Modifying the DataFrame will not affect the data on disk in any way.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>If you do want to save your changes, you can do so with the <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> DataFrame method.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="arrays.html" title="previous page">Arrays</a>
+    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

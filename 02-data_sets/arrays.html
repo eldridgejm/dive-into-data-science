@@ -39,7 +39,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="An example of the dterm role" href="../dterms.html" />
+    <link rel="next" title="DataFrames" href="dataframes.html" />
     <link rel="prev" title="Booleans" href="../01-getting_started/data_types-bool.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,11 +100,14 @@
   <li class="active">
     <a href="">Arrays</a>
   </li>
+  <li class="">
+    <a href="dataframes.html">DataFrames</a>
+  </li>
 <li class="navbar-special">
 <p class="margin-caption">Reference</p>
 </li>
   <li class="">
-    <a href="../dterms.html">An example of the dterm role</a>
+    <a href="../how_to_read.html">How To Read This Book</a>
   </li>
   <li class="">
     <a href="../glossary.html">Glossary</a>
@@ -221,6 +224,10 @@
         <li class="nav-item toc-entry toc-h2">
             <a href="#array-methods" class="nav-link">Array Methods</a><ul class="nav section-nav flex-column">
                 
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#example" class="nav-link">Example</a>
+        </li>
+    
         <li class="nav-item toc-entry toc-h3">
             <a href="#accessing-array-items" class="nav-link">Accessing array items</a>
         </li>
@@ -349,7 +356,20 @@ Remember that Python wasn’t originally designed specifically for data scientis
 <p class="admonition-title">Note</p>
 <p>Note the square brackets! If you try to create an array without them, you’ll see an error.</p>
 </div>
-<p>Arrays can also contain other types of data, like strings or bools. <em>But</em> in order to maximize their efficience, a single array should only contain a single type of data.</p>
+<p>Arrays are their own data type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">hours_slept_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
+</pre></div>
+</div>
+</div>
+</div>
+<p>The array we’ve created contains numbers, but arrays can also contain other types of data, like strings or bools. <em>But</em> in order to maximize their efficiency, a single array should only contain a single data type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;this&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;also&#39;</span><span class="p">,</span> <span class="s1">&#39;fine&#39;</span><span class="p">])</span>
@@ -488,6 +508,81 @@ Remember that Python wasn’t originally designed specifically for data scientis
 </div>
 </div>
 <p>Don’t worry, you don’t need to memorize all of the different functions/methods (there are a lot!) – we’ll include references when necessary.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Every year, the programming community forum <a class="reference external" href="http://stackoverflow.com">StackOverflow</a> <a class="reference external" href="https://insights.stackoverflow.com/survey/2019#overview">surveys</a> its users, asking them such important questions as: what is your salary? and, how many computer monitors are on your desk at home? The results are publicly available. Since many of those who respond are data scientists, we can use the data to get an idea of a typical data scientist’s salary.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">salaries</span></code> is a NumPy array containing the salaries of every US-based data scientist in the survey. How many were there? We can answer that with <code class="docutils literal notranslate"><span class="pre">len</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1117
+</pre></div>
+</div>
+</div>
+</div>
+<p>What was the mean salary?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salaries</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>111032.657564906
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nice. What about the <em>median</em> salary?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salaries</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="n">d0d1f0e8b82e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">salaries</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;median&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oops. It turns out that there is no method called “median” in numpy. There is, however, a <code class="docutils literal notranslate"><span class="pre">median</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>100000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that the median is about $10,000 less than the mean. As a data scientist would point out, the mean is more “sensitive” to “outliers”, meaning that a few people who make a very large amount of money can skew the mean. Let’s see what the largest salary is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salaries</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000000.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>2 million dollars! Remember, though: these salaries are <em>self-reported</em>.</p>
+</div>
 <div class="section" id="accessing-array-items">
 <h3>Accessing array items<a class="headerlink" href="#accessing-array-items" title="Permalink to this headline">¶</a></h3>
 <p>An array is an <em>ordered sequence</em> of items that has a beginning and an end. We can retrieve an element by specifying its <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-index">index</a></strong>. The index of the first item in an array is zero, the index of the second item is one, and so on. For example, let’s say we have an array with three elements:</p>
@@ -566,7 +661,7 @@ Remember that Python wasn’t originally designed specifically for data scientis
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">db3f0aeffdb7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">db3f0aeffdb7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">names</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
 
 <span class="ne">IndexError</span>: index 99 is out of bounds for axis 0 with size 3
@@ -620,8 +715,7 @@ Remember that Python wasn’t originally designed specifically for data scientis
 </div>
 </div>
 </div>
-<p>Remember that the formu
-la for converting a measurement in Fahrenheit to Celsius is <span class="math notranslate nohighlight">\(C = (F - 32) * (5/9)\)</span>. Therefore:</p>
+<p>Remember that the formula for converting a measurement in Fahrenheit to Celsius is <span class="math notranslate nohighlight">\(C = (F - 32) * (5/9)\)</span>. Therefore:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures_c</span> <span class="o">=</span> <span class="p">(</span><span class="n">temperatures_f</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
@@ -706,7 +800,7 @@ la for converting a measurement in Fahrenheit to Celsius is <span class="math no
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="n">bb60a55f36b1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="n">bb60a55f36b1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">array_short</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">array1</span> <span class="o">*</span> <span class="n">array_short</span>
 
@@ -876,7 +970,7 @@ In fact, this error is telling us that the first array has three elements but th
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../01-getting_started/data_types-bool.html" title="previous page">Booleans</a>
-    <a class='right-next' id="next-link" href="../dterms.html" title="next page">An example of the dterm role</a>
+    <a class='right-next' id="next-link" href="dataframes.html" title="next page">DataFrames</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

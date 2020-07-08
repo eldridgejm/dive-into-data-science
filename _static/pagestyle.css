@@ -39,7 +39,7 @@ code {
 }
 
 /* If something is targeted, make it highlighted */
-* :target,
+:not(h2):target,
 span.highlighted,
 :target[id^="index"] + * {
     background-color: #ffdf00;
