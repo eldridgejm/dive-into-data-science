@@ -14,7 +14,7 @@
 
 - header: NumPy and Babypandas
 - file: 02-data_sets/arrays
-  # - file: 02-data_sets/series
+- file: 02-data_sets/dataframes
 
 - header: Reference
 - file: dterms
