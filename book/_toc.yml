@@ -17,6 +17,6 @@
   # - file: 02-data_sets/series
 
 - header: Reference
-- file: dterms
+- file: how_to_read
 - file: glossary
 - file: genindex
