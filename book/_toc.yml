@@ -15,6 +15,7 @@
 - header: NumPy and Babypandas
 - file: 02-data_sets/arrays
 - file: 02-data_sets/dataframes
+- file: 02-data_sets/accessing
 
 - header: Reference
 - file: how_to_read
