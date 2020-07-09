@@ -1,3 +1,12 @@
+#main-content {
+    font-size: 17px;
+}
+
+em {
+    padding-right: 0.25ex;
+}
+
+
 /* Override narrow user interface.
 
 Line width should be kept narrow, but navigation/interface should be pushed to
@@ -8,7 +17,7 @@ the sides of the page.
 }
 
 .bd-content .section {
-    max-width: 48em; /* A nice reading width */
+    max-width: 82ex; /* A nice reading width */
     margin: auto;
 }
 
@@ -57,3 +66,24 @@ span[id^="index"] {
     position: relative;
     top: -6em;
 }
+
+/* Same thing for glossary links.
+
+Need a bit more of a workaround to get this working with the highlighting.
+*/
+dt[id^="term"] {
+    z-index: -2;
+}
+dt[id^="term"]::before {
+    content: '';
+    display: block;
+    margin-top: -6em;
+    height: 6em;
+    background-color: white;
+    z-index: -1;
+}
+
+.dataframe * {
+    font-size: 0.9rem;
+}
+
