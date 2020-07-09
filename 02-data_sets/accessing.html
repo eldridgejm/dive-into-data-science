@@ -1,0 +1,1035 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accessing and Sorting &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="prev" title="DataFrames" href="dataframes.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Getting Started</p>
+</li>
+  <li class="">
+    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/expressions.html">Expressions</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/functions.html">Functions and Imports</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/data_types.html">Data Types</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">NumPy and Babypandas</p>
+</li>
+  <li class="">
+    <a href="arrays.html">Arrays</a>
+  </li>
+  <li class="">
+    <a href="dataframes.html">DataFrames</a>
+  </li>
+  <li class="active">
+    <a href="">Accessing and Sorting</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Reference</p>
+</li>
+  <li class="">
+    <a href="../how_to_read.html">How To Read This Book</a>
+  </li>
+  <li class="">
+    <a href="../glossary.html">Glossary</a>
+  </li>
+  <li class="">
+    <a href="../genindex.html">Index</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/accessing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/accessing.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/accessing.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#accessing-with-loc" class="nav-link">Accessing with .loc</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#example" class="nav-link">Example</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#sorting" class="nav-link">Sorting</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#accessing-with-iloc" class="nav-link">Accessing with .iloc</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#approach-1-with-loc" class="nav-link">Approach #1: with .loc.</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#approach-2-with-iloc" class="nav-link">Approach #2: with .iloc</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="accessing-and-sorting">
+<h1>Accessing and Sorting<a class="headerlink" href="#accessing-and-sorting" title="Permalink to this headline">¶</a></h1>
+<p>The Cedar Fire left an indelible mark on San Diego county. When it happened in 2003, it was the largest wildfire in California history. Just how big was the fire? And what caused it? The data set we saw in the previous section has these answers, but we still need to learn how to retrieve this information.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/cedar.jpg"><img alt="../_images/cedar.jpg" src="../_images/cedar.jpg" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cars scramble to leave the 15 as the Cedar Fire crosses the highway and approaches Miramar.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="accessing-with-loc">
+<h2>Accessing with <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#accessing-with-loc" title="Permalink to this headline">¶</a></h2>
+<p>Let’s begin by reading our dataset from a CSV and setting the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column to be the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="n">calfire</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>How big was the Cedar Fire? We know that we can retrieve the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column using the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+CAMP         153335.562500
+BUTTE         70846.531250
+KING          97684.546875
+ROUGH        151546.812500
+MEGRAM       125072.531250
+                 ...      
+DAY          161815.656250
+MATILIJA     219999.281250
+THOMAS       281790.875000
+SIMI FIRE    107570.398438
+COUNTY        89831.148438
+Name: acres, Length: 50, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a series. We don’t see the Cedar Fire listed; it <em>is</em> there, just hidden within the <code class="docutils literal notranslate"><span class="pre">...</span></code>.</p>
+<p>We can retrieve an element from a Series using its row label and the special <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute. Since it looks like all the fires have their names capitalized, the row label for the Cedar Fire will be <code class="docutils literal notranslate"><span class="pre">CEDAR</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>270686.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the square brackets in <code class="docutils literal notranslate"><span class="pre">.loc['CEDAR']</span></code>. This is by analogy with using square brackets to retrieve elements from an array.</p>
+<p>To repeat, we can retrieve a particular element in a table, such as the size of the Cedar Fire, by first <code class="docutils literal notranslate"><span class="pre">.get</span></code>ting the column containing the fire sizes, then using <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to retrieve the size corresponding to the Cedar Fire. This is a pattern that we’ll be using over and over:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.get()</span></code> with the column label; then</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> with the row label</p></li>
+</ol>
+<p>Let’s try it again: what was the cause of the Cedar Fire?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;2 - Equipment Use&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Originally, the Cedar Fire was to believed to be caused by a lost hunter shooting their rifle to get the attention of rescuers – thus the cause is listed as “Equipment Use”. However, the hunter later admitted that they had started a signal fire to alert rescuers, and that it quickly spread out of control.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>What code would you write to determine the county in which the Frying Pan Fire occurred?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">calfire.get('county').loc['FRYING</span> <span class="pre">PAN']</span></code></p>
+</div>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>The Cedar Fire was truly huge, stretching from the Cuyamaca Mountains in eastern San Diego County, almost to the Pacific Ocean. But most of us don’t have a good sense of what an “acre” is. Instead, let’s frame the size of the fire in terms of other things we might be more familiar with. For instance, a soccer field is 1.32 acres. Therefore, the Cedar Fire burned:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1.32</span><span class="p">,</span> <span class="s1">&#39;soccer fields.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>205065.15151515152 soccer fields.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Other comparisons are perhaps more surprising. The Cedar Fire burned:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_976</span><span class="p">,</span> <span class="s1">&#39;times the size of UCSD</span><span class="se">\&#39;</span><span class="s1">s campus.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">14_600</span><span class="p">,</span> <span class="s1">&#39;times the size of Manhattan.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">382_000</span><span class="p">,</span> <span class="s1">&#39;times the size of the island of Oahu.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;CEDAR&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.9e6</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;percent of San Diego county.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>136.98684210526315 times the size of UCSD&#39;s campus.
+18.54013698630137 times the size of Manhattan.
+0.7086020942408376 times the size of the island of Oahu.
+9.334000000000001 percent of San Diego county.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>While the Cedar Fire was the largest fire in California history when it occurred in 2003, it has since been surpassed. If it wasn’t the largest fire, what was?</p>
+<p>One way to answer this question is to sort the table by the size of the fires. We can do this with the <code class="docutils literal notranslate"><span class="pre">.sort_values</span></code> DataFrame method. The method requires one keyword argument, <code class="docutils literal notranslate"><span class="pre">by=</span></code>, which should be given a string with the name of the column to sort by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>HAPPY</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>68095.242188</td>
+      <td>Trinity County</td>
+    </tr>
+    <tr>
+      <th>ROCKY</th>
+      <td>2015</td>
+      <td>9 - Miscellaneous</td>
+      <td>69438.164062</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+    </tr>
+    <tr>
+      <th>RAVENNA</th>
+      <td>1919</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>71373.148438</td>
+      <td>Los Angeles County</td>
+    </tr>
+    <tr>
+      <th>VALLEY</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>76084.835938</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>RIM</th>
+      <td>2013</td>
+      <td>4 - Campfire</td>
+      <td>256175.531250</td>
+      <td>Tuolumne County</td>
+    </tr>
+    <tr>
+      <th>CEDAR</th>
+      <td>2003</td>
+      <td>2 - Equipment Use</td>
+      <td>270686.000000</td>
+      <td>San Diego County</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>RUSH</th>
+      <td>2012</td>
+      <td>1 - Lightning</td>
+      <td>315511.500000</td>
+      <td>Lassen County</td>
+    </tr>
+    <tr>
+      <th>RANCH</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>410202.468750</td>
+      <td>Lake County</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Notice that the table has been sorted in <em>ascending</em> order (from smallest to largest) using the values in the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column. Therefore, we see that the largest fire in California history was the Ranch Fire. At 410,202 acres, the Ranch fire was <em>double</em> the size of the Cedar Fire. It was part of the Mendocino Complex Fire, which burned in 2019. Although the cause of the fire is listed here as undetermined, it was later discovered that it began when a person tried to plug the entrance of wasp’s nest with a hammer and a metal stake. When they hammered the stake, sparks flew and caught the ground on fire. The fire resulted in $250 million in damages.</p>
+<p>What if we want to come to the same conclusion <em>programatically</em>, without having to look at the table? After sorting, the last row of the table corresponds to the largest fire, and we want the fire’s name. This is stored in the <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-table-index">table index</a></strong>. Remember that the index is essentially an array, and so we can get the last element of the array using square bracket notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;RANCH&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we are using <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-method-chaining">method chaining</a></strong> to save typing.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Actually, we do not need to include the <code class="docutils literal notranslate"><span class="pre">by=</span></code> in this case: calling <code class="docutils literal notranslate"><span class="pre">.sort_values('acres')</span></code> will work just fine. But writing <code class="docutils literal notranslate"><span class="pre">by=</span></code> makes the code more <em>readable</em>.</p>
+</div>
+<p>We could have also made the same discovery by sorting the table in <em>descending</em> order. This is done by passing a second keyword argument: <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;acres&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>RANCH</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>410202.468750</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>RUSH</th>
+      <td>2012</td>
+      <td>1 - Lightning</td>
+      <td>315511.500000</td>
+      <td>Lassen County</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>CEDAR</th>
+      <td>2003</td>
+      <td>2 - Equipment Use</td>
+      <td>270686.000000</td>
+      <td>San Diego County</td>
+    </tr>
+    <tr>
+      <th>RIM</th>
+      <td>2013</td>
+      <td>4 - Campfire</td>
+      <td>256175.531250</td>
+      <td>Tuolumne County</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>VALLEY</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>76084.835938</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>RAVENNA</th>
+      <td>1919</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>71373.148438</td>
+      <td>Los Angeles County</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+    </tr>
+    <tr>
+      <th>ROCKY</th>
+      <td>2015</td>
+      <td>9 - Miscellaneous</td>
+      <td>69438.164062</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>HAPPY</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>68095.242188</td>
+      <td>Trinity County</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>If this keyword argument isn’t given, it defaults to <code class="docutils literal notranslate"><span class="pre">ascending=True</span></code>.</p>
+<p>When sorting in descending order, we could get the fire’s name from the index by asking for the first row label:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;acres&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;RANCH&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also sort by columns containing strings. In this case, the rows are sorted <em>lexicographically</em> – that is, in dictionary order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>70846.531250</td>
+      <td>Calaveras County</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado County</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno County</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt County</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>107570.398438</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>89831.148438</td>
+      <td>Yolo County</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="accessing-with-iloc">
+<h2>Accessing with <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#accessing-with-iloc" title="Permalink to this headline">¶</a></h2>
+<p>How large was the oldest fire in the data set? There are two approaches to answering this question. The first approach uses tools that we already know, but it requires a little extra work. The second approach uses something new: <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p>
+<div class="section" id="approach-1-with-loc">
+<h3>Approach #1: with <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.<a class="headerlink" href="#approach-1-with-loc" title="Permalink to this headline">¶</a></h3>
+<p>In the first approach, we’ll first find the name of the oldest fire in the data set. We’ll then use this name to ask for the size of the fire using our <code class="docutils literal notranslate"><span class="pre">.get().loc[]</span></code> pattern.</p>
+<p>To get the name of the oldest fire, we’ll sort by year and look at the first element of the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">oldest_fire_name</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">oldest_fire_name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;GLASS MOUNTAIN&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll use this as the row label in looking up the acreage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">oldest_fire_name</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>146967.5625
+</pre></div>
+</div>
+</div>
+</div>
+<p>This approach works, but there is a faster way.</p>
+</div>
+<div class="section" id="approach-2-with-iloc">
+<h3>Approach #2: with <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#approach-2-with-iloc" title="Permalink to this headline">¶</a></h3>
+<p>After we sort the table by year, we know that the row we’re interested in is the first row in the table. But to access the entries of this row with <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, we need to first find out that row’s label. Instead of performing this intermediate step, we can get the first row’s information directly with <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p>
+<p>Whereas <code class="docutils literal notranslate"><span class="pre">.loc</span></code> looks up a row by its label, <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> looks up a row by its <em>integer position</em> (thus the <em>i</em> in <code class="docutils literal notranslate"><span class="pre">iloc</span></code>). For instance, suppose we have sorted the table by year and retrieved the acreage column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+<span class="n">sizes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+GLASS MOUNTAIN    146967.562500
+RAVENNA            71373.148438
+MATILIJA          219999.281250
+REFUGIO            79428.710938
+LAGUNA            174161.546875
+                      ...      
+FERGUSON           96900.039062
+WOOLSEY            96949.000000
+RANCH             410202.468750
+COUNTY             89831.148438
+KINCADE            77762.140625
+Name: acres, Length: 50, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>To get the size of the first fire, we can use <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> directly, without knowing the fire’s name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>146967.5625
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is equivalent to using <code class="docutils literal notranslate"><span class="pre">.loc</span></code> with the column name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;GLASS MOUNTAIN&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>146967.5625
+</pre></div>
+</div>
+</div>
+</div>
+<p>To summarize, <code class="docutils literal notranslate"><span class="pre">.loc</span></code> retrieves information using the row label. <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> retrieves information using integer position. It is typically more convenient to use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> with the row label, but sometimes <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> is preferable.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dataframes.html" title="previous page">DataFrames</a>
+    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>

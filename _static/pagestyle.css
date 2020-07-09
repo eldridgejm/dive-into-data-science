@@ -38,8 +38,12 @@ code {
     margin: 0 2px;
 }
 
-/* If something is targeted, make it highlighted */
-:not(h2):target,
+/* If something is targeted, make it highlighted.
+
+But, make sure not to highlight entire sections or titles
+(e.g. page sections or index headings)
+*/
+:not(h2):not(.section):target,
 span.highlighted,
 :target[id^="index"] + * {
     background-color: #ffdf00;

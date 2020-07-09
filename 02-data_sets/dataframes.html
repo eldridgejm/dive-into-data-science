@@ -33,7 +33,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="next" title="Accessing and Sorting" href="accessing.html" />
     <link rel="prev" title="Arrays" href="arrays.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,6 +96,9 @@
   </li>
   <li class="active">
     <a href="">DataFrames</a>
+  </li>
+  <li class="">
+    <a href="accessing.html">Accessing and Sorting</a>
   </li>
 <li class="navbar-special">
 <p class="margin-caption">Reference</p>
@@ -227,7 +230,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h3">
-            <a href="#series-methods-mean-max-describe" class="nav-link">Series methods: .mean, .max, .describe</a>
+            <a href="#series-methods-mean-max-describe-etc" class="nav-link">Series methods: .mean, .max, .describe, etc.</a>
         </li>
     
             </ul>
@@ -291,76 +294,55 @@
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>2018</td>
-      <td>11</td>
       <td>CAMP</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2015</td>
-      <td>9</td>
       <td>BUTTE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2014</td>
-      <td>9</td>
       <td>KING</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2015</td>
-      <td>7</td>
       <td>ROUGH</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1999</td>
-      <td>8</td>
       <td>MEGRAM</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -370,61 +352,46 @@
     <tr>
       <th>45</th>
       <td>2006</td>
-      <td>9</td>
       <td>DAY</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>46</th>
       <td>1932</td>
-      <td>9</td>
       <td>MATILIJA</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>47</th>
       <td>2017</td>
-      <td>12</td>
       <td>THOMAS</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>48</th>
       <td>2003</td>
-      <td>10</td>
       <td>SIMI FIRE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>49</th>
       <td>2018</td>
-      <td>6</td>
       <td>COUNTY</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <div class="section" id="pandas-dataframes">
@@ -475,76 +442,55 @@ It is a convention among data scientists to rename <code class="docutils literal
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>2018</td>
-      <td>11</td>
       <td>CAMP</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2015</td>
-      <td>9</td>
       <td>BUTTE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2014</td>
-      <td>9</td>
       <td>KING</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2015</td>
-      <td>7</td>
       <td>ROUGH</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1999</td>
-      <td>8</td>
       <td>MEGRAM</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -554,61 +500,46 @@ It is a convention among data scientists to rename <code class="docutils literal
     <tr>
       <th>45</th>
       <td>2006</td>
-      <td>9</td>
       <td>DAY</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>46</th>
       <td>1932</td>
-      <td>9</td>
       <td>MATILIJA</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>47</th>
       <td>2017</td>
-      <td>12</td>
       <td>THOMAS</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>48</th>
       <td>2003</td>
-      <td>10</td>
       <td>SIMI FIRE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>49</th>
       <td>2018</td>
-      <td>6</td>
       <td>COUNTY</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>If we ask for the <code class="docutils literal notranslate"><span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">fires</span></code>, Python will tell us that it is a DataFrame:</p>
@@ -633,7 +564,7 @@ It is a convention among data scientists to rename <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(50, 8)
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(50, 5)
 </pre></div>
 </div>
 </div>
@@ -651,7 +582,7 @@ It is a convention among data scientists to rename <code class="docutils literal
 </div>
 </div>
 </div>
-<p>Every row and column in a DataFrame has a <em>label</em>. We will use the row and column labels to refer to particular parts of the table and retrieve information from within it. The columns of the above DataFrame are labeled “year”, “month”, “cause”, and so on. The rows of the above table are simply labeled <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so forth.</p>
+<p>Every row and column in a DataFrame has a <em>label</em>. We will use the row and column labels to refer to particular parts of the table and retrieve information from within it. The columns of the above DataFrame are labeled “year”, “name”, “cause”, and so on. The rows of the above table are simply labeled “0”, “1”, “2”, and so forth.</p>
 </div>
 <div class="section" id="the-index">
 <h2>The Index<a class="headerlink" href="#the-index" title="Permalink to this headline">¶</a></h2>
@@ -687,18 +618,12 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -709,58 +634,40 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -769,56 +676,41 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 7 columns</p>
+<p>50 rows × 4 columns</p>
 </div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">.set_index</span></code> method accepts one argument: the label of the column that should be used as the index. It then creates a <em>new</em> DataFrame in which the index has been replaced with the information from this column; the old DataFrame is not changed. In order to save the results, we’ll need to assign the new table to a variable, like so:</p>
@@ -849,18 +741,12 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -871,58 +757,40 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -931,56 +799,41 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 7 columns</p>
+<p>50 rows × 4 columns</p>
 </div></div></div>
 </div>
 <p>Notice that the fire names have been moved all the way to the left, and have been made bold – this is <em>babypandas</em>’ way of showing that these names are now the index.</p>
@@ -1124,8 +977,8 @@ Name: acres, Length: 50, dtype: float64
 </div>
 <p>We can also perform arithmetic with two series, assuming that they are the same size.</p>
 </div>
-<div class="section" id="series-methods-mean-max-describe">
-<h3>Series methods: <code class="docutils literal notranslate"><span class="pre">.mean</span></code>, <code class="docutils literal notranslate"><span class="pre">.max</span></code>, <code class="docutils literal notranslate"><span class="pre">.describe</span></code><a class="headerlink" href="#series-methods-mean-max-describe" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="series-methods-mean-max-describe-etc">
+<h3>Series methods: <code class="docutils literal notranslate"><span class="pre">.mean</span></code>, <code class="docutils literal notranslate"><span class="pre">.max</span></code>, <code class="docutils literal notranslate"><span class="pre">.describe</span></code>, etc.<a class="headerlink" href="#series-methods-mean-max-describe-etc" title="Permalink to this headline">¶</a></h3>
 <p><em>Series</em> objects also come with a bunch of useful methods attached, like <code class="docutils literal notranslate"><span class="pre">.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">.max</span></code>. For example, the average size of a fire in this data set is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,15 +992,15 @@ Name: acres, Length: 50, dtype: float64
 </div>
 </div>
 </div>
-<p>The northernmost fire (i.e., the fire with the largest latitude) had latitude:</p>
+<p>The largest fire burned this many acres:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>41.735693277673136
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>410202.46875
 </pre></div>
 </div>
 </div>
@@ -1226,19 +1079,13 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
       <th>sqmiles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1250,56 +1097,41 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -1309,68 +1141,50 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>There’s a lot going on here, so let’s break it down. First, the assign method takes a single argument: a series that will become the new column. But the way that we pass this argument is new. Instead of simply passing the argument itself, we also give the argument a name by writing <code class="docutils literal notranslate"><span class="pre">sqmiles=</span></code>. This will be the column’s label. Arguments written in the form <code class="docutils literal notranslate"><span class="pre">argument_name=argument_value</span></code> are called <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-keyword-argument">keyword arguments</a></strong>.</p>
@@ -1417,19 +1231,13 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
       <th>square_miles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1441,56 +1249,41 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -1500,68 +1293,50 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>The second thing to note is that <code class="docutils literal notranslate"><span class="pre">.assign</span></code> creates an entirely new table containing the new column. It does not change the old table, as we can verify by recalling the value of <code class="docutils literal notranslate"><span class="pre">fires_by_name</span></code>:</p>
@@ -1591,18 +1366,12 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1613,58 +1382,40 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -1673,56 +1424,41 @@ Name: year, dtype: float64
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 7 columns</p>
+<p>50 rows × 4 columns</p>
 </div></div></div>
 </div>
 <div class="admonition note">
@@ -1757,19 +1493,13 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
       <th>sqmiles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1781,56 +1511,41 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -1840,68 +1555,50 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -1935,18 +1632,12 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1957,58 +1648,40 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2017,62 +1690,47 @@ Name: year, dtype: float64
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 7 columns</p>
+<p>50 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>If we didn’t want the latitude and longitude:</p>
+<p>If we didn’t want the cause or the county:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cause&#39;</span><span class="p">,</span> <span class="s1">&#39;county&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2096,17 +1754,11 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
-      <th>cause</th>
       <th>acres</th>
-      <th>county</th>
       <th>sqmiles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2116,46 +1768,31 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
-      <td>11 - Powerline</td>
       <td>153335.562500</td>
-      <td>Butte County</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
-      <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
-      <td>Calaveras County</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
-      <td>7 - Arson</td>
       <td>97684.546875</td>
-      <td>El Dorado County</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
-      <td>1 - Lightning</td>
       <td>151546.812500</td>
-      <td>Fresno County</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
-      <td>1 - Lightning</td>
       <td>125072.531250</td>
-      <td>Humboldt County</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -2163,72 +1800,54 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
-      <td>5 - Debris</td>
       <td>161815.656250</td>
-      <td>Ventura County</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
-      <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
-      <td>Ventura County</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
-      <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
-      <td>Ventura County</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
-      <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
-      <td>Ventura County</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
-      <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
-      <td>Yolo County</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 6 columns</p>
+<p>50 rows × 3 columns</p>
 </div></div></div>
 </div>
 <p>Note that the argument name (<code class="docutils literal notranslate"><span class="pre">columns</span></code>) is not something we can change, unlike the keyword argument name used in <code class="docutils literal notranslate"><span class="pre">.assign</span></code>. We <em>must</em> use <code class="docutils literal notranslate"><span class="pre">columns=...</span></code>, or else Python will not understand us. And if you don’t use the keyword name, Python will be upset:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="n">bea9118708aa</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">7</span><span class="n">d1ab73fa32f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: drop() takes 1 positional argument but 2 were given
 </pre></div>
@@ -2271,19 +1890,13 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
       <th>square_miles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2295,56 +1908,41 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -2354,68 +1952,50 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>We can also do this in a single line:</p>
@@ -2445,19 +2025,13 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
       <th>square_miles</th>
     </tr>
     <tr>
       <th>name</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -2469,56 +2043,41 @@ Name: year, dtype: float64
     <tr>
       <th>CAMP</th>
       <td>2018</td>
-      <td>11</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
       <td>239.586816</td>
     </tr>
     <tr>
       <th>BUTTE</th>
       <td>2015</td>
-      <td>9</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
       <td>110.697705</td>
     </tr>
     <tr>
       <th>KING</th>
       <td>2014</td>
-      <td>9</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
       <td>152.632104</td>
     </tr>
     <tr>
       <th>ROUGH</th>
       <td>2015</td>
-      <td>7</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
       <td>236.791895</td>
     </tr>
     <tr>
       <th>MEGRAM</th>
       <td>1999</td>
-      <td>8</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
       <td>195.425830</td>
     </tr>
     <tr>
@@ -2528,68 +2087,50 @@ Name: year, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>DAY</th>
       <td>2006</td>
-      <td>9</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
       <td>252.836963</td>
     </tr>
     <tr>
       <th>MATILIJA</th>
       <td>1932</td>
-      <td>9</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
       <td>343.748877</td>
     </tr>
     <tr>
       <th>THOMAS</th>
       <td>2017</td>
-      <td>12</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
       <td>440.298242</td>
     </tr>
     <tr>
       <th>SIMI FIRE</th>
       <td>2003</td>
-      <td>10</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
       <td>168.078748</td>
     </tr>
     <tr>
       <th>COUNTY</th>
       <td>2018</td>
-      <td>6</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
       <td>140.361169</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>This trick of applying two methods, one after the other, in one line of code is called <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-method-chaining">method chaining</a></strong>. It works because the result of <code class="docutils literal notranslate"><span class="pre">.assign</span></code> is itself a table. When Python evalautes the expression, it first evaluates the <code class="docutils literal notranslate"><span class="pre">.assign</span></code>, then uses this table during the call to <code class="docutils literal notranslate"><span class="pre">.drop</span></code>.</p>
@@ -2606,16 +2147,16 @@ Name: year, dtype: float64
 <p>A CSV file is simply a text file in a certain format. Here are the first few lines of the CSV file containing our wildfire data:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>year,month,name,cause,acres,county,longitude,latitude
-2018,11,CAMP,11 - Powerline,153335.5625,Butte County,-121.55911931604462,39.75163181892352
-2015,9,BUTTE,14 - Unknown / Unidentified,70846.53125,Calaveras County,-120.59498919511628,38.26400337865449
-2014,9,KING,7 - Arson,97684.546875,El Dorado County,-120.53128071068107,38.9008861450767
-2015,7,ROUGH,1 - Lightning,151546.8125,Fresno County,-118.92203760158033,36.840937927564624
-1999,8,MEGRAM,1 - Lightning,125072.53125,Humboldt County,-123.43606538294354,41.048103009542395
-2018,7,RANCH,14 - Unknown / Unidentified,410202.46875,Lake County,-122.768016366197,39.287256744184425
-2015,9,VALLEY ,14 - Unknown / Unidentified,76084.8359375,Lake County,-122.62426879359931,38.787643352540094
-2015,7,ROCKY  ,9 - Miscellaneous,69438.1640625,Lake County,-122.45488018738592,38.94577913831215
-1996,8,FORK,7 - Arson,83056.9453125,Lake County,-122.74375218837721,39.20253268961674
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>year,name,cause,acres,county
+2018,CAMP,11 - Powerline,153335.5625,Butte County
+2015,BUTTE,14 - Unknown / Unidentified,70846.53125,Calaveras County
+2014,KING,7 - Arson,97684.546875,El Dorado County
+2015,ROUGH,1 - Lightning,151546.8125,Fresno County
+1999,MEGRAM,1 - Lightning,125072.53125,Humboldt County
+2018,RANCH,14 - Unknown / Unidentified,410202.46875,Lake County
+2015,VALLEY ,14 - Unknown / Unidentified,76084.8359375,Lake County
+2015,ROCKY  ,9 - Miscellaneous,69438.1640625,Lake County
+1996,FORK,7 - Arson,83056.9453125,Lake County
 </pre></div>
 </div>
 </div>
@@ -2649,76 +2190,55 @@ Name: year, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>year</th>
-      <th>month</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
       <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>2018</td>
-      <td>11</td>
       <td>CAMP</td>
       <td>11 - Powerline</td>
       <td>153335.562500</td>
       <td>Butte County</td>
-      <td>-121.559119</td>
-      <td>39.751632</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2015</td>
-      <td>9</td>
       <td>BUTTE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>70846.531250</td>
       <td>Calaveras County</td>
-      <td>-120.594989</td>
-      <td>38.264003</td>
     </tr>
     <tr>
       <th>2</th>
       <td>2014</td>
-      <td>9</td>
       <td>KING</td>
       <td>7 - Arson</td>
       <td>97684.546875</td>
       <td>El Dorado County</td>
-      <td>-120.531281</td>
-      <td>38.900886</td>
     </tr>
     <tr>
       <th>3</th>
       <td>2015</td>
-      <td>7</td>
       <td>ROUGH</td>
       <td>1 - Lightning</td>
       <td>151546.812500</td>
       <td>Fresno County</td>
-      <td>-118.922038</td>
-      <td>36.840938</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1999</td>
-      <td>8</td>
       <td>MEGRAM</td>
       <td>1 - Lightning</td>
       <td>125072.531250</td>
       <td>Humboldt County</td>
-      <td>-123.436065</td>
-      <td>41.048103</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2728,61 +2248,46 @@ Name: year, dtype: float64
     <tr>
       <th>45</th>
       <td>2006</td>
-      <td>9</td>
       <td>DAY</td>
       <td>5 - Debris</td>
       <td>161815.656250</td>
       <td>Ventura County</td>
-      <td>-118.969598</td>
-      <td>34.614926</td>
     </tr>
     <tr>
       <th>46</th>
       <td>1932</td>
-      <td>9</td>
       <td>MATILIJA</td>
       <td>9 - Miscellaneous</td>
       <td>219999.281250</td>
       <td>Ventura County</td>
-      <td>-119.241715</td>
-      <td>34.536820</td>
     </tr>
     <tr>
       <th>47</th>
       <td>2017</td>
-      <td>12</td>
       <td>THOMAS</td>
       <td>9 - Miscellaneous</td>
       <td>281790.875000</td>
       <td>Ventura County</td>
-      <td>-119.286856</td>
-      <td>34.450254</td>
     </tr>
     <tr>
       <th>48</th>
       <td>2003</td>
-      <td>10</td>
       <td>SIMI FIRE</td>
       <td>14 - Unknown / Unidentified</td>
       <td>107570.398438</td>
       <td>Ventura County</td>
-      <td>-118.792189</td>
-      <td>34.335361</td>
     </tr>
     <tr>
       <th>49</th>
       <td>2018</td>
-      <td>6</td>
       <td>COUNTY</td>
       <td>14 - Unknown / Unidentified</td>
       <td>89831.148438</td>
       <td>Yolo County</td>
-      <td>-122.167104</td>
-      <td>38.661059</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 8 columns</p>
+<p>50 rows × 5 columns</p>
 </div></div></div>
 </div>
 <p>Modifying the DataFrame will not affect the data on disk in any way.</p>
@@ -2803,7 +2308,7 @@ Name: year, dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="arrays.html" title="previous page">Arrays</a>
-    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+    <a class='right-next' id="next-link" href="accessing.html" title="next page">Accessing and Sorting</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Querying &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+<li class="navbar-special">
+<p class="margin-caption">Getting Started</p>
+</li>
+  <li class="">
+    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/expressions.html">Expressions</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/variables.html">Variables</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/functions.html">Functions and Imports</a>
+  </li>
+  <li class="">
+    <a href="../01-getting_started/data_types.html">Data Types</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">NumPy and Babypandas</p>
+</li>
+  <li class="">
+    <a href="arrays.html">Arrays</a>
+  </li>
+  <li class="">
+    <a href="dataframes.html">DataFrames</a>
+  </li>
+  <li class="">
+    <a href="accessing.html">Accessing and Sorting</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Reference</p>
+</li>
+  <li class="">
+    <a href="../how_to_read.html">How To Read This Book</a>
+  </li>
+  <li class="">
+    <a href="../glossary.html">Glossary</a>
+  </li>
+  <li class="">
+    <a href="../genindex.html">Index</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/querying.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/querying.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/querying.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#boolean-arrays" class="nav-link">Boolean Arrays</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id1" class="nav-link">…</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="querying">
+<h1>Querying<a class="headerlink" href="#querying" title="Permalink to this headline">¶</a></h1>
+<p>Let’s continue with our analysis of California wildfires. In the previous section we learned how to answer questions like “what were the largest fires?”, but very often we’re more interested answering questions like “what were the largest fires <em>in the year 2019</em>?”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<span class="n">fires</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../data/calfire-full.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="n">fires</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>unit</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>LOS PADRES</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>Ventura County</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>20539.949219</td>
+      <td>Ventura County</td>
+      <td>-119.367830</td>
+      <td>34.446830</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1898</td>
+      <td>4</td>
+      <td>Ventura County</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>2641.123047</td>
+      <td>Ventura County</td>
+      <td>-119.299625</td>
+      <td>34.488614</td>
+    </tr>
+    <tr>
+      <th>COZY DELL</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>Ventura County</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>2974.585205</td>
+      <td>Ventura County</td>
+      <td>-119.265380</td>
+      <td>34.482316</td>
+    </tr>
+    <tr>
+      <th>FEROUD</th>
+      <td>1902</td>
+      <td>8</td>
+      <td>Ventura County</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>731.481567</td>
+      <td>Ventura County</td>
+      <td>-119.320979</td>
+      <td>34.417515</td>
+    </tr>
+    <tr>
+      <th>SAN ANTONIO</th>
+      <td>1903</td>
+      <td>10</td>
+      <td>Ventura County</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>380.260590</td>
+      <td>Ventura County</td>
+      <td>-119.253422</td>
+      <td>34.430616</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>STAGE</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>7 - Arson</td>
+      <td>13.019149</td>
+      <td>Monterey County</td>
+      <td>-121.599207</td>
+      <td>36.764065</td>
+    </tr>
+    <tr>
+      <th>CROSS</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>289.151428</td>
+      <td>Monterey County</td>
+      <td>-120.726245</td>
+      <td>35.793698</td>
+    </tr>
+    <tr>
+      <th>FRUDDEN</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>2 - Equipment Use</td>
+      <td>11.789393</td>
+      <td>Monterey County</td>
+      <td>-120.908061</td>
+      <td>35.908627</td>
+    </tr>
+    <tr>
+      <th>JOLON</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>11 - Powerline</td>
+      <td>61.592369</td>
+      <td>Monterey County</td>
+      <td>-121.010025</td>
+      <td>35.910750</td>
+    </tr>
+    <tr>
+      <th>SADDLE RIDGE</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>Los Angeles City FD</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>8799.325195</td>
+      <td>Los Angeles County</td>
+      <td>-118.516473</td>
+      <td>34.321859</td>
+    </tr>
+  </tbody>
+</table>
+<p>13537 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Since we already know how to sort rows by the largest fire, the next natural question to ask ourselves is how do we only look at the fires which took place in 2019. Here’s how – we’ll break the next line of code down in just a moment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="p">[</span><span class="n">fires</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>unit</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>BELMONT</th>
+      <td>2019</td>
+      <td>5</td>
+      <td>San Luis Obispo CAL FIRE</td>
+      <td>1 - Lightning</td>
+      <td>832.636047</td>
+      <td>San Luis Obispo County</td>
+      <td>-119.955207</td>
+      <td>35.300217</td>
+    </tr>
+    <tr>
+      <th>GILLIS</th>
+      <td>2019</td>
+      <td>7</td>
+      <td>San Luis Obispo CAL FIRE</td>
+      <td>2 - Equipment Use</td>
+      <td>977.141052</td>
+      <td>San Luis Obispo County</td>
+      <td>-120.244443</td>
+      <td>35.627949</td>
+    </tr>
+    <tr>
+      <th>GLADE</th>
+      <td>2019</td>
+      <td>7</td>
+      <td>San Luis Obispo CAL FIRE</td>
+      <td>2 - Equipment Use</td>
+      <td>5.218050</td>
+      <td>San Luis Obispo County</td>
+      <td>-120.007527</td>
+      <td>35.303746</td>
+    </tr>
+    <tr>
+      <th>DOMINGUEZ</th>
+      <td>2019</td>
+      <td>6</td>
+      <td>San Luis Obispo CAL FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>15.181743</td>
+      <td>San Luis Obispo County</td>
+      <td>-119.969265</td>
+      <td>35.281757</td>
+    </tr>
+    <tr>
+      <th>TOPAZ</th>
+      <td>2019</td>
+      <td>6</td>
+      <td>San Luis Obispo CAL FIRE</td>
+      <td>2 - Equipment Use</td>
+      <td>47.889503</td>
+      <td>San Luis Obispo County</td>
+      <td>-120.056067</td>
+      <td>35.378737</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>STAGE</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>7 - Arson</td>
+      <td>13.019149</td>
+      <td>Monterey County</td>
+      <td>-121.599207</td>
+      <td>36.764065</td>
+    </tr>
+    <tr>
+      <th>CROSS</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>289.151428</td>
+      <td>Monterey County</td>
+      <td>-120.726245</td>
+      <td>35.793698</td>
+    </tr>
+    <tr>
+      <th>FRUDDEN</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>2 - Equipment Use</td>
+      <td>11.789393</td>
+      <td>Monterey County</td>
+      <td>-120.908061</td>
+      <td>35.908627</td>
+    </tr>
+    <tr>
+      <th>JOLON</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>Monterey - San Benito CAL FIRE</td>
+      <td>11 - Powerline</td>
+      <td>61.592369</td>
+      <td>Monterey County</td>
+      <td>-121.010025</td>
+      <td>35.910750</td>
+    </tr>
+    <tr>
+      <th>SADDLE RIDGE</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>Los Angeles City FD</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>8799.325195</td>
+      <td>Los Angeles County</td>
+      <td>-118.516473</td>
+      <td>34.321859</td>
+    </tr>
+  </tbody>
+</table>
+<p>295 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>So what’s going on in the expression above?</p>
+<div class="section" id="boolean-arrays">
+<h2>Boolean Arrays<a class="headerlink" href="#boolean-arrays" title="Permalink to this headline">¶</a></h2>
+<p>Essentially, we can select a subset of rows by using square brackets and using a <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-comparison-operator">comparison operator</a></strong> on one of our columns. Recall from our introduction to <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-boolean">Booleans</a></strong> that we use comparison operators to return whether a comparison between two values is True or False.  In the expression above, we’re getting the column of years and seeing if it equals 2019.</p>
+<p>This starts to give us an idea of how the expression works beneath the surface. In fact, what happens if we just look at the result of the expression within the square brackets?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2019</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+LOS PADRES      False
+MATILIJA        False
+COZY DELL       False
+FEROUD          False
+SAN ANTONIO     False
+                ...  
+STAGE            True
+CROSS            True
+FRUDDEN          True
+JOLON            True
+SADDLE RIDGE     True
+Name: year, Length: 13537, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-boolean-array">Boolean array</a></strong> – a sequence of True and False values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The term Boolean array isn’t confined to just arrays. We can actually refer to any sequence of True and False as a Boolean array, including lists and Series.</p>
+</div>
+<p>Just like we saw that arrays and Series support element-wise operations with arithmetic, they also support element-wise <em>comparisons</em>!</p>
+<p>When we use square brackets on a table, Babypandas expects to recieve a Boolean array that has the same length as the number of rows in the table. If the Boolean array is True in the first position, then the first row of the table will be included in the result. If the Boolean array is False in some position, then the row of the table in that same position won’t be included in the result.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using square brackets on a table can be read aloud as “<em>where</em>”.</p>
+<p>So the expression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="p">[</span><span class="n">fires</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2019</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>would be read aloud as <strong>“fires <em>where</em> the year column of fires equals 2019”</strong>.</p>
+</div>
+<p>As long as the Boolean array has the same length as the number of rows in the table, we can use it. Though it’s rather impractical, we could have manually created a list of True and False to pass in to our row selection.</p>
+<p>Take the following table of five common sorting algorithms <code class="docutils literal notranslate"><span class="pre">algos</span></code> as an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">algos</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">Algorithm</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Insertion sort&#39;</span><span class="p">,</span> <span class="s1">&#39;Merge sort&#39;</span><span class="p">,</span> <span class="s1">&#39;Quick sort&#39;</span><span class="p">,</span> <span class="s1">&#39;Bubble sort&#39;</span><span class="p">,</span> <span class="s1">&#39;Heap sort&#39;</span><span class="p">],</span>
+    <span class="n">Efficiency</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;O(n^2)&#39;</span><span class="p">,</span> <span class="s1">&#39;O(n log n)&#39;</span><span class="p">,</span> <span class="s1">&#39;O(n^2)&#39;</span><span class="p">,</span> <span class="s1">&#39;O(n^2)&#39;</span><span class="p">,</span> <span class="s1">&#39;O(n log n)&#39;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Algorithm&#39;</span><span class="p">)</span>
+<span class="n">algos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Efficiency</th>
+    </tr>
+    <tr>
+      <th>Algorithm</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Insertion sort</th>
+      <td>O(n^2)</td>
+    </tr>
+    <tr>
+      <th>Merge sort</th>
+      <td>O(n log n)</td>
+    </tr>
+    <tr>
+      <th>Quick sort</th>
+      <td>O(n^2)</td>
+    </tr>
+    <tr>
+      <th>Bubble sort</th>
+      <td>O(n^2)</td>
+    </tr>
+    <tr>
+      <th>Heap sort</th>
+      <td>O(n log n)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we wanted to select only the rows that have an efficiency of <span class="math notranslate nohighlight">\(O(n\log n)\)</span>, we <em>could</em> manually create a Boolean array and select using that.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>What is this mysterious notation with <span class="math notranslate nohighlight">\(O\)</span> and <span class="math notranslate nohighlight">\(n\)</span>s? It’s related to the <em>efficiency</em> of an algorithm.</p>
+<p>No need to know what they are now – you’ll see them again in DSC 40A!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bool_arr</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="n">algos</span><span class="p">[</span><span class="n">bool_arr</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Efficiency</th>
+    </tr>
+    <tr>
+      <th>Algorithm</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Merge sort</th>
+      <td>O(n log n)</td>
+    </tr>
+    <tr>
+      <th>Heap sort</th>
+      <td>O(n log n)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Though it would almost always make quite a bit more sense to calculate the Boolean array programatically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bool_arr_calculated</span> <span class="o">=</span> <span class="n">algos</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Efficiency&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;O(n log n)&#39;</span>
+<span class="n">algos</span><span class="p">[</span><span class="n">bool_arr_calculated</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Efficiency</th>
+    </tr>
+    <tr>
+      <th>Algorithm</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Merge sort</th>
+      <td>O(n log n)</td>
+    </tr>
+    <tr>
+      <th>Heap sort</th>
+      <td>O(n log n)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>…<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>gotcha: sorting then selecting (using the column of the unsorted)</p></li>
+<li><p>In a broader sense, we’re often interested in answering questions on a subset of data where some <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-condition">condition</a></strong> is satisfied by the columns.</p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
