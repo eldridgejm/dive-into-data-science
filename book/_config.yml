@@ -26,3 +26,4 @@ sphinx:
   - jupyterhublink
   - hiddenanswer
   - dterms
+  - admonitionlists
