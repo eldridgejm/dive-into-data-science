@@ -1,51 +1,51 @@
-year,name,cause,acres,county
-2018,CAMP,11 - Powerline,153335.5625,Butte County
-2015,BUTTE,14 - Unknown / Unidentified,70846.53125,Calaveras County
-2014,KING,7 - Arson,97684.546875,El Dorado County
-2015,ROUGH,1 - Lightning,151546.8125,Fresno County
-1999,MEGRAM,1 - Lightning,125072.53125,Humboldt County
-2018,RANCH,14 - Unknown / Unidentified,410202.46875,Lake County
-2015,VALLEY ,14 - Unknown / Unidentified,76084.8359375,Lake County
-2015,ROCKY  ,9 - Miscellaneous,69438.1640625,Lake County
-1996,FORK,7 - Arson,83056.9453125,Lake County
-2012,RUSH,1 - Lightning,315511.5,Lassen County
-1919,RAVENNA,14 - Unknown / Unidentified,71373.1484375,Los Angeles County
-2018,WOOLSEY,14 - Unknown / Unidentified,96949.0,Los Angeles County
-2009,STATION,7 - Arson,160833.109375,Los Angeles County
-2018,FERGUSON,9 - Miscellaneous,96900.0390625,Mariposa County
-2017,DETWILER,9 - Miscellaneous,81826.2734375,Mariposa County
-1977,SCARFACE,1 - Lightning,78190.8515625,Modoc County
-2016,SOBERANES,4 - Campfire,132104.28125,Monterey County
-2008,INDIANS,4 - Campfire,76459.78125,Monterey County
-1999,KIRK,1 - Lightning,85834.9140625,Monterey County
-2008,BASIN COMPLEX,1 - Lightning,163606.6875,Monterey County
-1977,MARBLE-CONE,9 - Miscellaneous,173333.453125,Monterey County
-2012,CHIPS,4 - Campfire,76349.7109375,Plumas County
-2003,OLD,7 - Arson,91428.0,San Bernardino County
-2007,HARRIS 2,14 - Unknown / Unidentified,90728.328125,San Diego County
-2003,CEDAR,2 - Equipment Use,270686.0,San Diego County
-2007,WITCH,9 - Miscellaneous,162070.46875,San Diego County
-1970,LAGUNA,4 - Campfire,174161.546875,San Diego County
-1985,LAS PILITAS,2 - Equipment Use,84271.421875,San Luis Obispo County
-1996,HIGHWAY 58,9 - Miscellaneous,106969.7421875,San Luis Obispo County
-2007,ZACA,2 - Equipment Use,240358.703125,Santa Barbara County
-1955,REFUGIO,9 - Miscellaneous,79428.7109375,Santa Barbara County
-2009,LA BREA,9 - Miscellaneous,97815.3125,Santa Barbara County
-2018,CARR ,10 - Vehicle,229651.40625,Shasta County
-2017,OAK,1 - Lightning,91125.328125,Siskiyou County
-2014,FRYING PAN,1 - Lightning,133177.375,Siskiyou County
-1910,GLASS MOUNTAIN,1 - Lightning,146967.5625,Siskiyou County
-2019,KINCADE,11 - Powerline,77762.140625,Sonoma County
-1990,CAMPBELL,2 - Equipment Use,131504.21875,Tehama County
-1976,SKINNER MILL,9 - Miscellaneous,89133.28125,Tehama County
-2015,HAPPY,1 - Lightning,68095.2421875,Trinity County
-2000,MANTER,9 - Miscellaneous,79223.4296875,Tulare County
-2002,MCNALLY,4 - Campfire,149475.28125,Tulare County
-2013,RIM,4 - Campfire,256175.53125,Tuolumne County
-1970,CLAMPITT FIRE,14 - Unknown / Unidentified,115537.421875,Ventura County
-1985,WHEELER #2,9 - Miscellaneous,122686.8828125,Ventura County
-2006,DAY,5 - Debris,161815.65625,Ventura County
-1932,MATILIJA,9 - Miscellaneous,219999.28125,Ventura County
-2017,THOMAS,9 - Miscellaneous,281790.875,Ventura County
-2003,SIMI FIRE,14 - Unknown / Unidentified,107570.3984375,Ventura County
-2018,COUNTY,14 - Unknown / Unidentified,89831.1484375,Yolo County
+name,year,cause,acres,county
+CAMP,2018,11 - Powerline,153335.5625,Butte
+BUTTE,2015,14 - Unknown,70846.53125,Calaveras
+KING,2014,7 - Arson,97684.546875,El Dorado
+ROUGH,2015,1 - Lightning,151546.8125,Fresno
+MEGRAM,1999,1 - Lightning,125072.53125,Humboldt
+RANCH,2018,14 - Unknown,410202.46875,Lake
+VALLEY ,2015,14 - Unknown,76084.8359375,Lake
+ROCKY  ,2015,9 - Miscellaneous,69438.1640625,Lake
+FORK,1996,7 - Arson,83056.9453125,Lake
+RUSH,2012,1 - Lightning,315511.5,Lassen
+RAVENNA,1919,14 - Unknown,71373.1484375,Los Angeles
+WOOLSEY,2018,14 - Unknown,96949.0,Los Angeles
+STATION,2009,7 - Arson,160833.109375,Los Angeles
+FERGUSON,2018,9 - Miscellaneous,96900.0390625,Mariposa
+DETWILER,2017,9 - Miscellaneous,81826.2734375,Mariposa
+SCARFACE,1977,1 - Lightning,78190.8515625,Modoc
+SOBERANES,2016,4 - Campfire,132104.28125,Monterey
+INDIANS,2008,4 - Campfire,76459.78125,Monterey
+KIRK,1999,1 - Lightning,85834.9140625,Monterey
+BASIN COMPLEX,2008,1 - Lightning,163606.6875,Monterey
+MARBLE-CONE,1977,9 - Miscellaneous,173333.453125,Monterey
+CHIPS,2012,4 - Campfire,76349.7109375,Plumas
+OLD,2003,7 - Arson,91428.0,San Bernardino
+HARRIS 2,2007,14 - Unknown,90728.328125,San Diego
+CEDAR,2003,2 - Equipment Use,270686.0,San Diego
+WITCH,2007,9 - Miscellaneous,162070.46875,San Diego
+LAGUNA,1970,4 - Campfire,174161.546875,San Diego
+LAS PILITAS,1985,2 - Equipment Use,84271.421875,San Luis Obispo
+HIGHWAY 58,1996,9 - Miscellaneous,106969.7421875,San Luis Obispo
+ZACA,2007,2 - Equipment Use,240358.703125,Santa Barbara
+REFUGIO,1955,9 - Miscellaneous,79428.7109375,Santa Barbara
+LA BREA,2009,9 - Miscellaneous,97815.3125,Santa Barbara
+CARR ,2018,10 - Vehicle,229651.40625,Shasta
+OAK,2017,1 - Lightning,91125.328125,Siskiyou
+FRYING PAN,2014,1 - Lightning,133177.375,Siskiyou
+GLASS MOUNTAIN,1910,1 - Lightning,146967.5625,Siskiyou
+KINCADE,2019,11 - Powerline,77762.140625,Sonoma
+CAMPBELL,1990,2 - Equipment Use,131504.21875,Tehama
+SKINNER MILL,1976,9 - Miscellaneous,89133.28125,Tehama
+HAPPY,2015,1 - Lightning,68095.2421875,Trinity
+MANTER,2000,9 - Miscellaneous,79223.4296875,Tulare
+MCNALLY,2002,4 - Campfire,149475.28125,Tulare
+RIM,2013,4 - Campfire,256175.53125,Tuolumne
+CLAMPITT FIRE,1970,14 - Unknown,115537.421875,Ventura
+WHEELER #2,1985,9 - Miscellaneous,122686.8828125,Ventura
+DAY,2006,5 - Debris,161815.65625,Ventura
+MATILIJA,1932,9 - Miscellaneous,219999.28125,Ventura
+THOMAS,2017,9 - Miscellaneous,281790.875,Ventura
+SIMI FIRE,2003,14 - Unknown,107570.3984375,Ventura
+COUNTY,2018,14 - Unknown,89831.1484375,Yolo
