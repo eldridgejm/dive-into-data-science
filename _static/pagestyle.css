@@ -16,7 +16,7 @@ the sides of the page.
 }
 
 .bd-content .section {
-    max-width: 150ex; /* A nice reading width */
+    max-width: 100ex; /* A nice reading width */
     margin: auto;
 }
 
