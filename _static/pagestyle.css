@@ -1,5 +1,5 @@
 #main-content {
-    font-size: 16px;
+    font-size: 17px;
 }
 
 em {
@@ -16,7 +16,7 @@ the sides of the page.
 }
 
 .bd-content .section {
-    max-width: 100ex; /* A nice reading width */
+    max-width: 82ex; /* A nice reading width */
     margin: auto;
 }
 

@@ -368,8 +368,7 @@
 <p>Let’s start with a simple example. Below, we have created a table containing the population of the five largest cities in California. The table is arranged in alphabetical order:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
-<span class="n">populations</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">City</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fresno&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;SF&#39;</span><span class="p">,</span> <span class="s1">&#39;SJ&#39;</span><span class="p">],</span>
     <span class="n">Population</span><span class="o">=</span><span class="p">[</span><span class="mi">502_000</span><span class="p">,</span> <span class="mi">4_094_000</span><span class="p">,</span> <span class="mi">1_376_000</span><span class="p">,</span> <span class="mi">856_000</span><span class="p">,</span> <span class="mi">1_023_000</span><span class="p">]</span>
 <span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;City&#39;</span><span class="p">)</span>
@@ -778,7 +777,7 @@ Name: Population, dtype: bool
       <td>...</td>
     </tr>
     <tr>
-      <th>13459</th>
+      <th>13460</th>
       <td>2019</td>
       <td>9</td>
       <td>Monterey - San Benito CAL FIRE</td>
@@ -790,7 +789,7 @@ Name: Population, dtype: bool
       <td>36.764065</td>
     </tr>
     <tr>
-      <th>13460</th>
+      <th>13461</th>
       <td>2019</td>
       <td>10</td>
       <td>Monterey - San Benito CAL FIRE</td>
@@ -802,7 +801,7 @@ Name: Population, dtype: bool
       <td>35.793698</td>
     </tr>
     <tr>
-      <th>13461</th>
+      <th>13462</th>
       <td>2019</td>
       <td>9</td>
       <td>Monterey - San Benito CAL FIRE</td>
@@ -814,7 +813,7 @@ Name: Population, dtype: bool
       <td>35.908627</td>
     </tr>
     <tr>
-      <th>13462</th>
+      <th>13463</th>
       <td>2019</td>
       <td>9</td>
       <td>Monterey - San Benito CAL FIRE</td>
@@ -826,7 +825,7 @@ Name: Population, dtype: bool
       <td>35.910750</td>
     </tr>
     <tr>
-      <th>13463</th>
+      <th>13464</th>
       <td>2019</td>
       <td>10</td>
       <td>Los Angeles City FD</td>
@@ -839,7 +838,7 @@ Name: Population, dtype: bool
     </tr>
   </tbody>
 </table>
-<p>13464 rows × 9 columns</p>
+<p>13465 rows × 9 columns</p>
 </div></div></div>
 </div>
 <p>Notice that we haven’t set the index of the table. The natural choice of index would be the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column, but it turns out that several fires have the same name. Remember that row labels should be unique!</p>
@@ -884,7 +883,7 @@ Name: Population, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>12772</th>
+      <th>12773</th>
       <td>2018</td>
       <td>7</td>
       <td>San Luis Obispo CAL FIRE</td>
@@ -896,7 +895,7 @@ Name: Population, dtype: bool
       <td>35.588189</td>
     </tr>
     <tr>
-      <th>12773</th>
+      <th>12774</th>
       <td>2018</td>
       <td>12</td>
       <td>Los Angeles County</td>
@@ -908,7 +907,7 @@ Name: Population, dtype: bool
       <td>34.473468</td>
     </tr>
     <tr>
-      <th>12774</th>
+      <th>12775</th>
       <td>2018</td>
       <td>11</td>
       <td>Los Angeles County</td>
@@ -920,7 +919,7 @@ Name: Population, dtype: bool
       <td>34.720091</td>
     </tr>
     <tr>
-      <th>12775</th>
+      <th>12776</th>
       <td>2018</td>
       <td>10</td>
       <td>Los Angeles County</td>
@@ -932,7 +931,7 @@ Name: Population, dtype: bool
       <td>34.123768</td>
     </tr>
     <tr>
-      <th>12776</th>
+      <th>12777</th>
       <td>2018</td>
       <td>10</td>
       <td>Los Angeles County</td>
@@ -956,7 +955,7 @@ Name: Population, dtype: bool
       <td>...</td>
     </tr>
     <tr>
-      <th>13164</th>
+      <th>13165</th>
       <td>2018</td>
       <td>4</td>
       <td>Ventura County</td>
@@ -968,7 +967,7 @@ Name: Population, dtype: bool
       <td>34.214345</td>
     </tr>
     <tr>
-      <th>13165</th>
+      <th>13166</th>
       <td>2018</td>
       <td>1</td>
       <td>Ventura County</td>
@@ -980,7 +979,7 @@ Name: Population, dtype: bool
       <td>34.235447</td>
     </tr>
     <tr>
-      <th>13166</th>
+      <th>13167</th>
       <td>2018</td>
       <td>10</td>
       <td>Ventura County</td>
@@ -992,7 +991,7 @@ Name: Population, dtype: bool
       <td>34.343482</td>
     </tr>
     <tr>
-      <th>13167</th>
+      <th>13168</th>
       <td>2018</td>
       <td>6</td>
       <td>Ventura County</td>
@@ -1004,7 +1003,7 @@ Name: Population, dtype: bool
       <td>34.298223</td>
     </tr>
     <tr>
-      <th>13168</th>
+      <th>13169</th>
       <td>2018</td>
       <td>7</td>
       <td>Ventura County</td>
@@ -1199,7 +1198,7 @@ Name: Population, dtype: bool
       <td>...</td>
     </tr>
     <tr>
-      <th>13387</th>
+      <th>13388</th>
       <td>2019</td>
       <td>9</td>
       <td>Fresno-Kings CAL FIRE</td>
@@ -1211,7 +1210,7 @@ Name: Population, dtype: bool
       <td>36.163830</td>
     </tr>
     <tr>
-      <th>13405</th>
+      <th>13406</th>
       <td>2019</td>
       <td>3</td>
       <td>Riverside CAL FIRE</td>
@@ -1223,7 +1222,7 @@ Name: Population, dtype: bool
       <td>33.534968</td>
     </tr>
     <tr>
-      <th>13409</th>
+      <th>13410</th>
       <td>2019</td>
       <td>8</td>
       <td>Santa Clara CAL FIRE</td>
@@ -1235,7 +1234,7 @@ Name: Population, dtype: bool
       <td>37.715312</td>
     </tr>
     <tr>
-      <th>13425</th>
+      <th>13426</th>
       <td>2019</td>
       <td>8</td>
       <td>Santa Clara CAL FIRE</td>
@@ -1247,7 +1246,7 @@ Name: Population, dtype: bool
       <td>37.888016</td>
     </tr>
     <tr>
-      <th>13459</th>
+      <th>13460</th>
       <td>2019</td>
       <td>9</td>
       <td>Monterey - San Benito CAL FIRE</td>
@@ -1271,7 +1270,7 @@ Name: Population, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.05666963755199049
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.05666542888971407
 </pre></div>
 </div>
 </div>
@@ -1328,7 +1327,7 @@ Name: Population, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>12800</th>
+      <th>12801</th>
       <td>2018</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -1340,7 +1339,7 @@ Name: Population, dtype: bool
       <td>33.078967</td>
     </tr>
     <tr>
-      <th>12819</th>
+      <th>12820</th>
       <td>2018</td>
       <td>3</td>
       <td>Camp Pendleton Marine Corps Base</td>
@@ -1352,7 +1351,7 @@ Name: Population, dtype: bool
       <td>33.440113</td>
     </tr>
     <tr>
-      <th>12821</th>
+      <th>12822</th>
       <td>2018</td>
       <td>8</td>
       <td>Camp Pendleton Marine Corps Base</td>
@@ -1364,7 +1363,7 @@ Name: Population, dtype: bool
       <td>33.419019</td>
     </tr>
     <tr>
-      <th>12889</th>
+      <th>12890</th>
       <td>2018</td>
       <td>5</td>
       <td>Cleveland National Forest</td>
@@ -1376,7 +1375,7 @@ Name: Population, dtype: bool
       <td>32.896771</td>
     </tr>
     <tr>
-      <th>12968</th>
+      <th>12969</th>
       <td>2018</td>
       <td>7</td>
       <td>Cleveland National Forest</td>
@@ -1400,7 +1399,7 @@ Name: Population, dtype: bool
       <td>...</td>
     </tr>
     <tr>
-      <th>13056</th>
+      <th>13057</th>
       <td>2018</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -1412,7 +1411,7 @@ Name: Population, dtype: bool
       <td>33.419540</td>
     </tr>
     <tr>
-      <th>13069</th>
+      <th>13070</th>
       <td>2018</td>
       <td>6</td>
       <td>San Diego CAL FIRE</td>
@@ -1424,7 +1423,7 @@ Name: Population, dtype: bool
       <td>32.654185</td>
     </tr>
     <tr>
-      <th>13071</th>
+      <th>13072</th>
       <td>2018</td>
       <td>5</td>
       <td>San Diego CAL FIRE</td>
@@ -1436,7 +1435,7 @@ Name: Population, dtype: bool
       <td>33.363286</td>
     </tr>
     <tr>
-      <th>13141</th>
+      <th>13142</th>
       <td>2018</td>
       <td>6</td>
       <td>San Diego CAL FIRE</td>
@@ -1448,7 +1447,7 @@ Name: Population, dtype: bool
       <td>32.687008</td>
     </tr>
     <tr>
-      <th>13142</th>
+      <th>13143</th>
       <td>2018</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -1707,7 +1706,7 @@ dtype: bool
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">9</span><span class="n">d9087344376</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">9</span><span class="n">d9087344376</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">with_regions</span><span class="p">[</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span> <span class="o">&amp;</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="p">]</span>
@@ -1857,14 +1856,14 @@ dtype: bool
 </div>
 <div class="section" id="id1">
 <h3>The <code class="docutils literal notranslate"><span class="pre">|</span></code> Operator<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Suppose we wanted to select all fires which occurred in either San Diego County <em>or</em> Imperial County. In this situation,
+<p>Suppose we wanted to select all fires which occurred in either San Diego County <em>or</em> Yolo County. In this situation,
 we use the <em>binary or</em> operator, <code class="docutils literal notranslate"><span class="pre">|</span></code>. This operator takes two Boolean arrays of the same size as input and creates a new array in which a particular entry is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>at least one</em> of the corresponding entries in the input arrays is true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_san_diego</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;San Diego County&quot;</span>
-<span class="n">in_imperial</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Imperial County&quot;</span>
+<span class="n">in_yolo</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Yolo County&quot;</span>
 
-<span class="n">calfire</span><span class="p">[</span><span class="n">in_imperial</span> <span class="o">|</span> <span class="n">in_san_diego</span><span class="p">]</span>
+<span class="n">calfire</span><span class="p">[</span><span class="n">in_san_diego</span> <span class="o">|</span> <span class="n">in_yolo</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1948,16 +1947,16 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>33.392911</td>
     </tr>
     <tr>
-      <th>1332</th>
+      <th>1331</th>
       <td>1950</td>
-      <td>8</td>
+      <td>10</td>
       <td>San Diego CAL FIRE</td>
-      <td>CONEJOS</td>
-      <td>9 - Miscellaneous</td>
-      <td>62848.742188</td>
+      <td>WET BACK</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>3954.672363</td>
       <td>San Diego County</td>
-      <td>-116.644504</td>
-      <td>32.900322</td>
+      <td>-116.931376</td>
+      <td>32.695100</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1972,19 +1971,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
     </tr>
     <tr>
-      <th>13348</th>
-      <td>2019</td>
-      <td>6</td>
-      <td>San Diego CAL FIRE</td>
-      <td>PAUMA 4</td>
-      <td>9 - Miscellaneous</td>
-      <td>22.021397</td>
-      <td>San Diego County</td>
-      <td>-116.986509</td>
-      <td>33.297972</td>
-    </tr>
-    <tr>
-      <th>13349</th>
+      <th>13350</th>
       <td>2019</td>
       <td>8</td>
       <td>San Diego CAL FIRE</td>
@@ -1996,7 +1983,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>33.285729</td>
     </tr>
     <tr>
-      <th>13350</th>
+      <th>13351</th>
       <td>2019</td>
       <td>9</td>
       <td>San Diego CAL FIRE</td>
@@ -2008,7 +1995,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.777229</td>
     </tr>
     <tr>
-      <th>13351</th>
+      <th>13352</th>
       <td>2019</td>
       <td>11</td>
       <td>San Diego CAL FIRE</td>
@@ -2020,7 +2007,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.701877</td>
     </tr>
     <tr>
-      <th>13371</th>
+      <th>13372</th>
       <td>2019</td>
       <td>11</td>
       <td>San Diego CAL FIRE</td>
@@ -2031,9 +2018,21 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>-116.575401</td>
       <td>33.256260</td>
     </tr>
+    <tr>
+      <th>13373</th>
+      <td>2019</td>
+      <td>6</td>
+      <td>Sonoma - Lake - Napa CAL FIRE</td>
+      <td>SAND</td>
+      <td>1 - Lightning</td>
+      <td>2422.017578</td>
+      <td>Yolo County</td>
+      <td>-122.255871</td>
+      <td>38.904186</td>
+    </tr>
   </tbody>
 </table>
-<p>846 rows × 9 columns</p>
+<p>899 rows × 9 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -2079,7 +2078,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
   </thead>
   <tbody>
     <tr>
-      <th>7802</th>
+      <th>7803</th>
       <td>2002</td>
       <td>2</td>
       <td>San Diego CAL FIRE</td>
@@ -2091,7 +2090,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.644564</td>
     </tr>
     <tr>
-      <th>8093</th>
+      <th>8094</th>
       <td>2003</td>
       <td>8</td>
       <td>San Diego CAL FIRE</td>
@@ -2169,7 +2168,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>41.487778</td>
     </tr>
     <tr>
-      <th>7187</th>
+      <th>7188</th>
       <td>1999</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -2181,7 +2180,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.567800</td>
     </tr>
     <tr>
-      <th>7418</th>
+      <th>7419</th>
       <td>2000</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -2193,7 +2192,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.657144</td>
     </tr>
     <tr>
-      <th>7802</th>
+      <th>7803</th>
       <td>2002</td>
       <td>2</td>
       <td>San Diego CAL FIRE</td>
@@ -2217,7 +2216,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
     </tr>
     <tr>
-      <th>12092</th>
+      <th>12093</th>
       <td>2016</td>
       <td>6</td>
       <td>San Diego CAL FIRE</td>
@@ -2229,7 +2228,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.604410</td>
     </tr>
     <tr>
-      <th>12710</th>
+      <th>12711</th>
       <td>2017</td>
       <td>9</td>
       <td>San Diego CAL FIRE</td>
@@ -2241,7 +2240,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.574468</td>
     </tr>
     <tr>
-      <th>12759</th>
+      <th>12760</th>
       <td>2017</td>
       <td>9</td>
       <td>San Diego CAL FIRE</td>
@@ -2253,7 +2252,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.585912</td>
     </tr>
     <tr>
-      <th>13317</th>
+      <th>13318</th>
       <td>2019</td>
       <td>8</td>
       <td>San Diego CAL FIRE</td>
@@ -2265,7 +2264,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>32.557500</td>
     </tr>
     <tr>
-      <th>13318</th>
+      <th>13319</th>
       <td>2019</td>
       <td>8</td>
       <td>San Diego CAL FIRE</td>
@@ -2394,7 +2393,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
     </tr>
     <tr>
-      <th>12237</th>
+      <th>12238</th>
       <td>2017</td>
       <td>8</td>
       <td>Sierra National Forest</td>
@@ -2406,7 +2405,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>37.447218</td>
     </tr>
     <tr>
-      <th>12516</th>
+      <th>12517</th>
       <td>2017</td>
       <td>9</td>
       <td>Siskiyou CAL FIRE</td>
@@ -2418,7 +2417,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>41.526095</td>
     </tr>
     <tr>
-      <th>12567</th>
+      <th>12568</th>
       <td>2017</td>
       <td>7</td>
       <td>Tulare CAL FIRE</td>
@@ -2430,7 +2429,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>36.015821</td>
     </tr>
     <tr>
-      <th>13147</th>
+      <th>13148</th>
       <td>2018</td>
       <td>11</td>
       <td>Ventura County</td>
@@ -2442,7 +2441,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>34.206380</td>
     </tr>
     <tr>
-      <th>13218</th>
+      <th>13219</th>
       <td>2019</td>
       <td>8</td>
       <td>Northern CA District - BLM</td>
@@ -2535,7 +2534,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>38.300486</td>
     </tr>
     <tr>
-      <th>1441</th>
+      <th>1442</th>
       <td>1951</td>
       <td>8</td>
       <td>Stanislaus National Forest</td>
@@ -2547,7 +2546,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>38.354487</td>
     </tr>
     <tr>
-      <th>1760</th>
+      <th>1761</th>
       <td>1953</td>
       <td>5</td>
       <td>Ventura County</td>
@@ -2571,7 +2570,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>...</td>
     </tr>
     <tr>
-      <th>5176</th>
+      <th>5177</th>
       <td>1985</td>
       <td>7</td>
       <td>Shasta - Trinity CAL FIRE</td>
@@ -2583,7 +2582,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>40.391840</td>
     </tr>
     <tr>
-      <th>5177</th>
+      <th>5178</th>
       <td>1985</td>
       <td>7</td>
       <td>Shasta - Trinity CAL FIRE</td>
@@ -2595,7 +2594,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>40.392093</td>
     </tr>
     <tr>
-      <th>5178</th>
+      <th>5179</th>
       <td>1985</td>
       <td>7</td>
       <td>Shasta - Trinity CAL FIRE</td>
@@ -2607,7 +2606,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>40.394094</td>
     </tr>
     <tr>
-      <th>6579</th>
+      <th>6580</th>
       <td>1996</td>
       <td>7</td>
       <td>Santa Clara CAL FIRE</td>
@@ -2619,7 +2618,7 @@ where we have added a space to the beginning of the search string. This will mat
       <td>37.475377</td>
     </tr>
     <tr>
-      <th>8870</th>
+      <th>8871</th>
       <td>2006</td>
       <td>7</td>
       <td>Los Angeles County</td>
@@ -2715,7 +2714,7 @@ Name: names, dtype: object
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;2019&#39;</span><span class="p">)</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/babypandas/bpd.py</span> in <span class="ni">str</span><span class="nt">(self)</span>
@@ -2778,7 +2777,7 @@ Name: names, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2335858585858586
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2336427775714816
 </pre></div>
 </div>
 </div>
@@ -2856,7 +2855,7 @@ Name: names, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>5799</th>
+      <th>5800</th>
       <td>1990</td>
       <td>6</td>
       <td>San Diego CAL FIRE</td>
@@ -2868,7 +2867,7 @@ Name: names, dtype: object
       <td>33.196718</td>
     </tr>
     <tr>
-      <th>5805</th>
+      <th>5806</th>
       <td>1990</td>
       <td>9</td>
       <td>San Diego CAL FIRE</td>
@@ -2880,7 +2879,7 @@ Name: names, dtype: object
       <td>33.058681</td>
     </tr>
     <tr>
-      <th>5811</th>
+      <th>5812</th>
       <td>1990</td>
       <td>10</td>
       <td>Cleveland National Forest</td>
@@ -2892,7 +2891,7 @@ Name: names, dtype: object
       <td>33.432863</td>
     </tr>
     <tr>
-      <th>5924</th>
+      <th>5925</th>
       <td>1991</td>
       <td>6</td>
       <td>San Diego CAL FIRE</td>
@@ -2904,7 +2903,7 @@ Name: names, dtype: object
       <td>32.618218</td>
     </tr>
     <tr>
-      <th>5985</th>
+      <th>5986</th>
       <td>1992</td>
       <td>11</td>
       <td>San Diego CAL FIRE</td>
@@ -2928,7 +2927,7 @@ Name: names, dtype: object
       <td>...</td>
     </tr>
     <tr>
-      <th>6999</th>
+      <th>7000</th>
       <td>1998</td>
       <td>7</td>
       <td>San Diego CAL FIRE</td>
@@ -2940,7 +2939,7 @@ Name: names, dtype: object
       <td>32.604883</td>
     </tr>
     <tr>
-      <th>7107</th>
+      <th>7108</th>
       <td>1999</td>
       <td>8</td>
       <td>Cleveland National Forest</td>
@@ -2952,7 +2951,7 @@ Name: names, dtype: object
       <td>32.900014</td>
     </tr>
     <tr>
-      <th>7188</th>
+      <th>7189</th>
       <td>1999</td>
       <td>9</td>
       <td>San Diego CAL FIRE</td>
@@ -2964,7 +2963,7 @@ Name: names, dtype: object
       <td>32.692336</td>
     </tr>
     <tr>
-      <th>7217</th>
+      <th>7218</th>
       <td>1999</td>
       <td>10</td>
       <td>San Diego CAL FIRE</td>
@@ -2976,7 +2975,7 @@ Name: names, dtype: object
       <td>33.273254</td>
     </tr>
     <tr>
-      <th>7331</th>
+      <th>7332</th>
       <td>1999</td>
       <td>10</td>
       <td>San Diego CAL FIRE</td>
