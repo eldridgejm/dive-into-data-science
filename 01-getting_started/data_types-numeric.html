@@ -71,65 +71,110 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="variables.html">Variables</a>
-  </li>
-  <li class="">
-    <a href="functions.html">Functions and Imports</a>
-  </li>
-  <li class="active">
-    <a href="data_types.html">Data Types</a>
-  <ul class="nav sidenav_l2">
-    <li class="active">
-      <a href="">Numbers</a>
-    </li>
-    <li class="">
-      <a href="data_types-strings.html">Strings</a>
-    </li>
-    <li class="">
-      <a href="data_types-bool.html">Booleans</a>
-    </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="data_types.html">
+   Data Types
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types-bool.html">
+     Booleans
+    </a>
+   </li>
   </ul>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="">
-    <a href="../02-data_sets/arrays.html">Arrays</a>
-  </li>
-  <li class="">
-    <a href="../02-data_sets/dataframes.html">DataFrames</a>
-  </li>
-  <li class="">
-    <a href="../02-data_sets/accessing.html">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="../how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="">
-    <a href="../glossary.html">Glossary</a>
-  </li>
-  <li class="">
-    <a href="../genindex.html">Index</a>
-  </li>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -219,38 +264,45 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-types-of-numbers">
+   Two Types of Numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-and-arithmetic">
+   Types and Arithmetic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conversions">
+   Conversions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integers-and-floats-redux">
+   Integers and Floats
+   <em>
+    Redux
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#two-types-of-numbers" class="nav-link">Two Types of Numbers</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#types-and-arithmetic" class="nav-link">Types and Arithmetic</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#conversions" class="nav-link">Conversions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#integers-and-floats-redux" class="nav-link">Integers and Floats Redux</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#summary" class="nav-link">Summary</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -343,7 +395,7 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </div>
 </div>
 </div>
-<div class="admonition tip">
+<div class="admonition tip" id="tip-0">
 <p class="admonition-title">Tip</p>
 <p>You can place underscores in large numbers to make them easier to read – Python will ignore them. For instance, it is hard to read <code class="docutils literal notranslate"><span class="pre">10000000000</span></code>, but somewhat easier to read <code class="docutils literal notranslate"><span class="pre">10_000_000_000</span></code>.</p>
 </div>
@@ -494,7 +546,7 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </div>
 </div>
 <p>Since dividing two integers <em>could</em> result in a decimal number, the result is <em>always</em> a <code class="docutils literal notranslate"><span class="pre">float</span></code>, even when the answer is mathematically-speaking an integer.</p>
-<div class="admonition tip">
+<div class="admonition tip" id="tip-1">
 <p class="admonition-title">Tip</p>
 <p>If you find this rule confusing, you can replace it with these two equivalent rules instead:</p>
 <ol class="simple">

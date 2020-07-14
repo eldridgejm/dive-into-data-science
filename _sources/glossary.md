@@ -1,5 +1,6 @@
-# Glossary
+# All Terms and Tips
 
+## Glossary of Terms
 ```{glossary}
 :sorted:
 
@@ -50,4 +51,12 @@ index
 
     [All references →](./genindex.html#I)
 
+```
+
+## General Tips
+```{tiplist}
+```
+
+## Jupyter Tips
+```{jupytertiplist}
 ```

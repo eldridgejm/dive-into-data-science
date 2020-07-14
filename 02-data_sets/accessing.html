@@ -39,7 +39,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="next" title="Querying" href="querying.html" />
     <link rel="prev" title="DataFrames" href="dataframes.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,54 +71,93 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/variables.html">Variables</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/functions.html">Functions and Imports</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/data_types.html">Data Types</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="">
-    <a href="arrays.html">Arrays</a>
-  </li>
-  <li class="">
-    <a href="dataframes.html">DataFrames</a>
-  </li>
-  <li class="active">
-    <a href="">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="../how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="">
-    <a href="../glossary.html">Glossary</a>
-  </li>
-  <li class="">
-    <a href="../genindex.html">Index</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -208,46 +247,88 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-with-loc">
+   Accessing with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .loc
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sorting">
+   Sorting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-in-descending-order">
+     Sorting in
+     <em>
+      descending
+     </em>
+     order
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-by-multiple-columns">
+     Sorting by multiple columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-with-iloc">
+   Accessing with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .iloc
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approach-1-with-loc">
+     Approach #1: with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc
+      </span>
+     </code>
+     .
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#approach-2-with-iloc">
+     Approach #2: with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#accessing-with-loc" class="nav-link">Accessing with .loc</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#example" class="nav-link">Example</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#sorting" class="nav-link">Sorting</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#accessing-with-iloc" class="nav-link">Accessing with .iloc</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#approach-1-with-loc" class="nav-link">Approach #1: with .loc.</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#approach-2-with-iloc" class="nav-link">Approach #2: with .iloc</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -646,6 +727,8 @@ Name: acres, Length: 50, dtype: float64
 <p class="sidebar-title"></p>
 <p>Actually, we do not need to include the <code class="docutils literal notranslate"><span class="pre">by=</span></code> in this case: calling <code class="docutils literal notranslate"><span class="pre">.sort_values('acres')</span></code> will work just fine. But writing <code class="docutils literal notranslate"><span class="pre">by=</span></code> makes the code more <em>readable</em>.</p>
 </div>
+<div class="section" id="sorting-in-descending-order">
+<h3>Sorting in <em>descending</em> order<a class="headerlink" href="#sorting-in-descending-order" title="Permalink to this headline">¶</a></h3>
 <p>We could have also made the same discovery by sorting the table in <em>descending</em> order. This is done by passing a second keyword argument: <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,6 +988,133 @@ Name: acres, Length: 50, dtype: float64
 </div></div></div>
 </div>
 </div>
+<div class="section" id="sorting-by-multiple-columns">
+<h3>Sorting by multiple columns<a class="headerlink" href="#sorting-by-multiple-columns" title="Permalink to this headline">¶</a></h3>
+<p>If you look at the help message for <code class="docutils literal notranslate"><span class="pre">.sort_values</span></code>, you’ll see that it can also accept a <em>list</em> of column names to sort by, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;acres&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>GLASS MOUNTAIN</th>
+      <td>1910</td>
+      <td>1 - Lightning</td>
+      <td>146967.562500</td>
+      <td>Siskiyou County</td>
+    </tr>
+    <tr>
+      <th>RAVENNA</th>
+      <td>1919</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>71373.148438</td>
+      <td>Los Angeles County</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>REFUGIO</th>
+      <td>1955</td>
+      <td>9 - Miscellaneous</td>
+      <td>79428.710938</td>
+      <td>Santa Barbara County</td>
+    </tr>
+    <tr>
+      <th>CLAMPITT FIRE</th>
+      <td>1970</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>115537.421875</td>
+      <td>Ventura County</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>WOOLSEY</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>96949.000000</td>
+      <td>Los Angeles County</td>
+    </tr>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte County</td>
+    </tr>
+    <tr>
+      <th>CARR</th>
+      <td>2018</td>
+      <td>10 - Vehicle</td>
+      <td>229651.406250</td>
+      <td>Shasta County</td>
+    </tr>
+    <tr>
+      <th>RANCH</th>
+      <td>2018</td>
+      <td>14 - Unknown / Unidentified</td>
+      <td>410202.468750</td>
+      <td>Lake County</td>
+    </tr>
+    <tr>
+      <th>KINCADE</th>
+      <td>2019</td>
+      <td>11 - Powerline</td>
+      <td>77762.140625</td>
+      <td>Sonoma County</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>In this case, the resulting table will be sorted by the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column, but within each year the fires will be grouped by their size in the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column. Take a look: the fires occurring in 2018 are organized from smallest to largest. Sorting like this is mostly used for presentation purposes.</p>
+</div>
+</div>
 <div class="section" id="accessing-with-iloc">
 <h2>Accessing with <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#accessing-with-iloc" title="Permalink to this headline">¶</a></h2>
 <p>How large was the oldest fire in the data set? There are two approaches to answering this question. The first approach uses tools that we already know, but it requires a little extra work. The second approach uses something new: <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p>
@@ -1010,7 +1220,7 @@ Name: acres, Length: 50, dtype: float64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="dataframes.html" title="previous page">DataFrames</a>
-    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+    <a class='right-next' id="next-link" href="querying.html" title="next page">Querying</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

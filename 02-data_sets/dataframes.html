@@ -65,54 +65,93 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/variables.html">Variables</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/functions.html">Functions and Imports</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/data_types.html">Data Types</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="">
-    <a href="arrays.html">Arrays</a>
-  </li>
-  <li class="active">
-    <a href="">DataFrames</a>
-  </li>
-  <li class="">
-    <a href="accessing.html">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="../how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="">
-    <a href="../glossary.html">Glossary</a>
-  </li>
-  <li class="">
-    <a href="../genindex.html">Index</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -202,66 +241,109 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-dataframes">
+   Pandas DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-index">
+   The Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series">
+   Series
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-a-column-with-get">
+     Getting a column with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .get
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arithmetic">
+     Arithmetic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series-methods-mean-max-describe-etc">
+     Series methods:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .mean
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .max
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .describe
+      </span>
+     </code>
+     , etc.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-and-removing-columns">
+   Adding and removing columns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-column-with-assign">
+     Adding a column with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .assign
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-a-column-with-drop">
+     Removing a column with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .drop
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#renaming-columns">
+     Renaming columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-csv-files">
+   Reading CSV files
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#pandas-dataframes" class="nav-link">Pandas DataFrames</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#the-index" class="nav-link">The Index</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#series" class="nav-link">Series</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#getting-a-column-with-get" class="nav-link">Getting a column with .get</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#arithmetic" class="nav-link">Arithmetic</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#series-methods-mean-max-describe-etc" class="nav-link">Series methods: .mean, .max, .describe, etc.</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#adding-and-removing-columns" class="nav-link">Adding and removing columns</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#adding-a-column-with-assign" class="nav-link">Adding a column with .assign</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#removing-a-column-with-drop" class="nav-link">Removing a column with .drop</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#renaming-columns" class="nav-link">Renaming columns</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#reading-csv-files" class="nav-link">Reading CSV files</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -2135,7 +2217,7 @@ Name: year, dtype: float64
 </div>
 <p>This trick of applying two methods, one after the other, in one line of code is called <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-method-chaining">method chaining</a></strong>. It works because the result of <code class="docutils literal notranslate"><span class="pre">.assign</span></code> is itself a table. When Python evalautes the expression, it first evaluates the <code class="docutils literal notranslate"><span class="pre">.assign</span></code>, then uses this table during the call to <code class="docutils literal notranslate"><span class="pre">.drop</span></code>.</p>
 <p>Method chaining is useful and can save us some typing, but it can be overused. It is sometimes better to save intermediate results.</p>
-<div class="admonition tip">
+<div class="admonition tip" id="tip-0">
 <p class="admonition-title">Tip</p>
 <p>If your method-chaining code isn’t working as you’d expect, break apart the code and save intermediate variables. Print out the values of these variables to do some debugging.</p>
 </div>

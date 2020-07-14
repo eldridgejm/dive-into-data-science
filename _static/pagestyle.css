@@ -1,6 +1,14 @@
-/* Override narrow user interface.
+#main-content {
+    font-size: 16px;
+}
 
-Line width should be kept narrow, but navigation/interface should be pushed to
+em {
+    padding-right: 0.25ex;
+}
+
+
+/*
+Override narrow user interface. Keep line width narrow but push page chrome to
 the sides of the page.
 */
 .container-xl {
@@ -8,13 +16,12 @@ the sides of the page.
 }
 
 .bd-content .section {
-    max-width: 48em; /* A nice reading width */
+    max-width: 150ex; /* A nice reading width */
     margin: auto;
 }
 
-/* Make buttons lighter
-
-We don't want to change the tooltips, only the icons, thus >
+/*
+Make buttons at the top of the page lighter
 */
 #navbar-toggler,
 .topbar .topbar-main button.topbarbtn > * {
@@ -26,9 +33,8 @@ We don't want to change the tooltips, only the icons, thus >
     color: #556;
 }
 
-/* Modify the look of `code`.
-
-Inline code is too hard to see!
+/*
+Modify the look of inline `code` so it's easier to see.
 */
 code {
     padding: 4px 4px 2px;
@@ -38,8 +44,8 @@ code {
     margin: 0 2px;
 }
 
-/* If something is targeted, make it highlighted.
-
+/*
+If something is targeted, make it highlighted.
 But, make sure not to highlight entire sections or titles
 (e.g. page sections or index headings)
 */
@@ -49,11 +55,47 @@ span.highlighted,
     background-color: #ffdf00;
 }
 
-/* Make sure that terms jumped to via index links aren't covered by the header.
-
+/*
+Make sure that terms jumped to via index links aren't covered by the header.
 The should be part way down the page (since they're highlighted ^ easy to see)
 */
 span[id^="index"] {
     position: relative;
     top: -6em;
+}
+
+/*
+Same thing for glossary links.
+Need a bit more of a workaround to get this working with the highlighting.
+*/
+dt[id^="term"] {
+    z-index: -2;
+}
+dt[id^="term"]::before {
+    content: '';
+    display: block;
+    margin-top: -6em;
+    height: 6em;
+    background-color: white;
+    z-index: -1;
+}
+
+.dataframe * {
+    font-size: 0.9rem;
+}
+
+/*
+Currently using an html code block to give Python expression templates, e.g.
+<table>.groupby('<column_name>').<calculation>()
+changing the styling of this block so that it looks as preformatted text instead
+of a code block.
+*/
+.highlight-html * {
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.highlight-html .copybtn {
+    display: none;
 }

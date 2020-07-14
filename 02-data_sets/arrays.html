@@ -71,54 +71,93 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="../01-getting_started/tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/variables.html">Variables</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/functions.html">Functions and Imports</a>
-  </li>
-  <li class="">
-    <a href="../01-getting_started/data_types.html">Data Types</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="active">
-    <a href="">Arrays</a>
-  </li>
-  <li class="">
-    <a href="dataframes.html">DataFrames</a>
-  </li>
-  <li class="">
-    <a href="accessing.html">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="../how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="">
-    <a href="../glossary.html">Glossary</a>
-  </li>
-  <li class="">
-    <a href="../genindex.html">Index</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -208,52 +247,59 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lists">
+   Lists
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Arrays
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#array-methods">
+   Array Methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-array-items">
+   Accessing array items
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#element-wise-operations">
+   Element-wise operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ranges">
+   Ranges
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#lists" class="nav-link">Lists</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id1" class="nav-link">Arrays</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#array-methods" class="nav-link">Array Methods</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#example" class="nav-link">Example</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#accessing-array-items" class="nav-link">Accessing array items</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#element-wise-operations" class="nav-link">Element-wise operations</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#ranges" class="nav-link">Ranges</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#summary" class="nav-link">Summary</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -319,7 +365,7 @@ Remember that Python wasn’t originally designed specifically for data scientis
 <a class="reference internal image-reference" href="../_images/numpy-logo.svg"><img alt="../_images/numpy-logo.svg" height="150px" src="../_images/numpy-logo.svg" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The <em>NumPy</em> logo.</span><a class="headerlink" href="#my-figure" title="Permalink to this image">¶</a></p>
 </div>
-<div class="admonition tip">
+<div class="admonition tip" id="tip-0">
 <p class="admonition-title">Tip</p>
 <p>Avoid the embarassment – it’s pronounced “num-pie”<br />
 <small>(not “num-pee”)</small></p>
@@ -586,8 +632,9 @@ Remember that Python wasn’t originally designed specifically for data scientis
 </div>
 <p>2 million dollars! Remember, though: these salaries are <em>self-reported</em>.</p>
 </div>
+</div>
 <div class="section" id="accessing-array-items">
-<h3>Accessing array items<a class="headerlink" href="#accessing-array-items" title="Permalink to this headline">¶</a></h3>
+<h2>Accessing array items<a class="headerlink" href="#accessing-array-items" title="Permalink to this headline">¶</a></h2>
 <p>An array is an <em>ordered sequence</em> of items that has a beginning and an end. We can retrieve an element by specifying its <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-index">index</a></strong>. The index of the first item in an array is zero, the index of the second item is one, and so on. For example, let’s say we have an array with three elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +716,6 @@ Remember that Python wasn’t originally designed specifically for data scientis
 
 <span class="ne">IndexError</span>: index 99 is out of bounds for axis 0 with size 3
 </pre></div>
-</div>
 </div>
 </div>
 </div>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Glossary &#8212; Dive into Data Science</title>
+    <title>All Terms and Tips &#8212; Dive into Data Science</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -65,54 +65,93 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="01-getting_started/tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="01-getting_started/first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="01-getting_started/expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="01-getting_started/variables.html">Variables</a>
-  </li>
-  <li class="">
-    <a href="01-getting_started/functions.html">Functions and Imports</a>
-  </li>
-  <li class="">
-    <a href="01-getting_started/data_types.html">Data Types</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="">
-    <a href="02-data_sets/arrays.html">Arrays</a>
-  </li>
-  <li class="">
-    <a href="02-data_sets/dataframes.html">DataFrames</a>
-  </li>
-  <li class="">
-    <a href="02-data_sets/accessing.html">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="active">
-    <a href="">Glossary</a>
-  </li>
-  <li class="">
-    <a href="genindex.html">Index</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -185,15 +224,32 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#glossary-of-terms">
+   Glossary of Terms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-tips">
+   General Tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-tips">
+   Jupyter Tips
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -201,8 +257,10 @@
         
               <div>
                 
-  <div class="section" id="glossary">
-<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="all-terms-and-tips">
+<h1>All Terms and Tips<a class="headerlink" href="#all-terms-and-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="glossary-of-terms">
+<h2>Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary">
 <dt id="term-boolean">boolean</dt><dd><p>The data type for logical truthiness or falseiness. Often arises from comparisons. Has the type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">bool(0)</span></code></p>
@@ -232,6 +290,127 @@
 <p><a class="reference external" href="./genindex.html#W">All references →</a></p>
 </dd>
 </dl>
+</div>
+<div class="section" id="general-tips">
+<h2>General Tips<a class="headerlink" href="#general-tips" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can place underscores in large numbers to make them easier to read -- Python will ignore them. For instance, it is hard to read <code class="docutils literal notranslate"><span class="pre">10000000000</span></code>, but somewhat easier to read <code class="docutils literal notranslate"><span class="pre">10_000_000_000</span></code>.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/data_types-numeric.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you find this rule confusing, you can replace it with these two equivalent rules instead:</p>
+<ol class="simple">
+<li><p>When two numbers are combined, with one of them being a float, the result is a float.</p></li>
+<li><p>Dividing two numbers results in a float, even if both numbers are integers.</p></li>
+</ol>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/data_types-numeric.html#tip-1"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A big part of learning to program is experimenting with code to see what does (and doesn't) work. Luckily, Jupyter notebooks make this easy!</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/functions.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Giving names to variables makes your code easier to understand. It's often a good idea to break a long calculation up into intermediate steps and give names to the result of each part.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/variables.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Avoid the embarassment -- it's pronounced &quot;num-pie&quot;<br />
+<small>(not &quot;num-pee&quot;)</small></p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/arrays.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your method-chaining code isn't working as you'd expect, break apart the code and save intermediate variables. Print out the values of these variables to do some debugging.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/dataframes.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To create a table by hand, start by creating an empty DataFrame with <code class="docutils literal notranslate"><span class="pre">bpd.DataFrame()</span></code>, then use <code class="docutils literal notranslate"><span class="pre">.assign</span></code> to add columns to the table.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/querying.html#tip-0"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using square brackets on a table can be read aloud as &quot;<em>where</em>&quot;.</p>
+<p>So the expression</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>is read as &quot;the rows <em>where</em> the populations is greater than 1 million&quot;.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/querying.html#tip-1"><em>here</em></a>.)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Often times, when reading an error message it's most helpful to look at the two ends of the message -- and don't get too worried about the middle bits.</p>
+<p>The very top line points to <em>where</em> the error occurred, and the very bottom lines explain <em>why</em> the error occurred.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/querying.html#tip-2"><em>here</em></a>.)</p>
+</div>
+<div class="section" id="jupyter-tips">
+<h2>Jupyter Tips<a class="headerlink" href="#jupyter-tips" title="Permalink to this headline">¶</a></h2>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>You can see all of Python's string methods by typing <code class="docutils literal notranslate"><span class="pre">&quot;some</span> <span class="pre">string&quot;.</span></code> then hitting <kbd class="kbd docutils literal notranslate">Tab</kbd>.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/data_types-strings.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>Any changes you make to the notebook will be automatically saved at regular
+intervals, but you can save them immediately by selecting &quot;File -&gt; Save and
+Checkpoint&quot;.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/first_steps.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>There are plenty of keyboard shortcuts to use with Jupyter notebooks. One of the
+most useful is <kbd class="kbd docutils literal notranslate">Ctrl-m a</kbd>, which creates a new cell. Another useful
+shortcut is <kbd class="kbd docutils literal notranslate">dd</kbd>, which deletes the selected cell. Select &quot;Help -&gt; Keyboard
+shortcuts&quot; to see all of them.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/first_steps.html#jupytertip-1"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>Another way to see a function's help message in a Jupyter notebook is to write the function name, followed by <code class="docutils literal notranslate"><span class="pre">?</span></code>. For instance, to see the documentation for the <code class="docutils literal notranslate"><span class="pre">round</span></code> function, write</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>round?
+</pre></div>
+</div>
+<p>by itself in a code cell.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/functions.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>To have Jupyter display the value of a variable that has just been assigned, write the variable's name as the last line of the cell. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>number_of_seconds_in_a_year = 60 * 60 * 24 * 365
+number_of_seconds_in_a_year
+</pre></div>
+</div>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/variables.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>If you notice strange behavior while working with a Jupyter notebook, remember the number one rule of debugging: try turning it off and then back on. The equivalent of this with a Jupyter notebook is selecting &quot;Kernel -&gt; Restart and Run All&quot; from the top menu.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="01-getting_started/variables.html#jupytertip-1"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>You can ask Jupyter for some information on all of the Series methods available by writing <code class="docutils literal notranslate"><span class="pre">help(bpd.Series)</span></code>. The methods starting with two underscores (<code class="docutils literal notranslate"><span class="pre">__</span></code>) are called &quot;dunder&quot; methods, and implement special behavior. You're not meant to call them direcly, so you can pretty much ignore them.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/dataframes.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>If you forgot parentheses and want to add them quickly, you can select the section of code you want to surround in parentheses and then type <code class="docutils literal notranslate"><span class="pre">(</span></code>. Jupyter will wrap your entire selection in a single pair of parentheses.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="02-data_sets/querying.html#jupytertip-0"><em>here</em></a>.)</p>
+<div class="jupytertip admonition">
+<p class="admonition-title">Jupyter Tip</p>
+<p>Jupyter Tips contain helpful information about the Jupyter Notebook environment we do most of our work in. These tips are meant to make your workflow more convenient.</p>
+</div>
+<p>(The original entry can be found <a class="reference external" href="how_to_read.html#jupytertip-0"><em>here</em></a>.)</p>
+</div>
 </div>
 
 

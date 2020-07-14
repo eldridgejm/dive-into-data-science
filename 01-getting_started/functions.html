@@ -71,54 +71,93 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Getting Started</p>
-</li>
-  <li class="">
-    <a href="tools.html">Tools of the Trade</a>
-  </li>
-  <li class="">
-    <a href="first_steps.html">First Steps with Notebooks</a>
-  </li>
-  <li class="">
-    <a href="expressions.html">Expressions</a>
-  </li>
-  <li class="">
-    <a href="variables.html">Variables</a>
-  </li>
-  <li class="active">
-    <a href="">Functions and Imports</a>
-  </li>
-  <li class="">
-    <a href="data_types.html">Data Types</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">NumPy and Babypandas</p>
-</li>
-  <li class="">
-    <a href="../02-data_sets/arrays.html">Arrays</a>
-  </li>
-  <li class="">
-    <a href="../02-data_sets/dataframes.html">DataFrames</a>
-  </li>
-  <li class="">
-    <a href="../02-data_sets/accessing.html">Accessing and Sorting</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Reference</p>
-</li>
-  <li class="">
-    <a href="../how_to_read.html">How To Read This Book</a>
-  </li>
-  <li class="">
-    <a href="../glossary.html">Glossary</a>
-  </li>
-  <li class="">
-    <a href="../genindex.html">Index</a>
-  </li>
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="data_types.html">
+   Data Types
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -208,34 +247,37 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-call-expressions">
+   Function Call Expressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-arguments">
+   Multiple Arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing">
+   Importing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#function-call-expressions" class="nav-link">Function Call Expressions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#multiple-arguments" class="nav-link">Multiple Arguments</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#importing" class="nav-link">Importing</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#example" class="nav-link">Example</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -379,7 +421,7 @@ round(number, ndigits=None)
 </div>
 </div>
 </div>
-<div class="admonition tip">
+<div class="admonition tip" id="tip-0">
 <p class="admonition-title">Tip</p>
 <p>A big part of learning to program is experimenting with code to see what does (and doesn’t) work. Luckily, Jupyter notebooks make this easy!</p>
 </div>
