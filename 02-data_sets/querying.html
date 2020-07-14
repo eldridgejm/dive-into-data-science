@@ -368,10 +368,15 @@
 <p>Let’s start with a simple example. Below, we have created a table containing the population of the five largest cities in California. The table is arranged in alphabetical order:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">City</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fresno&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;SF&#39;</span><span class="p">,</span> <span class="s1">&#39;SJ&#39;</span><span class="p">],</span>
-    <span class="n">Population</span><span class="o">=</span><span class="p">[</span><span class="mi">502_000</span><span class="p">,</span> <span class="mi">4_094_000</span><span class="p">,</span> <span class="mi">1_376_000</span><span class="p">,</span> <span class="mi">856_000</span><span class="p">,</span> <span class="mi">1_023_000</span><span class="p">]</span>
-<span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;City&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<span class="n">populations</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">City</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fresno&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;SF&#39;</span><span class="p">,</span> <span class="s1">&#39;SJ&#39;</span><span class="p">],</span>
+        <span class="n">Population</span><span class="o">=</span><span class="p">[</span><span class="mi">502_000</span><span class="p">,</span> <span class="mi">4_094_000</span><span class="p">,</span> <span class="mi">1_376_000</span><span class="p">,</span> <span class="mi">856_000</span><span class="p">,</span> <span class="mi">1_023_000</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;City&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">populations</span>
 </pre></div>
 </div>
@@ -694,7 +699,6 @@ Name: Population, dtype: bool
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -708,11 +712,10 @@ Name: Population, dtype: bool
       <th>0</th>
       <td>1898</td>
       <td>9</td>
-      <td>Ventura County</td>
       <td>LOS PADRES</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>20539.949219</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.367830</td>
       <td>34.446830</td>
     </tr>
@@ -720,11 +723,10 @@ Name: Population, dtype: bool
       <th>1</th>
       <td>1898</td>
       <td>4</td>
-      <td>Ventura County</td>
       <td>MATILIJA</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>2641.123047</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.299625</td>
       <td>34.488614</td>
     </tr>
@@ -732,11 +734,10 @@ Name: Population, dtype: bool
       <th>2</th>
       <td>1898</td>
       <td>9</td>
-      <td>Ventura County</td>
       <td>COZY DELL</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>2974.585205</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.265380</td>
       <td>34.482316</td>
     </tr>
@@ -744,11 +745,10 @@ Name: Population, dtype: bool
       <th>3</th>
       <td>1902</td>
       <td>8</td>
-      <td>Ventura County</td>
       <td>FEROUD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>731.481567</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.320979</td>
       <td>34.417515</td>
     </tr>
@@ -756,11 +756,10 @@ Name: Population, dtype: bool
       <th>4</th>
       <td>1903</td>
       <td>10</td>
-      <td>Ventura County</td>
       <td>SAN ANTONIO</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>380.260590</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.253422</td>
       <td>34.430616</td>
     </tr>
@@ -774,71 +773,65 @@ Name: Population, dtype: bool
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>13460</th>
+      <th>13459</th>
       <td>2019</td>
       <td>9</td>
-      <td>Monterey - San Benito CAL FIRE</td>
       <td>STAGE</td>
       <td>7 - Arson</td>
       <td>13.019149</td>
-      <td>Monterey County</td>
+      <td>Monterey</td>
       <td>-121.599207</td>
       <td>36.764065</td>
     </tr>
     <tr>
-      <th>13461</th>
+      <th>13460</th>
       <td>2019</td>
       <td>10</td>
-      <td>Monterey - San Benito CAL FIRE</td>
       <td>CROSS</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>289.151428</td>
-      <td>Monterey County</td>
+      <td>Monterey</td>
       <td>-120.726245</td>
       <td>35.793698</td>
+    </tr>
+    <tr>
+      <th>13461</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>FRUDDEN</td>
+      <td>2 - Equipment Use</td>
+      <td>11.789393</td>
+      <td>Monterey</td>
+      <td>-120.908061</td>
+      <td>35.908627</td>
     </tr>
     <tr>
       <th>13462</th>
       <td>2019</td>
       <td>9</td>
-      <td>Monterey - San Benito CAL FIRE</td>
-      <td>FRUDDEN</td>
-      <td>2 - Equipment Use</td>
-      <td>11.789393</td>
-      <td>Monterey County</td>
-      <td>-120.908061</td>
-      <td>35.908627</td>
-    </tr>
-    <tr>
-      <th>13463</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>Monterey - San Benito CAL FIRE</td>
       <td>JOLON</td>
       <td>11 - Powerline</td>
       <td>61.592369</td>
-      <td>Monterey County</td>
+      <td>Monterey</td>
       <td>-121.010025</td>
       <td>35.910750</td>
     </tr>
     <tr>
-      <th>13464</th>
+      <th>13463</th>
       <td>2019</td>
       <td>10</td>
-      <td>Los Angeles City FD</td>
       <td>SADDLE RIDGE</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>8799.325195</td>
-      <td>Los Angeles County</td>
+      <td>Los Angeles</td>
       <td>-118.516473</td>
       <td>34.321859</td>
     </tr>
   </tbody>
 </table>
-<p>13465 rows × 9 columns</p>
+<p>13464 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>Notice that we haven’t set the index of the table. The natural choice of index would be the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column, but it turns out that several fires have the same name. Remember that row labels should be unique!</p>
@@ -872,7 +865,6 @@ Name: Population, dtype: bool
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -883,62 +875,57 @@ Name: Population, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>12773</th>
+      <th>12772</th>
       <td>2018</td>
       <td>7</td>
-      <td>San Luis Obispo CAL FIRE</td>
       <td>LAGUNA</td>
       <td>2 - Equipment Use</td>
       <td>1.116125</td>
-      <td>San Luis Obispo County</td>
+      <td>San Luis Obispo</td>
       <td>-120.632741</td>
       <td>35.588189</td>
     </tr>
     <tr>
-      <th>12774</th>
+      <th>12773</th>
       <td>2018</td>
       <td>12</td>
-      <td>Los Angeles County</td>
       <td>OAK</td>
       <td>11 - Powerline</td>
       <td>2.180850</td>
-      <td>Los Angeles County</td>
+      <td>Los Angeles</td>
       <td>-118.692809</td>
       <td>34.473468</td>
     </tr>
     <tr>
-      <th>12775</th>
+      <th>12774</th>
       <td>2018</td>
       <td>11</td>
-      <td>Los Angeles County</td>
       <td>COPCO</td>
       <td>9 - Miscellaneous</td>
       <td>6.980345</td>
-      <td>Los Angeles County</td>
+      <td>Los Angeles</td>
       <td>-118.797409</td>
       <td>34.720091</td>
+    </tr>
+    <tr>
+      <th>12775</th>
+      <td>2018</td>
+      <td>10</td>
+      <td>SANTA MARIA</td>
+      <td>14 - Unknown</td>
+      <td>1.347234</td>
+      <td>Los Angeles</td>
+      <td>-118.592681</td>
+      <td>34.123768</td>
     </tr>
     <tr>
       <th>12776</th>
       <td>2018</td>
       <td>10</td>
-      <td>Los Angeles County</td>
-      <td>SANTA MARIA</td>
-      <td>14 - Unknown / Unidentified</td>
-      <td>1.347234</td>
-      <td>Los Angeles County</td>
-      <td>-118.592681</td>
-      <td>34.123768</td>
-    </tr>
-    <tr>
-      <th>12777</th>
-      <td>2018</td>
-      <td>10</td>
-      <td>Los Angeles County</td>
       <td>MUREAU</td>
       <td>11 - Powerline</td>
       <td>0.133597</td>
-      <td>Los Angeles County</td>
+      <td>Los Angeles</td>
       <td>-118.678461</td>
       <td>34.151321</td>
     </tr>
@@ -952,71 +939,65 @@ Name: Population, dtype: bool
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>13165</th>
+      <th>13164</th>
       <td>2018</td>
       <td>4</td>
-      <td>Ventura County</td>
       <td>HARBOR</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.392633</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.247964</td>
       <td>34.214345</td>
     </tr>
     <tr>
-      <th>13166</th>
+      <th>13165</th>
       <td>2018</td>
       <td>1</td>
-      <td>Ventura County</td>
       <td>ERBES</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.028838</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-118.846409</td>
       <td>34.235447</td>
     </tr>
     <tr>
-      <th>13167</th>
+      <th>13166</th>
       <td>2018</td>
       <td>10</td>
-      <td>Ventura County</td>
       <td>GRIMES</td>
       <td>2 - Equipment Use</td>
       <td>0.202070</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-118.904546</td>
       <td>34.343482</td>
     </tr>
     <tr>
-      <th>13168</th>
+      <th>13167</th>
       <td>2018</td>
       <td>6</td>
-      <td>Ventura County</td>
       <td>BEACH</td>
       <td>9 - Miscellaneous</td>
       <td>0.521827</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.341277</td>
       <td>34.298223</td>
     </tr>
     <tr>
-      <th>13169</th>
+      <th>13168</th>
       <td>2018</td>
       <td>7</td>
-      <td>Ventura County</td>
       <td>ROLLING</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.007145</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-118.868440</td>
       <td>34.174372</td>
     </tr>
   </tbody>
 </table>
-<p>397 rows × 9 columns</p>
+<p>397 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>The resulting table has 397 rows, which means that there were 397 fires in 2018. We could also get this information with code by using the <code class="docutils literal notranslate"><span class="pre">.shape</span></code> attribute:</p>
@@ -1075,13 +1056,12 @@ Name: Population, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;14 - Unknown / Unidentified&#39;, &#39;7 - Arson&#39;, &#39;4 - Campfire&#39;,
-       &#39;1 - Lightning&#39;, &#39;9 - Miscellaneous&#39;, &#39;5 - Debris&#39;,
-       &#39;8 - Playing with fire&#39;, &#39;3 - Smoking&#39;, &#39;15 - Structure&#39;,
-       &#39;2 - Equipment Use&#39;, &#39;10 - Vehicle&#39;, &#39;6 - Railroad&#39;,
-       &#39;18 - Escaped Prescribed Burn&#39;, &#39;11 - Powerline&#39;, &#39;16 - Aircraft&#39;,
-       &#39;12 - Firefighter Training&#39;, &#39;13 - Non-Firefighter Training&#39;],
-      dtype=object)
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;14 - Unknown&#39;, &#39;7 - Arson&#39;, &#39;4 - Campfire&#39;, &#39;1 - Lightning&#39;,
+       &#39;9 - Miscellaneous&#39;, &#39;5 - Debris&#39;, &#39;8 - Playing with fire&#39;,
+       &#39;3 - Smoking&#39;, &#39;15 - Structure&#39;, &#39;2 - Equipment Use&#39;,
+       &#39;10 - Vehicle&#39;, &#39;6 - Railroad&#39;, &#39;18 - Escaped Prescribed Burn&#39;,
+       &#39;11 - Powerline&#39;, &#39;16 - Aircraft&#39;, &#39;12 - Firefighter Training&#39;,
+       &#39;13 - Non-Firefighter Training&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1095,6 @@ Name: Population, dtype: bool
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -1129,11 +1108,10 @@ Name: Population, dtype: bool
       <th>9</th>
       <td>1910</td>
       <td>8</td>
-      <td>Six Rivers National Forest</td>
       <td>CRAWFORD CREEK 2</td>
       <td>7 - Arson</td>
       <td>497.885071</td>
-      <td>Humboldt County</td>
+      <td>Humboldt</td>
       <td>-123.552471</td>
       <td>41.300052</td>
     </tr>
@@ -1141,11 +1119,10 @@ Name: Population, dtype: bool
       <th>24</th>
       <td>1911</td>
       <td>7</td>
-      <td>Six Rivers National Forest</td>
       <td>ORCUTT FLAT</td>
       <td>7 - Arson</td>
       <td>94.598785</td>
-      <td>Humboldt County</td>
+      <td>Humboldt</td>
       <td>-123.515171</td>
       <td>41.319056</td>
     </tr>
@@ -1153,11 +1130,10 @@ Name: Population, dtype: bool
       <th>25</th>
       <td>1911</td>
       <td>7</td>
-      <td>Six Rivers National Forest</td>
       <td>PRIGMORE FLAT</td>
       <td>7 - Arson</td>
       <td>14.936650</td>
-      <td>Humboldt County</td>
+      <td>Humboldt</td>
       <td>-123.520594</td>
       <td>41.288310</td>
     </tr>
@@ -1165,11 +1141,10 @@ Name: Population, dtype: bool
       <th>29</th>
       <td>1911</td>
       <td>8</td>
-      <td>Six Rivers National Forest</td>
       <td>ULLATHORNE CREEK</td>
       <td>7 - Arson</td>
       <td>9.957536</td>
-      <td>Humboldt County</td>
+      <td>Humboldt</td>
       <td>-123.576445</td>
       <td>41.289008</td>
     </tr>
@@ -1177,11 +1152,10 @@ Name: Population, dtype: bool
       <th>31</th>
       <td>1911</td>
       <td>8</td>
-      <td>Six Rivers National Forest</td>
       <td>PEARCH CREEK</td>
       <td>7 - Arson</td>
       <td>398.317413</td>
-      <td>Humboldt County</td>
+      <td>Humboldt</td>
       <td>-123.495326</td>
       <td>41.302627</td>
     </tr>
@@ -1195,71 +1169,65 @@ Name: Population, dtype: bool
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>13388</th>
+      <th>13387</th>
       <td>2019</td>
       <td>9</td>
-      <td>Fresno-Kings CAL FIRE</td>
       <td>FRAME</td>
       <td>7 - Arson</td>
       <td>15.022148</td>
-      <td>Fresno County</td>
+      <td>Fresno</td>
       <td>-120.649290</td>
       <td>36.163830</td>
     </tr>
     <tr>
-      <th>13406</th>
+      <th>13405</th>
       <td>2019</td>
       <td>3</td>
-      <td>Riverside CAL FIRE</td>
       <td>LINCOLN</td>
       <td>7 - Arson</td>
       <td>564.215393</td>
-      <td>Riverside County</td>
+      <td>Riverside</td>
       <td>-116.072059</td>
       <td>33.534968</td>
     </tr>
     <tr>
-      <th>13410</th>
+      <th>13409</th>
       <td>2019</td>
       <td>8</td>
-      <td>Santa Clara CAL FIRE</td>
       <td>PATTERSON</td>
       <td>7 - Arson</td>
       <td>139.200714</td>
-      <td>San Joaquin County</td>
+      <td>San Joaquin</td>
       <td>-121.538773</td>
       <td>37.715312</td>
     </tr>
     <tr>
-      <th>13426</th>
+      <th>13425</th>
       <td>2019</td>
       <td>8</td>
-      <td>Santa Clara CAL FIRE</td>
       <td>MARSH 5</td>
       <td>7 - Arson</td>
       <td>226.616867</td>
-      <td>Contra Costa County</td>
+      <td>Contra Costa</td>
       <td>-121.828352</td>
       <td>37.888016</td>
     </tr>
     <tr>
-      <th>13460</th>
+      <th>13459</th>
       <td>2019</td>
       <td>9</td>
-      <td>Monterey - San Benito CAL FIRE</td>
       <td>STAGE</td>
       <td>7 - Arson</td>
       <td>13.019149</td>
-      <td>Monterey County</td>
+      <td>Monterey</td>
       <td>-121.599207</td>
       <td>36.764065</td>
     </tr>
   </tbody>
 </table>
-<p>763 rows × 9 columns</p>
+<p>763 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>To find the percentage of fires caused by arson, we divide the size of this table by the size of the original table:</p>
@@ -1270,7 +1238,7 @@ Name: Population, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.05666542888971407
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.05666963755199049
 </pre></div>
 </div>
 </div>
@@ -1291,7 +1259,7 @@ Name: Population, dtype: bool
 <p>Now we’ll select only the fires from San Diego County, making sure to use <code class="docutils literal notranslate"><span class="pre">fires_from_2018</span></code>, and not <code class="docutils literal notranslate"><span class="pre">calfires</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span><span class="p">[</span><span class="n">fires_from_2018</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego County&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span><span class="p">[</span><span class="n">fires_from_2018</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1316,7 +1284,6 @@ Name: Population, dtype: bool
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -1327,62 +1294,57 @@ Name: Population, dtype: bool
   </thead>
   <tbody>
     <tr>
-      <th>12801</th>
+      <th>12800</th>
       <td>2018</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>PASQUAL</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>327.586121</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.917288</td>
       <td>33.078967</td>
     </tr>
     <tr>
-      <th>12820</th>
+      <th>12819</th>
       <td>2018</td>
       <td>3</td>
-      <td>Camp Pendleton Marine Corps Base</td>
       <td>MCP BASILONE GATE</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.023540</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.559119</td>
       <td>33.440113</td>
     </tr>
     <tr>
-      <th>12822</th>
+      <th>12821</th>
       <td>2018</td>
       <td>8</td>
-      <td>Camp Pendleton Marine Corps Base</td>
       <td>SAN MATEO CAMPGROUND</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>2.909111</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.572772</td>
       <td>33.419019</td>
     </tr>
     <tr>
-      <th>12890</th>
+      <th>12889</th>
       <td>2018</td>
       <td>5</td>
-      <td>Cleveland National Forest</td>
       <td>MONTE</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>13.088419</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.767460</td>
       <td>32.896771</td>
     </tr>
     <tr>
-      <th>12969</th>
+      <th>12968</th>
       <td>2018</td>
       <td>7</td>
-      <td>Cleveland National Forest</td>
       <td>WEST</td>
       <td>2 - Equipment Use</td>
       <td>505.399994</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.745126</td>
       <td>32.829008</td>
     </tr>
@@ -1396,71 +1358,65 @@ Name: Population, dtype: bool
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>13057</th>
+      <th>13056</th>
       <td>2018</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>ROCK 5</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>206.256805</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.236669</td>
       <td>33.419540</td>
     </tr>
     <tr>
-      <th>13070</th>
+      <th>13069</th>
       <td>2018</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>RECYCLE</td>
       <td>4 - Campfire</td>
       <td>248.380676</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.443775</td>
       <td>32.654185</td>
     </tr>
     <tr>
-      <th>13072</th>
+      <th>13071</th>
       <td>2018</td>
       <td>5</td>
-      <td>San Diego CAL FIRE</td>
       <td>AGUA</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>59.082077</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.028463</td>
       <td>33.363286</td>
     </tr>
     <tr>
-      <th>13142</th>
+      <th>13141</th>
       <td>2018</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>CHURCH 2</td>
       <td>10 - Vehicle</td>
       <td>11.045366</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.359866</td>
       <td>32.687008</td>
     </tr>
     <tr>
-      <th>13143</th>
+      <th>13142</th>
       <td>2018</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>BUILDING</td>
       <td>9 - Miscellaneous</td>
       <td>10.419848</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.766340</td>
       <td>32.620508</td>
     </tr>
   </tbody>
 </table>
-<p>13 rows × 9 columns</p>
+<p>13 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>It seems that there were 13 such fires.</p>
@@ -1706,7 +1662,7 @@ dtype: bool
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">9</span><span class="n">d9087344376</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">9</span><span class="n">d9087344376</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">with_regions</span><span class="p">[</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span> <span class="o">&amp;</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="p">]</span>
@@ -1856,14 +1812,14 @@ dtype: bool
 </div>
 <div class="section" id="id1">
 <h3>The <code class="docutils literal notranslate"><span class="pre">|</span></code> Operator<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Suppose we wanted to select all fires which occurred in either San Diego County <em>or</em> Yolo County. In this situation,
+<p>Suppose we wanted to select all fires which occurred in either San Diego County <em>or</em> Imperial County. In this situation,
 we use the <em>binary or</em> operator, <code class="docutils literal notranslate"><span class="pre">|</span></code>. This operator takes two Boolean arrays of the same size as input and creates a new array in which a particular entry is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>at least one</em> of the corresponding entries in the input arrays is true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_san_diego</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;San Diego County&quot;</span>
-<span class="n">in_yolo</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Yolo County&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_san_diego</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;San Diego&quot;</span>
+<span class="n">in_imperial</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Imperial&quot;</span>
 
-<span class="n">calfire</span><span class="p">[</span><span class="n">in_san_diego</span> <span class="o">|</span> <span class="n">in_yolo</span><span class="p">]</span>
+<span class="n">calfire</span><span class="p">[</span><span class="n">in_imperial</span> <span class="o">|</span> <span class="n">in_san_diego</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1888,7 +1844,6 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -1902,11 +1857,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1292</th>
       <td>1950</td>
       <td>10</td>
-      <td>San Diego CAL FIRE</td>
       <td>TALBOTT</td>
       <td>9 - Miscellaneous</td>
       <td>522.326538</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.732715</td>
       <td>32.699059</td>
     </tr>
@@ -1914,11 +1868,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1295</th>
       <td>1950</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>PUEBLO SIDING</td>
       <td>9 - Miscellaneous</td>
       <td>315.018127</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.356054</td>
       <td>32.613788</td>
     </tr>
@@ -1926,11 +1879,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1296</th>
       <td>1950</td>
       <td>10</td>
-      <td>San Diego CAL FIRE</td>
       <td>BANNER</td>
       <td>9 - Miscellaneous</td>
       <td>2195.823242</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.568905</td>
       <td>33.057330</td>
     </tr>
@@ -1938,25 +1890,23 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1322</th>
       <td>1950</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>AGUA TIBIA</td>
       <td>1 - Lightning</td>
       <td>1941.808594</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.992760</td>
       <td>33.392911</td>
     </tr>
     <tr>
-      <th>1331</th>
+      <th>1332</th>
       <td>1950</td>
-      <td>10</td>
-      <td>San Diego CAL FIRE</td>
-      <td>WET BACK</td>
-      <td>14 - Unknown / Unidentified</td>
-      <td>3954.672363</td>
-      <td>San Diego County</td>
-      <td>-116.931376</td>
-      <td>32.695100</td>
+      <td>8</td>
+      <td>CONEJOS</td>
+      <td>9 - Miscellaneous</td>
+      <td>62848.742188</td>
+      <td>San Diego</td>
+      <td>-116.644504</td>
+      <td>32.900322</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1968,71 +1918,65 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>13350</th>
+      <th>13348</th>
+      <td>2019</td>
+      <td>6</td>
+      <td>PAUMA 4</td>
+      <td>9 - Miscellaneous</td>
+      <td>22.021397</td>
+      <td>San Diego</td>
+      <td>-116.986509</td>
+      <td>33.297972</td>
+    </tr>
+    <tr>
+      <th>13349</th>
       <td>2019</td>
       <td>8</td>
-      <td>San Diego CAL FIRE</td>
       <td>AIRPORT</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>1.677516</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.663357</td>
       <td>33.285729</td>
     </tr>
     <tr>
-      <th>13351</th>
+      <th>13350</th>
       <td>2019</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>DEHESA 11</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>225.646027</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.819500</td>
       <td>32.777229</td>
     </tr>
     <tr>
-      <th>13352</th>
+      <th>13351</th>
       <td>2019</td>
       <td>11</td>
-      <td>San Diego CAL FIRE</td>
       <td>CRESTWOOD</td>
       <td>10 - Vehicle</td>
       <td>31.554823</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.349084</td>
       <td>32.701877</td>
     </tr>
     <tr>
-      <th>13372</th>
+      <th>13371</th>
       <td>2019</td>
       <td>11</td>
-      <td>San Diego CAL FIRE</td>
       <td>CAMINO</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.721892</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.575401</td>
       <td>33.256260</td>
     </tr>
-    <tr>
-      <th>13373</th>
-      <td>2019</td>
-      <td>6</td>
-      <td>Sonoma - Lake - Napa CAL FIRE</td>
-      <td>SAND</td>
-      <td>1 - Lightning</td>
-      <td>2422.017578</td>
-      <td>Yolo County</td>
-      <td>-122.255871</td>
-      <td>38.904186</td>
-    </tr>
   </tbody>
 </table>
-<p>899 rows × 9 columns</p>
+<p>846 rows × 8 columns</p>
 </div></div></div>
 </div>
 </div>
@@ -2067,7 +2011,6 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -2078,26 +2021,24 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
   </thead>
   <tbody>
     <tr>
-      <th>7803</th>
+      <th>7802</th>
       <td>2002</td>
       <td>2</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER#2</td>
       <td>4 - Campfire</td>
       <td>270.632538</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.692025</td>
       <td>32.644564</td>
     </tr>
     <tr>
-      <th>8094</th>
+      <th>8093</th>
       <td>2003</td>
       <td>8</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER#2</td>
       <td>4 - Campfire</td>
       <td>112.706635</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.915079</td>
       <td>32.602055</td>
     </tr>
@@ -2133,7 +2074,6 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -2147,11 +2087,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>606</th>
       <td>1934</td>
       <td>6</td>
-      <td>Modoc National Forest</td>
       <td>BORDER MT.</td>
       <td>1 - Lightning</td>
       <td>9.332158</td>
-      <td>Siskiyou County</td>
+      <td>Siskiyou</td>
       <td>-121.467036</td>
       <td>41.489674</td>
     </tr>
@@ -2159,47 +2098,43 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>824</th>
       <td>1939</td>
       <td>9</td>
-      <td>Modoc National Forest</td>
       <td>BORDER MT.</td>
       <td>9 - Miscellaneous</td>
       <td>48.154457</td>
-      <td>Siskiyou County</td>
+      <td>Siskiyou</td>
       <td>-121.466297</td>
       <td>41.487778</td>
     </tr>
     <tr>
-      <th>7188</th>
+      <th>7187</th>
       <td>1999</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER #70</td>
       <td>4 - Campfire</td>
       <td>118.480690</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.808309</td>
       <td>32.567800</td>
     </tr>
     <tr>
-      <th>7419</th>
+      <th>7418</th>
       <td>2000</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER #6</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>74.557014</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.335658</td>
       <td>32.657144</td>
     </tr>
     <tr>
-      <th>7803</th>
+      <th>7802</th>
       <td>2002</td>
       <td>2</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER#2</td>
       <td>4 - Campfire</td>
       <td>270.632538</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.692025</td>
       <td>32.644564</td>
     </tr>
@@ -2213,71 +2148,65 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>12093</th>
+      <th>12092</th>
       <td>2016</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER 3</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>7606.026367</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.557240</td>
       <td>32.604410</td>
     </tr>
     <tr>
-      <th>12711</th>
+      <th>12710</th>
       <td>2017</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER 9</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>22.502857</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.668979</td>
       <td>32.574468</td>
     </tr>
     <tr>
-      <th>12760</th>
+      <th>12759</th>
       <td>2017</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER 6</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>135.044418</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.750203</td>
       <td>32.585912</td>
+    </tr>
+    <tr>
+      <th>13317</th>
+      <td>2019</td>
+      <td>8</td>
+      <td>BORDER 10</td>
+      <td>14 - Unknown</td>
+      <td>11.862469</td>
+      <td>San Diego</td>
+      <td>-116.866295</td>
+      <td>32.557500</td>
     </tr>
     <tr>
       <th>13318</th>
       <td>2019</td>
       <td>8</td>
-      <td>San Diego CAL FIRE</td>
-      <td>BORDER 10</td>
-      <td>14 - Unknown / Unidentified</td>
-      <td>11.862469</td>
-      <td>San Diego County</td>
-      <td>-116.866295</td>
-      <td>32.557500</td>
-    </tr>
-    <tr>
-      <th>13319</th>
-      <td>2019</td>
-      <td>8</td>
-      <td>San Diego CAL FIRE</td>
       <td>BORDER 9</td>
       <td>7 - Arson</td>
       <td>67.372292</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.741779</td>
       <td>32.569219</td>
     </tr>
   </tbody>
 </table>
-<p>45 rows × 9 columns</p>
+<p>45 rows × 8 columns</p>
 </div></div></div>
 </div>
 <div class="section" id="a-trick-to-avoid-spurious-matches">
@@ -2310,7 +2239,6 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -2324,11 +2252,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>467</th>
       <td>1930</td>
       <td>7</td>
-      <td>Six Rivers National Forest</td>
       <td>ROAD #1</td>
       <td>5 - Debris</td>
       <td>6.970353</td>
-      <td>Trinity County</td>
+      <td>Trinity</td>
       <td>-123.528351</td>
       <td>40.239767</td>
     </tr>
@@ -2336,11 +2263,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>497</th>
       <td>1931</td>
       <td>10</td>
-      <td>Six Rivers National Forest</td>
       <td>NIELSON ROAD</td>
       <td>4 - Campfire</td>
       <td>2.489452</td>
-      <td>Trinity County</td>
+      <td>Trinity</td>
       <td>-123.364262</td>
       <td>40.019498</td>
     </tr>
@@ -2348,11 +2274,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>791</th>
       <td>1939</td>
       <td>8</td>
-      <td>Klamath National Forest</td>
       <td>CUTOFF ROAD</td>
       <td>7 - Arson</td>
       <td>1057.719482</td>
-      <td>Siskiyou County</td>
+      <td>Siskiyou</td>
       <td>-122.865814</td>
       <td>41.825530</td>
     </tr>
@@ -2360,11 +2285,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1106</th>
       <td>1946</td>
       <td>9</td>
-      <td>Mendocino CAL FIRE</td>
       <td>RAILROAD #13</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>240.841370</td>
-      <td>Mendocino County</td>
+      <td>Mendocino</td>
       <td>-123.319311</td>
       <td>39.373807</td>
     </tr>
@@ -2372,11 +2296,10 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <th>1303</th>
       <td>1950</td>
       <td>7</td>
-      <td>Amador - El Dorado CAL FIRE</td>
       <td>SCULLY ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>416.051544</td>
-      <td>Amador County</td>
+      <td>Amador</td>
       <td>-120.925246</td>
       <td>38.300486</td>
     </tr>
@@ -2390,71 +2313,65 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>12238</th>
+      <th>12237</th>
       <td>2017</td>
       <td>8</td>
-      <td>Sierra National Forest</td>
       <td>RAILROAD</td>
       <td>9 - Miscellaneous</td>
       <td>12371.148438</td>
-      <td>Madera County</td>
+      <td>Madera</td>
       <td>-119.612630</td>
       <td>37.447218</td>
     </tr>
     <tr>
-      <th>12517</th>
+      <th>12516</th>
       <td>2017</td>
       <td>9</td>
-      <td>Siskiyou CAL FIRE</td>
       <td>RAILROAD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>2.216443</td>
-      <td>Siskiyou County</td>
+      <td>Siskiyou</td>
       <td>-122.520362</td>
       <td>41.526095</td>
     </tr>
     <tr>
-      <th>12568</th>
+      <th>12567</th>
       <td>2017</td>
       <td>7</td>
-      <td>Tulare CAL FIRE</td>
       <td>ROADRUNNER</td>
       <td>7 - Arson</td>
       <td>2284.595947</td>
-      <td>Tulare County</td>
+      <td>Tulare</td>
       <td>-118.933014</td>
       <td>36.015821</td>
     </tr>
     <tr>
-      <th>13148</th>
+      <th>13147</th>
       <td>2018</td>
       <td>11</td>
-      <td>Ventura County</td>
       <td>ROADRUNNER</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>0.613522</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-118.921408</td>
       <td>34.206380</td>
     </tr>
     <tr>
-      <th>13219</th>
+      <th>13218</th>
       <td>2019</td>
       <td>8</td>
-      <td>Northern CA District - BLM</td>
       <td>R4 RAILROAD</td>
       <td>1 - Lightning</td>
       <td>24.105974</td>
-      <td>Lassen County</td>
+      <td>Lassen</td>
       <td>-120.375015</td>
       <td>40.629286</td>
     </tr>
   </tbody>
 </table>
-<p>132 rows × 9 columns</p>
+<p>132 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>We see several “good” matches, like “NIELSON ROAD” and “CUTOFF ROAD”, but several “spurious” matches, like “ROADRUNNER”, and “RAILROAD”. How can we exclude these fires?</p>
@@ -2487,7 +2404,6 @@ where we have added a space to the beginning of the search string. This will mat
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -2501,11 +2417,10 @@ where we have added a space to the beginning of the search string. This will mat
       <th>497</th>
       <td>1931</td>
       <td>10</td>
-      <td>Six Rivers National Forest</td>
       <td>NIELSON ROAD</td>
       <td>4 - Campfire</td>
       <td>2.489452</td>
-      <td>Trinity County</td>
+      <td>Trinity</td>
       <td>-123.364262</td>
       <td>40.019498</td>
     </tr>
@@ -2513,11 +2428,10 @@ where we have added a space to the beginning of the search string. This will mat
       <th>791</th>
       <td>1939</td>
       <td>8</td>
-      <td>Klamath National Forest</td>
       <td>CUTOFF ROAD</td>
       <td>7 - Arson</td>
       <td>1057.719482</td>
-      <td>Siskiyou County</td>
+      <td>Siskiyou</td>
       <td>-122.865814</td>
       <td>41.825530</td>
     </tr>
@@ -2525,35 +2439,32 @@ where we have added a space to the beginning of the search string. This will mat
       <th>1303</th>
       <td>1950</td>
       <td>7</td>
-      <td>Amador - El Dorado CAL FIRE</td>
       <td>SCULLY ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>416.051544</td>
-      <td>Amador County</td>
+      <td>Amador</td>
       <td>-120.925246</td>
       <td>38.300486</td>
     </tr>
     <tr>
-      <th>1442</th>
+      <th>1441</th>
       <td>1951</td>
       <td>8</td>
-      <td>Stanislaus National Forest</td>
       <td>SMITH ROAD</td>
       <td>3 - Smoking</td>
       <td>629.024658</td>
-      <td>Calaveras County</td>
+      <td>Calaveras</td>
       <td>-120.314476</td>
       <td>38.354487</td>
     </tr>
     <tr>
-      <th>1761</th>
+      <th>1760</th>
       <td>1953</td>
       <td>5</td>
-      <td>Ventura County</td>
       <td>RICE ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>638.207275</td>
-      <td>Ventura County</td>
+      <td>Ventura</td>
       <td>-119.296153</td>
       <td>34.441824</td>
     </tr>
@@ -2567,71 +2478,65 @@ where we have added a space to the beginning of the search string. This will mat
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
+    </tr>
+    <tr>
+      <th>5176</th>
+      <td>1985</td>
+      <td>7</td>
+      <td>GAS POINT ROAD</td>
+      <td>14 - Unknown</td>
+      <td>93.247581</td>
+      <td>Shasta</td>
+      <td>-122.477858</td>
+      <td>40.391840</td>
     </tr>
     <tr>
       <th>5177</th>
       <td>1985</td>
       <td>7</td>
-      <td>Shasta - Trinity CAL FIRE</td>
       <td>GAS POINT ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
-      <td>93.247581</td>
-      <td>Shasta County</td>
-      <td>-122.477858</td>
-      <td>40.391840</td>
+      <td>14 - Unknown</td>
+      <td>78.217186</td>
+      <td>Shasta</td>
+      <td>-122.439950</td>
+      <td>40.392093</td>
     </tr>
     <tr>
       <th>5178</th>
       <td>1985</td>
       <td>7</td>
-      <td>Shasta - Trinity CAL FIRE</td>
       <td>GAS POINT ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
-      <td>78.217186</td>
-      <td>Shasta County</td>
-      <td>-122.439950</td>
-      <td>40.392093</td>
-    </tr>
-    <tr>
-      <th>5179</th>
-      <td>1985</td>
-      <td>7</td>
-      <td>Shasta - Trinity CAL FIRE</td>
-      <td>GAS POINT ROAD</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>106.863319</td>
-      <td>Shasta County</td>
+      <td>Shasta</td>
       <td>-122.430627</td>
       <td>40.394094</td>
     </tr>
     <tr>
-      <th>6580</th>
+      <th>6579</th>
       <td>1996</td>
       <td>7</td>
-      <td>Santa Clara CAL FIRE</td>
       <td>MINES ROAD</td>
       <td>2 - Equipment Use</td>
       <td>174.051270</td>
-      <td>Santa Clara County</td>
+      <td>Santa Clara</td>
       <td>-121.523671</td>
       <td>37.475377</td>
     </tr>
     <tr>
-      <th>8871</th>
+      <th>8870</th>
       <td>2006</td>
       <td>7</td>
-      <td>Los Angeles County</td>
       <td>JOHNSON ROAD FIRE</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>110.659088</td>
-      <td>Los Angeles County</td>
+      <td>Los Angeles</td>
       <td>-118.334695</td>
       <td>34.661443</td>
     </tr>
   </tbody>
 </table>
-<p>48 rows × 9 columns</p>
+<p>48 rows × 8 columns</p>
 </div></div></div>
 </div>
 <p>Strings have other useful string methods, as well. In this case, all of the fire names are capitalized, but it is common to find that datasets are inconsistent in their capitalization. For instance:</p>
@@ -2714,7 +2619,7 @@ Name: names, dtype: object
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;2019&#39;</span><span class="p">)</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/babypandas/bpd.py</span> in <span class="ni">str</span><span class="nt">(self)</span>
@@ -2777,7 +2682,7 @@ Name: names, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2336427775714816
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2335858585858586
 </pre></div>
 </div>
 </div>
@@ -2810,7 +2715,7 @@ Name: names, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">is_gt_1000_acres</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span>
-<span class="n">is_in_sd</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego County&#39;</span>
+<span class="n">is_in_sd</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego&#39;</span>
 <span class="n">is_in_1990s</span> <span class="o">=</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2844,7 +2749,6 @@ Name: names, dtype: object
       <th></th>
       <th>year</th>
       <th>month</th>
-      <th>unit</th>
       <th>name</th>
       <th>cause</th>
       <th>acres</th>
@@ -2855,62 +2759,57 @@ Name: names, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>5800</th>
+      <th>5799</th>
       <td>1990</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>MORRETTIS</td>
       <td>7 - Arson</td>
       <td>3314.026611</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.667315</td>
       <td>33.196718</td>
     </tr>
     <tr>
-      <th>5806</th>
+      <th>5805</th>
       <td>1990</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>PAINT</td>
       <td>9 - Miscellaneous</td>
       <td>2760.890869</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.144556</td>
       <td>33.058681</td>
     </tr>
     <tr>
-      <th>5812</th>
+      <th>5811</th>
       <td>1990</td>
       <td>10</td>
-      <td>Cleveland National Forest</td>
       <td>CASE</td>
       <td>9 - Miscellaneous</td>
       <td>2062.641357</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.441422</td>
       <td>33.432863</td>
     </tr>
     <tr>
-      <th>5925</th>
+      <th>5924</th>
       <td>1991</td>
       <td>6</td>
-      <td>San Diego CAL FIRE</td>
       <td>BARRETT</td>
       <td>2 - Equipment Use</td>
       <td>1609.205811</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.670060</td>
       <td>32.618218</td>
     </tr>
     <tr>
-      <th>5986</th>
+      <th>5985</th>
       <td>1992</td>
       <td>11</td>
-      <td>San Diego CAL FIRE</td>
       <td>BRAVO</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>2023.847290</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-117.543498</td>
       <td>33.374327</td>
     </tr>
@@ -2924,71 +2823,65 @@ Name: names, dtype: object
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>7000</th>
+      <th>6999</th>
       <td>1998</td>
       <td>7</td>
-      <td>San Diego CAL FIRE</td>
       <td>SUMMIT</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>1123.004883</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.732161</td>
       <td>32.604883</td>
     </tr>
     <tr>
-      <th>7108</th>
+      <th>7107</th>
       <td>1999</td>
       <td>8</td>
-      <td>Cleveland National Forest</td>
       <td>LAGUNA 100</td>
       <td>7 - Arson</td>
       <td>4411.434570</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.406902</td>
       <td>32.900014</td>
     </tr>
     <tr>
-      <th>7189</th>
+      <th>7188</th>
       <td>1999</td>
       <td>9</td>
-      <td>San Diego CAL FIRE</td>
       <td>PROCTOR</td>
       <td>7 - Arson</td>
       <td>1460.064453</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.918494</td>
       <td>32.692336</td>
     </tr>
     <tr>
-      <th>7218</th>
+      <th>7217</th>
       <td>1999</td>
       <td>10</td>
-      <td>San Diego CAL FIRE</td>
       <td>LA JOLLA</td>
       <td>5 - Debris</td>
       <td>7845.939941</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.789519</td>
       <td>33.273254</td>
     </tr>
     <tr>
-      <th>7332</th>
+      <th>7331</th>
       <td>1999</td>
       <td>10</td>
-      <td>San Diego CAL FIRE</td>
       <td>SHOCKEY</td>
-      <td>14 - Unknown / Unidentified</td>
+      <td>14 - Unknown</td>
       <td>3284.517578</td>
-      <td>San Diego County</td>
+      <td>San Diego</td>
       <td>-116.405917</td>
       <td>32.607751</td>
     </tr>
   </tbody>
 </table>
-<p>32 rows × 9 columns</p>
+<p>32 rows × 8 columns</p>
 </div></div></div>
 </div>
 </div>
