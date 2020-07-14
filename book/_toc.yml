@@ -16,6 +16,8 @@
 - file: 02-data_sets/arrays
 - file: 02-data_sets/dataframes
 - file: 02-data_sets/accessing
+- file: 02-data_sets/querying
+# - file: 02-data_sets/groupby
 
 - header: Reference
 - file: how_to_read
