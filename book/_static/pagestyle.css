@@ -99,3 +99,13 @@ of a code block.
 .highlight-html .copybtn {
     display: none;
 }
+
+/*
+References to other pages should be decorated!
+*/
+.doc::before {
+    content: '🔖 ';
+}
+.doc {
+    display: inline-block;
+}
