@@ -151,6 +151,11 @@
    Querying
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -621,6 +626,28 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </div>
 </div>
 </div>
+<p>Now you try:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-1-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-1-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-0 active docutils container">
+<p>Which of the two is bigger? <code class="docutils literal notranslate"><span class="pre">int(-3.9999)</span></code> or <code class="docutils literal notranslate"><span class="pre">int(-4.0001)</span></code>?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-1 docutils container">
+<p><code class="docutils literal notranslate"><span class="pre">int(-3.999)</span></code></p>
+</div>
+</div>
+<p>Since Python rounds the numbers <em>towards</em> zero, <code class="docutils literal notranslate"><span class="pre">int(-3.9999)</span></code> will evaluate to <code class="docutils literal notranslate"><span class="pre">-3</span></code> while <code class="docutils literal notranslate"><span class="pre">int(-4.0001)</span></code> will evaluate to <code class="docutils literal notranslate"><span class="pre">-4</span></code> and we know that <code class="docutils literal notranslate"><span class="pre">-3&gt;-4</span></code>.</p>
 </div>
 <div class="section" id="integers-and-floats-redux">
 <h2>Integers and Floats <em>Redux</em><a class="headerlink" href="#integers-and-floats-redux" title="Permalink to this headline">¶</a></h2>
@@ -728,6 +755,33 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </div>
 </div>
 </div>
+<p>Now you try:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-2-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-2-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-0 active docutils container">
+<p>Python supports a <code class="docutils literal notranslate"><span class="pre">round()</span></code> function that (in simple terms) rounds a decimal to an integer like we do with hand so 3.7 gets rounded to 4 and 3.1 gets rounded to 3. With this in mind, answer the following question:
+Do <code class="docutils literal notranslate"><span class="pre">int(2.51*100)</span></code> and <code class="docutils literal notranslate"><span class="pre">round(2.51*100)</span></code> equivalent?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-1 docutils container">
+<p>False</p>
+</div>
+</div>
+<p>As we saw earlier, Python evaluates <code class="docutils literal notranslate"><span class="pre">2.51*100</span></code> to <code class="docutils literal notranslate"><span class="pre">250.99999999999997</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int(250.99999999999997)</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">250</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">round(250.99999999999997)</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">251</span></code></p></li>
+</ul>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>

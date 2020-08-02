@@ -39,7 +39,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="next" title="GroupBy" href="groupby.html" />
     <link rel="prev" title="Accessing and Sorting" href="accessing.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -132,6 +132,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="groupby.html">
+   GroupBy
   </a>
  </li>
 </ul>
@@ -2630,32 +2635,32 @@ Name: names, dtype: object
 <span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="c1"># Formatting</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5268</span>             <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">5269</span>         <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">5270</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5271</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5272</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">5124</span>             <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">5125</span>         <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">5126</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5127</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5128</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/accessor.py</span> in <span class="ni">__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="c1"># we&#39;re accessing the attribute of the class, i.e., Dataset.geo</span>
 <span class="g g-Whitespace">    </span><span class="mi">186</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span>
 <span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">accessor_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessor</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">188</span>         <span class="c1"># Replace the property with the accessor object. Inspired by:</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="c1"># http://www.pydanny.com/cached-property.html</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="c1"># https://www.pydanny.com/cached-property.html</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/strings.py</span> in <span class="ni">__init__</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2039</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2040</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2041</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_inferred_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2042</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_is_categorical</span> <span class="o">=</span> <span class="n">is_categorical_dtype</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2043</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_is_string</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;string&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2098</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2099</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2100</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_inferred_dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2101</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_is_categorical</span> <span class="o">=</span> <span class="n">is_categorical_dtype</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2102</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_is_string</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;string&quot;</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/strings.py</span> in <span class="ni">_validate</span><span class="nt">(data)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2096</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2097</span>         <span class="k">if</span> <span class="n">inferred_dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_types</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2098</span>             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Can only use .str accessor with string values!&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2099</span>         <span class="k">return</span> <span class="n">inferred_dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">2100</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2155</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2156</span>         <span class="k">if</span> <span class="n">inferred_dtype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_types</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2157</span>             <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Can only use .str accessor with string values!&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2158</span>         <span class="k">return</span> <span class="n">inferred_dtype</span>
+<span class="g g-Whitespace">   </span><span class="mi">2159</span> 
 
 <span class="ne">AttributeError</span>: Can only use .str accessor with string values!
 </pre></div>
@@ -2898,7 +2903,7 @@ Name: names, dtype: object
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="accessing.html" title="previous page">Accessing and Sorting</a>
-    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+    <a class='right-next' id="next-link" href="groupby.html" title="next page">GroupBy</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

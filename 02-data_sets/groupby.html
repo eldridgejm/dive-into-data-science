@@ -1,0 +1,2151 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>GroupBy &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How To Read This Book" href="../how_to_read.html" />
+    <link rel="prev" title="Querying" href="querying.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   GroupBy
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/groupby.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/groupby.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/groupby.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-aggregate-combine">
+   Split, Aggregate, Combine
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .groupby
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregators">
+     Aggregators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#groupby-versus-querying">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .groupby
+    </span>
+   </code>
+   versus querying
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subgroups">
+   Subgroups
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="groupby">
+<h1>GroupBy<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h1>
+<p>What is the most common cause of wildfires in California? We can count the number of fires due to a particular cause, such as lightning, using a query:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1 - Lightning&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2550
+</pre></div>
+</div>
+</div>
+</div>
+<p>This query retrieves a table containing only those fires caused by lightning, and <code class="docutils literal notranslate"><span class="pre">.shape[0]</span></code> returns the number of rows in this table, effectively counting the number of such fires.
+To determine the number of fires due to <em>each</em> cause, we <em>could</em> write a query for each different type of fire:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1 - Lightning&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;2 - Equipment Use&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;3 - Smoking&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;14 - Unknown&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>But there is a better way. As we’ll see in this section, the powerful <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> method allows to quickly <em>group</em> a table’s rows and perform the same analysis on each group.</p>
+<div class="section" id="split-aggregate-combine">
+<h2>Split, Aggregate, Combine<a class="headerlink" href="#split-aggregate-combine" title="Permalink to this headline">¶</a></h2>
+<p>Let’s count the number of fires due to each cause using <code class="docutils literal notranslate"><span class="pre">.groupby</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>cause</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1 - Lightning</th>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+    </tr>
+    <tr>
+      <th>10 - Vehicle</th>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+    </tr>
+    <tr>
+      <th>11 - Powerline</th>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+    </tr>
+    <tr>
+      <th>12 - Firefighter Training</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>13 - Non-Firefighter Training</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5 - Debris</th>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+    </tr>
+    <tr>
+      <th>6 - Railroad</th>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>7 - Arson</th>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+    </tr>
+    <tr>
+      <th>8 - Playing with fire</th>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+    </tr>
+    <tr>
+      <th>9 - Miscellaneous</th>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+    </tr>
+  </tbody>
+</table>
+<p>17 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>This result tells us that there were 2550 fires caused by lightning, 399 caused by vehicles, and so forth. But why do all of the columns contain exactly the same information? And what is going on with the column labels? Let’s dissect this piece of code to understand what, exactly, is going on.</p>
+<p>Three things happen when we run <code class="docutils literal notranslate"><span class="pre">calfire.groupby('cause').count()</span></code>:</p>
+<ol class="simple">
+<li><p>The table’s rows are <strong>split</strong> into groups according to cause. All of the rows whose cause is <code class="docutils literal notranslate"><span class="pre">'1</span> <span class="pre">-</span> <span class="pre">Lightning'</span></code> are placed into one group, all of the rows whose cause is <code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">-</span> <span class="pre">Equipment</span> <span class="pre">Use'</span></code> are placed into another group and so on.</p></li>
+<li><p>Each group is <strong>aggregated</strong> into a single row by counting the number of entries in each of the group’s columns.</p></li>
+<li><p>The resulting rows are <strong>combined</strong> to form a new table, with one row for every group.</p></li>
+</ol>
+<p><a class="reference internal" href="#split-agg-combine"><span class="std std-numref">Fig. 6</span></a> below demonstrates this process on a small example table.</p>
+<div class="figure align-default" id="split-agg-combine">
+<img alt="../_images/split-agg-combine.png" src="../_images/split-agg-combine.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">caption: The split-aggregate-combine pattern.</span><a class="headerlink" href="#split-agg-combine" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">.groupby</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The “split” part of the “split-aggregate-combine” process is performed by the <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> method. It accepts a single argument: the column whose values should be used to form groups. When we call <code class="docutils literal notranslate"><span class="pre">.groupby('cause')</span></code>, <em>babypandas</em> looks through our table and separates the rows into groups by their value in the <code class="docutils literal notranslate"><span class="pre">cause</span></code> column – all of the rows whose cause is <code class="docutils literal notranslate"><span class="pre">'1</span> <span class="pre">-</span> <span class="pre">Lightning'</span></code> are placed into one group, all of the rows whose cause is <code class="docutils literal notranslate"><span class="pre">'2</span> <span class="pre">-</span> <span class="pre">Equipment</span> <span class="pre">Use'</span></code> are placed into another group and so on.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>To be precise, <em>babypandas</em> doesn’t immediately create groups when you run <code class="docutils literal notranslate"><span class="pre">calfire.groupby('cause')</span></code>. Instead, it only does this work later, when you use the groups. The technical term for such a function is <strong>lazy</strong>, because it procrastinates. In some cases, being lazy helps the function avoid doing extra work that doesn’t need to be done.</p>
+</div>
+<p>The result of <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> is something called a <code class="docutils literal notranslate"><span class="pre">DataFrameGroupby</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;babypandas.bpd.DataFrameGroupBy at 0x7f783acd3358&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code> object doesn’t look all that useful by itself. We need to tell <em>babypandas</em> what action should be taken on each group. We do this by specifying an <strong>aggregator</strong>.</p>
+</div>
+<div class="section" id="aggregators">
+<h3>Aggregators<a class="headerlink" href="#aggregators" title="Permalink to this headline">¶</a></h3>
+<p>After we have grouped the table’s rows using <code class="docutils literal notranslate"><span class="pre">.groupby</span></code>, we must next apply an <strong>aggregator</strong>. An aggregator takes each group, aggregates it into a single row, and finally combines these rows to form a new table, with one row for each group with the group’s name as its label.  There are several aggregators to choose from, namely:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.median()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code></p></li>
+</ul>
+<p>We have already seen how the <code class="docutils literal notranslate"><span class="pre">.count()</span></code> aggregator can be used to count the number of fires due to each cause. If we instead wanted to find the average size of each type of fire, we could use the <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> aggregator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>acres</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>cause</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1 - Lightning</th>
+      <td>1993.815294</td>
+      <td>7.480784</td>
+      <td>2436.783344</td>
+      <td>-120.810116</td>
+      <td>39.036871</td>
+    </tr>
+    <tr>
+      <th>10 - Vehicle</th>
+      <td>2008.689223</td>
+      <td>7.343358</td>
+      <td>1456.904712</td>
+      <td>-120.205692</td>
+      <td>36.708733</td>
+    </tr>
+    <tr>
+      <th>11 - Powerline</th>
+      <td>2006.729805</td>
+      <td>7.200557</td>
+      <td>1441.556715</td>
+      <td>-120.465738</td>
+      <td>36.601976</td>
+    </tr>
+    <tr>
+      <th>12 - Firefighter Training</th>
+      <td>2002.500000</td>
+      <td>8.000000</td>
+      <td>1082.385803</td>
+      <td>-120.401002</td>
+      <td>38.392531</td>
+    </tr>
+    <tr>
+      <th>13 - Non-Firefighter Training</th>
+      <td>2001.800000</td>
+      <td>3.800000</td>
+      <td>305.873876</td>
+      <td>-119.927214</td>
+      <td>34.978246</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5 - Debris</th>
+      <td>1977.645902</td>
+      <td>7.457377</td>
+      <td>992.116907</td>
+      <td>-121.751834</td>
+      <td>39.450188</td>
+    </tr>
+    <tr>
+      <th>6 - Railroad</th>
+      <td>1997.042857</td>
+      <td>7.300000</td>
+      <td>1267.831665</td>
+      <td>-120.741341</td>
+      <td>38.573846</td>
+    </tr>
+    <tr>
+      <th>7 - Arson</th>
+      <td>1995.422018</td>
+      <td>7.546527</td>
+      <td>2509.532333</td>
+      <td>-120.137300</td>
+      <td>37.265328</td>
+    </tr>
+    <tr>
+      <th>8 - Playing with fire</th>
+      <td>1995.052980</td>
+      <td>7.039735</td>
+      <td>753.464156</td>
+      <td>-119.490352</td>
+      <td>36.122455</td>
+    </tr>
+    <tr>
+      <th>9 - Miscellaneous</th>
+      <td>1988.960075</td>
+      <td>7.471616</td>
+      <td>2901.573769</td>
+      <td>-119.527044</td>
+      <td>36.746385</td>
+    </tr>
+  </tbody>
+</table>
+<p>17 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>The average size of each kind of fire is contained in the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column.</p>
+<p>When an aggregator is applied to a group, it performs its operation on <em>each column independently</em>. For example, the <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> aggregator computes the mean of the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column, the mean of the <code class="docutils literal notranslate"><span class="pre">'month'</span></code> column, and so forth. So what we see in the table above is the mean year of all fires caused by lightning, the mean month, mean size in acres, and so on.</p>
+<p>Notice that some columns are apparently missing. For instance, the original table has columns called <code class="docutils literal notranslate"><span class="pre">'name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'county'</span></code>, but the table above does not have these columns. This is because they contain strings, and it doesn’t make sense to find the mean of a collection of strings. As such, <em>babypandas</em> has automatically dropped these column from the result. Likewise, these columns will be dropped if we use the <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> aggregator.</p>
+<p>What if we use the <code class="docutils literal notranslate"><span class="pre">.max()</span></code> aggregator? You might be surprised to find the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> and <code class="docutils literal notranslate"><span class="pre">'county'</span></code> columns in the result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>cause</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1 - Lightning</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>ZIEGLER-Iron Complex</td>
+      <td>315511.500000</td>
+      <td>Yuba</td>
+      <td>-114.987792</td>
+      <td>41.990849</td>
+    </tr>
+    <tr>
+      <th>10 - Vehicle</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>ZACA</td>
+      <td>229651.406250</td>
+      <td>Yuba</td>
+      <td>-115.569205</td>
+      <td>41.874351</td>
+    </tr>
+    <tr>
+      <th>11 - Powerline</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>YUBA</td>
+      <td>153335.562500</td>
+      <td>Yuba</td>
+      <td>-116.395032</td>
+      <td>41.925561</td>
+    </tr>
+    <tr>
+      <th>12 - Firefighter Training</th>
+      <td>2004</td>
+      <td>8</td>
+      <td>OREGON</td>
+      <td>1954.705933</td>
+      <td>Fresno</td>
+      <td>-119.301603</td>
+      <td>39.597129</td>
+    </tr>
+    <tr>
+      <th>13 - Non-Firefighter Training</th>
+      <td>2003</td>
+      <td>6</td>
+      <td>UNIT #5</td>
+      <td>805.634644</td>
+      <td>Monterey</td>
+      <td>-118.426778</td>
+      <td>35.824536</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5 - Debris</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>ZIEBRIGHT</td>
+      <td>161815.656250</td>
+      <td>Yuba</td>
+      <td>-115.393351</td>
+      <td>41.995821</td>
+    </tr>
+    <tr>
+      <th>6 - Railroad</th>
+      <td>2016</td>
+      <td>11</td>
+      <td>WOODHOUSE</td>
+      <td>56076.332031</td>
+      <td>Yuba</td>
+      <td>-116.193409</td>
+      <td>41.979014</td>
+    </tr>
+    <tr>
+      <th>7 - Arson</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>YOLO</td>
+      <td>160833.109375</td>
+      <td>Yuba</td>
+      <td>-116.072059</td>
+      <td>41.992000</td>
+    </tr>
+    <tr>
+      <th>8 - Playing with fire</th>
+      <td>2019</td>
+      <td>11</td>
+      <td>YORBA LINDA</td>
+      <td>38347.472656</td>
+      <td>Yuba</td>
+      <td>-116.308956</td>
+      <td>41.997899</td>
+    </tr>
+    <tr>
+      <th>9 - Miscellaneous</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>ZERMATT</td>
+      <td>281790.875000</td>
+      <td>Yuba</td>
+      <td>-114.478988</td>
+      <td>42.002868</td>
+    </tr>
+  </tbody>
+</table>
+<p>17 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Here, <em>babypandas</em> adopts the view that the maximum of a collection of strings is the last string in the alphabetical ordering. So for instance, the <code class="docutils literal notranslate"><span class="pre">ZACA</span></code> fire was the fire whose name was alphabetically last among all fires caused by vehicles. Likewise, the <code class="docutils literal notranslate"><span class="pre">.min()</span></code> aggregator will produce the name that is alphabetically first within the group.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The aggregator is applied to each column <strong>independently</strong>. A common mistake is to believe that, after running <code class="docutils literal notranslate"><span class="pre">calfire.groupby('cause').max()</span></code>, the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column will contain the size of the largest fire in each group, and the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column contains its name. This is not the case: the <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column contains the name that appears last in the alphabetical ordering of names within the group.</p>
+</div>
+<p>Let’s take another look at the count aggregator. Recall the result of our first groupby:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>cause</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1 - Lightning</th>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+      <td>2550</td>
+    </tr>
+    <tr>
+      <th>10 - Vehicle</th>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+      <td>399</td>
+    </tr>
+    <tr>
+      <th>11 - Powerline</th>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+      <td>359</td>
+    </tr>
+    <tr>
+      <th>12 - Firefighter Training</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>13 - Non-Firefighter Training</th>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5 - Debris</th>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+      <td>610</td>
+    </tr>
+    <tr>
+      <th>6 - Railroad</th>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>7 - Arson</th>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+      <td>763</td>
+    </tr>
+    <tr>
+      <th>8 - Playing with fire</th>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+      <td>151</td>
+    </tr>
+    <tr>
+      <th>9 - Miscellaneous</th>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+      <td>1603</td>
+    </tr>
+  </tbody>
+</table>
+<p>17 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Notice that all of the columns contain <em>exactly</em> the same information. We now know why this is: when we apply <code class="docutils literal notranslate"><span class="pre">.count()</span></code>, it counts the number of entries within the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column, the <code class="docutils literal notranslate"><span class="pre">'month'</span></code> column, <code class="docutils literal notranslate"><span class="pre">'name'</span></code> column, etc. There are the name number of entries within each column, so we get the same number for each. Also notice that the column names are no longer very meaningful. The <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column no longer contains years – it contains the <em>count</em> of entries in the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column within each group.</p>
+<p>If our goal is to count the number of fires due to each cause, we could use <em>any</em> column in the result – I usually just pick the one that is easiest to type:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>To be precise, the <code class="docutils literal notranslate"><span class="pre">.count()</span></code> aggregator counts the number of <em>non-null</em> values in the column. So if there is a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> entry, it will not be counted.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>cause
+1 - Lightning                    2550
+10 - Vehicle                      399
+11 - Powerline                    359
+12 - Firefighter Training           2
+13 - Non-Firefighter Training       5
+                                 ... 
+5 - Debris                        610
+6 - Railroad                       70
+7 - Arson                         763
+8 - Playing with fire             151
+9 - Miscellaneous                1603
+Name: year, Length: 17, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Which year had the largest number of fires?</strong></em></p>
+<p>We can count the number of fires from each year with <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">.count()</span></code>. But this time we want to group by the year column, so that fires from the same year are placed within the same group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1898</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1908</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1909</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>286</td>
+      <td>286</td>
+      <td>286</td>
+      <td>286</td>
+      <td>286</td>
+      <td>286</td>
+      <td>286</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+      <td>342</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>591</td>
+      <td>591</td>
+      <td>591</td>
+      <td>591</td>
+      <td>591</td>
+      <td>591</td>
+      <td>591</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>397</td>
+      <td>397</td>
+      <td>397</td>
+      <td>397</td>
+      <td>397</td>
+      <td>397</td>
+      <td>397</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>295</td>
+      <td>295</td>
+      <td>295</td>
+      <td>295</td>
+      <td>295</td>
+      <td>295</td>
+      <td>295</td>
+    </tr>
+  </tbody>
+</table>
+<p>115 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Notice that the index now contains the different years, since we have grouped by year. To find the year with the largest number of fires, we’ll do what we’ve done before: sort the table and return the last entry in the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2017
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you’re confused why we are sorting by the <code class="docutils literal notranslate"><span class="pre">'month'</span></code> column, remember: all of the columns contain the exact same information after <code class="docutils literal notranslate"><span class="pre">.count()</span></code>! So we could have sorted by the <code class="docutils literal notranslate"><span class="pre">'county'</span></code> column to get the same result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2017
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>What is the median fire size in each county?</strong></em></p>
+<p>We’ll group by the <code class="docutils literal notranslate"><span class="pre">'county'</span></code> column, and apply the <code class="docutils literal notranslate"><span class="pre">.median()</span></code> aggregator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>acres</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>county</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Alameda</th>
+      <td>1988.0</td>
+      <td>7.0</td>
+      <td>346.514191</td>
+      <td>-121.624947</td>
+      <td>37.707623</td>
+    </tr>
+    <tr>
+      <th>Alpine</th>
+      <td>2012.0</td>
+      <td>8.0</td>
+      <td>186.335419</td>
+      <td>-119.822902</td>
+      <td>38.443338</td>
+    </tr>
+    <tr>
+      <th>Amador</th>
+      <td>1992.5</td>
+      <td>7.0</td>
+      <td>240.124207</td>
+      <td>-120.666797</td>
+      <td>38.438166</td>
+    </tr>
+    <tr>
+      <th>Butte</th>
+      <td>1999.0</td>
+      <td>8.0</td>
+      <td>471.250946</td>
+      <td>-121.559119</td>
+      <td>39.634084</td>
+    </tr>
+    <tr>
+      <th>Calaveras</th>
+      <td>1991.0</td>
+      <td>8.0</td>
+      <td>228.224197</td>
+      <td>-120.597127</td>
+      <td>38.180825</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Tulare</th>
+      <td>1996.0</td>
+      <td>7.0</td>
+      <td>167.007103</td>
+      <td>-118.773436</td>
+      <td>36.336689</td>
+    </tr>
+    <tr>
+      <th>Tuolumne</th>
+      <td>2001.0</td>
+      <td>8.0</td>
+      <td>86.326668</td>
+      <td>-120.047074</td>
+      <td>37.946170</td>
+    </tr>
+    <tr>
+      <th>Ventura</th>
+      <td>1996.0</td>
+      <td>8.0</td>
+      <td>122.332626</td>
+      <td>-119.021737</td>
+      <td>34.333966</td>
+    </tr>
+    <tr>
+      <th>Yolo</th>
+      <td>1988.0</td>
+      <td>7.0</td>
+      <td>677.440491</td>
+      <td>-122.097986</td>
+      <td>38.744614</td>
+    </tr>
+    <tr>
+      <th>Yuba</th>
+      <td>2008.0</td>
+      <td>7.5</td>
+      <td>74.831673</td>
+      <td>-121.341850</td>
+      <td>39.201832</td>
+    </tr>
+  </tbody>
+</table>
+<p>57 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>If we want just the fire size, we could <code class="docutils literal notranslate"><span class="pre">.get</span></code> the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>county
+Alameda      346.514191
+Alpine       186.335419
+Amador       240.124207
+Butte        471.250946
+Calaveras    228.224197
+                ...    
+Tulare       167.007103
+Tuolumne      86.326668
+Ventura      122.332626
+Yolo         677.440491
+Yuba          74.831673
+Name: acres, Length: 57, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>What was the size of the largest fire in 1995?</strong></em></p>
+<p>We will group by year and apply the max aggregator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1898</th>
+      <td>9</td>
+      <td>MATILIJA</td>
+      <td>14 - Unknown</td>
+      <td>20539.949219</td>
+      <td>Ventura</td>
+      <td>-119.265380</td>
+      <td>34.488614</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <td>8</td>
+      <td>FEROUD</td>
+      <td>14 - Unknown</td>
+      <td>731.481567</td>
+      <td>Ventura</td>
+      <td>-119.320979</td>
+      <td>34.417515</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <td>10</td>
+      <td>SAN ANTONIO</td>
+      <td>14 - Unknown</td>
+      <td>380.260590</td>
+      <td>Ventura</td>
+      <td>-119.253422</td>
+      <td>34.430616</td>
+    </tr>
+    <tr>
+      <th>1908</th>
+      <td>9</td>
+      <td>REEVES</td>
+      <td>14 - Unknown</td>
+      <td>7433.901855</td>
+      <td>Ventura</td>
+      <td>-119.179959</td>
+      <td>41.000197</td>
+    </tr>
+    <tr>
+      <th>1909</th>
+      <td>9</td>
+      <td>SHOEMAKER</td>
+      <td>14 - Unknown</td>
+      <td>3174.514648</td>
+      <td>Ventura</td>
+      <td>-117.685816</td>
+      <td>34.482616</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>12</td>
+      <td>ZEBRA</td>
+      <td>9 - Miscellaneous</td>
+      <td>151546.812500</td>
+      <td>Yuba</td>
+      <td>-115.837487</td>
+      <td>41.989971</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>12</td>
+      <td>YUCCA</td>
+      <td>9 - Miscellaneous</td>
+      <td>132104.281250</td>
+      <td>Yuba</td>
+      <td>-116.557240</td>
+      <td>41.971890</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>12</td>
+      <td>ZERMATT</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Yuba</td>
+      <td>-115.268126</td>
+      <td>42.002868</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>12</td>
+      <td>YOSEMITE</td>
+      <td>9 - Miscellaneous</td>
+      <td>410202.468750</td>
+      <td>Yuba</td>
+      <td>-116.359866</td>
+      <td>41.979459</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>12</td>
+      <td>WILLOWS 3</td>
+      <td>9 - Miscellaneous</td>
+      <td>77762.140625</td>
+      <td>Yuba</td>
+      <td>-115.339065</td>
+      <td>42.007182</td>
+    </tr>
+  </tbody>
+</table>
+<p>115 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Now we want to retrieve the size (in acres) of the fire from 1995. We’ll do this with our familiar <code class="docutils literal notranslate"><span class="pre">.get().loc[]</span></code> pattern:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>21444.125
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip" id="tip-0">
+<p class="admonition-title">Tip</p>
+<p>When method chaining, it is useful to keep in mind what <em>type</em> of object you are working with at each step. Any time you write <code class="docutils literal notranslate"><span class="pre">.</span></code>, you should be able to stop and say whether the piece of code to the left evaluates to a table, a series, a number, etc. For instance, <code class="docutils literal notranslate"><span class="pre">calfire.groupby('year').max()</span></code> evaluates to a table, so whatever follows should be a table method.</p>
+</div>
+</div>
+<div class="section" id="groupby-versus-querying">
+<h2><code class="docutils literal notranslate"><span class="pre">.groupby</span></code> versus querying<a class="headerlink" href="#groupby-versus-querying" title="Permalink to this headline">¶</a></h2>
+<p>In the last example above, we found the size of the largest fire from 1995. We did this with <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and the <code class="docutils literal notranslate"><span class="pre">.max()</span></code> aggregator. While this worked, you might have noticed that we can obtain the same result with a simple <em>query</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1995</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>21444.125
+</pre></div>
+</div>
+</div>
+</div>
+<p>Which is better? And how do we choose which method to use?</p>
+<p>In many cases like this one, both approaches work equally well. In general, however, queries are most useful when asking a question about a <em>single</em> group (or subset) of a table, and <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> is most useful when your question is about <em>each group</em>. As a rule of thumb, if you question contains the word “each” – like in “What was the size of the largest fire in each county?” – you probably want to use <code class="docutils literal notranslate"><span class="pre">.groupby</span></code>.</p>
+<p>Queries have many advantages over <code class="docutils literal notranslate"><span class="pre">.groupby</span></code>. For one, queries can be performed with complex, compound conditions, while <code class="docutils literal notranslate"><span class="pre">.groupby</span></code>’s is limited to forming groups using the values in a particular column. For instance, suppose we want to find the size of the largest fire between 1990 and 2000. We can do this with a query, but not with <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> directly. Second, a query results in a full DataFrame object, while <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> must be followed by one of a limited number of available aggregators.</p>
+<div class="jupytertip admonition" id="jupytertip-0">
+<p class="admonition-title">Jupyter Tip</p>
+<p>If you’d like to know how efficient a particular piece of code is, you can use the <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> “magic function”. This runs a cell over and over, printing the average time it takes to execute. Create a new cell with <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> and the code you’d like to time, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">timeit</span>
+<span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1995</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This will print something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>62.4 ms ± 161 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+<p>This tells us that the code took 62.4 milliseconds to run on average. Not bad!</p>
+</div>
+</div>
+<div class="section" id="subgroups">
+<h2>Subgroups<a class="headerlink" href="#subgroups" title="Permalink to this headline">¶</a></h2>
+<p>Which month of which year had the most wildfires in California history? To answer this question, we’d like to count the number of wildfires for each month of every year. So for instance, the number of fires in January 1991, February 1991, …, January 1992, February 1992, …, and so on.</p>
+<p>This looks like a job for <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> with the <code class="docutils literal notranslate"><span class="pre">.count</span></code> aggregator. But what do we group by? If we group by year, we’ll get the number of fires in each year. If we just group by month, we’ll get the number of fires in each month <em>over all years</em>, which isn’t quite what we want:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>85</td>
+      <td>85</td>
+      <td>85</td>
+      <td>85</td>
+      <td>85</td>
+      <td>85</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>131</td>
+      <td>131</td>
+      <td>131</td>
+      <td>131</td>
+      <td>131</td>
+      <td>131</td>
+      <td>131</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>274</td>
+      <td>274</td>
+      <td>274</td>
+      <td>274</td>
+      <td>274</td>
+      <td>274</td>
+      <td>274</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>832</td>
+      <td>832</td>
+      <td>832</td>
+      <td>832</td>
+      <td>832</td>
+      <td>832</td>
+      <td>832</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2945</td>
+      <td>2945</td>
+      <td>2945</td>
+      <td>2945</td>
+      <td>2945</td>
+      <td>2945</td>
+      <td>2945</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2179</td>
+      <td>2179</td>
+      <td>2179</td>
+      <td>2179</td>
+      <td>2179</td>
+      <td>2179</td>
+      <td>2179</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>966</td>
+      <td>966</td>
+      <td>966</td>
+      <td>966</td>
+      <td>966</td>
+      <td>966</td>
+      <td>966</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+      <td>424</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>169</td>
+      <td>169</td>
+      <td>169</td>
+      <td>169</td>
+      <td>169</td>
+      <td>169</td>
+      <td>169</td>
+    </tr>
+  </tbody>
+</table>
+<p>12 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>What we’d like to do is to group rows which are in the same year <em>and</em> in the same month. It turns out that <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> supports this via <em>subgrouping</em>. We can specify <em>two</em> columns to group by using a list. First, “outer” groups will be formed using the first column, then “inner” groups will be formed <em>within</em> each outer group using the values in the second column. Here is how it looks in action:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>month</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1898</th>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1902</th>
+      <th>8</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1903</th>
+      <th>10</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1908</th>
+      <th>7</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">2019</th>
+      <th>8</th>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>931 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>We see something new in the result: <em>both</em> the year and the month are being used as the row label. This called a <strong>hierarchical index</strong> (or <strong>multi-index</strong>). Hierarchical indices are quite powerful, but introduce extra complexity. Instead of using multi-indexes, we’ll use the <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> method to move each level of the index to its own column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_month</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">by_month</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1898</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1902</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1903</td>
+      <td>10</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1908</td>
+      <td>7</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>926</th>
+      <td>2019</td>
+      <td>8</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>927</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>928</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>929</th>
+      <td>2019</td>
+      <td>11</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>930</th>
+      <td>2019</td>
+      <td>12</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>931 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Which month of which year had the most wildfires? We’ll solve this by sorting, as usual:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_month_sorted</span> <span class="o">=</span> <span class="n">by_month</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_month_sorted</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2008
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">by_month_sorted</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="querying.html" title="previous page">Querying</a>
+    <a class='right-next' id="next-link" href="../how_to_read.html" title="next page">How To Read This Book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
