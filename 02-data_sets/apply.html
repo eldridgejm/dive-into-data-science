@@ -1,0 +1,1996 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Defining and Applying Functions &#8212; Dive into Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exploring Data" href="../exploring_data/exploring_data.html" />
+    <link rel="prev" title="GroupBy" href="groupby.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Defining and Applying Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../exploring_data/exploring_data.html">
+   Exploring Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/02-data_sets/apply.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F02-data_sets/apply.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/apply.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-functions">
+   Defining Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splitting-strings">
+     Splitting Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-def-statement">
+     The
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       def
+      </span>
+     </code>
+     statement
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#name">
+       Name
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#arguments">
+       Arguments
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#body">
+       Body
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#docstring">
+       Docstring
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#return">
+       Return
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-behavior">
+     Function Behavior
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions-are-recipes">
+       Functions are “recipes”
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#scope">
+       Scope
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#return-exits-the-function">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       exits the function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#printing-versus-returning">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         print
+        </span>
+       </code>
+       ing versus
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         return
+        </span>
+       </code>
+       ing
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-apply-series-method">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .apply
+    </span>
+   </code>
+   Series Method
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="defining-and-applying-functions">
+<h1>Defining and Applying Functions<a class="headerlink" href="#defining-and-applying-functions" title="Permalink to this headline">¶</a></h1>
+<p>We have seen that Python comes with a bunch of useful functions for performing common tasks. For instance, the built-in <code class="docutils literal notranslate"><span class="pre">round</span></code> function rounds a number to a specified number of decimal places.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have also seen that we can access even more functions by installing and importing a library, like <em>NumPy</em> or <em>babypandas</em>.</p>
+<p>In some cases, however, there might not be a library providing the function that you need. Luckily, Python allows us to define our own functions. In this section, we’ll see how to create functions and apply them to tables.</p>
+<div class="section" id="defining-functions">
+<h2>Defining Functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you are working with a dataset containing a bunch of street addresses, such as the following address of the University of California, San Diego:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span> <span class="o">=</span> <span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose we only care about the city and state. That is, we’d like to extract the string <code class="docutils literal notranslate"><span class="pre">'La</span> <span class="pre">Jolla,</span> <span class="pre">CA'</span></code> from the full address. Python doesn’t come with a function that does exactly this, but we can write our own without too much work.</p>
+<div class="section" id="splitting-strings">
+<h3>Splitting Strings<a class="headerlink" href="#splitting-strings" title="Permalink to this headline">¶</a></h3>
+<p>A typical address has several parts: the street address, the city name, the state, and the zip code. The parts are separated by commas (with the exception of the state and zip code). Python strings have a helpful <code class="docutils literal notranslate"><span class="pre">.split</span></code> method which will split a string into parts according to whatever delimiter we provide. To split by a comma, we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;9500 Gilman Dr&#39;, &#39; La Jolla&#39;, &#39; CA 92093&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result is a list of strings, each of them a part of the original list.</p>
+<p>If we do not provide a delimiter, the default behavior of <code class="docutils literal notranslate"><span class="pre">.split</span></code> is to split based on whitespace (such as spaces):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;9500&#39;, &#39;Gilman&#39;, &#39;Dr,&#39;, &#39;La&#39;, &#39;Jolla,&#39;, &#39;CA&#39;, &#39;92093&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">.split</span></code> to retrieve the city and state name. Notice that when we split by commas, the city name will always be the second-to-last entry of the resulting list. This is because the last comma separates the city from the state and zip code. Remember that we can retrieve the second-to-last element of a list using square bracket notation, combined with using <code class="docutils literal notranslate"><span class="pre">-2</span></code> as the index:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">city</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The result has a leading space that we might want to get rid of – we’ll deal with that in a moment. For now, let’s retrieve the state name. To do this, it might be easiest to split based on whitespace – then the state abbreviation will again be the second-to-last element of the list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">state</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’d like to put the city and state together into a single string, like <code class="docutils literal notranslate"><span class="pre">'La</span> <span class="pre">Jolla,</span> <span class="pre">CA'</span></code>. To do so, remember that the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator <em>concatenates</em> strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
+<span class="n">city_and_state</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is almost perfect, but let’s get rid of the leading space. We can do this with the <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> string method, which removes leading and trailing whitespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! Putting it all together, here’s the code we used to retrieve the city and state:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
+<span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code might seem simple enough, but suppose we have another address that we’d like to process:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lego</span> <span class="o">=</span> <span class="s1">&#39;LEGOLAND California Resort 1 Legoland Dr, Carlsbad, CA 92008&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We <em>could</em> copy and paste the code above, but there is a better way: let’s define a function.</p>
+</div>
+<div class="section" id="the-def-statement">
+<h3>The <code class="docutils literal notranslate"><span class="pre">def</span></code> statement<a class="headerlink" href="#the-def-statement" title="Permalink to this headline">¶</a></h3>
+<p>In Python, new functions are created using the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement. Here is an example of a function which retrieves the city and state name from an address:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">city_comma_state</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return CITY, ST from an address string.&quot;&quot;&quot;</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
+    <span class="k">return</span> <span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a lot to say about this, but first let’s test the function to see if it works. We call user-defined functions just like any other function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">ucsd</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">lego</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Carlsbad, CA&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a closer look at the anatomy of a function definition. <a class="reference internal" href="#function"><span class="std std-numref">Fig. 7</span></a> below shows all of the different parts.</p>
+<div class="figure align-default" id="function">
+<a class="reference internal image-reference" href="../_images/function.svg"><img alt="../_images/function.svg" src="../_images/function.svg" width="80%" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">The anatomy of a function.</span><a class="headerlink" href="#function" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="name">
+<h4>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h4>
+<p>A function definition starts with a name. Above, we’ve named our function <code class="docutils literal notranslate"><span class="pre">city_comma_state</span></code>, but any valid variable name would do. A function’s name should be short but descriptive.</p>
+</div>
+<div class="section" id="arguments">
+<h4>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h4>
+<p>Next come the function’s arguments. These are the “inputs” to the function. In this case, there is only one argument: the address that will be processed. We’ll see how to define functions with more than one argument in a moment. A function can also have zero arguments, in which case we would write <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">function_with_no_args():</span></code>. The arguments can be named anything, as long as they are valid variable names. The arguments are surrounded by parentheses, and separated by commas.</p>
+</div>
+<div class="section" id="body">
+<h4>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h4>
+<p>The body of the function contains the code that will be executed when the function is called. The arguments can be used within the body of the function. The body of the function must be indented – we usually do this with the tab key.</p>
+</div>
+<div class="section" id="docstring">
+<h4>Docstring<a class="headerlink" href="#docstring" title="Permalink to this headline">¶</a></h4>
+<p>The docstring is a piece of documentation that tells the reader what the function does. Including it is optional but recommended. If you ask Python for information on your function using <code class="docutils literal notranslate"><span class="pre">help</span></code>, the docstring will be displayed!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">city_comma_state</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function city_comma_state in module __main__:
+
+city_comma_state(address)
+    Return CITY, ST from an address string.
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="return">
+<h4>Return<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h4>
+<p>A function should usually return some value – this is done using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, followed by an expression whose value will be returned.</p>
+</div>
+</div>
+<div class="section" id="function-behavior">
+<h3>Function Behavior<a class="headerlink" href="#function-behavior" title="Permalink to this headline">¶</a></h3>
+<p>The code we include in a function behaves differently than the code we are used to writing in a couple of key ways.</p>
+<div class="section" id="functions-are-recipes">
+<h4>Functions are “recipes”<a class="headerlink" href="#functions-are-recipes" title="Permalink to this headline">¶</a></h4>
+<p>The code inside of a function is not executed until we call the function. For instance, suppose we try to do something impossible inside of a function – like dividing by zero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you run the cell defining this function, everything will be fine: you won’t see an error. But when you <em>call</em> the function, Python let’s you know that you’re doing something that is mathematically impossible:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">c19b6d9633cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">foo</span><span class="p">()</span>
+
+<span class="nn">&lt;ipython-input-17-477336bbf293&gt;</span> in <span class="ni">foo</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">return</span> <span class="n">x</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is because function definition are like recipes in the sense that handing someone a recipe is not the same as following the recipe and preparing the meal.</p>
+</div>
+<div class="section" id="scope">
+<h4>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h4>
+<p>Variables defined within a function are available only inside of the function. We can define variables inside a function just as we normally would:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we run the function, we’ll see the number <code class="docutils literal notranslate"><span class="pre">47</span></code> displayed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>47
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, if we try to use the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, Python will yell at us:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">6</span><span class="n">fcf9dfbd479</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span>
+
+<span class="ne">NameError</span>: name &#39;x&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is because variables defined within a function are accessible only within the function. If we want to use that variable outside of the function, we need to pass it back to the caller using a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>It is a very good thing that the variables defined inside of a function do not exist outside of a function. For one, good programming practice stresses <strong>encapsulation</strong> – that is, to keep things simple, we shouldn’t need to know exactly what is going on inside of a function to be able to use it. Second, if every variable used inside of a function were available outside of the function, things would get messy very fast. Having a bunch of extra variables – most of which you’ll never use – is called <strong>namespace pollution</strong>.</p>
+</div>
+<p>Note that arguments count as “variables defined within a function”. For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">my_argument</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">my_argument</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we call the function, everything will act as expected:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
+</div>
+<p>But if we try to access <code class="docutils literal notranslate"><span class="pre">my_argument</span></code> outside of the function, Python tells us that we can’t:</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_argument</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">785</span><span class="n">f83eb3696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_argument</span>
+
+<span class="ne">NameError</span>: name &#39;my_argument&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>On the other hand, variables defined outside of a function are available inside the function. Consider for instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use this behavior sparingly – it is usually better to “isolate” a function from the outside world by passing in all of the variables that it needs.</p>
+</div>
+<div class="section" id="return-exits-the-function">
+<h4><code class="docutils literal notranslate"><span class="pre">return</span></code> exits the function<a class="headerlink" href="#return-exits-the-function" title="Permalink to this headline">¶</a></h4>
+<p>As soon as Python encounters a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, it stops executing the function and returns the corresponding value. As an example, consider the code below which has three <code class="docutils literal notranslate"><span class="pre">return</span></code>s. Only the first return statement will ever run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting execution.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hey, I made it!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;On to number three...&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Starting execution.
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="printing-versus-returning">
+<h4><code class="docutils literal notranslate"><span class="pre">print</span></code>ing versus <code class="docutils literal notranslate"><span class="pre">return</span></code>ing<a class="headerlink" href="#printing-versus-returning" title="Permalink to this headline">¶</a></h4>
+<p>As we saw above, functions are somewhat isolated from the rest of the world in the sense that variables defined within them cannot be used outside of the function. The “correct” way of transmitting values back to the world is to use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. However, a common mistake is to think that <code class="docutils literal notranslate"><span class="pre">print</span></code> does the same thing. This is understandable, since <code class="docutils literal notranslate"><span class="pre">print</span></code>ing and <code class="docutils literal notranslate"><span class="pre">returning</span></code> looks similar in a Jupyter notebook. For example, let’s define a function that both <code class="docutils literal notranslate"><span class="pre">print</span></code>s and <code class="docutils literal notranslate"><span class="pre">return</span></code>s:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">52</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we run this function, we’ll see both values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
+<span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Only <code class="docutils literal notranslate"><span class="pre">42</span></code> is the <em>output</em> of the cell and can be “saved” to a variable. <code class="docutils literal notranslate"><span class="pre">52</span></code>, on the other hand, is simply displayed to the screen and is afterwards lost forever. This can be checked by displaying the value of <code class="docutils literal notranslate"><span class="pre">z</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nevertheless, using <code class="docutils literal notranslate"><span class="pre">print</span></code> inside of a function can be helpful in “debugging” – more on that in a moment.
+Lastly, if you truly want to return two values from a function, the right way to do so is by separating them with a comma, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">52</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When the function is run, it will return a <strong>tuple</strong> of two things:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(42, 52)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A <strong>tuple</strong> is like a list, so we can use square bracket notation to retrieve each element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>52
+</pre></div>
+</div>
+</div>
+</div>
+<p>We won’t usually need to return more than one thing from a function, though.</p>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Given a year, produce the decade</strong></em></p>
+<p>Given a year, such as 1994, we’d like to retrieve the decade; in this case, 1990. At first we might think that <code class="docutils literal notranslate"><span class="pre">round</span></code> is useful:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+</pre></div>
+</div>
+</div>
+</div>
+<p>But it won’t work for years like 1997, since it will round up:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1997</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a few approaches that do work. One way is to use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator. Remember that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> returns the <em>remainder</em> upon dividing <code class="docutils literal notranslate"><span class="pre">x</span></code> by <code class="docutils literal notranslate"><span class="pre">y</span></code>. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>To find the decade, we can simply subtract the remainder obtained by dividing by ten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1997</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1997</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2000</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Placing this code in a function makes it so we don’t have to remember this trick, and makes our code more <strong>readable</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decade_from_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">year</span> <span class="o">-</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1992</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1997</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Given height and width, compute the area of a triangle</strong></em></p>
+<p>We need to define a function with <em>two</em> variables. We do so by separating the argument names with a comma, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_of_triangle</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>25.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the <em>order</em> of the arguments matters. When <code class="docutils literal notranslate"><span class="pre">area_of_triangle(10,</span> <span class="pre">5)</span></code> is executed, Python assigns the value of 10 to <code class="docutils literal notranslate"><span class="pre">base</span></code> and assigns the value of 5 to <code class="docutils literal notranslate"><span class="pre">height</span></code>. If you wish, you can use the keyword argument form to call the function, in which case arguments can be provided in any order. This is slightly more readable, too:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Perform a frequent query</strong></em></p>
+<p>Suppose we frequently want to retrieve only those rows of a table whose entries lie between some thresholds. For instance, we
+might want only those fires in<code class="docutils literal notranslate"> <span class="pre">calfire</span></code> from between 1995 and 2000. By writing this query into a function accepting a table, a column, and the thresholds, we make it easy to repeat:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">between</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">table</span><span class="p">[(</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For instance, to get only those fires from between 1995 and 2000:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6374</th>
+      <td>1995</td>
+      <td>11</td>
+      <td>SEMINOLE</td>
+      <td>2 - Equipment Use</td>
+      <td>645.149780</td>
+      <td>Riverside</td>
+      <td>-116.772176</td>
+      <td>33.890971</td>
+    </tr>
+    <tr>
+      <th>6375</th>
+      <td>1995</td>
+      <td>10</td>
+      <td>SHINN</td>
+      <td>7 - Arson</td>
+      <td>13.694411</td>
+      <td>Los Angeles</td>
+      <td>-117.679804</td>
+      <td>34.181470</td>
+    </tr>
+    <tr>
+      <th>6376</th>
+      <td>1995</td>
+      <td>8</td>
+      <td>ECHO</td>
+      <td>14 - Unknown</td>
+      <td>372.055573</td>
+      <td>Riverside</td>
+      <td>-117.209657</td>
+      <td>33.868816</td>
+    </tr>
+    <tr>
+      <th>6377</th>
+      <td>1995</td>
+      <td>10</td>
+      <td>FREEWAY FIRE NO II</td>
+      <td>14 - Unknown</td>
+      <td>1233.456909</td>
+      <td>Los Angeles</td>
+      <td>-118.372160</td>
+      <td>34.446973</td>
+    </tr>
+    <tr>
+      <th>6378</th>
+      <td>1995</td>
+      <td>12</td>
+      <td>TOWSLEY FIRE</td>
+      <td>14 - Unknown</td>
+      <td>818.184509</td>
+      <td>Los Angeles</td>
+      <td>-118.559865</td>
+      <td>34.345437</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7333</th>
+      <td>1999</td>
+      <td>7</td>
+      <td>VINTAGE</td>
+      <td>2 - Equipment Use</td>
+      <td>34.438271</td>
+      <td>Kern</td>
+      <td>-119.521235</td>
+      <td>35.207022</td>
+    </tr>
+    <tr>
+      <th>7334</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>41</td>
+      <td>10 - Vehicle</td>
+      <td>167.177612</td>
+      <td>Kern</td>
+      <td>-120.176735</td>
+      <td>35.768621</td>
+    </tr>
+    <tr>
+      <th>7335</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>WASHBURN</td>
+      <td>1 - Lightning</td>
+      <td>272.034943</td>
+      <td>San Luis Obispo</td>
+      <td>-119.806037</td>
+      <td>35.132310</td>
+    </tr>
+    <tr>
+      <th>7336</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>WOODLAND</td>
+      <td>1 - Lightning</td>
+      <td>995.418335</td>
+      <td>Butte</td>
+      <td>-121.699525</td>
+      <td>39.859890</td>
+    </tr>
+    <tr>
+      <th>7337</th>
+      <td>1999</td>
+      <td>8</td>
+      <td>BLOOMER</td>
+      <td>1 - Lightning</td>
+      <td>2609.674805</td>
+      <td>Butte</td>
+      <td>-121.476863</td>
+      <td>39.644791</td>
+    </tr>
+  </tbody>
+</table>
+<p>964 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Because this function accepts the column name, it is very reusable. We can use it to get the fires whose size is between 10,000 and 20,000 acres:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;acres&#39;</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">20_000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>16</th>
+      <td>1910</td>
+      <td>7</td>
+      <td>COYOTE CREEK</td>
+      <td>14 - Unknown</td>
+      <td>11226.824219</td>
+      <td>Ventura</td>
+      <td>-119.386960</td>
+      <td>34.421249</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>1924</td>
+      <td>8</td>
+      <td>UPPER DESOLATION VAL</td>
+      <td>14 - Unknown</td>
+      <td>10973.407227</td>
+      <td>El Dorado</td>
+      <td>-120.506799</td>
+      <td>38.571552</td>
+    </tr>
+    <tr>
+      <th>317</th>
+      <td>1926</td>
+      <td>7</td>
+      <td>FORT BIDWELL</td>
+      <td>9 - Miscellaneous</td>
+      <td>13100.943359</td>
+      <td>Modoc</td>
+      <td>-120.082147</td>
+      <td>41.934478</td>
+    </tr>
+    <tr>
+      <th>322</th>
+      <td>1927</td>
+      <td>8</td>
+      <td>LIEBRE</td>
+      <td>14 - Unknown</td>
+      <td>17957.339844</td>
+      <td>Los Angeles</td>
+      <td>-118.611143</td>
+      <td>34.719225</td>
+    </tr>
+    <tr>
+      <th>739</th>
+      <td>1938</td>
+      <td>8</td>
+      <td>RED CAP</td>
+      <td>14 - Unknown</td>
+      <td>14867.953125</td>
+      <td>Humboldt</td>
+      <td>-123.470725</td>
+      <td>41.174271</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>12949</th>
+      <td>2018</td>
+      <td>7</td>
+      <td>CRANSTON</td>
+      <td>7 - Arson</td>
+      <td>13229.158203</td>
+      <td>Riverside</td>
+      <td>-116.696822</td>
+      <td>33.715582</td>
+    </tr>
+    <tr>
+      <th>12954</th>
+      <td>2018</td>
+      <td>6</td>
+      <td>LIONS</td>
+      <td>1 - Lightning</td>
+      <td>13462.742188</td>
+      <td>Madera</td>
+      <td>-119.166248</td>
+      <td>37.577131</td>
+    </tr>
+    <tr>
+      <th>13290</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>TABOOSE</td>
+      <td>1 - Lightning</td>
+      <td>10267.631836</td>
+      <td>Inyo</td>
+      <td>-118.348358</td>
+      <td>37.021613</td>
+    </tr>
+    <tr>
+      <th>13305</th>
+      <td>2019</td>
+      <td>7</td>
+      <td>TUCKER</td>
+      <td>9 - Miscellaneous</td>
+      <td>14184.661133</td>
+      <td>Modoc</td>
+      <td>-121.241082</td>
+      <td>41.803004</td>
+    </tr>
+    <tr>
+      <th>13365</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>MARIA</td>
+      <td>14 - Unknown</td>
+      <td>10042.458984</td>
+      <td>Ventura</td>
+      <td>-119.056671</td>
+      <td>34.314244</td>
+    </tr>
+  </tbody>
+</table>
+<p>235 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operators work on strings, too, we can get all of the fires whose name is between A and E:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>COZY DELL</td>
+      <td>14 - Unknown</td>
+      <td>2974.585205</td>
+      <td>Ventura</td>
+      <td>-119.265380</td>
+      <td>34.482316</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1910</td>
+      <td>8</td>
+      <td>CRAWFORD CREEK 2</td>
+      <td>7 - Arson</td>
+      <td>497.885071</td>
+      <td>Humboldt</td>
+      <td>-123.552471</td>
+      <td>41.300052</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1910</td>
+      <td>7</td>
+      <td>BLUFF CREEK</td>
+      <td>4 - Campfire</td>
+      <td>298.716553</td>
+      <td>Del Norte</td>
+      <td>-123.760361</td>
+      <td>41.430391</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1910</td>
+      <td>7</td>
+      <td>COYOTE CREEK</td>
+      <td>14 - Unknown</td>
+      <td>11226.824219</td>
+      <td>Ventura</td>
+      <td>-119.386960</td>
+      <td>34.421249</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1910</td>
+      <td>8</td>
+      <td>BULL CREEK</td>
+      <td>4 - Campfire</td>
+      <td>56.897217</td>
+      <td>Humboldt</td>
+      <td>-123.621988</td>
+      <td>41.174766</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13446</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>ANTELOPE</td>
+      <td>9 - Miscellaneous</td>
+      <td>167.332794</td>
+      <td>San Benito</td>
+      <td>-120.831821</td>
+      <td>36.558925</td>
+    </tr>
+    <tr>
+      <th>13451</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>COW</td>
+      <td>10 - Vehicle</td>
+      <td>15.383965</td>
+      <td>Shasta</td>
+      <td>-122.038452</td>
+      <td>40.612144</td>
+    </tr>
+    <tr>
+      <th>13456</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>DEER</td>
+      <td>5 - Debris</td>
+      <td>9.367375</td>
+      <td>Santa Cruz</td>
+      <td>-122.085541</td>
+      <td>37.183180</td>
+    </tr>
+    <tr>
+      <th>13457</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>CABRILLO</td>
+      <td>2 - Equipment Use</td>
+      <td>61.750446</td>
+      <td>San Mateo</td>
+      <td>-122.358885</td>
+      <td>37.171839</td>
+    </tr>
+    <tr>
+      <th>13460</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>CROSS</td>
+      <td>14 - Unknown</td>
+      <td>289.151428</td>
+      <td>Monterey</td>
+      <td>-120.726245</td>
+      <td>35.793698</td>
+    </tr>
+  </tbody>
+</table>
+<p>3620 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="the-apply-series-method">
+<h2>The <code class="docutils literal notranslate"><span class="pre">.apply</span></code> Series Method<a class="headerlink" href="#the-apply-series-method" title="Permalink to this headline">¶</a></h2>
+<p>DataFrames come equipped with many useful methods, but defining our own functions allows us to make tables even more powerful. One way to use tables with functions is to pass the table into the function as one of its inputs, as we saw in the example above. In some situations, however, we don’t want to apply the function to the entire table, but rather to each entry in one of the table’s columns. In these cases, we can use the <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method.</p>
+<p>For instance, suppose we have a table containing a <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column, such as the <code class="docutils literal notranslate"><span class="pre">calfire</span></code> table we have been using, and we want to convert each year into the corresponding decade. We have already written a function that converts a single year to a decade: <code class="docutils literal notranslate"><span class="pre">decade_from_year</span></code>. Recall how it works:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1987</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1980
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’d like to apply this function to each entry in the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column. To do so, we’ll use <code class="docutils literal notranslate"><span class="pre">.apply</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        1890
+1        1890
+2        1890
+3        1900
+4        1900
+         ... 
+13459    2010
+13460    2010
+13461    2010
+13462    2010
+13463    2010
+Name: year, Length: 13464, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the pattern here: we <code class="docutils literal notranslate"><span class="pre">.get('year')</span></code> to retrieve column we wish to work with, and then <code class="docutils literal notranslate"><span class="pre">.apply(decade_from_year)</span></code> to the column. The result is a Series with the same number of entries as the column containing the years. Each entry is the result of applying the function to the corresponding entry of the original column.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that we pass the function into <code class="docutils literal notranslate"><span class="pre">.apply</span></code> <em>without</em> trailing parentheses. That is, we write <code class="docutils literal notranslate"><span class="pre">.apply(decade_from_year)</span></code> and not <code class="docutils literal notranslate"><span class="pre">.apply(decade_from_year())</span></code> or <code class="docutils literal notranslate"><span class="pre">.apply(decade_from_year(calfire.get('year')))</span></code>. The <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method accepts the name of a function. It will then call the function many times on the given Series.</p>
+</div>
+<p>In many cases we’d like to add this new Series back to the table as a new column. We can do so with <code class="docutils literal notranslate"><span class="pre">.assign</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_decade</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">decade</span><span class="o">=</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">with_decade</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+      <th>decade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>LOS PADRES</td>
+      <td>14 - Unknown</td>
+      <td>20539.949219</td>
+      <td>Ventura</td>
+      <td>-119.367830</td>
+      <td>34.446830</td>
+      <td>1890</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1898</td>
+      <td>4</td>
+      <td>MATILIJA</td>
+      <td>14 - Unknown</td>
+      <td>2641.123047</td>
+      <td>Ventura</td>
+      <td>-119.299625</td>
+      <td>34.488614</td>
+      <td>1890</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>COZY DELL</td>
+      <td>14 - Unknown</td>
+      <td>2974.585205</td>
+      <td>Ventura</td>
+      <td>-119.265380</td>
+      <td>34.482316</td>
+      <td>1890</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1902</td>
+      <td>8</td>
+      <td>FEROUD</td>
+      <td>14 - Unknown</td>
+      <td>731.481567</td>
+      <td>Ventura</td>
+      <td>-119.320979</td>
+      <td>34.417515</td>
+      <td>1900</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1903</td>
+      <td>10</td>
+      <td>SAN ANTONIO</td>
+      <td>14 - Unknown</td>
+      <td>380.260590</td>
+      <td>Ventura</td>
+      <td>-119.253422</td>
+      <td>34.430616</td>
+      <td>1900</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13459</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>STAGE</td>
+      <td>7 - Arson</td>
+      <td>13.019149</td>
+      <td>Monterey</td>
+      <td>-121.599207</td>
+      <td>36.764065</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>13460</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>CROSS</td>
+      <td>14 - Unknown</td>
+      <td>289.151428</td>
+      <td>Monterey</td>
+      <td>-120.726245</td>
+      <td>35.793698</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>13461</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>FRUDDEN</td>
+      <td>2 - Equipment Use</td>
+      <td>11.789393</td>
+      <td>Monterey</td>
+      <td>-120.908061</td>
+      <td>35.908627</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>13462</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>JOLON</td>
+      <td>11 - Powerline</td>
+      <td>61.592369</td>
+      <td>Monterey</td>
+      <td>-121.010025</td>
+      <td>35.910750</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>13463</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>SADDLE RIDGE</td>
+      <td>14 - Unknown</td>
+      <td>8799.325195</td>
+      <td>Los Angeles</td>
+      <td>-118.516473</td>
+      <td>34.321859</td>
+      <td>2010</td>
+    </tr>
+  </tbody>
+</table>
+<p>13464 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method is very useful for <strong>data cleaning</strong>. Data rarely comes to us in the exact form we need or prefer. For instance, we might wish to convert a year to its decade, or remove the leading number code from a fire’s cause. A common approach to doing so is to write a function capable of converting or cleaning a single entry, then <code class="docutils literal notranslate"><span class="pre">.apply</span></code>ing this function to the entire column.</p>
+<p><em><strong>Example: clean the <code class="docutils literal notranslate"><span class="pre">cause</span></code> column</strong></em></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cause</span></code> column contains the cause of each fire as string, such as <code class="docutils literal notranslate"><span class="pre">'14</span> <span class="pre">-</span> <span class="pre">Unknown'</span></code>. The string contains a number encoding unique to the cause of the fire, but this is redundant since the cause is described immediately after. Let’s get rid of the number, leaving only the description.</p>
+<p>First, we’ll write a function that accepts a cause and returns only the description:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cause_description</span><span class="p">(</span><span class="n">cause</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cause</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cause_description</span><span class="p">(</span><span class="s1">&#39;2 - Equipment Use&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Equipment Use&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we <code class="docutils literal notranslate"><span class="pre">.apply</span></code> the function to the <code class="docutils literal notranslate"><span class="pre">'cause'</span></code> column. We’ll save it back to the table using <code class="docutils literal notranslate"><span class="pre">.assign</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">cause</span><span class="o">=</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">cause_description</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>name</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>longitude</th>
+      <th>latitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>LOS PADRES</td>
+      <td>Unknown</td>
+      <td>20539.949219</td>
+      <td>Ventura</td>
+      <td>-119.367830</td>
+      <td>34.446830</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1898</td>
+      <td>4</td>
+      <td>MATILIJA</td>
+      <td>Unknown</td>
+      <td>2641.123047</td>
+      <td>Ventura</td>
+      <td>-119.299625</td>
+      <td>34.488614</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1898</td>
+      <td>9</td>
+      <td>COZY DELL</td>
+      <td>Unknown</td>
+      <td>2974.585205</td>
+      <td>Ventura</td>
+      <td>-119.265380</td>
+      <td>34.482316</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1902</td>
+      <td>8</td>
+      <td>FEROUD</td>
+      <td>Unknown</td>
+      <td>731.481567</td>
+      <td>Ventura</td>
+      <td>-119.320979</td>
+      <td>34.417515</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1903</td>
+      <td>10</td>
+      <td>SAN ANTONIO</td>
+      <td>Unknown</td>
+      <td>380.260590</td>
+      <td>Ventura</td>
+      <td>-119.253422</td>
+      <td>34.430616</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13459</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>STAGE</td>
+      <td>Arson</td>
+      <td>13.019149</td>
+      <td>Monterey</td>
+      <td>-121.599207</td>
+      <td>36.764065</td>
+    </tr>
+    <tr>
+      <th>13460</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>CROSS</td>
+      <td>Unknown</td>
+      <td>289.151428</td>
+      <td>Monterey</td>
+      <td>-120.726245</td>
+      <td>35.793698</td>
+    </tr>
+    <tr>
+      <th>13461</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>FRUDDEN</td>
+      <td>Equipment Use</td>
+      <td>11.789393</td>
+      <td>Monterey</td>
+      <td>-120.908061</td>
+      <td>35.908627</td>
+    </tr>
+    <tr>
+      <th>13462</th>
+      <td>2019</td>
+      <td>9</td>
+      <td>JOLON</td>
+      <td>Powerline</td>
+      <td>61.592369</td>
+      <td>Monterey</td>
+      <td>-121.010025</td>
+      <td>35.910750</td>
+    </tr>
+    <tr>
+      <th>13463</th>
+      <td>2019</td>
+      <td>10</td>
+      <td>SADDLE RIDGE</td>
+      <td>Unknown</td>
+      <td>8799.325195</td>
+      <td>Los Angeles</td>
+      <td>-118.516473</td>
+      <td>34.321859</td>
+    </tr>
+  </tbody>
+</table>
+<p>13464 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="groupby.html" title="previous page">GroupBy</a>
+    <a class='right-next' id="next-link" href="../exploring_data/exploring_data.html" title="next page">Exploring Data</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
