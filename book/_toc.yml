@@ -18,6 +18,8 @@
 - file: 02-data_sets/accessing
 - file: 02-data_sets/querying
 - file: 02-data_sets/groupby
+- file: 02-data_sets/apply
+- file: exploring_data/exploring_data
 
 - header: Reference
 - file: how_to_read
