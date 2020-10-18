@@ -1,23 +1,44 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>DataFrames &#8212; Dive into Data Science</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -25,19 +46,17 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Accessing and Sorting" href="accessing.html" />
     <link rel="prev" title="Arrays" href="arrays.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -233,7 +252,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -244,7 +264,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/dataframes.ipynb"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/dataframes.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -259,8 +279,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -359,6 +380,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -498,7 +520,7 @@
 <p>To get access to the functionality that <em>babypandas</em> provides, we’ll need to import it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
 </pre></div>
 </div>
 </div>
@@ -515,7 +537,7 @@ It is a convention among data scientists to rename <code class="docutils literal
 <p>In <em>babypandas</em> (and <em>pandas</em>), a table is called a <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-dataframe">DataFrame</a></strong> (though we’ll use the two terms interchangeably). Since DataFrames are often used to store very large data sets, they are not typically created by typing their entries one by one – instead, they are usually read from a file. We’ll see how to do that in a moment, but for now we assume that we have already loaded a DataFrame into a variable called <code class="docutils literal notranslate"><span class="pre">fires</span></code>. If we type <code class="docutils literal notranslate"><span class="pre">fires</span></code> in our Jupyter notebook cell and execute it, it will display the table with nice formatting:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span>
 </pre></div>
 </div>
 </div>
@@ -642,12 +664,12 @@ It is a convention among data scientists to rename <code class="docutils literal
 <p>If we ask for the <code class="docutils literal notranslate"><span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">fires</span></code>, Python will tell us that it is a DataFrame:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.DataFrame
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.DataFrame
 </pre></div>
 </div>
 </div>
@@ -656,12 +678,12 @@ It is a convention among data scientists to rename <code class="docutils literal
 <p>We can get the number of rows and columns in a <em>DataFrame</em> by asking for its <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-shape">shape</a></strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(50, 5)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 5)
 </pre></div>
 </div>
 </div>
@@ -669,12 +691,12 @@ It is a convention among data scientists to rename <code class="docutils literal
 <p>This tells us that there are 50 rows and 9 columns. If for whatever reason we just wanted the number of rows, we could ask for the first element of this pair:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>50
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
 </div>
@@ -691,7 +713,7 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -813,7 +835,7 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
 <p>The <code class="docutils literal notranslate"><span class="pre">.set_index</span></code> method accepts one argument: the label of the column that should be used as the index. It then creates a <em>new</em> DataFrame in which the index has been replaced with the information from this column; the old DataFrame is not changed. In order to save the results, we’ll need to assign the new table to a variable, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span> <span class="o">=</span> <span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span> <span class="o">=</span> <span class="n">fires</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
 <span class="n">fires_by_name</span>
 </pre></div>
 </div>
@@ -942,12 +964,12 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
 <p>A table’s index is essentially an array. We can get the index by writing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Index([&#39;CAMP&#39;, &#39;BUTTE&#39;, &#39;KING&#39;, &#39;ROUGH&#39;, &#39;MEGRAM&#39;, &#39;RANCH&#39;, &#39;VALLEY &#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;CAMP&#39;, &#39;BUTTE&#39;, &#39;KING&#39;, &#39;ROUGH&#39;, &#39;MEGRAM&#39;, &#39;RANCH&#39;, &#39;VALLEY &#39;,
        &#39;ROCKY  &#39;, &#39;FORK&#39;, &#39;RUSH&#39;, &#39;RAVENNA&#39;, &#39;WOOLSEY&#39;, &#39;STATION&#39;, &#39;FERGUSON&#39;,
        &#39;DETWILER&#39;, &#39;SCARFACE&#39;, &#39;SOBERANES&#39;, &#39;INDIANS&#39;, &#39;KIRK&#39;, &#39;BASIN COMPLEX&#39;,
        &#39;MARBLE-CONE&#39;, &#39;CHIPS&#39;, &#39;OLD&#39;, &#39;HARRIS 2&#39;, &#39;CEDAR&#39;, &#39;WITCH&#39;, &#39;LAGUNA&#39;,
@@ -963,39 +985,39 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
 <p>We can then access individual elements of the index using the same notation as used with arrays, remembering that Python starts counting from zero:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first element</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first element</span>
 <span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CAMP&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CAMP&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the second element</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the second element</span>
 <span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;BUTTE&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;BUTTE&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the last element</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the last element</span>
 <span class="n">fires_by_name</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;COUNTY&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;COUNTY&#39;
 </pre></div>
 </div>
 </div>
@@ -1008,12 +1030,12 @@ By default, a table’s rows are labeled by numbering them. However, in many cas
 <p>We can retrieve a particular column from the table with the <code class="docutils literal notranslate"><span class="pre">.get</span></code> method. For instance, to get the column labeled “acres”, we would write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
 CAMP         153335.562500
 BUTTE         70846.531250
 KING          97684.546875
@@ -1033,12 +1055,12 @@ Name: acres, Length: 50, dtype: float64
 <p>The result might look like a DataFrame with one column, but it’s actually a new type of object called a <em>Series</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.Series
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>babypandas.bpd.Series
 </pre></div>
 </div>
 </div>
@@ -1050,12 +1072,12 @@ Name: acres, Length: 50, dtype: float64
 <p>Because a Series is like an array, we can do similar things with it. For instance, we can perform elementwise arithmetic with a Series. Let’s try it out by converting the fire sizes from acres to square miles. Each acre is 0.0015625 square miles, so we can do the conversion with a simple multiplication:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>name
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
 CAMP         239.586816
 BUTTE        110.697705
 KING         152.632104
@@ -1079,12 +1101,12 @@ Name: acres, Length: 50, dtype: float64
 <p><em>Series</em> objects also come with a bunch of useful methods attached, like <code class="docutils literal notranslate"><span class="pre">.mean</span></code> and <code class="docutils literal notranslate"><span class="pre">.max</span></code>. For example, the average size of a fire in this data set is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>135919.636875
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>135919.636875
 </pre></div>
 </div>
 </div>
@@ -1092,12 +1114,12 @@ Name: acres, Length: 50, dtype: float64
 <p>The largest fire burned this many acres:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>410202.46875
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>410202.46875
 </pre></div>
 </div>
 </div>
@@ -1105,12 +1127,12 @@ Name: acres, Length: 50, dtype: float64
 <p>And the earliest fire in the data set was in the year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1910
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1910
 </pre></div>
 </div>
 </div>
@@ -1118,12 +1140,12 @@ Name: acres, Length: 50, dtype: float64
 <p>A very useful <em>Series</em> method is <code class="docutils literal notranslate"><span class="pre">.describe</span></code>. It gives us a quick look at the basic statistics of the data in a particular column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>count      50.000000
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count      50.000000
 mean     1998.840000
 std        25.220141
 min      1910.000000
@@ -1152,7 +1174,7 @@ Name: year, dtype: float64
 <p>Adding a column can be done with the <code class="docutils literal notranslate"><span class="pre">.assign</span></code> method, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sqmiles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">sqmiles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1288,7 +1310,7 @@ Name: year, dtype: float64
 <p>We can call the column anything we like, as long as it is a valid python variable name. This means that the variable name cannot contain spaces, or start with a number. If you try, you’ll get a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square</span> <span class="n">miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square</span> <span class="n">miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1304,7 +1326,7 @@ Name: year, dtype: float64
 <p>Instead of spaces, we can use underscores:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1439,7 +1461,7 @@ Name: year, dtype: float64
 <p>The second thing to note is that <code class="docutils literal notranslate"><span class="pre">.assign</span></code> creates an entirely new table containing the new column. It does not change the old table, as we can verify by recalling the value of <code class="docutils literal notranslate"><span class="pre">fires_by_name</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_by_name</span>
 </pre></div>
 </div>
 </div>
@@ -1565,7 +1587,7 @@ Name: year, dtype: float64
 <p>In order to permanently add the column to the table, we need to save the result of <code class="docutils literal notranslate"><span class="pre">.assign</span></code> to a variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span> <span class="o">=</span> <span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span> <span class="o">=</span> <span class="n">fires_by_name</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">sqmiles</span><span class="o">=</span><span class="n">fires_by_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0015625</span>
 <span class="p">)</span>
 <span class="n">fires_with_sqmiles</span>
@@ -1707,7 +1729,7 @@ Name: year, dtype: float64
 <p>For example, to get rid of the <code class="docutils literal notranslate"><span class="pre">'sqmiles'</span></code> column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1829,7 +1851,7 @@ Name: year, dtype: float64
 <p>If we didn’t want the cause or the county:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cause&#39;</span><span class="p">,</span> <span class="s1">&#39;county&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cause&#39;</span><span class="p">,</span> <span class="s1">&#39;county&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1938,7 +1960,7 @@ Name: year, dtype: float64
 <p>Note that the argument name (<code class="docutils literal notranslate"><span class="pre">columns</span></code>) is not something we can change, unlike the keyword argument name used in <code class="docutils literal notranslate"><span class="pre">.assign</span></code>. We <em>must</em> use <code class="docutils literal notranslate"><span class="pre">columns=...</span></code>, or else Python will not understand us. And if you don’t use the keyword name, Python will be upset:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1964,7 +1986,7 @@ Name: year, dtype: float64
 <p>For instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_new_name</span> <span class="o">=</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_new_name</span> <span class="o">=</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">square_miles</span><span class="o">=</span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">fires_with_new_name</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
@@ -2102,7 +2124,7 @@ Name: year, dtype: float64
 <p>We can also do this in a single piece of code, without intermediate variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
     <span class="n">fires_with_sqmiles</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">square_miles</span><span class="o">=</span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">))</span>
     <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;sqmiles&#39;</span><span class="p">)</span>
@@ -2256,7 +2278,7 @@ Name: year, dtype: float64
 <p>A CSV file is simply a text file in a certain format. Here are the first few lines of the CSV file containing our wildfire data:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>name,year,cause,acres,county
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name,year,cause,acres,county
 CAMP,2018,11 - Powerline,153335.5625,Butte
 BUTTE,2015,14 - Unknown,70846.53125,Calaveras
 KING,2014,7 - Arson,97684.546875,El Dorado
@@ -2274,7 +2296,7 @@ FORK,1996,7 - Arson,83056.9453125,Lake
 <p>We can read a CSV file into a <em>babypandas</em> DataFrame using the <code class="docutils literal notranslate"><span class="pre">bpd.read_csv</span></code> function. We give this function a string containing the filepath to the CSV file we want to read. For example, our wildfire data exists in a file called <code class="docutils literal notranslate"><span class="pre">calfire.csv</span></code> contained in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory. We can read it into a DataFrame as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire.csv&#39;</span><span class="p">)</span>
 <span class="n">calfire</span>
 </pre></div>
 </div>
@@ -2436,7 +2458,10 @@ FORK,1996,7 - Arson,83056.9453125,Lake
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>

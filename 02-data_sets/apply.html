@@ -1,23 +1,44 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>Defining and Applying Functions &#8212; Dive into Data Science</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -25,19 +46,17 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exploring Data" href="../exploring_data/exploring_data.html" />
     <link rel="prev" title="GroupBy" href="groupby.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -233,7 +252,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -244,7 +264,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/apply.ipynb"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/apply.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -259,8 +279,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -376,6 +397,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -388,12 +410,12 @@
 <p>We have seen that Python comes with a bunch of useful functions for performing common tasks. For instance, the built-in <code class="docutils literal notranslate"><span class="pre">round</span></code> function rounds a number to a specified number of decimal places.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3.14
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
 </pre></div>
 </div>
 </div>
@@ -405,7 +427,7 @@
 <p>Suppose you are working with a dataset containing a bunch of street addresses, such as the following address of the University of California, San Diego:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span> <span class="o">=</span> <span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span> <span class="o">=</span> <span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -416,12 +438,12 @@
 <p>A typical address has several parts: the street address, the city name, the state, and the zip code. The parts are separated by commas (with the exception of the state and zip code). Python strings have a helpful <code class="docutils literal notranslate"><span class="pre">.split</span></code> method which will split a string into parts according to whatever delimiter we provide. To split by a comma, we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;9500 Gilman Dr&#39;, &#39; La Jolla&#39;, &#39; CA 92093&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;9500 Gilman Dr&#39;, &#39; La Jolla&#39;, &#39; CA 92093&#39;]
 </pre></div>
 </div>
 </div>
@@ -430,12 +452,12 @@
 <p>If we do not provide a delimiter, the default behavior of <code class="docutils literal notranslate"><span class="pre">.split</span></code> is to split based on whitespace (such as spaces):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;9500&#39;, &#39;Gilman&#39;, &#39;Dr,&#39;, &#39;La&#39;, &#39;Jolla,&#39;, &#39;CA&#39;, &#39;92093&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;9500&#39;, &#39;Gilman&#39;, &#39;Dr,&#39;, &#39;La&#39;, &#39;Jolla,&#39;, &#39;CA&#39;, &#39;92093&#39;]
 </pre></div>
 </div>
 </div>
@@ -443,13 +465,13 @@
 <p>We can use <code class="docutils literal notranslate"><span class="pre">.split</span></code> to retrieve the city and state name. Notice that when we split by commas, the city name will always be the second-to-last entry of the resulting list. This is because the last comma separates the city from the state and zip code. Remember that we can retrieve the second-to-last element of a list using square bracket notation, combined with using <code class="docutils literal notranslate"><span class="pre">-2</span></code> as the index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">city</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla&#39;
 </pre></div>
 </div>
 </div>
@@ -457,13 +479,13 @@
 <p>The result has a leading space that we might want to get rid of – we’ll deal with that in a moment. For now, let’s retrieve the state name. To do this, it might be easiest to split based on whitespace – then the state abbreviation will again be the second-to-last element of the list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">state</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">state</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CA&#39;
 </pre></div>
 </div>
 </div>
@@ -471,13 +493,13 @@
 <p>We’d like to put the city and state together into a single string, like <code class="docutils literal notranslate"><span class="pre">'La</span> <span class="pre">Jolla,</span> <span class="pre">CA'</span></code>. To do so, remember that the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator <em>concatenates</em> strings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
 <span class="n">city_and_state</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; La Jolla, CA&#39;
 </pre></div>
 </div>
 </div>
@@ -485,12 +507,12 @@
 <p>This is almost perfect, but let’s get rid of the leading space. We can do this with the <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> string method, which removes leading and trailing whitespace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
 </pre></div>
 </div>
 </div>
@@ -498,7 +520,7 @@
 <p>Great! Putting it all together, here’s the code we used to retrieve the city and state:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">state</span> <span class="o">=</span> <span class="n">ucsd</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">city_and_state</span> <span class="o">=</span> <span class="n">city</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="n">state</span>
 <span class="n">city_and_state</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
@@ -506,7 +528,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
 </pre></div>
 </div>
 </div>
@@ -514,7 +536,7 @@
 <p>This code might seem simple enough, but suppose we have another address that we’d like to process:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lego</span> <span class="o">=</span> <span class="s1">&#39;LEGOLAND California Resort 1 Legoland Dr, Carlsbad, CA 92008&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lego</span> <span class="o">=</span> <span class="s1">&#39;LEGOLAND California Resort 1 Legoland Dr, Carlsbad, CA 92008&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -526,7 +548,7 @@
 <p>In Python, new functions are created using the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement. Here is an example of a function which retrieves the city and state name from an address:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">city_comma_state</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">city_comma_state</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return CITY, ST from an address string.&quot;&quot;&quot;</span>
     <span class="n">city</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">state</span> <span class="o">=</span> <span class="n">address</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
@@ -539,36 +561,36 @@
 <p>There is a lot to say about this, but first let’s test the function to see if it works. We call user-defined functions just like any other function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="s1">&#39;9500 Gilman Dr, La Jolla, CA 92093&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">ucsd</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">ucsd</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La Jolla, CA&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">lego</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city_comma_state</span><span class="p">(</span><span class="n">lego</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Carlsbad, CA&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Carlsbad, CA&#39;
 </pre></div>
 </div>
 </div>
@@ -595,16 +617,15 @@
 <p>The docstring is a piece of documentation that tells the reader what the function does. Including it is optional but recommended. If you ask Python for information on your function using <code class="docutils literal notranslate"><span class="pre">help</span></code>, the docstring will be displayed!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">city_comma_state</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">city_comma_state</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function city_comma_state in module __main__:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function city_comma_state in module __main__:
 
 city_comma_state(address)
     Return CITY, ST from an address string.
-
 </pre></div>
 </div>
 </div>
@@ -623,7 +644,7 @@ city_comma_state(address)
 <p>The code inside of a function is not executed until we call the function. For instance, suppose we try to do something impossible inside of a function – like dividing by zero:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
@@ -633,7 +654,7 @@ city_comma_state(address)
 <p>If you run the cell defining this function, everything will be fine: you won’t see an error. But when you <em>call</em> the function, Python let’s you know that you’re doing something that is mathematically impossible:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -660,7 +681,7 @@ city_comma_state(address)
 <p>Variables defined within a function are available only inside of the function. We can define variables inside a function just as we normally would:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -671,12 +692,12 @@ city_comma_state(address)
 <p>If we run the function, we’ll see the number <code class="docutils literal notranslate"><span class="pre">47</span></code> displayed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>47
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
 </pre></div>
 </div>
 </div>
@@ -684,7 +705,7 @@ city_comma_state(address)
 <p>However, if we try to use the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, Python will yell at us:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
 </pre></div>
 </div>
 </div>
@@ -707,7 +728,7 @@ city_comma_state(address)
 <p>Note that arguments count as “variables defined within a function”. For instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">my_argument</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">my_argument</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">my_argument</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
@@ -716,12 +737,12 @@ city_comma_state(address)
 <p>If we call the function, everything will act as expected:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>44
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
 </pre></div>
 </div>
 </div>
@@ -729,7 +750,7 @@ city_comma_state(address)
 <p>But if we try to access <code class="docutils literal notranslate"><span class="pre">my_argument</span></code> outside of the function, Python tells us that we can’t:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_argument</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_argument</span>
 </pre></div>
 </div>
 </div>
@@ -747,7 +768,7 @@ city_comma_state(address)
 <p>On the other hand, variables defined outside of a function are available inside the function. Consider for instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
 </pre></div>
@@ -756,12 +777,12 @@ city_comma_state(address)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>52
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
@@ -773,7 +794,7 @@ city_comma_state(address)
 <p>As soon as Python encounters a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, it stops executing the function and returns the corresponding value. As an example, consider the code below which has three <code class="docutils literal notranslate"><span class="pre">return</span></code>s. Only the first return statement will ever run:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting execution.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hey, I made it!&#39;</span><span class="p">)</span>
@@ -786,15 +807,15 @@ city_comma_state(address)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Starting execution.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting execution.
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -805,7 +826,7 @@ city_comma_state(address)
 <p>As we saw above, functions are somewhat isolated from the rest of the world in the sense that variables defined within them cannot be used outside of the function. The “correct” way of transmitting values back to the world is to use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. However, a common mistake is to think that <code class="docutils literal notranslate"><span class="pre">print</span></code> does the same thing. This is understandable, since <code class="docutils literal notranslate"><span class="pre">print</span></code>ing and <code class="docutils literal notranslate"><span class="pre">returning</span></code> looks similar in a Jupyter notebook. For example, let’s define a function that both <code class="docutils literal notranslate"><span class="pre">print</span></code>s and <code class="docutils literal notranslate"><span class="pre">return</span></code>s:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">52</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
@@ -817,16 +838,16 @@ city_comma_state(address)
 <p>When we run this function, we’ll see both values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">foo</span><span class="p">()</span>
 <span class="n">z</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>52
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -834,12 +855,12 @@ city_comma_state(address)
 <p>Only <code class="docutils literal notranslate"><span class="pre">42</span></code> is the <em>output</em> of the cell and can be “saved” to a variable. <code class="docutils literal notranslate"><span class="pre">52</span></code>, on the other hand, is simply displayed to the screen and is afterwards lost forever. This can be checked by displaying the value of <code class="docutils literal notranslate"><span class="pre">z</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -848,7 +869,7 @@ city_comma_state(address)
 Lastly, if you truly want to return two values from a function, the right way to do so is by separating them with a comma, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">52</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
@@ -859,12 +880,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>When the function is run, it will return a <strong>tuple</strong> of two things:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(42, 52)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, 52)
 </pre></div>
 </div>
 </div>
@@ -872,24 +893,24 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>A <strong>tuple</strong> is like a list, so we can use square bracket notation to retrieve each element:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>52
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
@@ -904,12 +925,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>Given a year, such as 1994, we’d like to retrieve the decade; in this case, 1990. At first we might think that <code class="docutils literal notranslate"><span class="pre">round</span></code> is useful:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
@@ -917,12 +938,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>But it won’t work for years like 1997, since it will round up:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1997</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1997</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000
 </pre></div>
 </div>
 </div>
@@ -930,12 +951,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>There are a few approaches that do work. One way is to use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator. Remember that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> returns the <em>remainder</em> upon dividing <code class="docutils literal notranslate"><span class="pre">x</span></code> by <code class="docutils literal notranslate"><span class="pre">y</span></code>. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -943,36 +964,36 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>To find the decade, we can simply subtract the remainder obtained by dividing by ten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1997</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1997</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1997</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1997</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2000</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2000</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000
 </pre></div>
 </div>
 </div>
@@ -980,7 +1001,7 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>Placing this code in a function makes it so we don’t have to remember this trick, and makes our code more <strong>readable</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decade_from_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decade_from_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">year</span> <span class="o">-</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">10</span>
 </pre></div>
 </div>
@@ -988,24 +1009,24 @@ Lastly, if you truly want to return two values from a function, the right way to
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1992</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1992</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1997</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1997</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1990
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1035,7 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>We need to define a function with <em>two</em> variables. We do so by separating the argument names with a comma, like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_of_triangle</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_of_triangle</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span>
 </pre></div>
 </div>
@@ -1022,12 +1043,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>25.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.0
 </pre></div>
 </div>
 </div>
@@ -1035,12 +1056,12 @@ Lastly, if you truly want to return two values from a function, the right way to
 <p>Note that the <em>order</em> of the arguments matters. When <code class="docutils literal notranslate"><span class="pre">area_of_triangle(10,</span> <span class="pre">5)</span></code> is executed, Python assigns the value of 10 to <code class="docutils literal notranslate"><span class="pre">base</span></code> and assigns the value of 5 to <code class="docutils literal notranslate"><span class="pre">height</span></code>. If you wish, you can use the keyword argument form to call the function, in which case arguments can be provided in any order. This is slightly more readable, too:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
 </pre></div>
 </div>
 </div>
@@ -1050,7 +1071,7 @@ Lastly, if you truly want to return two values from a function, the right way to
 might want only those fires in<code class="docutils literal notranslate"> <span class="pre">calfire</span></code> from between 1995 and 2000. By writing this query into a function accepting a table, a column, and the thresholds, we make it easy to repeat:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">between</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">between</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">table</span><span class="p">[(</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">stop</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -1059,7 +1080,7 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 <p>For instance, to get only those fires from between 1995 and 2000:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1222,7 +1243,7 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 <p>Because this function accepts the column name, it is very reusable. We can use it to get the fires whose size is between 10,000 and 20,000 acres:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;acres&#39;</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">20_000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;acres&#39;</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">20_000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1406,7 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 <p>Since the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operators work on strings, too, we can get all of the fires whose name is between A and E:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">between</span><span class="p">(</span><span class="n">calfire</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1552,12 +1573,12 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 <p>For instance, suppose we have a table containing a <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column, such as the <code class="docutils literal notranslate"><span class="pre">calfire</span></code> table we have been using, and we want to convert each year into the corresponding decade. We have already written a function that converts a single year to a decade: <code class="docutils literal notranslate"><span class="pre">decade_from_year</span></code>. Recall how it works:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1987</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1987</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1980
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1980
 </pre></div>
 </div>
 </div>
@@ -1565,12 +1586,12 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 <p>We’d like to apply this function to each entry in the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column. To do so, we’ll use <code class="docutils literal notranslate"><span class="pre">.apply</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0        1890
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        1890
 1        1890
 2        1890
 3        1900
@@ -1594,7 +1615,7 @@ Name: year, Length: 13464, dtype: int64
 <p>In many cases we’d like to add this new Series back to the table as a new column. We can do so with <code class="docutils literal notranslate"><span class="pre">.assign</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_decade</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_decade</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">decade</span><span class="o">=</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="n">with_decade</span>
@@ -1775,7 +1796,7 @@ Name: year, Length: 13464, dtype: int64
 <p>First, we’ll write a function that accepts a cause and returns only the description:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cause_description</span><span class="p">(</span><span class="n">cause</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cause_description</span><span class="p">(</span><span class="n">cause</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">cause</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1783,12 +1804,12 @@ Name: year, Length: 13464, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cause_description</span><span class="p">(</span><span class="s1">&#39;2 - Equipment Use&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cause_description</span><span class="p">(</span><span class="s1">&#39;2 - Equipment Use&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;Equipment Use&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Equipment Use&#39;
 </pre></div>
 </div>
 </div>
@@ -1796,7 +1817,7 @@ Name: year, Length: 13464, dtype: int64
 <p>Now we <code class="docutils literal notranslate"><span class="pre">.apply</span></code> the function to the <code class="docutils literal notranslate"><span class="pre">'cause'</span></code> column. We’ll save it back to the table using <code class="docutils literal notranslate"><span class="pre">.assign</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">cause</span><span class="o">=</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">cause_description</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
@@ -1990,7 +2011,10 @@ Name: year, Length: 13464, dtype: int64
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>

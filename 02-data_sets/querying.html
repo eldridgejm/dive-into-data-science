@@ -1,14 +1,30 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>Querying &#8212; Dive into Data Science</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -17,11 +33,12 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -29,21 +46,19 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
     <script src="../_static/sphinx_tabs/tabs.js"></script>
-    <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GroupBy" href="groupby.html" />
     <link rel="prev" title="Accessing and Sorting" href="accessing.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -239,7 +254,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -250,7 +266,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/querying.ipynb"><button type="button"
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/02-data_sets/querying.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -265,8 +281,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -329,6 +346,23 @@
      Operator
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#never-use-and-or">
+     Never use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       and
+      </span>
+     </code>
+     /
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       or
+      </span>
+     </code>
+     !
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -368,6 +402,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -383,7 +418,7 @@
 <p>Let’s start with a simple example. Below, we have created a table containing the population of the five largest cities in California. The table is arranged in alphabetical order:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
 <span class="n">populations</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
@@ -454,7 +489,7 @@
 <p>Suppose we want to know which cities have populations larger than 1 million. We can do so with the following <strong>query</strong>, the result of which is a new table consisting only of the cities whose population is greater than 1 million.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -504,12 +539,12 @@
 <p>Let’s take a deeper look at what is going on insider of a query. At it’s heart is a <em>comparison</em>: <code class="docutils literal notranslate"><span class="pre">populations.get('Population')</span> <span class="pre">&gt;</span> <span class="pre">1_000_000</span></code>. Recall from <a class="reference internal" href="../01-getting_started/data_types-bool.html"><span class="doc">Booleans</span></a> that a comparison between two numbers results in a <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-boolean">Boolean</a></strong> value (that is, the result is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>). For instance, is we ask if 2 million is larger than 1 million, we get:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2_000_000</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2_000_000</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -517,12 +552,12 @@
 <p>Now, in this case of <code class="docutils literal notranslate"><span class="pre">populations.get('Population')</span> <span class="pre">&gt;</span> <span class="pre">1_000_000</span></code>, we are comparing an entire column of the table to a single number, <code class="docutils literal notranslate"><span class="pre">1_000_000</span></code>. What will be the result? As with arithmetic on a table column, comparisons are performed elementwise:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>City
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>City
 Fresno    False
 LA         True
 SD         True
@@ -537,7 +572,7 @@ Name: Population, dtype: bool
 <p>We can carry out the query and produce a new table by passing the Boolean array into the table using square bracket notation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -596,7 +631,7 @@ Name: Population, dtype: bool
 <p>It should be mentioned that <em>any</em> Boolean array whose length matches the number of rows in the table can be used to select a subset of the table’s rows. For instance, we could construct our own Boolean array by hand and get the same result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -647,7 +682,7 @@ Name: Population, dtype: bool
 <p>Lastly, note that if no row satisfies your condition, an empty table will be returned. For instance, no cities have more than 10 million people:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10_000_000</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span><span class="p">[</span><span class="n">populations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10_000_000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -688,7 +723,7 @@ Name: Population, dtype: bool
 <p>Let’s get some practice with querying on a larger data set. For this, we’ll use the full dataset of California wildfires. While the wildfire dataset we saw previously contained only the 50 largest fires in California history, this dataset will contain <em>all named fires</em> since the late 1800’s. It is in a file called <code class="docutils literal notranslate"><span class="pre">calfire-full.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">data</span></code> directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire-full.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/calfire-full.csv&#39;</span><span class="p">)</span>
 <span class="n">calfire</span>
 </pre></div>
 </div>
@@ -855,7 +890,7 @@ Name: Population, dtype: bool
 <p>We can determine how many fires there were in 2018 by selecting only those rows where the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> value is equal to 2018 and calculating the size of the resulting table. Remember: to ask if two values are equal, we use <code class="docutils literal notranslate"><span class="pre">==</span></code>, not <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1018,12 +1053,12 @@ Name: Population, dtype: bool
 <p>The resulting table has 397 rows, which means that there were 397 fires in 2018. We could also get this information with code by using the <code class="docutils literal notranslate"><span class="pre">.shape</span></code> attribute:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>397
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>397
 </pre></div>
 </div>
 </div>
@@ -1035,13 +1070,13 @@ Name: Population, dtype: bool
 <p>We know how to retrieve only those fires from 2018; we did this above with <code class="docutils literal notranslate"><span class="pre">calfire[calfire.get('year')</span> <span class="pre">==</span> <span class="pre">2018]</span></code>. Now we simply ask for the sum of the <code class="docutils literal notranslate"><span class="pre">'acres'</span></code> column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">area_burned_2018</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_burned_2018</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">area_burned_2018</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1586074.870139362
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1586074.870139362
 </pre></div>
 </div>
 </div>
@@ -1049,12 +1084,12 @@ Name: Population, dtype: bool
 <p>That certainly <em>seems</em> like a large number, but let’s put it in perspective. The island of Manhattan is 14,600 acres in area. Therefore, the area burned in 2018 was:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">area_burned_2018</span> <span class="o">/</span> <span class="mi">14_600</span><span class="p">,</span> <span class="s1">&#39;times the size of Manhattan.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">area_burned_2018</span> <span class="o">/</span> <span class="mi">14_600</span><span class="p">,</span> <span class="s1">&#39;times the size of Manhattan.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>108.6352650780385 times the size of Manhattan.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108.6352650780385 times the size of Manhattan.
 </pre></div>
 </div>
 </div>
@@ -1066,12 +1101,12 @@ Name: Population, dtype: bool
 <p>We can get this information by asking for the unique values that appear in a column with the <code class="docutils literal notranslate"><span class="pre">.unique</span></code> Series method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;14 - Unknown&#39;, &#39;7 - Arson&#39;, &#39;4 - Campfire&#39;, &#39;1 - Lightning&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;14 - Unknown&#39;, &#39;7 - Arson&#39;, &#39;4 - Campfire&#39;, &#39;1 - Lightning&#39;,
        &#39;9 - Miscellaneous&#39;, &#39;5 - Debris&#39;, &#39;8 - Playing with fire&#39;,
        &#39;3 - Smoking&#39;, &#39;15 - Structure&#39;, &#39;2 - Equipment Use&#39;,
        &#39;10 - Vehicle&#39;, &#39;6 - Railroad&#39;, &#39;18 - Escaped Prescribed Burn&#39;,
@@ -1084,7 +1119,7 @@ Name: Population, dtype: bool
 <p>It looks like the right string for arson is <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">-</span> <span class="pre">Arson</span></code>. Let’s perform the query:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arsons</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;7 - Arson&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arsons</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cause&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;7 - Arson&#39;</span><span class="p">]</span>
 <span class="n">arsons</span>
 </pre></div>
 </div>
@@ -1248,12 +1283,12 @@ Name: Population, dtype: bool
 <p>To find the percentage of fires caused by arson, we divide the size of this table by the size of the original table:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arsons</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">calfire</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arsons</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">calfire</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.05666963755199049
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.05666963755199049
 </pre></div>
 </div>
 </div>
@@ -1266,7 +1301,7 @@ Name: Population, dtype: bool
 <p>First, we’ll get the fires from 2018:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1274,7 +1309,7 @@ Name: Population, dtype: bool
 <p>Now we’ll select only the fires from San Diego County, making sure to use <code class="docutils literal notranslate"><span class="pre">fires_from_2018</span></code>, and not <code class="docutils literal notranslate"><span class="pre">calfires</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span><span class="p">[</span><span class="n">fires_from_2018</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_from_2018</span><span class="p">[</span><span class="n">fires_from_2018</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1445,7 +1480,7 @@ Name: Population, dtype: bool
 <p>Let’s begin with another simple example. Below is the table of city populations that we saw at the beginning of this section, but with an additional column containing the region of California that the city is in:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">City</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fresno&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="s1">&#39;SF&#39;</span><span class="p">,</span> <span class="s1">&#39;SJ&#39;</span><span class="p">],</span>
     <span class="n">Population</span><span class="o">=</span><span class="p">[</span><span class="mi">502_000</span><span class="p">,</span> <span class="mi">4_094_000</span><span class="p">,</span> <span class="mi">1_376_000</span><span class="p">,</span> <span class="mi">856_000</span><span class="p">,</span> <span class="mi">1_023_000</span><span class="p">],</span>
     <span class="n">Region</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Central Valley&#39;</span><span class="p">,</span> <span class="s1">&#39;SoCal&#39;</span><span class="p">,</span> <span class="s1">&#39;SoCal&#39;</span><span class="p">,</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">,</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">]</span>
@@ -1516,13 +1551,13 @@ Name: Population, dtype: bool
 <p>We know how to make Boolean arrays for both queries individually:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">is_more_than_a_million</span> <span class="o">=</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_more_than_a_million</span> <span class="o">=</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span>
 <span class="n">is_more_than_a_million</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>City
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>City
 Fresno    False
 LA         True
 SD         True
@@ -1535,13 +1570,13 @@ Name: Population, dtype: bool
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">is_in_norcal</span> <span class="o">=</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_in_norcal</span> <span class="o">=</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span>
 <span class="n">is_in_norcal</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>City
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>City
 Fresno    False
 LA        False
 SD        False
@@ -1556,12 +1591,12 @@ Name: Region, dtype: bool
 <p>We can construct such an array using the <em>binary and</em> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator. <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> takes two Boolean arrays of the same size and returns a new Boolean array that is True only when the input arrays are <em>both</em> True.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">is_more_than_a_million</span> <span class="o">&amp;</span> <span class="n">is_in_norcal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_more_than_a_million</span> <span class="o">&amp;</span> <span class="n">is_in_norcal</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>City
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>City
 Fresno    False
 LA        False
 SD        False
@@ -1576,7 +1611,7 @@ dtype: bool
 <p>We can now pass this new array into the table to select only the desired rows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span><span class="n">is_more_than_a_million</span> <span class="o">&amp;</span> <span class="n">is_in_norcal</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span><span class="n">is_more_than_a_million</span> <span class="o">&amp;</span> <span class="n">is_in_norcal</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1656,7 @@ dtype: bool
 <p>In this case, we’ve assigned each of the two queries to intermediate variables, <code class="docutils literal notranslate"><span class="pre">is_more_than_a_million</span></code> and <code class="docutils literal notranslate"><span class="pre">is_in_norcal</span></code>. This is totally fine, but many times we’ll save ourselves the extra typing by writing the query in one line of code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
     <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">)</span>
 <span class="p">]</span>
 </pre></div>
@@ -1668,7 +1703,7 @@ dtype: bool
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">()</span></code> around each individual comparison. These are extremely important! If you don’t include these, you’ll get yelled at by Python:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
     <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span> <span class="o">&amp;</span> <span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span>
 <span class="p">]</span>
 </pre></div>
@@ -1695,68 +1730,11 @@ dtype: bool
 <p class="admonition-title">Jupyter Tip</p>
 <p>If you forgot parentheses and want to add them quickly, you can select the section of code you want to surround in parentheses and then type <code class="docutils literal notranslate"><span class="pre">(</span></code>. Jupyter will wrap your entire selection in a single pair of parentheses.</p>
 </div>
-<p>You might know that <code class="docutils literal notranslate"><span class="pre">and</span></code> is a valid Python keyword and might wonder why we use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> instead of <code class="docutils literal notranslate"><span class="pre">and</span></code>. In fact, <code class="docutils literal notranslate"><span class="pre">and</span></code> does not perform the right type of comparison when working with arrays. Your code <em>will</em> run, but it will give you the wrong result:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
-    <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">)</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Population</th>
-      <th>Region</th>
-    </tr>
-    <tr>
-      <th>City</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>SF</th>
-      <td>856000</td>
-      <td>NorCal</td>
-    </tr>
-    <tr>
-      <th>SJ</th>
-      <td>1023000</td>
-      <td>NorCal</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Notice that SF has been included, even though its population is less than 1 million.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Never use <code class="docutils literal notranslate"><span class="pre">and</span></code> when writing comparisons in a query. Always use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
-</div>
 <p>Lastly, Python is all about readability and  a e s t h e t i c.</p>
 <p>If we’re inside of parentheses or brackets, we can break up long lines of code to make them easier to read and understand:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
     <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">)</span>
     <span class="o">&amp;</span>
     <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">)</span>
@@ -1831,7 +1809,7 @@ dtype: bool
 we use the <em>binary or</em> operator, <code class="docutils literal notranslate"><span class="pre">|</span></code>. This operator takes two Boolean arrays of the same size as input and creates a new array in which a particular entry is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>at least one</em> of the corresponding entries in the input arrays is true.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_san_diego</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;San Diego&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_san_diego</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;San Diego&quot;</span>
 <span class="n">in_imperial</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Imperial&quot;</span>
 
 <span class="n">calfire</span><span class="p">[</span><span class="n">in_imperial</span> <span class="o">|</span> <span class="n">in_san_diego</span><span class="p">]</span>
@@ -1995,13 +1973,223 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
 </div></div></div>
 </div>
 </div>
+<div class="section" id="never-use-and-or">
+<h3>Never use <code class="docutils literal notranslate"><span class="pre">and</span></code> / <code class="docutils literal notranslate"><span class="pre">or</span></code>!<a class="headerlink" href="#never-use-and-or" title="Permalink to this headline">¶</a></h3>
+<p>You might know that <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> are valid Python keywords and might wonder why we use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> instead. In fact, <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> <em>do not</em> perform the right type of comparison when working with arrays. Your code <em>will</em> run, but it will give you the wrong result. Here’s a quick example. Suppose we want to get all cities in NorCal with populations larger than 1 million. We write a compound query, but use <code class="docutils literal notranslate"><span class="pre">and</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. The code runs, but is the result correct?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">with_regions</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Population&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1_000_000</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">with_regions</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NorCal&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Population</th>
+      <th>Region</th>
+    </tr>
+    <tr>
+      <th>City</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SF</th>
+      <td>856000</td>
+      <td>NorCal</td>
+    </tr>
+    <tr>
+      <th>SJ</th>
+      <td>1023000</td>
+      <td>NorCal</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice that SF has been included, even though its population is less than 1 million! Why is this? The short answer is that <code class="docutils literal notranslate"><span class="pre">and</span></code> does not do the same thing as <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. Remember that <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> works elementwise on arrays, returning a new array which is <code class="docutils literal notranslate"><span class="pre">True</span></code> only where both of the input arrays are <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="o">&amp;</span> <span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1     True
+2    False
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s try the same thing, but with <code class="docutils literal notranslate"><span class="pre">and</span></code> instead of <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="ow">and</span> <span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1     True
+2     True
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s not what we expected!</p>
+<p>For the purposes of this textbook, it’s enough to know that <code class="docutils literal notranslate"><span class="pre">and</span></code> doesn’t do the same thing as <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. But if you’re curious as to why this happens, here’s the short version. We know that Python has Boolean literals <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>, and <code class="docutils literal notranslate"><span class="pre">and</span></code> works with them as you’d expect:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>But Python also assigns truth value to other things, like lists and strings. For instance, it is often useful to treat an empty list as if is is <code class="docutils literal notranslate"><span class="pre">False</span></code>, and a non-empty list as if it is <code class="docutils literal notranslate"><span class="pre">True</span></code>. We can see the truth value Python assigns to something by using the <code class="docutils literal notranslate"><span class="pre">bool</span></code> function to convert it to a Boolean:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because of this, we can use <code class="docutils literal notranslate"><span class="pre">and</span></code> between things that aren’t <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. For instance, we can put it between two lists to make sure that both are non-empty:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the output isn’t <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, it is a list! If we really wanted <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> for some reason, we could do so with <code class="docutils literal notranslate"><span class="pre">bool()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="ow">and</span> <span class="p">[])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>But this is the key:  apparently, <code class="docutils literal notranslate"><span class="pre">and</span></code> will produce the second list if both are non-empty. The same thing happens if we use <code class="docutils literal notranslate"><span class="pre">and</span></code> between Boolean series. Take another look at our example from above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="ow">and</span> <span class="n">bpd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1     True
+2     True
+dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that what is returned is actually the array on the right hand side of <code class="docutils literal notranslate"><span class="pre">and</span></code>! This almost never what we want when comparing arrays, so remember the following warning:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Never use <code class="docutils literal notranslate"><span class="pre">and</span></code> when writing comparisons in a query. Always use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. Likewise, never use <code class="docutils literal notranslate"><span class="pre">or</span></code>; always use <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+</div>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> later on when writing conditionals.</p>
+</div>
 </div>
 <div class="section" id="searching-for-a-substring">
 <h2>Searching for a Substring<a class="headerlink" href="#searching-for-a-substring" title="Permalink to this headline">¶</a></h2>
 <p>Wildfires are typically named after the place where they started. For example, fires that start near the border between California and another state or Mexico are often named something like “BORDER #6”, or “BORDER #12”, etc. We know how to write a query to select all fires with a specific name. For instance, it turns out that there are multiple fires called “BORDER#2”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;BORDER#2&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;BORDER#2&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2064,7 +2252,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
 <p>But how do we retrieve all fires with “BORDER” somewhere in their names? It turns out that <em>babypandas</em> includes a helpful Series method called <code class="docutils literal notranslate"><span class="pre">.str.contains</span></code> which can help us do exactly this. It accepts one argument – a string – and searches for it within each entry of the Series, returning a Boolean array. For instance, to find the fires with “BORDER” in their name, we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;BORDER&#39;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;BORDER&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2229,7 +2417,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
 <p>Many fires are named after roads. Let’s count how many:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ROAD&#39;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ROAD&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2394,7 +2582,7 @@ we use the <em>binary or</em> operator, <code class="docutils literal notranslat
 where we have added a space to the beginning of the search string. This will match strings like “CUTOFF ROAD”, but not “RAILROAD”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39; ROAD&#39;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39; ROAD&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2557,7 +2745,7 @@ where we have added a space to the beginning of the search string. This will mat
 <p>Strings have other useful string methods, as well. In this case, all of the fire names are capitalized, but it is common to find that datasets are inconsistent in their capitalization. For instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span>
     <span class="s1">&#39;San Diego&#39;</span><span class="p">,</span> <span class="s1">&#39;los angeles&#39;</span><span class="p">,</span> <span class="s1">&#39;san luis obispo&#39;</span><span class="p">,</span> <span class="s1">&#39;Oakland&#39;</span><span class="p">,</span> <span class="s1">&#39;Stockton&#39;</span>
 <span class="p">])</span>
 </pre></div>
@@ -2568,12 +2756,12 @@ where we have added a space to the beginning of the search string. This will mat
 <p>A common practice is to make sure all of your text data for a given column is in the same capitalization before selecting on substrings. We can chain together the <code class="docutils literal notranslate"><span class="pre">.str.lower</span></code> method with the <code class="docutils literal notranslate"><span class="pre">.str.contains</span></code> method to quickly achieve this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0          san diego
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0          san diego
 1        los angeles
 2    san luis obispo
 3            oakland
@@ -2585,7 +2773,7 @@ Name: names, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;san&#39;</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;names&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;san&#39;</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -2627,14 +2815,14 @@ Name: names, dtype: object
 <p>It’s worth noting that if you try using the <code class="docutils literal notranslate"><span class="pre">.str</span></code> methods on a Series that doesn’t contain text, you’ll encounter a helpful error (once you scroll to the bottom).</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;2019&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;2019&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="mi">25277</span><span class="n">a5a166e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;2019&#39;</span><span class="p">)</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/babypandas/bpd.py</span> in <span class="ni">str</span><span class="nt">(self)</span>
@@ -2645,11 +2833,11 @@ Name: names, dtype: object
 <span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="c1"># Formatting</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5124</span>             <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">5125</span>         <span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">5126</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5127</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5128</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">5133</span>             <span class="ow">or</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">5134</span>         <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">5135</span>             <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5136</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5137</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 
 <span class="nn">~/env/lib/python3.7/site-packages/pandas/core/accessor.py</span> in <span class="ni">__get__</span><span class="nt">(self, obj, cls)</span>
 <span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="c1"># we&#39;re accessing the attribute of the class, i.e., Dataset.geo</span>
@@ -2691,13 +2879,13 @@ Name: names, dtype: object
 <p>We’ll use <code class="docutils literal notranslate"><span class="pre">|</span></code> to find those fires whose <code class="docutils literal notranslate"><span class="pre">'month'</span></code> is either 9 or 10:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sept_or_oct</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sept_or_oct</span> <span class="o">=</span> <span class="n">calfire</span><span class="p">[(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">9</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)]</span>
 <span class="n">sept_or_oct</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">calfire</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0.2335858585858586
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2335858585858586
 </pre></div>
 </div>
 </div>
@@ -2708,7 +2896,7 @@ Name: names, dtype: object
 <p>The latitude of San Francisco is 37.7749, while the latitude of LA is 34.0522. Selecting all fires within this range can be done with <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span>
     <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">37.7749</span><span class="p">)</span>
     <span class="o">&amp;</span>
     <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">34.0522</span><span class="p">)</span>
@@ -2717,7 +2905,7 @@ Name: names, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5519
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5519
 </pre></div>
 </div>
 </div>
@@ -2729,7 +2917,7 @@ Name: names, dtype: object
 <p>With a complex query like this, it’s probably best to make the three Boolean arrays separately and save them in intermediate variables, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">is_gt_1000_acres</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_gt_1000_acres</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;acres&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span>
 <span class="n">is_in_sd</span> <span class="o">=</span> <span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;San Diego&#39;</span>
 <span class="n">is_in_1990s</span> <span class="o">=</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">)</span>
 </pre></div>
@@ -2739,7 +2927,7 @@ Name: names, dtype: object
 <p>Now we can perform the query. All three of these conditions must be true simultaneously, so we use <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">is_gt_1000_acres</span> <span class="o">&amp;</span> <span class="n">is_in_sd</span> <span class="o">&amp;</span> <span class="n">is_in_1990s</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="p">[</span><span class="n">is_gt_1000_acres</span> <span class="o">&amp;</span> <span class="n">is_in_sd</span> <span class="o">&amp;</span> <span class="n">is_in_1990s</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2932,7 +3120,10 @@ Name: names, dtype: object
       </div>
     </div>
 
-    <script src="../_static/js/index.js"></script>
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
     
   </body>
 </html>
