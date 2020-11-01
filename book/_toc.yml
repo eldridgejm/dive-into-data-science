@@ -19,7 +19,13 @@
 - file: 02-data_sets/querying
 - file: 02-data_sets/groupby
 - file: 02-data_sets/apply
-- file: exploring_data/exploring_data
+
+- header: Visualization
+- file: 03-visualization/intro
+- file: 03-visualization/scatter
+- file: 03-visualization/line
+- file: 03-visualization/bar
+- file: 03-visualization/histogram
 
 - header: Reference
 - file: how_to_read
