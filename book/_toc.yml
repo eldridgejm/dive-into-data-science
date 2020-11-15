@@ -27,6 +27,20 @@
 - file: 03-visualization/bar
 - file: 03-visualization/histogram
 
+- header: Advanced Data Manipulation
+- file: 04-advanced_data_manipulation/merging
+
+- header: Probability and Simulation
+- file: 05-probability_and_simulation/probability_and_simulation
+
+- header: Populations and Samples
+- file: 06-populations_and_samples/1_populations_and_samples
+- file: 06-populations_and_samples/2_parameters_and_statistics
+
+- header: Hypothesis Testing
+- file: 07-hypothesis_testing/1_hypothesis_tests
+- file: 07-hypothesis_testing/2_permutation_tests.ipynb
+
 - header: Reference
 - file: how_to_read
 - file: glossary
