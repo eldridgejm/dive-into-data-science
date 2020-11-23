@@ -39,7 +39,6 @@
 
 - header: Hypothesis Testing
 - file: 07-hypothesis_testing/1_hypothesis_tests
-- file: 07-hypothesis_testing/2_permutation_tests.ipynb
 
 - header: Reference
 - file: how_to_read
