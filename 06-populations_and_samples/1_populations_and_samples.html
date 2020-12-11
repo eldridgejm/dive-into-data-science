@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Populations and Samples &#8212; Dive into Data Science</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parameters and statistics" href="2_parameters_and_statistics.html" />
+    <link rel="prev" title="Probability and simulation" href="../05-probability_and_simulation/probability_and_simulation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/apply.html">
+   Defining and Applying Functions
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/06-populations_and_samples/1_populations_and_samples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F06-populations_and_samples/1_populations_and_samples.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/06-populations_and_samples/1_populations_and_samples.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#populations">
+   Populations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specifying-a-population">
+     Specifying a population
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#population-distributions">
+     Population distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#models">
+     Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#probability-distributions">
+       Probability distributions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#samples">
+   Samples
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-schemes">
+     Sampling schemes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collecting-a-random-sample">
+     Collecting a random sample
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample-size-and-replacement">
+       Sample size and replacement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sampling-from-tables">
+       Sampling from tables
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-distributions">
+     Sample distributions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample-distributions-converge-to-the-population-distribution">
+       Sample distributions converge to the population distribution
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-do-sample-distributions-resemble-their-population">
+       Why do sample distributions resemble their population?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="populations-and-samples">
+<h1>Populations and Samples<a class="headerlink" href="#populations-and-samples" title="Permalink to this headline">¶</a></h1>
+<p>In the previous chapter we ended off by talking about the “birthday problem” and used simulation to stumble upon a surprising result. But when we solved the problem we relied on the assumption that <em>every single birthday is equally likely</em> in our population. As a data scientist, we might like to check if that assumption is actually valid!</p>
+<p>What if in actuality less people are born over the summer, or perhaps more people are born nine months after Valentines day? In that case, certain birthdays would be more prevalent than others. But how can we actually find out whether or not this is true?</p>
+<p>One way is to ask everyone in the world what their birthday is… good luck with that! As it turns out, it’s not feasible to survey billions of people. Fortunately, we can get a pretty good idea of how birthdays are distributed by collecting a <em>sample</em> of the population.</p>
+<p>This is precisely the concept we’ll introduce in this chapter.</p>
+<p>Many interesting data-driven questions revolve around understanding some aspect of a ‘population’. In practice, we usually can’t collect data on the entire population, so instead we rely on samples to give us a representative idea of what the population actually looks like, or how it actually behaves.</p>
+<div class="section" id="populations">
+<h2>Populations<a class="headerlink" href="#populations" title="Permalink to this headline">¶</a></h2>
+<p>A <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-population">population</a></strong> in data science and statistics is an entire group of people, objects, or events on which we’re capable of collecting data, in order to answer a specific question. The answers to questions like “do people prefer to watch content A or content B” or “what is a typical price for a house” are dependent on what specific <em>population</em> of people or houses they’re referring to – perhaps the populations about could be “all Netflix users”, or “all houses in the South of France”. Interestingly, a population can also refer to a group of events, such as “all fair dice rolls”.</p>
+<div class="section" id="specifying-a-population">
+<h3>Specifying a population<a class="headerlink" href="#specifying-a-population" title="Permalink to this headline">¶</a></h3>
+<p>When we pose a question, we must narrow in on a corresponding population. There are two steps we follow to do so.</p>
+<ol>
+<li><p>What group is our question about?</p>
+<p>Maybe we’re only interested in particular group – like house prices specifically in the South of France. Therefore, our population would be narrowed down from all houses in the world to just houses in the South of France.</p>
+</li>
+<li><p>What group can we collect data from?</p>
+<p>Our data collection is often a limiting factor – for example, if we’re running a survey hosted on our website then we can only collect data on the people who visit our site. Therefore, our population is narrowed down from all users of the internet to just users who visit our site. We must remember that our population during analysis is always limited by the data we collect.</p>
+</li>
+</ol>
+<p>In the birthday problem above, we’re probably interested in the population being the entire world – are <em>all</em> birthdays actually equally likely across the globe? However, we managed to collect <a class="reference external" href="https://github.com/fivethirtyeight/data/tree/master/births">a sample</a> which only contains births in the United States. Therefore we must narrow our population to only birthdays in the U.S. since that’s the population that our data is coming from.</p>
+</div>
+<div class="section" id="population-distributions">
+<h3>Population distributions<a class="headerlink" href="#population-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Recall that knowing the <em>distribution</em> of some data is imperative to understanding and gaining insight from the data. The distribution is referred to as the ‘shape’ of the data, or simply what the data <em>looks</em> like.</p>
+<p>The <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-population-distribution">population distribution</a></strong> is the shape of a feature across the entire specified population. In most settings, it’s considered – unchanging – for the duration of a study. Notice that even something like the distribution of birthdays in the U.S., which technically changes every time someone is born or dies, is unlikely to change by any substantial amount over the course of a study.</p>
+</div>
+<div class="section" id="models">
+<h3>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h3>
+<p>In reality, unless we fully measure an entire population, we’ll never actually <em>know</em> what a true population distribution looks like.</p>
+<p>However, in many scenarios we tend to operate under <em>assumptions</em> about what populations look like. Statisticians (and marketing folks) love to call a set of these assumptions about the population distribution a “<span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-model">model</a></strong> for the population”.</p>
+<p>For example, we proposed a model for the population of U.S. birthdays, which assumes that every birthday is equally likely and thus the population distribution is <em>uniform</em>. (Remember that we’re ignoring leap years for simplicity – sorry!)</p>
+<p><img alt="" src="../_images/uniform-birthdays.png" /></p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>At the time of this writing, the United States populace is approximately <span class="math notranslate nohighlight">\(330,221,340\)</span> people. Let’s call the population size <span class="math notranslate nohighlight">\(N\)</span>. Under the assumptions of our model, each of the 365 days in a year is assumed to be equally likely <span class="math notranslate nohighlight">\(P(\text{day})=\frac{1}{365}\)</span>.</p>
+<p>By using a frequentist approach to probability, <span class="math notranslate nohighlight">\(P(\text{day})=\frac{\text{# people with this birthday}}{N}\)</span>, can you calculate the number of people in the U.S. with a birthday on any given day?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+N &amp;= 320,221,340 \\
+\\
+P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N} \\
+\\
+\text{# people with this birthday} &amp;= \frac{365}{N} \\
+&amp;= 904,716 \\
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
+<p>This distribution is purely the result of assumptions from our model!</p>
+<p>Perhaps the distribution of U.S. birthdays actually looks totally different, like a wave <img alt="" src="../_images/wave-birthdays.png" />, or a U <img alt="" src="../_images/u-birthdays.png" />, or it could possess gaps where mysteriously no one has a birthday <img alt="" src="../_images/missing-birthdays.png" />. (Do you actually <em>know</em> anyone born on March 19th? Yeah, nor do I.)</p>
+<p>The truth is: we don’t know, and we’ll never know what the <em>true</em> population distribution is for most measurements since it’s infeasible to collect data on every individual in the population!</p>
+<div class="admonition-a-look-forward admonition">
+<p class="admonition-title">A look forward</p>
+<p>What we <em>can</em> find out is whether or not the data we eventually collect actually fits our model.</p>
+<p>The samples we’re about to learn about are imperative for allowing us to create “hypothesis tests” which can tell is if our model is believable or not!</p>
+</div>
+<div class="section" id="probability-distributions">
+<h4>Probability distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this headline">¶</a></h4>
+<p>In many <em>models</em>, we basically end up assuming that our distribution matches some known <em>probability distribution</em>. This is useful since we know the probability of every outcome in a probability distribution!</p>
+<p>There are also some cases where we <em>do</em> know the true population distribution, because we know that the members of the population must follow some probabilistic process.</p>
+<p>For example, when working with the population, “outcomes of all fair six-sided dice rolls”, we know <em>by the nature of ‘fair’</em> that the true population distribution is the uniform probability distribution.</p>
+<p><img alt="" src="../_images/dice-distribution.png" /></p>
+<p>This uniform distribution arises as the true population distribution when all values in that population are equally likely. There are <em>loads</em> of other probability distributions that exist, many with their own natural-world counterparts such as the ‘bell curve’ shape of people’s birth weight, or the ‘Poisson’ shape of the number of supernovae seen per year, or the ‘Pareto’ distribution of wealth allocation (commonly abbreviated to simply the 80-20 rule)</p>
+<p><img alt="" src="../_images/probability-distributions.png" /></p>
+<p>If we can convince ourselves that measurements from a particular population is the result of a probabilistic process – such as fair dice rolls, occurrences of cosmological events, mature heights of a specific natural organism, or even combinations of multiple random inputs – then we know that the true population distribution will match a mathematically-calculatable probability distribution!</p>
+<p>That being said, if we’re not entirely sure whether or not a population truly arises from a probabilistic process, we can still <em>hypothesize</em> that the population distribution looks similar to a probability distribution – this is the case when we’re comparing the distribution of U.S. birthdays to the uniform distribution.</p>
+</div>
+</div>
+</div>
+<div class="section" id="samples">
+<h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
+<p>No matter what our hypotheses may be, if we want to get our hands dirty and witness first-hand what our population looks like, we must turn to the power of sampling.</p>
+<p>In contrast to a population, a <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-sample">sample</a></strong> is a subset of individuals randomly taken from a population. While it’s infeasible to collect data from every member of a population, we can easily collect data from <em>some</em> of them.</p>
+<p>Here’s that sample of U.S. birthdays we mentioned earlier. This subset of the population only includes total births each day between the years 2000 and 2014 (inclusive) and includes <span class="math notranslate nohighlight">\(45,538,958\)</span> birthdays (out of the roughly <span class="math notranslate nohighlight">\(320,000,000\)</span> birthdays that exist in the country.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">birthdays</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/us_total_births_2000-2014_no_leaps.csv&#39;</span><span class="p">)</span>
+<span class="n">birthdays</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;day_of_year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;births&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Day of year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">366</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">366</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample of U.S. Total Births per Day, 2000-2014&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Sample of U.S. Total Births per Day, 2000-2014&#39;)
+</pre></div>
+</div>
+<img alt="../_images/1_populations_and_samples_11_1.png" src="../_images/1_populations_and_samples_11_1.png" />
+</div>
+</div>
+<p>Hmmm, our sample seems to have a few days where considerably fewer births occur. This maybe just happened by random chance that less people were born on certain days. Maybe not, though, and our sample is a good way to find out. Out of curiosity, let’s check which days had the fewest births.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Top 5 lowest number of births</span>
+<span class="n">birthdays</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;births&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>day_of_year</th>
+      <th>month</th>
+      <th>date_of_month</th>
+      <th>births</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>358</th>
+      <td>359</td>
+      <td>12</td>
+      <td>25</td>
+      <td>70794</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>84099</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>358</td>
+      <td>12</td>
+      <td>24</td>
+      <td>88883</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>185</td>
+      <td>7</td>
+      <td>4</td>
+      <td>96114</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>105941</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="admonition-a-look-forward admonition">
+<p class="admonition-title">A look forward</p>
+<p>Notice that our sample doesn’t quite match the uniform model we proposed. Is this sample evidence that our uniform model is wrong? Certainly is seems very odd that a truly uniform distribution could produce a random sample with some days (like December 25, January 1, and July 4) with so few births…</p>
+<p>These days don’t seem so ‘random’ either. Chances are the true population of U.S. birthdays is <em>not</em> uniform. We’ll learn how we can use our sample to make decisions about our model in the Hypothesis Testing chapter.</p>
+</div>
+<div class="section" id="sampling-schemes">
+<h3>Sampling schemes<a class="headerlink" href="#sampling-schemes" title="Permalink to this headline">¶</a></h3>
+<p>The process of choosing individuals from a population is called <em>sampling</em>, and while there are many different ways you can sample from a population, some approaches are better than others!</p>
+<p>For example, if we were tasked with collecting a sample of people in the U.S., in an attempt to answer the birthday assumption, we might be tempted to just ask the people around us – you might choose to ask your classmates, or simply the first hundred people you encounter on campus. This is called a <em>convenience sample</em> because, well, it’s convenient. Unfortunately it’s a bad practice.</p>
+<p>Poor sampling schemes, like convenience sampling, produce samples that don’t accurately represent the population. Remember that our population is determined in part by the data we’re able to collect – so when conducting convenience sampling we’re essentially limiting our population to individuals in our geographical area at best.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Did you know that the birthdays on sports teams are usually more common earlier in the year than later? So, if you were about to only ask your teammates on the local hockey team – well, don’t, that would probably be a skewed sample!</p>
+<p>https://en.wikipedia.org/wiki/Relative_age_effect</p>
+<p>https://www.wired.com/2013/03/nhl-selection-bias/</p>
+</div>
+<p>A much better sampling scheme should produce samples that are <em>representative</em> of the population – therefore diverse and random in nature.</p>
+<p>By far the most common, simple, and yet extremely powerful method of sampling is called the “<em>simple random sample</em>”. NumPy has a name for it too: <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code>.</p>
+<p>As you might already suspect, this representative sampling scheme boils down to one simple step: <em>pick individuals from the total population, completely at random</em>.</p>
+</div>
+<div class="section" id="collecting-a-random-sample">
+<h3>Collecting a random sample<a class="headerlink" href="#collecting-a-random-sample" title="Permalink to this headline">¶</a></h3>
+<p>NumPy’s <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> function should at least sound familiar to us by now, since we used it to simulate coin flips. In general, the function works by randomly picking elements from a sequence, like a list or an array – in this case, randomly picking elements from a population.</p>
+<p>In the case of simulating probabilities, we’re essentially sampling from a probability distribution. But, in order get some experimental data samples, we need some population data to sample from!</p>
+<p>How about we look at some fish? Each year in August the London Zoo measures the weight of its nearly 20,000 animal inhabitants, 7072 of which were fish as of 2019. Weight is a very powerful indicator of general health, but measuring the entire population of fish at the London Zoo is, obviously, quite an arduous process.</p>
+<p>At other points in the year we still want to track the population distribution of fish weights, but we don’t want to measure all seven-thousand fish again – nor do we need to! As long as we collect a representative sample we can avoid a lot of work and still understand roughly what distribution of weights looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load in an array of fish weights in kilograms</span>
+<span class="n">fish</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;../../data/fish_kg.csv&#39;</span><span class="p">)</span>
+<span class="n">fish</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.05 , 1.1  , 2.8  , ..., 0.2  , 0.22 , 0.225])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above, the ‘true’ population of fish weights in kilograms has been loaded into a table – but we won’t look at it just yet. Let’s work on sampling first.</p>
+<p>By calling <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code> we can don our wetsuits, pull out a single random fish from anywhere in the entire zoo, measure it and then put the fish back in its tank.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">fish</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-size-and-replacement">
+<h4>Sample size and replacement<a class="headerlink" href="#sample-size-and-replacement" title="Permalink to this headline">¶</a></h4>
+<p>If you remember from the last chapter, <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> also accepts a <code class="docutils literal notranslate"><span class="pre">size=</span></code> argument. The name of the argument, ‘size’, may have seemed strange in the context of simulating coin flips, but in the context of collecting a sample it fits right in. We can set the <code class="docutils literal notranslate"><span class="pre">size=</span></code> argument to our desired sampled size!</p>
+<p>Careful though. By default, the <code class="docutils literal notranslate"><span class="pre">random.choice</span></code> function <em>puts the fish back</em> each time it samples an individual, which poses a problem if we try to sample multiple individuals. If we’re unlucky, we might measure a fish, put it back, and then swim around and accidentally grab the same fish again! In a large population, this chance is really slim so it doesn’t matter if we replace or don’t replace the fish, but it’s good to be cognizant of when dealing with smaller populations.</p>
+<p>If we want to take our sample all at the same time, <em>without</em> replacing the individual after each pull. Therefore, we must remember to specify <code class="docutils literal notranslate"><span class="pre">replace=False</span></code>.</p>
+<p>Let’s try it now by filling up our scuba tank and randomly pulling aside fifty fish.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">fish</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.09 , 3.625, 4.   , 2.15 , 6.72 , 1.65 , 3.75 , 4.   , 1.685,
+       7.58 , 0.925, 0.905, 3.845, 0.75 , 2.965, 1.805, 4.135, 1.225,
+       1.25 , 4.7  , 4.13 , 2.85 , 4.   , 4.57 , 1.005, 0.875, 1.45 ,
+       6.25 , 3.225, 0.9  , 1.5  , 5.75 , 5.235, 1.6  , 0.95 , 2.475,
+       1.825, 1.625, 1.33 , 3.95 , 4.25 , 1.24 , 3.   , 5.75 , 0.805,
+       4.25 , 1.97 , 3.2  , 6.375, 0.875])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have the power to sample representatively with whatever sample size we want. One fish, two fish, ~~red fish, blue fish~~, one-hundred, two-thousand…</p>
+<p>You may have heard before that bigger sample sizes are better, so how about we go large and sample ten-thousand fish from our zoo?</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">fish</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">da7bdc3cea6c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">fish</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">mtrand.pyx</span> in <span class="ni">numpy.random.mtrand.RandomState.choice</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Cannot take a larger sample than population when &#39;replace=False&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can’t.</p>
+<p>The error message spells out the issue nicely – we cannot take a sample that is larger than the population if we’re sampling without replacement!</p>
+<p>In most cases it is true that larger sample sizes are better – we’ll learn more about this in the next chapter – but we have some notable limits. In real life, factors like cost or data availability might also limit our sample size.</p>
+</div>
+<div class="section" id="sampling-from-tables">
+<h4>Sampling from tables<a class="headerlink" href="#sampling-from-tables" title="Permalink to this headline">¶</a></h4>
+<p>Sampling is the act of picking <em>individuals</em> from a population. Those individuals might possess multiple measurements, and it’s important we keep those measurements together in case we want to compare those measurements in the future, like for measuring correlation.</p>
+<p>When we’re sampling individuals from a table, we need to create a sample of <em>rows</em>. For this, we use the DataFrame <code class="docutils literal notranslate"><span class="pre">.sample</span></code> method. It works exactly like the random choice function, but samples with <code class="docutils literal notranslate"><span class="pre">replace=False</span></code> as the default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a table of fish weights and fish lengths!</span>
+<span class="n">fish_frame</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/fish_kg_cm.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To sample a single row of our table, the <code class="docutils literal notranslate"><span class="pre">.sample</span></code> method can be called with no arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fish_frame</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And if we want to specify a sample size, we can just pass in the size as the first argument without needing any keywords. Remember that <code class="docutils literal notranslate"><span class="pre">replace=False</span></code> is the default behavior for sampling from tables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Randomly sample 50 rows without replacement</span>
+<span class="n">fish_frame</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-distributions">
+<h3>Sample distributions<a class="headerlink" href="#sample-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Just like populations, the distribution of a feature in our sample is called the <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-sample-distribution">sample distribution</a></strong>. We can quickly use a visualization such as a bar chart or histogram to see what it looks like.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">fish_frame</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">sample</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WEIGHT&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each time we take a sample, we’ll mostly end up collecting a different group of fish. As such, each time we collect an empirical sample distribution, it’ll look a bit different.</p>
+<p>Let’s take a look at a handful of sample distributions – all coming from the same population and the same sample size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You don&#39;t need to understand this plotting code, but congrats if you do :)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">draw_five_samples</span><span class="p">(</span><span class="n">sample_size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Collects five random samples with a specified sample size, then plots the</span>
+<span class="sd">    corresponding sample distributions side-by-side.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Create a figure to hold five charts on the same row</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Sample Distributions of Weight, n=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sample_size</span><span class="p">))</span>
+
+    <span class="c1"># Draw a sample and histogram for each chart position</span>
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="p">:</span>
+        <span class="n">fish_frame</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WEIGHT&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_five_samples</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sample-distributions-converge-to-the-population-distribution">
+<h4>Sample distributions converge to the population distribution<a class="headerlink" href="#sample-distributions-converge-to-the-population-distribution" title="Permalink to this headline">¶</a></h4>
+<p>It’s finally time to look at the true population distribution. This whole experiment was to find out if we truly can collect just a sample of fish weights and still determine what the population looks like. So how close did we get?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fish_frame</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WEIGHT&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We may have gotten close, we may have been quite wrong, depending on <em>which sample we pulled</em>. Notice that there is a lot of disparity between each sample distribution, and a varying amount of disparity between the population distribution and each sample distribution.</p>
+<p>Here’s where sample size starts to matter. Let’s increase the number of fish we measure from fifty to one-hundred.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_five_samples</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Quite a bit better, right? And it’s still tremendously less work than measuring the entire population of fish.</p>
+<p>As we increase sample size, sample distributions will increasingly resemble the population distribution they come from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_five_samples</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-do-sample-distributions-resemble-their-population">
+<h4>Why do sample distributions resemble their population?<a class="headerlink" href="#why-do-sample-distributions-resemble-their-population" title="Permalink to this headline">¶</a></h4>
+<p>When we take a representative sample, we are picking individuals at random from the population. Recall that when more individuals share a similar value of a feature, the population distribution is considered ‘denser’ at that value.</p>
+<p><img alt="" src="../_images/population-distribution.png" /></p>
+<p>When we randomly pick an individual, we’re more likely to pick individuals from denser regions (higher bars) since there are physically more individuals in our population that exist in that range of values. The opposite can be said for regions of low density (lower bars) – if there’s a low density, we’re less likely to pick an individual there.</p>
+<p><img alt="" src="../_images/population-samples.png" /></p>
+<p>Therefore, once we’ve taken our full sample and plot out the sample distribution, we the sample will also exhibit more individuals from the same dense regions, and fewer individuals from the same low density regions.</p>
+<p><img alt="" src="../_images/sample-distribution.png" /></p>
+<p>Invariably, there is random chance involved during sampling, so in most cases we won’t produce a sample distribution that is exactly the same as the population. Each sample looks a bit different from the population and from each other, but greater disparities have rarer probabilities. It’s downright statistically <em>unlikely</em> that we could produce a large sample distribution that looks super different from our population distribution.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../05-probability_and_simulation/probability_and_simulation.html" title="previous page">Probability and simulation</a>
+    <a class='right-next' id="next-link" href="2_parameters_and_statistics.html" title="next page">Parameters and statistics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

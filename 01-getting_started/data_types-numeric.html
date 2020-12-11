@@ -24,7 +24,7 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
@@ -49,7 +49,7 @@
     <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
     <script src="../_static/sphinx_tabs/tabs.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,15 +78,12 @@
   <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   Getting Started
  </span>
@@ -117,11 +114,11 @@
    Functions and Imports
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="data_types.html">
    Data Types
   </a>
-  <ul class="current">
+  <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Numbers
@@ -138,9 +135,11 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   NumPy and Babypandas
  </span>
@@ -176,13 +175,145 @@
    Defining and Applying Functions
   </a>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../exploring_data/exploring_data.html">
-   Exploring Data
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Reference
  </span>
@@ -205,9 +336,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 </div>
 
@@ -232,11 +361,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -248,8 +377,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -377,7 +506,7 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 <p>A <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-float">float</a></strong> is a number that <em>does</em> have decimals (even if that decimal component is zero), like:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>The term ‘float’ comes from “floating point number”, since they’re respented by the computer as a value and the position of the decimal point – so the decimal point can ‘float’ to any position in the value.</p>
+<p>The term ‘float’ comes from “floating point number”, since they’re represented by the computer as a value and the position of the decimal point – so the decimal point can ‘float’ to any position in the value.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -723,21 +852,11 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.12345678901234568
-</pre></div>
-</div>
-</div>
 </div>
 <p>Here’s another example. <span class="math notranslate nohighlight">\(1/(2^{10{,}000})\)</span> is a very small decimal number, but it isn’t zero. It is too small for Python to calculate using floats, however:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">10000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
@@ -750,21 +869,11 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250.99999999999997
-</pre></div>
-</div>
-</div>
 </div>
 <p>This also means that sometimes something that <em>should</em> be zero doesn’t seem to be zero, but instead appears to be a super small number.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">3.0</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">)</span> <span class="o">-</span> <span class="mf">3.6</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.440892098500626e-16
 </pre></div>
 </div>
 </div>
@@ -774,11 +883,6 @@ An <span class="target" id="index-0"></span><strong><a class="reference external
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;should&quot; be 251!</span>
 <span class="nb">int</span><span class="p">(</span><span class="mf">2.51</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>250
 </pre></div>
 </div>
 </div>

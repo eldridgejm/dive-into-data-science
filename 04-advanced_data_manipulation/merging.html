@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Merge &#8212; Dive into Data Science</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Probability and simulation" href="../05-probability_and_simulation/probability_and_simulation.html" />
+    <link rel="prev" title="Bar charts" href="../03-visualization/histogram.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/apply.html">
+   Defining and Applying Functions
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/04-advanced_data_manipulation/merging.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F04-advanced_data_manipulation/merging.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/04-advanced_data_manipulation/merging.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="merge">
+<h1>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h1>
+<p>We often find the need to work with data from multiple tables, even when that data is about the same topic! For example, both our wildfire data and our climate data had rows about 2019, or in a separate setting a store might keep track of their sales in one table but keep info on each item sold in a separate table. In either case, we’ll likely find it useful to combine the tables and put the data in one place so that we can conduct our analysis. This is called ‘merging’ or ‘joining’.</p>
+<p>Let’s entertain the second example in order to see how merging works. Suppose we’re a paint retailer, and we keep a table of transactions and a separate table of the paints we sell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orders</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">order_number</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span><span class="mi">111</span><span class="o">+</span><span class="mi">5</span><span class="p">),</span>
+    <span class="n">item</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;BEHR-N2&#39;</span><span class="p">,</span> <span class="s1">&#39;BEHR-N2&#39;</span><span class="p">,</span> <span class="s1">&#39;KM-D4&#39;</span><span class="p">,</span> <span class="s1">&#39;SW-K3&#39;</span><span class="p">,</span> <span class="s1">&#39;VALS-N2&#39;</span><span class="p">],</span>
+    <span class="n">sale</span><span class="o">=</span><span class="p">[</span><span class="mf">35.98</span><span class="p">,</span> <span class="mf">31.08</span><span class="p">,</span> <span class="mf">28.99</span><span class="p">,</span> <span class="mf">35.98</span><span class="p">,</span> <span class="mf">39.77</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">orders</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_number</th>
+      <th>item</th>
+      <th>sale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>111</td>
+      <td>BEHR-N2</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>112</td>
+      <td>BEHR-N2</td>
+      <td>31.08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>113</td>
+      <td>KM-D4</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>114</td>
+      <td>SW-K3</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>115</td>
+      <td>VALS-N2</td>
+      <td>39.77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paints</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">item_id</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;BEHR-N2&#39;</span><span class="p">,</span> <span class="s1">&#39;KM-D4&#39;</span><span class="p">,</span> <span class="s1">&#39;SW-K3&#39;</span><span class="p">,</span> <span class="s1">&#39;SW-Q0&#39;</span><span class="p">,</span> <span class="s1">&#39;VALS-N2&#39;</span><span class="p">],</span>
+    <span class="n">brand</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Behr&#39;</span><span class="p">,</span> <span class="s1">&#39;Kelley-Moore&#39;</span><span class="p">,</span> <span class="s1">&#39;Sherwin-Williams&#39;</span><span class="p">,</span> <span class="s1">&#39;Sherwin-Williams&#39;</span><span class="p">,</span> <span class="s1">&#39;Valspar&#39;</span><span class="p">],</span>
+    <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">],</span>
+    <span class="n">weight</span><span class="o">=</span><span class="p">[</span><span class="mf">11.4</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="mf">9.2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">paints</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item_id</th>
+      <th>brand</th>
+      <th>color</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BEHR-N2</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>KM-D4</td>
+      <td>Kelley-Moore</td>
+      <td>red</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SW-K3</td>
+      <td>Sherwin-Williams</td>
+      <td>green</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SW-Q0</td>
+      <td>Sherwin-Williams</td>
+      <td>black</td>
+      <td>10.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VALS-N2</td>
+      <td>Valspar</td>
+      <td>blue</td>
+      <td>9.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>A logical course of inquiry would be to figure out what kind of paint our customers like to buy, so that we can prioritize marketing and stocking that paint. Congrats, you’ve just discovered the field of business analytics! You’ve also discovered the need to merge these two tables.</p>
+<p>Currently we don’t know how to write code that would calculate which color of paint sells the most. However, notice that each table has a column with the paints’ serial number. We can utilize this to join the tables such that every time a serial number shows up in <code class="docutils literal notranslate"><span class="pre">orders</span></code>, we also include the columns from <code class="docutils literal notranslate"><span class="pre">paints</span></code>.</p>
+<p>We accomplish this with the <code class="docutils literal notranslate"><span class="pre">.merge</span></code> method, and just need to specify the names of the shared column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">orders</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">paints</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;item_id&#39;</span><span class="p">)</span>
+<span class="n">merged</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>order_number</th>
+      <th>item</th>
+      <th>sale</th>
+      <th>item_id</th>
+      <th>brand</th>
+      <th>color</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>111</td>
+      <td>BEHR-N2</td>
+      <td>35.98</td>
+      <td>BEHR-N2</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>112</td>
+      <td>BEHR-N2</td>
+      <td>31.08</td>
+      <td>BEHR-N2</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>113</td>
+      <td>KM-D4</td>
+      <td>28.99</td>
+      <td>KM-D4</td>
+      <td>Kelley-Moore</td>
+      <td>red</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>114</td>
+      <td>SW-K3</td>
+      <td>35.98</td>
+      <td>SW-K3</td>
+      <td>Sherwin-Williams</td>
+      <td>green</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>115</td>
+      <td>VALS-N2</td>
+      <td>39.77</td>
+      <td>VALS-N2</td>
+      <td>Valspar</td>
+      <td>blue</td>
+      <td>9.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In calling this method, we’re telling Babypandas to take a ‘left’ and ‘right’ table and merge the two tables based on shared values in a specific column.</p>
+<p><img alt="" src="04-advanced_data_manipulation/merging.jpg" /></p>
+<p>Notice that an item only shows up in this merged table if it shows up in <em>both</em> tables. And an item can show up multiple times if either table has multiple entries for it.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>The technical term for this type of merge, where data only shows up if its in both tables, is called an ‘inner join’.</p>
+</div>
+<p>Since this table join looks at both tables to decide whether to include a row, it doesn’t actually matter which table we use as the left versus the right. The only thing that will change is the order of our columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paints</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;item_id&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;item&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item_id</th>
+      <th>brand</th>
+      <th>color</th>
+      <th>weight</th>
+      <th>order_number</th>
+      <th>item</th>
+      <th>sale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BEHR-N2</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+      <td>111</td>
+      <td>BEHR-N2</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BEHR-N2</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+      <td>112</td>
+      <td>BEHR-N2</td>
+      <td>31.08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KM-D4</td>
+      <td>Kelley-Moore</td>
+      <td>red</td>
+      <td>8.9</td>
+      <td>113</td>
+      <td>KM-D4</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>SW-K3</td>
+      <td>Sherwin-Williams</td>
+      <td>green</td>
+      <td>10.0</td>
+      <td>114</td>
+      <td>SW-K3</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VALS-N2</td>
+      <td>Valspar</td>
+      <td>blue</td>
+      <td>9.2</td>
+      <td>115</td>
+      <td>VALS-N2</td>
+      <td>39.77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>With the table merge complete, we can easily perform calculations which rely on features from both <code class="docutils literal notranslate"><span class="pre">orders</span></code> and <code class="docutils literal notranslate"><span class="pre">paints</span></code>, such as the distribution of orders across each color of paint, or the average price-per-pound of the paints in our store.</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-0-0 docutils container">
+<div class="docutils container">
+<p>Question</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-0-1 docutils container">
+<div class="docutils container">
+<p>Answer</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
+<p>What code could you write to plot the categorical distribution of orders of each paint color?</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;order_number&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we’re following good table practices, we should really be setting the indices of our tables. So, orders would be indexed by order_number, and paints would be indexed by item_id.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orders</span> <span class="o">=</span> <span class="n">orders</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;order_number&#39;</span><span class="p">)</span>
+<span class="n">orders</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>sale</th>
+    </tr>
+    <tr>
+      <th>order_number</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>111</th>
+      <td>BEHR-N2</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>BEHR-N2</td>
+      <td>31.08</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>KM-D4</td>
+      <td>28.99</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>SW-K3</td>
+      <td>35.98</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>VALS-N2</td>
+      <td>39.77</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paints</span> <span class="o">=</span> <span class="n">paints</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;item_id&#39;</span><span class="p">)</span>
+<span class="n">paints</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brand</th>
+      <th>color</th>
+      <th>weight</th>
+    </tr>
+    <tr>
+      <th>item_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>BEHR-N2</th>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>KM-D4</th>
+      <td>Kelley-Moore</td>
+      <td>red</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>SW-K3</th>
+      <td>Sherwin-Williams</td>
+      <td>green</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>SW-Q0</th>
+      <td>Sherwin-Williams</td>
+      <td>black</td>
+      <td>10.1</td>
+    </tr>
+    <tr>
+      <th>VALS-N2</th>
+      <td>Valspar</td>
+      <td>blue</td>
+      <td>9.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this case, we’d need to merge using the ‘item’ column from <code class="docutils literal notranslate"><span class="pre">orders</span></code>, but the <em>index</em> of <code class="docutils literal notranslate"><span class="pre">paints</span></code>. To merge on an index, instead of specifying <code class="docutils literal notranslate"><span class="pre">left_on</span></code> or <code class="docutils literal notranslate"><span class="pre">right_on</span></code> we just specify <code class="docutils literal notranslate"><span class="pre">left_index=True</span></code> or <code class="docutils literal notranslate"><span class="pre">right_index=True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orders</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">paints</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item</th>
+      <th>sale</th>
+      <th>brand</th>
+      <th>color</th>
+      <th>weight</th>
+    </tr>
+    <tr>
+      <th>order_number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>111</th>
+      <td>BEHR-N2</td>
+      <td>35.98</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>BEHR-N2</td>
+      <td>31.08</td>
+      <td>Behr</td>
+      <td>blue</td>
+      <td>11.4</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>KM-D4</td>
+      <td>28.99</td>
+      <td>Kelley-Moore</td>
+      <td>red</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>SW-K3</td>
+      <td>35.98</td>
+      <td>Sherwin-Williams</td>
+      <td>green</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>VALS-N2</td>
+      <td>39.77</td>
+      <td>Valspar</td>
+      <td>blue</td>
+      <td>9.2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Merging is an integral part of data management, and serves as an intermediate step in our analysis. By aggregating data from multiple tables into a single table, we can feel confident in our ability to work with organized data, or even pull in and combine data from various sources!</p>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../03-visualization/histogram.html" title="previous page">Bar charts</a>
+    <a class='right-next' id="next-link" href="../05-probability_and_simulation/probability_and_simulation.html" title="next page">Probability and simulation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

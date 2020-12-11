@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hypothesis Testing &#8212; Dive into Data Science</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Permutation Tests" href="2_permutation_tests.html" />
+    <link rel="prev" title="Parameters and statistics" href="../06-populations_and_samples/2_parameters_and_statistics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/apply.html">
+   Defining and Applying Functions
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/07-hypothesis_testing/1_hypothesis_tests.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F07-hypothesis_testing/1_hypothesis_tests.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/07-hypothesis_testing/1_hypothesis_tests.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#models-versus-reality">
+   Models versus Reality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#swain-v-alabama">
+     Swain v. Alabama
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-guiding-question">
+   The guiding question
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-competing-hypotheses">
+   Two competing hypotheses
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#declaring-our-hypotheses">
+     Declaring our hypotheses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulating-new-observations">
+   Simulating new observations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#could-our-observed-value-have-come-from-the-model">
+   Could our observed value have come from the model?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-two-sided-alternative">
+     A two-sided alternative
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-p-value">
+   The p-value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-judgments-with-the-p-value">
+   Making judgments with the p-value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-threshold-for-p">
+   The threshold for
+   <span class="math notranslate nohighlight">
+    \(p\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applying-the-framework-to-diverse-scenarios">
+   Applying the framework to diverse scenarios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#follow-up-questions">
+   Follow-up questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-we-don-t-calculate-probability-of-equaling-the-observed-value">
+     Why we don’t calculate probability of equaling the observed value?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-if-i-reject-the-null-but-it-s-actually-true">
+     What if I reject the null but it’s actually true?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hypothesis-testing">
+<h1>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="models-versus-reality">
+<h2>Models versus Reality<a class="headerlink" href="#models-versus-reality" title="Permalink to this headline">¶</a></h2>
+<p>In our examination of populations, we were introduced to <em>models</em> – sets of assumptions about what a population distribution looks like. We assumed that the distribution of U.S. birthdays fit a uniform model <img alt="" src="../_images/birthday-model.png" />, but when we took a sample it looked a bit different than uniform <img alt="" src="../_images/birthday-sample.png" />. It doesn’t look <em>too</em> different though, right? Or does it? At what point does that sample distribution look so different from our model population that we choose to abandon the model?</p>
+<p>This teetering act between belief in a model versus the reality contained in a sample (albeit subject to random chance) is a tough but common problem present far beyond just statistics classes.</p>
+<div class="section" id="swain-v-alabama">
+<h3>Swain v. Alabama<a class="headerlink" href="#swain-v-alabama" title="Permalink to this headline">¶</a></h3>
+<p>The U.S. judicial system operates with a constitutional right that potential jurors for a court case are drawn representatively from the local population. (In U.S. courts, a pool of potential jurors is first drawn from the population fairly, and then the final jurors are selected manually by the involved parties).</p>
+<p>We can think of the constitutional right as establishing a model that the jury pool is drawn from the population of eligible jurors in the county.</p>
+<p>In Alabama 1964, this model was called into question by Robert Swain. As a black man, Swain was convicted by an all white jury, and sentenced to death. While appealing his sentence, Swain argued that the jury pool was not representative of his peers. Of the <span class="math notranslate nohighlight">\(100\)</span> potential jurors pooled, only <span class="math notranslate nohighlight">\(8\)</span> (<span class="math notranslate nohighlight">\(8\%\)</span>) were black – a sizable deviation from the <span class="math notranslate nohighlight">\(26\%\)</span> of eligible black jurors in the county. This case was soon elevated to the U.S. Supreme Court, <em>Swain v. Alabama</em>, calling into question the existence of bias in the jury pooling process. The Supreme Court eventually denied the appeal and the claim of bias. But should they have?</p>
+<p>That disparity between what is expected from a model versus what’s realized in a sample makes us feel uneasy. Quantifying that uneasiness is exactly what we’ll accomplish with a Hypothesis Test.</p>
+</div>
+</div>
+<div class="section" id="the-guiding-question">
+<h2>The guiding question<a class="headerlink" href="#the-guiding-question" title="Permalink to this headline">¶</a></h2>
+<p>The general motivation for conducting a hypothesis is this:</p>
+<ul class="simple">
+<li><p>We have a <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-model">model</a></strong>, a set of assumptions which specify the shape of a population distribution</p></li>
+<li><p>We observed actual data in the form of a sample</p></li>
+<li><p>We’re curious: <em>could what we observed have really come from the assumed population?</em></p></li>
+</ul>
+<p>If not, there could be some serious repercussions – namely, there’s a good chance our model is wrong! We would need to move to a new set of beliefs about how are samples are generated.</p>
+<p>Otherwise, if it looks like our observation could have feasibly come from the assumed population, then we don’t have enough evidence to abandon the model. We can continue operating under those beliefs (for now at least).</p>
+</div>
+<div class="section" id="two-competing-hypotheses">
+<h2>Two competing hypotheses<a class="headerlink" href="#two-competing-hypotheses" title="Permalink to this headline">¶</a></h2>
+<p>In statistics, these two competing answers to our question give way to the formal definitions of the <em>null hypothesis</em> and <em>alternative hypothesis</em>:</p>
+<ul>
+<li><p>The <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-null-hypothesi">null hypothesis</a></strong>, denoted <span class="math notranslate nohighlight">\(H_0\)</span>, is the hypothesis that our model is true; our observations came from the assumed population.</p>
+<p>Under the belief of this hypothesis, even if our observation looks a bit strange and different than what we would expect from the model, this strangeness is <em>wholly do to random chance</em>.</p>
+</li>
+<li><p>The <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-alternative-hypothesi">alternative hypothesis</a></strong>, denoted <span class="math notranslate nohighlight">\(H_1\)</span>, contradicts the null by stating that the model is false in some way; our observations came from a population that looks different than we assumed.</p>
+<p>This hypothesis stipulates that there is some reason <em>other than randomness</em> that lead to our observation being different than what we would expect from the model.</p>
+</li>
+</ul>
+<div class="section" id="declaring-our-hypotheses">
+<h3>Declaring our hypotheses<a class="headerlink" href="#declaring-our-hypotheses" title="Permalink to this headline">¶</a></h3>
+<p>Let’s declare our hypotheses for the Swain v. Alabama case.</p>
+<p>Our model and likewise our <strong>null hypothesis</strong> assumes that the jury pool was drawn from a population of <span class="math notranslate nohighlight">\(26\%\)</span> black residents and <span class="math notranslate nohighlight">\(74\%\)</span> non-black residents. We just happened to sample a low value like <span class="math notranslate nohighlight">\(8\%\)</span> purely due to random chance.</p>
+<p>Our <strong>alternative hypothesis</strong> is that the null is false, low values like <span class="math notranslate nohighlight">\(8\%\)</span> were sampled because the jury pool was essentially drawn from a population less than <span class="math notranslate nohighlight">\(26\%\)</span> black.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Though an alternative hypothesis can claim <em>how</em> a model is wrong – for instance in this case we’re claiming that the samples were taken from a population with a <em>lower</em> proportion of black members than the model assumes – we are not claiming specifically <em>why</em> this is the case.</p>
+<p>While something like biased sampling could lead to the alternative hypothesis being more likely, something else like the county census reporting the wrong amount of black residents could also be an underlying cause – both of these might produce the same numerical differences between our model and sample.</p>
+</div>
+</div>
+</div>
+<div class="section" id="simulating-new-observations">
+<h2>Simulating new observations<a class="headerlink" href="#simulating-new-observations" title="Permalink to this headline">¶</a></h2>
+<p>At the onset of our question, there’s a lot of uncertainty about which hypothesis to believe in. Therefore, we turn to the powers of <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-probabilitie">probabilities</a></strong>! It seems really unlikely that a population that is <span class="math notranslate nohighlight">\(26\%\)</span> black could produce sample proportions that are really low, like <span class="math notranslate nohighlight">\(8\%\)</span>. But <em>how</em> unlikely?</p>
+<p>We can use our simulation skills to help solve this question. By simply generating tons of random new observations using our null assumptions, we can see how likely it is for our model to produce strange samples like the one we observed.</p>
+<p>Since we’re generating these new sample statistics for the purpose of using them in a hypothesis test, they’re called <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-test-statistic">test statistics</a></strong>. And, since we’re operating under the population assumptions in order to create these samples, this entire process is called <strong>generating test statistics <em>under the null</em></strong>.</p>
+<p>We start by using our model to define a population we can sample from. In this case, we can specify a probability distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;non-black&#39;</span><span class="p">]</span>
+<span class="n">population_probs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we can generate a new sample from our assumed population by using NumPy. Remember that we’ll specify <code class="docutils literal notranslate"><span class="pre">p=</span></code> to use our model probabilities. And for the sample size, we should make sure to <strong>generate new samples with the same size as the original</strong> – in this case, <span class="math notranslate nohighlight">\(100\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">jury_pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">population_probs</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the <strong>test statistic</strong> we’re interested in is the proportion of black members in the jury pool.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">jury_pool</span> <span class="o">==</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">test_stat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.18
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s apply simulation best practices and put this code into a function to let ourselves easily call it multiple times in the future.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_jury_proportion</span><span class="p">():</span>
+    <span class="n">jury_pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">population_probs</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">test_stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">jury_pool</span> <span class="o">==</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">test_stat</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can create a <span class="target" id="index-5"></span><strong><a class="reference external" href="../glossary.html#term-sampling-distribution">sampling distribution</a></strong> of the test statistic under our null hypothesis – in other words, if the model were true then what kind of observations would we expect to see?</p>
+<p>This is done by simulating <em>lots</em> of observations under our null hypothesis, then plotting the distribution of the resulting test statistics. This follows the same process as our previous simulations. Namely, use a <span class="target" id="index-6"></span><strong><a class="reference external" href="../glossary.html#term-for-loop">for loop</a></strong> to generate simulated values multiple times, and add the result to a list each time. We can then use matplotlib to draw the histogram of these simulated values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trials</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">simulated_proportions</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+    <span class="n">jury_proportion</span> <span class="o">=</span> <span class="n">simulate_jury_proportion</span><span class="p">()</span>
+    <span class="n">simulated_proportions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jury_proportion</span><span class="p">)</span>
+
+<span class="c1"># These bins will look visually centered around each possible proportion</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span><span class="o">+</span><span class="mf">0.005</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">simulated_proportions</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulated sample proportions of black members under the null&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_hypothesis_tests_16_0.png" src="../_images/1_hypothesis_tests_16_0.png" />
+</div>
+</div>
+<p>Each proportion we simulated was the result of drawing <span class="math notranslate nohighlight">\(100\)</span> people from a population that was <span class="math notranslate nohighlight">\(26\%\)</span> black. Naturally, lots of our simulated proportions were equal to <span class="math notranslate nohighlight">\(0.26\)</span> – but not exactly. This distribution shows us that our simulated proportions can range anywhere from about <span class="math notranslate nohighlight">\(0.1\)</span> to <span class="math notranslate nohighlight">\(0.45\)</span>, but the distribution is <em>centered</em> around <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
+</div>
+<div class="section" id="could-our-observed-value-have-come-from-the-model">
+<h2>Could our observed value have come from the model?<a class="headerlink" href="#could-our-observed-value-have-come-from-the-model" title="Permalink to this headline">¶</a></h2>
+<p>What was our observed proportion again? Oh yeah, <span class="math notranslate nohighlight">\(0.08\)</span>. We’ve just simulated 10,000 samples under the assumptions of our model. Let’s see how those compare to what we originally observed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">observed</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">simulated_proportions</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Draw a red vertical line at our originally observed value</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">observed</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulated statistics compared to the observed statistic&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_hypothesis_tests_19_0.png" src="../_images/1_hypothesis_tests_19_0.png" />
+</div>
+</div>
+<p>Our original observation is off-the-charts low… literally!</p>
+<p>Remember that our alternative hypothesis is that the jury pool was truly sampled with less than a <span class="math notranslate nohighlight">\(26\%\)</span> black population – in other words, the alternative hypothesis supposes that the true sampling distribution should be shifted left, centered around something lower than <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
+<p>We started off by wanting to quantify how likely it is that such a ‘strange’ observation could have come from our model. Since our alternative hypothesis stipulates that low values are considered strange, we can calculate the probably of simulating a value as strange (or stranger) than the one we observed as:</p>
+<div class="math notranslate nohighlight">
+\[
+P(\text{simulated values} \leq \text{observed value})
+\]</div>
+<p>We could also calculate this by adding up the areas of each bar on the histogram that is more extreme than our observed value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">simulated_proportions</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.08</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Turns out Swain had a good reason to feel uneasy about the numbers he saw. It is <em>extremely rare</em> for a population that is <span class="math notranslate nohighlight">\(26\%\)</span> black to produce a sample of <span class="math notranslate nohighlight">\(100\)</span> people that happens to be only <span class="math notranslate nohighlight">\(8\%\)</span> black.</p>
+<p>It is not impossible (and our empirical simulation is just computing <em>estimate</em> probabilities, remember?), but our empirical probability of our observation arising from the null assumptions is so rare that we’re going to ‘reject’ those assumptions. The jury pool for Swain’s case clearly did <em>not</em> look like it came directly from a random sample of a <span class="math notranslate nohighlight">\(26\%\)</span> black population.</p>
+<div class="section" id="a-two-sided-alternative">
+<h3>A two-sided alternative<a class="headerlink" href="#a-two-sided-alternative" title="Permalink to this headline">¶</a></h3>
+<p>Truly, if we were the U.S. Department of Justice and wanted to check for bias in the jury pooling process, we would be interested in checking for <em>any</em> bias in <em>either</em> direction – that is, our <strong>alternative hypothesis</strong> would be that the proportion of black members in population the jury pool is selected from is either greater or less than <span class="math notranslate nohighlight">\(26\%\)</span>. This produces a two-sided alternative hypothesis.</p>
+<div class="math notranslate nohighlight">
+\[
+H_1: P(\text{black}) \neq 0.26
+\]</div>
+<p>In this case, we’re less concerned about whether the observed metric was specifically lower or higher than what the model assumes, and are more concerned about <em>how far away</em> the metric is. How do we do that? By taking the absolute value! In both our code and notationally we can re-write our alternative hypothesis as</p>
+<div class="math notranslate nohighlight">
+\[
+H_1: |P(\text{black}) - 0.26| &gt; 0
+\]</div>
+<p>Let’s re-examine the Swain case with the alternative hypothesis which is attempting to detect bias in either direction. We don’t actually need to run any new simulations, we just need to check the absolute difference when computing the probability that such an extreme observation could be produced under the null hypothesis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many simulated proportions were as far or further away from the null</span>
+<span class="c1"># assumed proportion (0.26) than what we originally observed (0.08)?</span>
+<span class="n">original</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mf">0.08</span> <span class="o">-</span> <span class="mf">0.26</span><span class="p">)</span>
+<span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">simulated_proportions</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.26</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">original</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0002
+</pre></div>
+</div>
+</div>
+</div>
+<p>You’ll notice that our probability of simulating ‘extreme’ results with a two-sided alternative is always larger than the probability of a one-sided alternative. That’s because, simply put, more values are considered extreme!</p>
+</div>
+</div>
+<div class="section" id="the-p-value">
+<h2>The p-value<a class="headerlink" href="#the-p-value" title="Permalink to this headline">¶</a></h2>
+<p>Once again, we give way to the formal language of statistics. The probability we estimated has a name: the <span class="target" id="index-7"></span><strong><a class="reference external" href="../glossary.html#term-p-value">p-value</a></strong>.</p>
+<p>It is mathematically defined as the probability that a metric generated under the null hypothesis can be as extreme or more extreme than the observed metric. Visually, the p-value is just the area of the sampling distribution that is more extreme than our observed value.</p>
+<p><img alt="" src="../_images/shaded-p-value.png" /></p>
+<p>Remember that the ‘extremity’ of a value is based on our alternative hypothesis. If <span class="math notranslate nohighlight">\(H_1\)</span> proposes that some parameter is truly less than our model assumes, then lower statistics are more extreme. The opposite is true if the alternative proposes the true value of a parameter is greater than in our model. And if the alternative is two-sided then we only care about the distance between a statistic and the assumed parameter.</p>
+</div>
+<div class="section" id="making-judgments-with-the-p-value">
+<h2>Making judgments with the p-value<a class="headerlink" href="#making-judgments-with-the-p-value" title="Permalink to this headline">¶</a></h2>
+<p>Once we’ve found the p-value – the chance our null population could have produced a sample statistics as extreme as the one we originally observed – it’s time to get judgmental.</p>
+<p>Are those null assumptions still holding up? Depends on how big our p-value is, and how much uncertainty we’re willing to accept in our lives.</p>
+<ul>
+<li><p><strong>If the p-value is really small</strong> it suggests that it’s really unlikely for the assumed population to produce such extreme sample statistics – not impossible, just so rare that we think there are flaws with our assumptions.</p>
+<p>When what we observed would be super unlikely if the null were true, we make the judgment to <strong>“reject the null”</strong> in favor of the beliefs set forth by the alternative hypothesis.</p>
+</li>
+<li><p><strong>If the p-value isn’t so small</strong> then it’s still conceivable that random chance could have been the sole reason for observing a sample statistic different from the population parameter – after all, we did observe it <span class="math notranslate nohighlight">\(p\%\)</span> of the time!</p>
+<p>Because our test doesn’t seem to suggest anything wrong with our observed statistic meshing with the beliefs set forth by the null, we don’t have justification to change those beliefs, and we <strong>“fail to reject</strong> the null”.</p>
+</li>
+</ul>
+<div class="admonition-a-look-forward admonition">
+<p class="admonition-title">A look forward</p>
+<p>Even if we reject the null in favor of the alternative, we don’t yet have a solid guess for what population we think our original sample truly came from! All that the alternative says is that the underlying population parameter is less-than/greater-than/not-equal-to a value, but shouldn’t we take a next step and estimate what value it actually is?</p>
+<p>We’ll learn to do exactly this in the chapter on Estimation.</p>
+</div>
+<p>So, we abandon the null hypothesis if the p-value is really small, and don’t if the p-value isn’t really small.</p>
+<p>But how small <em>is</em> ‘really small’?</p>
+</div>
+<div class="section" id="the-threshold-for-p">
+<h2>The threshold for <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#the-threshold-for-p" title="Permalink to this headline">¶</a></h2>
+<p>The cutoff for when a p-value is considered small enough to reject the null should be set ahead of time – before the test is conducted. This threshold is generally referred to as the <span class="target" id="index-8"></span><strong><a class="reference external" href="../glossary.html#term-level-of-significance">level of significance</a></strong>, denoted <span class="math notranslate nohighlight">\(\alpha\)</span>, and its value should be chosen depending on conventions, tolerance of risk (what if your test is wrong!?), and even your personal belief about how random the universe is.</p>
+<p>When you set the level of significance, you’re essentially saying:<br />
+“<em>If my observed statistic had less than <span class="math notranslate nohighlight">\(\alpha\%\)</span> chance of coming from the null-assumed population, then I’ll reject the null.</em>”</p>
+<p>In the history of hypothesis testing setting this value has been somewhat of a touchy-subject, and has sparked great controversy! If you’ve ever seen a hypothesis test before this point, you’ve likely seen the phrase “<span class="math notranslate nohighlight">\(p &lt; \alpha = 0.05\)</span>” as the justification that the results of some paper are significant since they were able to quash the prior beliefs of the null. Why is <span class="math notranslate nohighlight">\(0.05\)</span> used so commonly, though? Simply because it is popular.</p>
+<p>Remember, if we set <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> then we’ll choose abandon an entire set of beliefs just because we observed something that had a less-than <span class="math notranslate nohighlight">\(5\%\)</span> chance of occurring. What if the null is actually true, though? Then <span class="math notranslate nohighlight">\(5\%\)</span> of the time that we run our test we might randomly make an observation worth of incorrectly rejecting the null – that’s could be a one-in-twenty event!</p>
+<p>The level of significance is directly linked with the chance that we incorrectly reject the null hypothesis when in fact it is true. A “false positive” such as this could lead to disastrous effects depending on your field, which is why many fields like medicine choose much more stringent levels of significance, like <span class="math notranslate nohighlight">\(\alpha=0.001\)</span>.</p>
+</div>
+<div class="section" id="applying-the-framework-to-diverse-scenarios">
+<h2>Applying the framework to diverse scenarios<a class="headerlink" href="#applying-the-framework-to-diverse-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>The hypothesis testing framework work we’ve discovered really works great on lots of different things you throw at it.</p>
+<p>To summarize this framework, we:</p>
+<ol class="simple">
+<li><p>Observe a sample and statistic</p></li>
+<li><p>Formulate a null hypothesis about the underlying population and parameter, and set a level of significance</p></li>
+<li><p>Formulate an alternative hypothesis</p></li>
+<li><p>Generate new test statistics under the assumptions of the null</p></li>
+<li><p>Calculate the probability of a test statistic being as extreme as the observed statistic</p></li>
+<li><p>Make a judgment about the null hypothesis using the p-value and level of significance</p></li>
+</ol>
+<p>Notice that this approach towards hypothesis testing handles many different things we throw at it. We can run tests on continuous data or discrete data and it doesn’t matter what the true population looks like just as long as we’re able to generate a statistic. We can test using practically <em>any</em> statistic we choose, such as a mean, max, variance, or even count.</p>
+<p>This framework is so incredibly flexible because it follows a simple, intuitive principle: <em>if we have a set of assumptions, then we better expect data generated from those assumptions to look like what we observed in real life.</em> We now have a solid way to quantify the degree to which an observation challenges a set of assumptions.</p>
+</div>
+<div class="section" id="follow-up-questions">
+<h2>Follow-up questions<a class="headerlink" href="#follow-up-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-we-don-t-calculate-probability-of-equaling-the-observed-value">
+<h3>Why we don’t calculate probability of equaling the observed value?<a class="headerlink" href="#why-we-don-t-calculate-probability-of-equaling-the-observed-value" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When there are lots of possible outcomes, the probability of any <em>one specific outcome</em> is assuredly low!</p></li>
+<li><p>When working with continuous data, the probability of observing or generating any single number is (mathematically) zero</p></li>
+<li><p>Besides, if you were to see a result <em>more</em> extreme than the observed statistic, surely it should also count as evidence against the null, right?</p></li>
+</ul>
+</div>
+<div class="section" id="what-if-i-reject-the-null-but-it-s-actually-true">
+<h3>What if I reject the null but it’s actually true?<a class="headerlink" href="#what-if-i-reject-the-null-but-it-s-actually-true" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This does happen! It’s called a “false positive” or “Type I Error” (type one)</p></li>
+<li><p>We know the probably of incorrectly rejecting the null – it’s <span class="math notranslate nohighlight">\(\alpha\)</span>, our level of significance!</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../06-populations_and_samples/2_parameters_and_statistics.html" title="previous page">Parameters and statistics</a>
+    <a class='right-next' id="next-link" href="2_permutation_tests.html" title="next page">Permutation Tests</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

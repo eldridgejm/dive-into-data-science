@@ -24,7 +24,7 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
@@ -47,12 +47,12 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exploring Data" href="../exploring_data/exploring_data.html" />
+    <link rel="next" title="Plotting with Babypandas" href="../03-visualization/intro.html" />
     <link rel="prev" title="GroupBy" href="groupby.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -76,15 +76,12 @@
   <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <p class="caption">
+    <p class="caption collapsible-parent">
  <span class="caption-text">
   Getting Started
  </span>
@@ -115,13 +112,32 @@
    Functions and Imports
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../01-getting_started/data_types.html">
    Data Types
   </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   NumPy and Babypandas
  </span>
@@ -157,13 +173,145 @@
    Defining and Applying Functions
   </a>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../exploring_data/exploring_data.html">
-   Exploring Data
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Reference
  </span>
@@ -186,9 +334,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 </div>
 
@@ -213,11 +359,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -229,8 +375,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -696,26 +842,11 @@ city_comma_state(address)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
-</pre></div>
-</div>
-</div>
 </div>
 <p>However, if we try to use the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, Python will yell at us:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="mi">6</span><span class="n">fcf9dfbd479</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span>
-
-<span class="ne">NameError</span>: name &#39;x&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -741,26 +872,11 @@ city_comma_state(address)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
-</pre></div>
-</div>
-</div>
 </div>
 <p>But if we try to access <code class="docutils literal notranslate"><span class="pre">my_argument</span></code> outside of the function, Python tells us that we can’t:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_argument</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">785</span><span class="n">f83eb3696</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_argument</span>
-
-<span class="ne">NameError</span>: name &#39;my_argument&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -778,11 +894,6 @@ city_comma_state(address)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
@@ -811,14 +922,6 @@ city_comma_state(address)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting execution.
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="printing-versus-returning">
@@ -843,24 +946,11 @@ city_comma_state(address)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-</pre></div>
-</div>
-</div>
 </div>
 <p>Only <code class="docutils literal notranslate"><span class="pre">42</span></code> is the <em>output</em> of the cell and can be “saved” to a variable. <code class="docutils literal notranslate"><span class="pre">52</span></code>, on the other hand, is simply displayed to the screen and is afterwards lost forever. This can be checked by displaying the value of <code class="docutils literal notranslate"><span class="pre">z</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -884,11 +974,6 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, 52)
-</pre></div>
-</div>
-</div>
 </div>
 <p>A <strong>tuple</strong> is like a list, so we can use square bracket notation to retrieve each element:</p>
 <div class="cell docutils container">
@@ -897,20 +982,10 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
@@ -929,21 +1004,11 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
-</pre></div>
-</div>
-</div>
 </div>
 <p>But it won’t work for years like 1997, since it will round up:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mi">1997</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000
 </pre></div>
 </div>
 </div>
@@ -955,21 +1020,11 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
 </div>
 <p>To find the decade, we can simply subtract the remainder obtained by dividing by ten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1992</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1992</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
@@ -980,20 +1035,10 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2000</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2000</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000
 </pre></div>
 </div>
 </div>
@@ -1013,20 +1058,10 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decade_from_year</span><span class="p">(</span><span class="mi">1997</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1990
 </pre></div>
 </div>
 </div>
@@ -1047,21 +1082,11 @@ Lastly, if you truly want to return two values from a function, the right way to
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.0
-</pre></div>
-</div>
-</div>
 </div>
 <p>Note that the <em>order</em> of the arguments matters. When <code class="docutils literal notranslate"><span class="pre">area_of_triangle(10,</span> <span class="pre">5)</span></code> is executed, Python assigns the value of 10 to <code class="docutils literal notranslate"><span class="pre">base</span></code> and assigns the value of 5 to <code class="docutils literal notranslate"><span class="pre">height</span></code>. If you wish, you can use the keyword argument form to call the function, in which case arguments can be provided in any order. This is slightly more readable, too:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_of_triangle</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.0
 </pre></div>
 </div>
 </div>
@@ -1084,161 +1109,6 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>name</th>
-      <th>cause</th>
-      <th>acres</th>
-      <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6374</th>
-      <td>1995</td>
-      <td>11</td>
-      <td>SEMINOLE</td>
-      <td>2 - Equipment Use</td>
-      <td>645.149780</td>
-      <td>Riverside</td>
-      <td>-116.772176</td>
-      <td>33.890971</td>
-    </tr>
-    <tr>
-      <th>6375</th>
-      <td>1995</td>
-      <td>10</td>
-      <td>SHINN</td>
-      <td>7 - Arson</td>
-      <td>13.694411</td>
-      <td>Los Angeles</td>
-      <td>-117.679804</td>
-      <td>34.181470</td>
-    </tr>
-    <tr>
-      <th>6376</th>
-      <td>1995</td>
-      <td>8</td>
-      <td>ECHO</td>
-      <td>14 - Unknown</td>
-      <td>372.055573</td>
-      <td>Riverside</td>
-      <td>-117.209657</td>
-      <td>33.868816</td>
-    </tr>
-    <tr>
-      <th>6377</th>
-      <td>1995</td>
-      <td>10</td>
-      <td>FREEWAY FIRE NO II</td>
-      <td>14 - Unknown</td>
-      <td>1233.456909</td>
-      <td>Los Angeles</td>
-      <td>-118.372160</td>
-      <td>34.446973</td>
-    </tr>
-    <tr>
-      <th>6378</th>
-      <td>1995</td>
-      <td>12</td>
-      <td>TOWSLEY FIRE</td>
-      <td>14 - Unknown</td>
-      <td>818.184509</td>
-      <td>Los Angeles</td>
-      <td>-118.559865</td>
-      <td>34.345437</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>7333</th>
-      <td>1999</td>
-      <td>7</td>
-      <td>VINTAGE</td>
-      <td>2 - Equipment Use</td>
-      <td>34.438271</td>
-      <td>Kern</td>
-      <td>-119.521235</td>
-      <td>35.207022</td>
-    </tr>
-    <tr>
-      <th>7334</th>
-      <td>1999</td>
-      <td>8</td>
-      <td>41</td>
-      <td>10 - Vehicle</td>
-      <td>167.177612</td>
-      <td>Kern</td>
-      <td>-120.176735</td>
-      <td>35.768621</td>
-    </tr>
-    <tr>
-      <th>7335</th>
-      <td>1999</td>
-      <td>8</td>
-      <td>WASHBURN</td>
-      <td>1 - Lightning</td>
-      <td>272.034943</td>
-      <td>San Luis Obispo</td>
-      <td>-119.806037</td>
-      <td>35.132310</td>
-    </tr>
-    <tr>
-      <th>7336</th>
-      <td>1999</td>
-      <td>8</td>
-      <td>WOODLAND</td>
-      <td>1 - Lightning</td>
-      <td>995.418335</td>
-      <td>Butte</td>
-      <td>-121.699525</td>
-      <td>39.859890</td>
-    </tr>
-    <tr>
-      <th>7337</th>
-      <td>1999</td>
-      <td>8</td>
-      <td>BLOOMER</td>
-      <td>1 - Lightning</td>
-      <td>2609.674805</td>
-      <td>Butte</td>
-      <td>-121.476863</td>
-      <td>39.644791</td>
-    </tr>
-  </tbody>
-</table>
-<p>964 rows × 8 columns</p>
-</div></div></div>
 </div>
 <p>Because this function accepts the column name, it is very reusable. We can use it to get the fires whose size is between 10,000 and 20,000 acres:</p>
 <div class="cell docutils container">
@@ -1247,161 +1117,6 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>name</th>
-      <th>cause</th>
-      <th>acres</th>
-      <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>16</th>
-      <td>1910</td>
-      <td>7</td>
-      <td>COYOTE CREEK</td>
-      <td>14 - Unknown</td>
-      <td>11226.824219</td>
-      <td>Ventura</td>
-      <td>-119.386960</td>
-      <td>34.421249</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>1924</td>
-      <td>8</td>
-      <td>UPPER DESOLATION VAL</td>
-      <td>14 - Unknown</td>
-      <td>10973.407227</td>
-      <td>El Dorado</td>
-      <td>-120.506799</td>
-      <td>38.571552</td>
-    </tr>
-    <tr>
-      <th>317</th>
-      <td>1926</td>
-      <td>7</td>
-      <td>FORT BIDWELL</td>
-      <td>9 - Miscellaneous</td>
-      <td>13100.943359</td>
-      <td>Modoc</td>
-      <td>-120.082147</td>
-      <td>41.934478</td>
-    </tr>
-    <tr>
-      <th>322</th>
-      <td>1927</td>
-      <td>8</td>
-      <td>LIEBRE</td>
-      <td>14 - Unknown</td>
-      <td>17957.339844</td>
-      <td>Los Angeles</td>
-      <td>-118.611143</td>
-      <td>34.719225</td>
-    </tr>
-    <tr>
-      <th>739</th>
-      <td>1938</td>
-      <td>8</td>
-      <td>RED CAP</td>
-      <td>14 - Unknown</td>
-      <td>14867.953125</td>
-      <td>Humboldt</td>
-      <td>-123.470725</td>
-      <td>41.174271</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>12949</th>
-      <td>2018</td>
-      <td>7</td>
-      <td>CRANSTON</td>
-      <td>7 - Arson</td>
-      <td>13229.158203</td>
-      <td>Riverside</td>
-      <td>-116.696822</td>
-      <td>33.715582</td>
-    </tr>
-    <tr>
-      <th>12954</th>
-      <td>2018</td>
-      <td>6</td>
-      <td>LIONS</td>
-      <td>1 - Lightning</td>
-      <td>13462.742188</td>
-      <td>Madera</td>
-      <td>-119.166248</td>
-      <td>37.577131</td>
-    </tr>
-    <tr>
-      <th>13290</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>TABOOSE</td>
-      <td>1 - Lightning</td>
-      <td>10267.631836</td>
-      <td>Inyo</td>
-      <td>-118.348358</td>
-      <td>37.021613</td>
-    </tr>
-    <tr>
-      <th>13305</th>
-      <td>2019</td>
-      <td>7</td>
-      <td>TUCKER</td>
-      <td>9 - Miscellaneous</td>
-      <td>14184.661133</td>
-      <td>Modoc</td>
-      <td>-121.241082</td>
-      <td>41.803004</td>
-    </tr>
-    <tr>
-      <th>13365</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>MARIA</td>
-      <td>14 - Unknown</td>
-      <td>10042.458984</td>
-      <td>Ventura</td>
-      <td>-119.056671</td>
-      <td>34.314244</td>
-    </tr>
-  </tbody>
-</table>
-<p>235 rows × 8 columns</p>
-</div></div></div>
 </div>
 <p>Since the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> operators work on strings, too, we can get all of the fires whose name is between A and E:</p>
 <div class="cell docutils container">
@@ -1410,161 +1125,6 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>name</th>
-      <th>cause</th>
-      <th>acres</th>
-      <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>1898</td>
-      <td>9</td>
-      <td>COZY DELL</td>
-      <td>14 - Unknown</td>
-      <td>2974.585205</td>
-      <td>Ventura</td>
-      <td>-119.265380</td>
-      <td>34.482316</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>1910</td>
-      <td>8</td>
-      <td>CRAWFORD CREEK 2</td>
-      <td>7 - Arson</td>
-      <td>497.885071</td>
-      <td>Humboldt</td>
-      <td>-123.552471</td>
-      <td>41.300052</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>1910</td>
-      <td>7</td>
-      <td>BLUFF CREEK</td>
-      <td>4 - Campfire</td>
-      <td>298.716553</td>
-      <td>Del Norte</td>
-      <td>-123.760361</td>
-      <td>41.430391</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>1910</td>
-      <td>7</td>
-      <td>COYOTE CREEK</td>
-      <td>14 - Unknown</td>
-      <td>11226.824219</td>
-      <td>Ventura</td>
-      <td>-119.386960</td>
-      <td>34.421249</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>1910</td>
-      <td>8</td>
-      <td>BULL CREEK</td>
-      <td>4 - Campfire</td>
-      <td>56.897217</td>
-      <td>Humboldt</td>
-      <td>-123.621988</td>
-      <td>41.174766</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>13446</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>ANTELOPE</td>
-      <td>9 - Miscellaneous</td>
-      <td>167.332794</td>
-      <td>San Benito</td>
-      <td>-120.831821</td>
-      <td>36.558925</td>
-    </tr>
-    <tr>
-      <th>13451</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>COW</td>
-      <td>10 - Vehicle</td>
-      <td>15.383965</td>
-      <td>Shasta</td>
-      <td>-122.038452</td>
-      <td>40.612144</td>
-    </tr>
-    <tr>
-      <th>13456</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>DEER</td>
-      <td>5 - Debris</td>
-      <td>9.367375</td>
-      <td>Santa Cruz</td>
-      <td>-122.085541</td>
-      <td>37.183180</td>
-    </tr>
-    <tr>
-      <th>13457</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>CABRILLO</td>
-      <td>2 - Equipment Use</td>
-      <td>61.750446</td>
-      <td>San Mateo</td>
-      <td>-122.358885</td>
-      <td>37.171839</td>
-    </tr>
-    <tr>
-      <th>13460</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>CROSS</td>
-      <td>14 - Unknown</td>
-      <td>289.151428</td>
-      <td>Monterey</td>
-      <td>-120.726245</td>
-      <td>35.793698</td>
-    </tr>
-  </tbody>
-</table>
-<p>3620 rows × 8 columns</p>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="the-apply-series-method">
@@ -1577,32 +1137,11 @@ might want only those fires in<code class="docutils literal notranslate"> <span 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1980
-</pre></div>
-</div>
-</div>
 </div>
 <p>We’d like to apply this function to each entry in the <code class="docutils literal notranslate"><span class="pre">'year'</span></code> column. To do so, we’ll use <code class="docutils literal notranslate"><span class="pre">.apply</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calfire</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">decade_from_year</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        1890
-1        1890
-2        1890
-3        1900
-4        1900
-         ... 
-13459    2010
-13460    2010
-13461    2010
-13462    2010
-13463    2010
-Name: year, Length: 13464, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1622,173 +1161,6 @@ Name: year, Length: 13464, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>name</th>
-      <th>cause</th>
-      <th>acres</th>
-      <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>decade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1898</td>
-      <td>9</td>
-      <td>LOS PADRES</td>
-      <td>14 - Unknown</td>
-      <td>20539.949219</td>
-      <td>Ventura</td>
-      <td>-119.367830</td>
-      <td>34.446830</td>
-      <td>1890</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1898</td>
-      <td>4</td>
-      <td>MATILIJA</td>
-      <td>14 - Unknown</td>
-      <td>2641.123047</td>
-      <td>Ventura</td>
-      <td>-119.299625</td>
-      <td>34.488614</td>
-      <td>1890</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1898</td>
-      <td>9</td>
-      <td>COZY DELL</td>
-      <td>14 - Unknown</td>
-      <td>2974.585205</td>
-      <td>Ventura</td>
-      <td>-119.265380</td>
-      <td>34.482316</td>
-      <td>1890</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1902</td>
-      <td>8</td>
-      <td>FEROUD</td>
-      <td>14 - Unknown</td>
-      <td>731.481567</td>
-      <td>Ventura</td>
-      <td>-119.320979</td>
-      <td>34.417515</td>
-      <td>1900</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1903</td>
-      <td>10</td>
-      <td>SAN ANTONIO</td>
-      <td>14 - Unknown</td>
-      <td>380.260590</td>
-      <td>Ventura</td>
-      <td>-119.253422</td>
-      <td>34.430616</td>
-      <td>1900</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>13459</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>STAGE</td>
-      <td>7 - Arson</td>
-      <td>13.019149</td>
-      <td>Monterey</td>
-      <td>-121.599207</td>
-      <td>36.764065</td>
-      <td>2010</td>
-    </tr>
-    <tr>
-      <th>13460</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>CROSS</td>
-      <td>14 - Unknown</td>
-      <td>289.151428</td>
-      <td>Monterey</td>
-      <td>-120.726245</td>
-      <td>35.793698</td>
-      <td>2010</td>
-    </tr>
-    <tr>
-      <th>13461</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>FRUDDEN</td>
-      <td>2 - Equipment Use</td>
-      <td>11.789393</td>
-      <td>Monterey</td>
-      <td>-120.908061</td>
-      <td>35.908627</td>
-      <td>2010</td>
-    </tr>
-    <tr>
-      <th>13462</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>JOLON</td>
-      <td>11 - Powerline</td>
-      <td>61.592369</td>
-      <td>Monterey</td>
-      <td>-121.010025</td>
-      <td>35.910750</td>
-      <td>2010</td>
-    </tr>
-    <tr>
-      <th>13463</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>SADDLE RIDGE</td>
-      <td>14 - Unknown</td>
-      <td>8799.325195</td>
-      <td>Los Angeles</td>
-      <td>-118.516473</td>
-      <td>34.321859</td>
-      <td>2010</td>
-    </tr>
-  </tbody>
-</table>
-<p>13464 rows × 9 columns</p>
-</div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">.apply</span></code> method is very useful for <strong>data cleaning</strong>. Data rarely comes to us in the exact form we need or prefer. For instance, we might wish to convert a year to its decade, or remove the leading number code from a fire’s cause. A common approach to doing so is to write a function capable of converting or cleaning a single entry, then <code class="docutils literal notranslate"><span class="pre">.apply</span></code>ing this function to the entire column.</p>
 <p><em><strong>Example: clean the <code class="docutils literal notranslate"><span class="pre">cause</span></code> column</strong></em></p>
@@ -1808,11 +1180,6 @@ Name: year, Length: 13464, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Equipment Use&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now we <code class="docutils literal notranslate"><span class="pre">.apply</span></code> the function to the <code class="docutils literal notranslate"><span class="pre">'cause'</span></code> column. We’ll save it back to the table using <code class="docutils literal notranslate"><span class="pre">.assign</span></code>:</p>
 <div class="cell docutils container">
@@ -1823,161 +1190,6 @@ Name: year, Length: 13464, dtype: int64
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>year</th>
-      <th>month</th>
-      <th>name</th>
-      <th>cause</th>
-      <th>acres</th>
-      <th>county</th>
-      <th>longitude</th>
-      <th>latitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1898</td>
-      <td>9</td>
-      <td>LOS PADRES</td>
-      <td>Unknown</td>
-      <td>20539.949219</td>
-      <td>Ventura</td>
-      <td>-119.367830</td>
-      <td>34.446830</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1898</td>
-      <td>4</td>
-      <td>MATILIJA</td>
-      <td>Unknown</td>
-      <td>2641.123047</td>
-      <td>Ventura</td>
-      <td>-119.299625</td>
-      <td>34.488614</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1898</td>
-      <td>9</td>
-      <td>COZY DELL</td>
-      <td>Unknown</td>
-      <td>2974.585205</td>
-      <td>Ventura</td>
-      <td>-119.265380</td>
-      <td>34.482316</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1902</td>
-      <td>8</td>
-      <td>FEROUD</td>
-      <td>Unknown</td>
-      <td>731.481567</td>
-      <td>Ventura</td>
-      <td>-119.320979</td>
-      <td>34.417515</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1903</td>
-      <td>10</td>
-      <td>SAN ANTONIO</td>
-      <td>Unknown</td>
-      <td>380.260590</td>
-      <td>Ventura</td>
-      <td>-119.253422</td>
-      <td>34.430616</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>13459</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>STAGE</td>
-      <td>Arson</td>
-      <td>13.019149</td>
-      <td>Monterey</td>
-      <td>-121.599207</td>
-      <td>36.764065</td>
-    </tr>
-    <tr>
-      <th>13460</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>CROSS</td>
-      <td>Unknown</td>
-      <td>289.151428</td>
-      <td>Monterey</td>
-      <td>-120.726245</td>
-      <td>35.793698</td>
-    </tr>
-    <tr>
-      <th>13461</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>FRUDDEN</td>
-      <td>Equipment Use</td>
-      <td>11.789393</td>
-      <td>Monterey</td>
-      <td>-120.908061</td>
-      <td>35.908627</td>
-    </tr>
-    <tr>
-      <th>13462</th>
-      <td>2019</td>
-      <td>9</td>
-      <td>JOLON</td>
-      <td>Powerline</td>
-      <td>61.592369</td>
-      <td>Monterey</td>
-      <td>-121.010025</td>
-      <td>35.910750</td>
-    </tr>
-    <tr>
-      <th>13463</th>
-      <td>2019</td>
-      <td>10</td>
-      <td>SADDLE RIDGE</td>
-      <td>Unknown</td>
-      <td>8799.325195</td>
-      <td>Los Angeles</td>
-      <td>-118.516473</td>
-      <td>34.321859</td>
-    </tr>
-  </tbody>
-</table>
-<p>13464 rows × 8 columns</p>
-</div></div></div>
 </div>
 </div>
 </div>
@@ -1992,7 +1204,7 @@ Name: year, Length: 13464, dtype: int64
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="groupby.html" title="previous page">GroupBy</a>
-    <a class='right-next' id="next-link" href="../exploring_data/exploring_data.html" title="next page">Exploring Data</a>
+    <a class='right-next' id="next-link" href="../03-visualization/intro.html" title="next page">Plotting with Babypandas</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

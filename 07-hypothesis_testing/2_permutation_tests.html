@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Permutation Tests &#8212; Dive into Data Science</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parameter Estimation and Bootstrap" href="../08-estimation/1_bootstrap.html" />
+    <link rel="prev" title="Hypothesis Testing" href="1_hypothesis_tests.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/apply.html">
+   Defining and Applying Functions
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/1_bootstrap.html#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08-estimation/3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/07-hypothesis_testing/2_permutation_tests.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F07-hypothesis_testing/2_permutation_tests.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/07-hypothesis_testing/2_permutation_tests.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tale-of-two-samples">
+   A tale of two samples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-a-statistic-and-declaring-our-hypotheses">
+   Choosing a statistic and declaring our hypotheses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permuting-to-generate-new-test-statistics">
+   Permuting to generate new test statistics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-could-have-sampled-this-value-into-either-group">
+     We could have sampled this value into either group
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conduct-the-test-interpret-the-results">
+   Conduct the test, interpret the results
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#we-never-accept-the-null-only-fail-to-reject">
+     We never ‘accept’ the null, only fail to reject
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="permutation-tests">
+<h1>Permutation Tests<a class="headerlink" href="#permutation-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-tale-of-two-samples">
+<h2>A tale of two samples<a class="headerlink" href="#a-tale-of-two-samples" title="Permalink to this headline">¶</a></h2>
+<p>Commonly data science is used to measure differences between two groups. This is the case in scenarios such as a treatment and control group in which the effect of a medication is measured, and also in scenarios such as ‘A/B testing’ in which two different versions of a product are shown to users and the company determines which version drives more business.</p>
+<p><img alt="" src="../_images/two-samples.png" /></p>
+<p>When measurements from two groups are compared, we may find that the samples have a similar shape, but some of their statistics differ. How do we rule out that it wasn’t just random chance that lead to the difference?</p>
+<p>Sounds like it’s time for another simulation, but to do so we need to ask the right question first:<br />
+<em>Could the two groups have been sampled from the same population?</em></p>
+<p>Turns out, simply by comparing the statistics from these samples it’s possible for us to build enough evidence to claim that they don’t have the same underlying population distribution!</p>
+<p>If two samples have drastically different statistics, then it’s unlikely that the two samples could have come from the same population distribution.</p>
+<p>Just how ‘unlikely’ we’re willing to still believe will define our <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-level-of-significance">level of significance</a></strong>. Then we’ll use the <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-null-hypothesi">null hypothesis</a></strong> to propose that such a difference could have occurred solely due to random chance in the sampling, and the <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-alternative-hypothesi">alternative hypothesis</a></strong> to suggest that the two samples actually came from populations with differing parameters!</p>
+</div>
+<div class="section" id="choosing-a-statistic-and-declaring-our-hypotheses">
+<h2>Choosing a statistic and declaring our hypotheses<a class="headerlink" href="#choosing-a-statistic-and-declaring-our-hypotheses" title="Permalink to this headline">¶</a></h2>
+<p>Recall the general requirements for conducting a hypothesis test. We need to be able to:</p>
+<ol class="simple">
+<li><p>Observe a statistic from the collected data</p></li>
+<li><p>Generate new values of the test statistic under the assumptions of the null hypothesis</p></li>
+</ol>
+<p>A statistic is one number, but we have two samples. Somehow, our choice of test statistic must capture both samples in a single number <em>and</em> at the same time should represent the magnitude of difference between the samples.</p>
+<p>The easiest way to accomplish these demands is to measure the <strong>difference in sample statistics</strong> between the two samples.</p>
+<p>Thus our test statistic, and our initial observed statistic will be calculated as:
+$<span class="math notranslate nohighlight">\(\text{test statistic} = \text{Group A statistic} - \text{Group B statistic}\)</span>$</p>
+<p>Consequently, if the Group A statistic is smaller than the Group B statistic, then we’ll observe a negative value of our test statistic.</p>
+<p>When we extrapolate our samples to form hypotheses about the populations behind each group, we arrive at the null hypothesis that the two group populations have the same parameter (since they are the same distribution), and the alternative hypothesis that the two group populations exhibit different parameters.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \text{Group A parameter} = \text{Group B parameter}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \text{Group A parameter} \neq \text{Group B parameter}\)</span> (or <span class="math notranslate nohighlight">\(&lt;\)</span>, <span class="math notranslate nohighlight">\(&gt;\)</span>)</p></li>
+</ul>
+<p>We can re-write our hypotheses to match our test statistic a bit closer.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \text{Group A parameter} - \text{Group B parameter} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \text{Group A parameter} - \text{Group B parameter} \neq 0\)</span> (or <span class="math notranslate nohighlight">\(&lt;\)</span>, <span class="math notranslate nohighlight">\(&gt;\)</span>)</p></li>
+</ul>
+<p>In this two-sample setting, our alternative hypothesis may be <span class="math notranslate nohighlight">\(\star &lt; 0\)</span> if we have a suspicion that the Group A parameter is <em>less than</em> than the Group B parameter.</p>
+</div>
+<div class="section" id="permuting-to-generate-new-test-statistics">
+<h2>Permuting to generate new test statistics<a class="headerlink" href="#permuting-to-generate-new-test-statistics" title="Permalink to this headline">¶</a></h2>
+<p>Now we must generate new values of our test statistic under the null… how do we do that?</p>
+<p>In the previous one-sample hypothesis test, we had a model for the exact shape of the assumed population since we wanted to check if our sample came from <em>a specific</em> population. This allowed us to directly generate new data from that distribution.</p>
+<p>In this two-sample case, we’re only curious if the two samples have <em>the same</em> underlying population. Our assumptions about the underlying population have eroded such that we no longer assume – or care, really – what the distribution looks like. Without a distribution to utilize, we cannot general novel measurements. We <em>can</em> still generate new test statistics, however, by thinking cleverly about that data we do have.</p>
+<div class="section" id="we-could-have-sampled-this-value-into-either-group">
+<h3>We could have sampled this value into either group<a class="headerlink" href="#we-could-have-sampled-this-value-into-either-group" title="Permalink to this headline">¶</a></h3>
+<p>Under the null hypothesis, our group measurements all come from the same population. Therefore, during sampling we could have just as easily sampled a Group A point into the Group B sample instead! If they truly come from the same population, then it doesn’t matter which group each measurement belongs to.</p>
+<p>In practice, this means that underneath the null we can ‘generate’ a new set of samples by just swapping some data points between our Group A sample and our Group B sample. Some of Group A samples get moved into Group B, and the same number from Group B get moved into Group A. This process is called <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-permuting">permuting</a></strong>.</p>
+<p>Once we’ve shuffled the group labels around, we can basically treat this new permuted data as an entirely new set of samples, this time samples where we’re assuming the group really doesn’t matter since both samples come from the same underlying distribution. With these ‘new’ permuted samples, we can calculate a new test statistic (remember: the difference between sample statistics).</p>
+</div>
+</div>
+<div class="section" id="conduct-the-test-interpret-the-results">
+<h2>Conduct the test, interpret the results<a class="headerlink" href="#conduct-the-test-interpret-the-results" title="Permalink to this headline">¶</a></h2>
+<p>From this point, having satisfied the general requirements of a hypothesis test, we can follow the exact same simulation/hypothesis testing procedures as before.</p>
+<ul class="simple">
+<li><p>Permute the data multiple times, each time computing a new simulated test statistic</p></li>
+<li><p>Then compute the proportion of times the simulated test statistic is more extreme than the observed, where ‘extremity’ is based on your alternate hypothesis</p></li>
+<li><p>Finally, compare this p-value to your pre-determined level of significance</p></li>
+</ul>
+<p>When the p-value is sufficiently small, it’s because it is very unlikely that two samples drawn from the same distribution could have produced statistics that are so different from each other. At a certain point, this unlikeliness is great enough that we’ll reject the claim that the samples come from the same population. Instead, we believe that the populations each sample came from exhibit different parameters. This is when you can claim that there is ‘a significant difference’ in the parameters of the two groups.</p>
+<p>On the other hand, when the p-value isn’t too unlikely, then we don’t have enough evidence to suggest that the Group A population has a different parameter value than the Group B population. For the moment, we fail to reject the hypothesis that the two groups came from the same population. That being said…</p>
+<div class="section" id="we-never-accept-the-null-only-fail-to-reject">
+<h3>We never ‘accept’ the null, only fail to reject<a class="headerlink" href="#we-never-accept-the-null-only-fail-to-reject" title="Permalink to this headline">¶</a></h3>
+<p>We could very easily conduct a permutation test around one parameter, such as the mean, and find that we don’t have enough evidence to reject the null. After that, it’s still possible that we conduct another permutation test about a separate parameter, such as the variance, and decide that we <em>should</em> reject the null! How come?</p>
+<p>Think about it this way: The same parameter value, like the mean, could be exhibited by two population distributions that look completely different, they just need to be centered around the same spot.</p>
+<p><img alt="" src="../_images/different-dist-same-mean.png" /></p>
+<p>On the other hand, if we find any indication that two distributions have two different values for a parameter – such as if we found that a sample from each of the above populations suggest that the population variances differ – then we <em>know</em> that the two population distributions <em>cannot</em> be the same.</p>
+<p>This is a great example as to why in data science and statistics we never ‘accept’ the null hypothesis – only reject or fail to reject. Often we may fail to reject a null hypothesis simply because we don’t have enough evidence, or we’re not quite looking in the right places.</p>
+<p><em>And</em> it’s a great example as to why we should always visualize our data! If the two samples look like they don’t even have the same general shape then we should think critically about what statistic to use.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="1_hypothesis_tests.html" title="previous page">Hypothesis Testing</a>
+    <a class='right-next' id="next-link" href="../08-estimation/1_bootstrap.html" title="next page">Parameter Estimation and Bootstrap</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

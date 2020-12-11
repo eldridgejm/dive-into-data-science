@@ -1,0 +1,769 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Parameter Estimation and Bootstrap &#8212; Dive into Data Science</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Confidence Intervals" href="2_confidence_intervals.html" />
+    <link rel="prev" title="Permutation Tests" href="../07-hypothesis_testing/2_permutation_tests.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Dive into Data Science</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/tools.html">
+   Tools of the Trade
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/first_steps.html">
+   First Steps with Notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/expressions.html">
+   Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/variables.html">
+   Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-getting_started/functions.html">
+   Functions and Imports
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../01-getting_started/data_types.html">
+   Data Types
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-numeric.html">
+     Numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-strings.html">
+     Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-getting_started/data_types-bool.html">
+     Booleans
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  NumPy and Babypandas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/arrays.html">
+   Arrays
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/dataframes.html">
+   DataFrames
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/accessing.html">
+   Accessing and Sorting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/querying.html">
+   Querying
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/groupby.html">
+   GroupBy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-data_sets/apply.html">
+   Defining and Applying Functions
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/intro.html">
+   Plotting with Babypandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/scatter.html">
+   Scatter Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/line.html">
+   Line graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/bar.html">
+   Bar charts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-visualization/histogram.html">
+   Bar charts
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Data Manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-advanced_data_manipulation/merging.html">
+   Merge
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Probability and Simulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-probability_and_simulation/probability_and_simulation.html">
+   Probability and simulation
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Populations and Samples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/1_populations_and_samples.html">
+   Populations and Samples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06-populations_and_samples/2_parameters_and_statistics.html">
+   Parameters and statistics
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hypothesis Testing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/1_hypothesis_tests.html">
+   Hypothesis Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07-hypothesis_testing/2_permutation_tests.html">
+   Permutation Tests
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Estimation
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parameter Estimation and Bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#the-bootstrap">
+   The bootstrap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_confidence_intervals.html">
+   Confidence Intervals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_ht_using_intervals.html">
+   Hypothesis Tests for Parameters using Confidence Intervals
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../how_to_read.html">
+   How To Read This Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   All Terms and Tips
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/08-estimation/1_bootstrap.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eldridgejm/dive_into_data_science"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eldridgejm/dive_into_data_science/issues/new?title=Issue%20on%20page%20%2F08-estimation/1_bootstrap.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/user-redirect/git-pull?repo=https://github.com/eldridgejm/dive_into_data_science&urlpath=tree/dive_into_data_science/notebooks/book_pages/08-estimation/1_bootstrap.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Parameter Estimation and Bootstrap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-issue-with-just-guessing-the-statistic">
+     The issue with just guessing the statistic
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-best-guess-for-the-parameter">
+   Our best guess for the parameter
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-different-could-our-statistic-have-been">
+   How different could our statistic have been
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-empirical-sampling-distribution">
+     The empirical sampling distribution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-range-of-likely-estimates">
+     A range of likely estimates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bootstrap">
+   The bootstrap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-bootstrapped-sampling-distribution">
+     The bootstrapped sampling distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-bootstrap-isn-t-magical">
+   The bootstrap isn’t magical
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faq-bootstrapping-versus-permuting">
+   FAQ: Bootstrapping versus Permuting
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="parameter-estimation-and-bootstrap">
+<h1>Parameter Estimation and Bootstrap<a class="headerlink" href="#parameter-estimation-and-bootstrap" title="Permalink to this headline">¶</a></h1>
+<p>In the past handful of pages, we’ve been doing a lot of work around testing if samples fit some existing assumptions we have about their populations. But what if we want to start <em>making new assumptions</em> about the population – i.e. we want to estimate a population parameter using our sample.</p>
+<div class="section" id="the-issue-with-just-guessing-the-statistic">
+<h2>The issue with just guessing the statistic<a class="headerlink" href="#the-issue-with-just-guessing-the-statistic" title="Permalink to this headline">¶</a></h2>
+<p>It seems very convenient to just guess a value for the parameter based on the statistic – after all, representative samples should exhibit statistics similar to the parameter.</p>
+<p>Alas, a cautionary tale awaits you.</p>
+<p>You, a famed data magician, are tasked with demonstrating your powers by predicting the proportion of students at your school who prefer apples over oranges. You survey a bunch of students and proclaim that the proportion is <span class="math notranslate nohighlight">\(0.7\)</span>, because that’s what you saw in your sample. Soon, the school performs its annual “Apples vs Oranges” census, and it turns out the true proportion is only <span class="math notranslate nohighlight">\(0.6\)</span>… you were wrong. Your powers have been denounced and now you sit in shambles wondering how you could have prevented this from happening.</p>
+<p>Unfortunately, samples are affected by random chance. Our <em>best guess</em> for the population parameter <em>is</em> an equation involving the statistic, but each time we take a sample that statistic is going to look a bit different, so our best guess estimate is going to be different, too!</p>
+<p>Data science is not data magic. Data science is all about recognizing and embracing uncertainty. So when we make predictions we don’t just give one number, we give two:</p>
+<ol class="simple">
+<li><p>What is our best guess for the parameter</p></li>
+<li><p>How different could our guess have been</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="our-best-guess-for-the-parameter">
+<h1>Our best guess for the parameter<a class="headerlink" href="#our-best-guess-for-the-parameter" title="Permalink to this headline">¶</a></h1>
+<p>In your statistics classes you’ll learn about ‘maximum likelihood estimates’. These are basically just estimates for the population parameter that result in the highest probability of observing your sample statistic. They’re usually a pretty good way to come up with a best guess, or <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-point-estimate">point estimate</a></strong> for a parameter.</p>
+<p>A couple common point estimates are:</p>
+<ul class="simple">
+<li><p>Mean: We estimate that the population mean <span class="math notranslate nohighlight">\(\mu\)</span> is equal to the sample mean <span class="math notranslate nohighlight">\(\bar x\)</span></p></li>
+<li><p>Variance: We estimate that the population variance is equal to <span class="math notranslate nohighlight">\(\frac{1}{n}\sum(x_i - \bar x)^2\)</span></p></li>
+</ul>
+<p>When guessing something like the population maximum, the sample maximum is probably <em>not</em> a good choice because if our sample doesn’t contain the population max then we’re going to be totally wrong! We might choose to come up our own formula for guessing the max, like two times the mean <span class="math notranslate nohighlight">\(2\bar x\)</span>, or something else.</p>
+<p>In all of these cases, our point estimate is going to look different every time our sample statistic looks different, and our sample statistic will look different pretty much every time we take a new sample. If we want to measure how ‘good’ a point estimate is, we should think about the question “<em>how different could my estimate have been if I saw a different sample?</em>”</p>
+</div>
+<div class="section" id="how-different-could-our-statistic-have-been">
+<h1>How different could our statistic have been<a class="headerlink" href="#how-different-could-our-statistic-have-been" title="Permalink to this headline">¶</a></h1>
+<p>When we collect samples from a population distribution, each sample will resemble the population distribution in shape. Due to the randomness of sampling, though, there will be a bit of variability in the sample, and thus in the statistic as well.</p>
+<div class="section" id="the-empirical-sampling-distribution">
+<h2>The empirical sampling distribution<a class="headerlink" href="#the-empirical-sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<p>We can see this directly by loading in a population distribution, then taking a bunch of samples and plotting the empirical <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-sampling-distribution">sampling distribution</a></strong> (distribution of sample statistics). Let’s look at the salary dataset again. Because it’s a very skewed population, we’ll be computing the median salary and overlay this true population proportion on each of our plots. We’ll use samples of size 100 for simplicity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">babypandas</span> <span class="k">as</span> <span class="nn">bpd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">population</span> <span class="o">=</span> <span class="n">bpd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/salaries.csv&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Salary&#39;</span><span class="p">])</span>
+<span class="n">pop_median</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Population median:&#39;</span><span class="p">,</span> <span class="n">pop_median</span><span class="p">)</span>
+<span class="n">population</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Population distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pop_median</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Population Median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Population median: 100000.0
+</pre></div>
+</div>
+<img alt="../_images/1_bootstrap_10_1.png" src="../_images/1_bootstrap_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trials</span> <span class="o">=</span> <span class="mi">10_000</span>
+
+<span class="n">sample_medians</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">sample_medians</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">median</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sample_medians</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Empirical distribution of sample medians, n=100&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
+</pre></div>
+</div>
+<img alt="../_images/1_bootstrap_11_1.png" src="../_images/1_bootstrap_11_1.png" />
+</div>
+</div>
+<p>With this distribution of the sample statistic computed it’s very easy to see how different any one observed statistic could have been. There are a whole range of values that we could have randomly seen. Relatively often we could randomly find a sample with a statistic in the middle – pretty close to the true population median of <span class="math notranslate nohighlight">\(100,000\)</span>. But not all the time.</p>
+</div>
+<div class="section" id="a-range-of-likely-estimates">
+<h2>A range of likely estimates<a class="headerlink" href="#a-range-of-likely-estimates" title="Permalink to this headline">¶</a></h2>
+<p>If we were to take a random sample and make a point estimate for the population median, it seems like most of the time we might estimate anywhere between <span class="math notranslate nohighlight">\(90,000\)</span> and <span class="math notranslate nohighlight">\(110,000\)</span> – a solid <em>ten thousand dollars</em> below or above the true median. Very rarely we would get super unlucky with our sample and estimate outside of that range.</p>
+<p>We could feel a lot more confident about our estimate if we gave a range of values that might capture the population median, instead of just our point estimate. E.g. if we got a sample median of <span class="math notranslate nohighlight">\(95,000\)</span> it might be nice to say:<br />
+“Based on the sampling distribution I know that I could have gotten values both above and below this, so I’ll guess that the population median is <em>somewhere within</em> ten thousand dollars of <span class="math notranslate nohighlight">\(95,000\)</span>.”</p>
+</div>
+</div>
+<div class="section" id="the-bootstrap">
+<h1>The bootstrap<a class="headerlink" href="#the-bootstrap" title="Permalink to this headline">¶</a></h1>
+<p>So, when we set out to estimate a parameter, we’d like to use the distribution of our point estimate in order to come up with a <em>range</em> of estimates that probably capture the true population value.</p>
+<p>Only issue: we can’t go out get all of the brand new samples needed to make an empirical sampling distribution. In the real world we can’t just take thousands of samples due to a lack of funding and patience. Instead, we’ll usually need to make due with only one sample, and that’s all.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample, n=100&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
+</pre></div>
+</div>
+<img alt="../_images/1_bootstrap_15_1.png" src="../_images/1_bootstrap_15_1.png" />
+</div>
+</div>
+<p>So, we only have one sample; we don’t have access to the population; we want to create a sampling distribution so we can be confident in a range of possible values to estimate. Our question becomes:<br />
+<em>How can we create a sampling distribution when we don’t have a population to sample from?</em></p>
+<p>True, we don’t have access to the population distribution to take new samples from. However, if we could get access to a distribution that looks <em>similar</em> to the population… well then maybe we can get away with taking new samples from that similar distribution instead.</p>
+<p>As it turns out, we <em>do</em> have a distribution that looks similar to the population – our sample itself!</p>
+<div class="section" id="the-bootstrapped-sampling-distribution">
+<h2>The bootstrapped sampling distribution<a class="headerlink" href="#the-bootstrapped-sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<p>To generate a sampling distribution from our single sample, simply pretend that our sample <em>is</em> the population, and take <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-resample">resamples</a></strong> from that ‘population’.</p>
+<p>This process is called <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-bootstrapping">bootstrapping</a></strong>. The term originates from a 19th century saying of “to pull yourself up by your bootstraps” – essentially performing an impossible feat with no external help (like if a single lone sample were able to produce an entire sampling distribution with no external samples).</p>
+<p>Just like with our normal sampling distribution process, the sample size should be fixed to a value we’re interested in – in this case <strong>the resample size should be the same size of our original sample</strong>. And finally, it’s worth noting that <strong>we must take resamples with replacement</strong> – can you imagine what would happen if we didn’t?</p>
+<p>Let’s try it out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is our one and only sample</span>
+<span class="c1"># s = np.random.randint(10000)</span>
+<span class="c1"># print(s)</span>
+<span class="c1">#714,7698,4582,3493,7318,759,683,8441</span>
+<span class="c1"># np.random.seed(s)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">8441</span><span class="p">)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sample_median</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">sample_median</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sample Median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sample median:&#39;</span><span class="p">,</span> <span class="n">sample_median</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sample median: 110000.0
+</pre></div>
+</div>
+<img alt="../_images/1_bootstrap_18_1.png" src="../_images/1_bootstrap_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This time, all references to `population` have been replaced with `sample`,</span>
+<span class="c1"># and all `sample` have been replaced with `resample`.</span>
+<span class="c1">#</span>
+<span class="c1"># Other than that, this code looks pretty similar to previous sampling distrs!</span>
+
+<span class="n">trials</span> <span class="o">=</span> <span class="mi">10_000</span>
+
+<span class="n">resample_medians</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+    
+    <span class="c1"># Remember that we need to sample with replacement</span>
+    <span class="n">resample</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">resample</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Salary&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">resample_medians</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">median</span><span class="p">)</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">resample_medians</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of resample medians, n=100&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Bootstrapped median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
+</pre></div>
+</div>
+<img alt="../_images/1_bootstrap_19_1.png" src="../_images/1_bootstrap_19_1.png" />
+</div>
+</div>
+<p>Somehow (through the powers of probabilities and statistics) we managed to squeeze an entire sampling distribution out of a single sample. This ‘bootstrapped’ sampling distribution or resample medians doesn’t look exactly the same as our empirical sampling distribution of sample medians – but let’s look at the <em>range</em> that it produces.</p>
+<p>Based on this one sample, we conducted bootstrapping and determined that most resample medians fall somewhere between about <span class="math notranslate nohighlight">\(98,000\)</span> and <span class="math notranslate nohighlight">\(120,000\)</span>, and very rarely outside of this range. Knowing that our sample median might not be the exact right answer, we can use this range of possibilities to estimate with a good amount of confidence that the true population median is <em>captured somewhere within</em> the interval between <span class="math notranslate nohighlight">\(98,000\)</span> and <span class="math notranslate nohighlight">\(120,000\)</span>.</p>
+<p>That way, if it turns out that our point estimate isn’t perfect (it usually won’t be) we don’t need to be ashamed and ridiculed – we can <em>plan</em> on our single-sample estimate being approximate, and simply provide the interval that our estimate covers.</p>
+<p>It so happens that our range estimates from this example does successfully capture the true population median of <span class="math notranslate nohighlight">\(100,000\)</span>, nice!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">resample_medians</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of resample medians, n=100&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Bootstrapped median&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s overlay our point estimate and the true median</span>
+<span class="c1"># plt.axvline(sample_median, c=&#39;lightblue&#39;, label=&#39;Sample Estimate&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pop_median</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Population Median&#39;</span><span class="p">)</span>
+
+<span class="c1"># Finally, overlay our eyeballed range of typical bootstrapped estimates</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">98_000</span><span class="p">,</span> <span class="mi">120_000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Typical estimates&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_bootstrap_21_0.png" src="../_images/1_bootstrap_21_0.png" />
+</div>
+</div>
+<p>Using this general process, we can actually be pretty confident that <em>most</em> of times that we pull a random sample and generate a bootstrapped distribution of estimates the range <em>will</em> capture the true population parameter – we’ll find out more about this on the next page.</p>
+</div>
+</div>
+<div class="section" id="the-bootstrap-isn-t-magical">
+<h1>The bootstrap isn’t magical<a class="headerlink" href="#the-bootstrap-isn-t-magical" title="Permalink to this headline">¶</a></h1>
+<p>As a final point, it’s worth noting that the bootstrap – much like us – does not work by magic.</p>
+<p>Before using the bootstrap, it’s worth understanding a few key limitations. First of which: the quality of a bootstrap is bounded by the quality of the original sample it comes from.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This is parallel to a very common saying in machine learning, regarding the quality of training data and the performance of a model: “garbage in, garbage out”.</p>
+</div>
+<p>In order to produce a useful bootstrapped distribution, our original sample should employ proper sampling techniques and be large enough to resemble the population it comes from. Remember that the reason we allow ourselves to take resamples from the original sample is because we’ve convinced ourselves that the original sample resembles the population.</p>
+</div>
+<div class="section" id="faq-bootstrapping-versus-permuting">
+<h1>FAQ: Bootstrapping versus Permuting<a class="headerlink" href="#faq-bootstrapping-versus-permuting" title="Permalink to this headline">¶</a></h1>
+<p>Every quarter, a common question that arises is: “when do we resample versus when do we shuffle?” Both are a way of squeezing information out of samples so this question is understandable. Ultimately, they have different setup and different goals.</p>
+<ul class="simple">
+<li><p>Bootstrapping involves taking <strong>resamples</strong> (sampling the entire size of your data <em>with</em> replacement). We do this when we have a <strong>single sample</strong> and want to use it to generate a <strong>sampling distribution</strong> for a statistic (and a confidence interval, as we’ll soon see).</p></li>
+<li><p>Permuting involves <strong>shuffling</strong> (sampling the entire size of your data <em>without</em> replacement) the labels between two groups, so that a data point in one group may get randomly moved over to the other group and vice versa. We do this when we have <strong>two samples</strong> and want to conduct a <strong>hypothesis test for a shared population</strong>.</p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../07-hypothesis_testing/2_permutation_tests.html" title="previous page">Permutation Tests</a>
+    <a class='right-next' id="next-link" href="2_confidence_intervals.html" title="next page">Confidence Intervals</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Parker Addison and Justin Eldridge<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
