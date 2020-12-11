@@ -10,6 +10,6 @@ This is the textbook for [DSC 10](http://www.dsc10.com) at UC San Diego.
 Thank you to the following people who made various contributions: Janine
 Tiefenbruck, Devanshu Desai
 
-```{tableofcontents}
+```{toctree}
 ```
 
