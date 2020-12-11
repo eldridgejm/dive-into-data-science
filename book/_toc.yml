@@ -41,6 +41,11 @@
 - file: 07-hypothesis_testing/1_hypothesis_tests
 - file: 07-hypothesis_testing/2_permutation_tests
 
+- header: Estimation
+- file: 08-estimation/1_bootstrap
+- file: 08-estimation/2_confidence_intervals
+- file: 08-estimation/3_ht_using_intervals
+
 - header: Reference
 - file: how_to_read
 - file: glossary
