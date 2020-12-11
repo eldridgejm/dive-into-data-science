@@ -276,31 +276,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#our-best-guess-for-the-parameter">
-   Our best guess for the parameter
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#how-different-could-our-statistic-have-been">
-   How different could our statistic have been
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#the-bootstrap">
-   The bootstrap
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#the-bootstrap-isn-t-magical">
-   The bootstrap isn’t magical
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#faq-bootstrapping-versus-permuting">
-   FAQ: Bootstrapping versus Permuting
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="2_confidence_intervals.html">
    Confidence Intervals
   </a>
@@ -431,58 +406,51 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Parameter Estimation and Bootstrap
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-issue-with-just-guessing-the-statistic">
+   The issue with just guessing the statistic
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-issue-with-just-guessing-the-statistic">
-     The issue with just guessing the statistic
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#our-best-guess-for-the-parameter">
    Our best guess for the parameter
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-different-could-our-statistic-have-been">
    How different could our statistic have been
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-empirical-sampling-distribution">
      The empirical sampling distribution
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-range-of-likely-estimates">
      A range of likely estimates
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-bootstrap">
    The bootstrap
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-bootstrapped-sampling-distribution">
      The bootstrapped sampling distribution
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-bootstrap-isn-t-magical">
    The bootstrap isn’t magical
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#faq-bootstrapping-versus-permuting">
    FAQ: Bootstrapping versus Permuting
   </a>
@@ -513,9 +481,8 @@
 <li><p>How different could our guess have been</p></li>
 </ol>
 </div>
-</div>
 <div class="section" id="our-best-guess-for-the-parameter">
-<h1>Our best guess for the parameter<a class="headerlink" href="#our-best-guess-for-the-parameter" title="Permalink to this headline">¶</a></h1>
+<h2>Our best guess for the parameter<a class="headerlink" href="#our-best-guess-for-the-parameter" title="Permalink to this headline">¶</a></h2>
 <p>In your statistics classes you’ll learn about ‘maximum likelihood estimates’. These are basically just estimates for the population parameter that result in the highest probability of observing your sample statistic. They’re usually a pretty good way to come up with a best guess, or <span class="target" id="index-0"></span><strong><a class="reference external" href="../glossary.html#term-point-estimate">point estimate</a></strong> for a parameter.</p>
 <p>A couple common point estimates are:</p>
 <ul class="simple">
@@ -526,10 +493,10 @@
 <p>In all of these cases, our point estimate is going to look different every time our sample statistic looks different, and our sample statistic will look different pretty much every time we take a new sample. If we want to measure how ‘good’ a point estimate is, we should think about the question “<em>how different could my estimate have been if I saw a different sample?</em>”</p>
 </div>
 <div class="section" id="how-different-could-our-statistic-have-been">
-<h1>How different could our statistic have been<a class="headerlink" href="#how-different-could-our-statistic-have-been" title="Permalink to this headline">¶</a></h1>
+<h2>How different could our statistic have been<a class="headerlink" href="#how-different-could-our-statistic-have-been" title="Permalink to this headline">¶</a></h2>
 <p>When we collect samples from a population distribution, each sample will resemble the population distribution in shape. Due to the randomness of sampling, though, there will be a bit of variability in the sample, and thus in the statistic as well.</p>
 <div class="section" id="the-empirical-sampling-distribution">
-<h2>The empirical sampling distribution<a class="headerlink" href="#the-empirical-sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<h3>The empirical sampling distribution<a class="headerlink" href="#the-empirical-sampling-distribution" title="Permalink to this headline">¶</a></h3>
 <p>We can see this directly by loading in a population distribution, then taking a bunch of samples and plotting the empirical <span class="target" id="index-1"></span><strong><a class="reference external" href="../glossary.html#term-sampling-distribution">sampling distribution</a></strong> (distribution of sample statistics). Let’s look at the salary dataset again. Because it’s a very skewed population, we’ll be computing the median salary and overlay this true population proportion on each of our plots. We’ll use samples of size 100 for simplicity.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,14 +557,14 @@
 <p>With this distribution of the sample statistic computed it’s very easy to see how different any one observed statistic could have been. There are a whole range of values that we could have randomly seen. Relatively often we could randomly find a sample with a statistic in the middle – pretty close to the true population median of <span class="math notranslate nohighlight">\(100,000\)</span>. But not all the time.</p>
 </div>
 <div class="section" id="a-range-of-likely-estimates">
-<h2>A range of likely estimates<a class="headerlink" href="#a-range-of-likely-estimates" title="Permalink to this headline">¶</a></h2>
+<h3>A range of likely estimates<a class="headerlink" href="#a-range-of-likely-estimates" title="Permalink to this headline">¶</a></h3>
 <p>If we were to take a random sample and make a point estimate for the population median, it seems like most of the time we might estimate anywhere between <span class="math notranslate nohighlight">\(90,000\)</span> and <span class="math notranslate nohighlight">\(110,000\)</span> – a solid <em>ten thousand dollars</em> below or above the true median. Very rarely we would get super unlucky with our sample and estimate outside of that range.</p>
 <p>We could feel a lot more confident about our estimate if we gave a range of values that might capture the population median, instead of just our point estimate. E.g. if we got a sample median of <span class="math notranslate nohighlight">\(95,000\)</span> it might be nice to say:<br />
 “Based on the sampling distribution I know that I could have gotten values both above and below this, so I’ll guess that the population median is <em>somewhere within</em> ten thousand dollars of <span class="math notranslate nohighlight">\(95,000\)</span>.”</p>
 </div>
 </div>
 <div class="section" id="the-bootstrap">
-<h1>The bootstrap<a class="headerlink" href="#the-bootstrap" title="Permalink to this headline">¶</a></h1>
+<h2>The bootstrap<a class="headerlink" href="#the-bootstrap" title="Permalink to this headline">¶</a></h2>
 <p>So, when we set out to estimate a parameter, we’d like to use the distribution of our point estimate in order to come up with a <em>range</em> of estimates that probably capture the true population value.</p>
 <p>Only issue: we can’t go out get all of the brand new samples needed to make an empirical sampling distribution. In the real world we can’t just take thousands of samples due to a lack of funding and patience. Instead, we’ll usually need to make due with only one sample, and that’s all.</p>
 <div class="cell docutils container">
@@ -622,7 +589,7 @@
 <p>True, we don’t have access to the population distribution to take new samples from. However, if we could get access to a distribution that looks <em>similar</em> to the population… well then maybe we can get away with taking new samples from that similar distribution instead.</p>
 <p>As it turns out, we <em>do</em> have a distribution that looks similar to the population – our sample itself!</p>
 <div class="section" id="the-bootstrapped-sampling-distribution">
-<h2>The bootstrapped sampling distribution<a class="headerlink" href="#the-bootstrapped-sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<h3>The bootstrapped sampling distribution<a class="headerlink" href="#the-bootstrapped-sampling-distribution" title="Permalink to this headline">¶</a></h3>
 <p>To generate a sampling distribution from our single sample, simply pretend that our sample <em>is</em> the population, and take <span class="target" id="index-2"></span><strong><a class="reference external" href="../glossary.html#term-resample">resamples</a></strong> from that ‘population’.</p>
 <p>This process is called <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-bootstrapping">bootstrapping</a></strong>. The term originates from a 19th century saying of “to pull yourself up by your bootstraps” – essentially performing an impossible feat with no external help (like if a single lone sample were able to produce an entire sampling distribution with no external samples).</p>
 <p>Just like with our normal sampling distribution process, the sample size should be fixed to a value we’re interested in – in this case <strong>the resample size should be the same size of our original sample</strong>. And finally, it’s worth noting that <strong>we must take resamples with replacement</strong> – can you imagine what would happen if we didn’t?</p>
@@ -713,7 +680,7 @@
 </div>
 </div>
 <div class="section" id="the-bootstrap-isn-t-magical">
-<h1>The bootstrap isn’t magical<a class="headerlink" href="#the-bootstrap-isn-t-magical" title="Permalink to this headline">¶</a></h1>
+<h2>The bootstrap isn’t magical<a class="headerlink" href="#the-bootstrap-isn-t-magical" title="Permalink to this headline">¶</a></h2>
 <p>As a final point, it’s worth noting that the bootstrap – much like us – does not work by magic.</p>
 <p>Before using the bootstrap, it’s worth understanding a few key limitations. First of which: the quality of a bootstrap is bounded by the quality of the original sample it comes from.</p>
 <div class="margin sidebar">
@@ -723,12 +690,13 @@
 <p>In order to produce a useful bootstrapped distribution, our original sample should employ proper sampling techniques and be large enough to resemble the population it comes from. Remember that the reason we allow ourselves to take resamples from the original sample is because we’ve convinced ourselves that the original sample resembles the population.</p>
 </div>
 <div class="section" id="faq-bootstrapping-versus-permuting">
-<h1>FAQ: Bootstrapping versus Permuting<a class="headerlink" href="#faq-bootstrapping-versus-permuting" title="Permalink to this headline">¶</a></h1>
+<h2>FAQ: Bootstrapping versus Permuting<a class="headerlink" href="#faq-bootstrapping-versus-permuting" title="Permalink to this headline">¶</a></h2>
 <p>Every quarter, a common question that arises is: “when do we resample versus when do we shuffle?” Both are a way of squeezing information out of samples so this question is understandable. Ultimately, they have different setup and different goals.</p>
 <ul class="simple">
 <li><p>Bootstrapping involves taking <strong>resamples</strong> (sampling the entire size of your data <em>with</em> replacement). We do this when we have a <strong>single sample</strong> and want to use it to generate a <strong>sampling distribution</strong> for a statistic (and a confidence interval, as we’ll soon see).</p></li>
 <li><p>Permuting involves <strong>shuffling</strong> (sampling the entire size of your data <em>without</em> replacement) the labels between two groups, so that a data point in one group may get randomly moved over to the other group and vice versa. We do this when we have <strong>two samples</strong> and want to conduct a <strong>hypothesis test for a shared population</strong>.</p></li>
 </ul>
+</div>
 </div>
 
 
