@@ -45,14 +45,25 @@ code {
 }
 
 /*
-If something is targeted, make it highlighted.
+If something is targeted, make it pulse highlighted once.
 But, make sure not to highlight entire sections or titles
 (e.g. page sections or index headings)
 */
+@keyframes pulse-highlight {
+    0% {
+        background-color: #0000;
+    }
+    50% {
+        background-color: #ffdf00;
+    }
+    100% {
+        background-color: #0000;
+    }
+}
 :not(h2):not(.section):target,
 span.highlighted,
 :target[id^="index"] + * {
-    background-color: #ffdf00;
+    animation: pulse-highlight 1500ms ease-in-out;
 }
 
 /*

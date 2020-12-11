@@ -19,7 +19,32 @@
 - file: 02-data_sets/querying
 - file: 02-data_sets/groupby
 - file: 02-data_sets/apply
-- file: exploring_data/exploring_data
+
+- header: Visualization
+- file: 03-visualization/intro
+- file: 03-visualization/scatter
+- file: 03-visualization/line
+- file: 03-visualization/bar
+- file: 03-visualization/histogram
+
+- header: Advanced Data Manipulation
+- file: 04-advanced_data_manipulation/merging
+
+- header: Probability and Simulation
+- file: 05-probability_and_simulation/probability_and_simulation
+
+- header: Populations and Samples
+- file: 06-populations_and_samples/1_populations_and_samples
+- file: 06-populations_and_samples/2_parameters_and_statistics
+
+- header: Hypothesis Testing
+- file: 07-hypothesis_testing/1_hypothesis_tests
+- file: 07-hypothesis_testing/2_permutation_tests
+
+- header: Estimation
+- file: 08-estimation/1_bootstrap
+- file: 08-estimation/2_confidence_intervals
+- file: 08-estimation/3_ht_using_intervals
 
 - header: Reference
 - file: how_to_read
