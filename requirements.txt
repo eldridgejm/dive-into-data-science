@@ -1,4 +1,4 @@
-jupyter-book==0.7
+jupyter-book==0.9.1
 jupyter_contrib_nbextensions
 matplotlib
 sphinx-tabs
