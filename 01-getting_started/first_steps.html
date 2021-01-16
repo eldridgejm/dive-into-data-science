@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. First Steps with Notebooks &#8212; Dive into Data Science</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
@@ -24,17 +25,20 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
@@ -42,14 +46,20 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Expressions" href="expressions.html" />
@@ -81,9 +91,16 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../front.html">
+   Dive Into Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
  <span class="caption-text">
-  Getting Started
+  1. Getting Started
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -139,7 +156,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  NumPy and Babypandas
+  2. NumPy and Babypandas
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -176,7 +193,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Visualization
+  3. Visualization
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -203,7 +220,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Advanced Data Manipulation
+  4. Advanced Data Manipulation
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -215,7 +232,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Probability and Simulation
+  5. Probability and Simulation
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -227,7 +244,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Populations and Samples
+  6. Populations and Samples
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -244,7 +261,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Hypothesis Testing
+  7. Hypothesis Testing
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -261,7 +278,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Estimation
+  8. Estimation
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -305,6 +322,10 @@
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
 
 </div>
 
@@ -455,7 +476,7 @@ currently selected (and only that cell).</p></li>
 the top of the notebook.</p>
 </div>
 <ul class="simple">
-<li><p>By pressing <kbd class="kbd docutils literal notranslate">Shift + Return</kbd>. This is our preferred way, since it is
+<li><p>By pressing <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate"></kbd>+<kbd class="kbd docutils literal notranslate"></kbd> <kbd class="kbd docutils literal notranslate">Return</kbd></kbd>. This is our preferred way, since it is
 faster than reaching for the mouse.</p></li>
 </ul>
 <p>Upon running the cell, you’ll see the answer appear directly below.
@@ -490,7 +511,7 @@ shown in the toolbar.</p>
 <div class="jupytertip admonition" id="jupytertip-1">
 <p class="admonition-title">Jupyter Tip</p>
 <p>There are plenty of keyboard shortcuts to use with Jupyter notebooks. One of the
-most useful is <kbd class="kbd docutils literal notranslate">Ctrl-m a</kbd>, which creates a new cell. Another useful
+most useful is <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">m</kbd> <kbd class="kbd docutils literal notranslate">a</kbd></kbd>, which creates a new cell. Another useful
 shortcut is <kbd class="kbd docutils literal notranslate">dd</kbd>, which deletes the selected cell. Select “Help -&gt; Keyboard
 shortcuts” to see all of them.</p>
 </div>
@@ -521,6 +542,25 @@ cells are very useful part of Jupyter notebooks.</p>
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./01-getting_started"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
