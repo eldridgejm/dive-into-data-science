@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
@@ -1451,6 +1451,133 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 5 columns</p>
+</div></div></div>
 </div>
 <p>The second thing to note is that <code class="docutils literal notranslate"><span class="pre">.assign</span></code> creates an entirely new table containing the new column. It does not change the old table, as we can verify by recalling the value of <code class="docutils literal notranslate"><span class="pre">fires_by_name</span></code>:</p>
 <div class="cell docutils container">
@@ -1459,6 +1586,120 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1474,6 +1715,133 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>sqmiles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 5 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="removing-a-column-with-drop">
@@ -1486,6 +1854,120 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 4 columns</p>
+</div></div></div>
 </div>
 <p>If we didn’t want the cause or the county:</p>
 <div class="cell docutils container">
@@ -1494,11 +1976,122 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>acres</th>
+      <th>sqmiles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>153335.562500</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>70846.531250</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>97684.546875</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>151546.812500</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>125072.531250</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>161815.656250</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>219999.281250</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>281790.875000</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>107570.398438</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>89831.148438</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 3 columns</p>
+</div></div></div>
 </div>
 <p>Note that the argument name (<code class="docutils literal notranslate"><span class="pre">columns</span></code>) is not something we can change, unlike the keyword argument name used in <code class="docutils literal notranslate"><span class="pre">.assign</span></code>. We <em>must</em> use <code class="docutils literal notranslate"><span class="pre">columns=...</span></code>, or else Python will not understand us. And if you don’t use the keyword name, Python will be upset:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">7</span><span class="n">d1ab73fa32f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fires_with_sqmiles</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;county&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: drop() takes 1 positional argument but 2 were given
 </pre></div>
 </div>
 </div>
@@ -1521,6 +2114,133 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 5 columns</p>
+</div></div></div>
 </div>
 <p>We can also do this in a single piece of code, without intermediate variables:</p>
 <div class="cell docutils container">
@@ -1533,6 +2253,133 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+      <th>square_miles</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CAMP</th>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+      <td>239.586816</td>
+    </tr>
+    <tr>
+      <th>BUTTE</th>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+      <td>110.697705</td>
+    </tr>
+    <tr>
+      <th>KING</th>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+      <td>152.632104</td>
+    </tr>
+    <tr>
+      <th>ROUGH</th>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+      <td>236.791895</td>
+    </tr>
+    <tr>
+      <th>MEGRAM</th>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+      <td>195.425830</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>DAY</th>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+      <td>252.836963</td>
+    </tr>
+    <tr>
+      <th>MATILIJA</th>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+      <td>343.748877</td>
+    </tr>
+    <tr>
+      <th>THOMAS</th>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+      <td>440.298242</td>
+    </tr>
+    <tr>
+      <th>SIMI FIRE</th>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+      <td>168.078748</td>
+    </tr>
+    <tr>
+      <th>COUNTY</th>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+      <td>140.361169</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 5 columns</p>
+</div></div></div>
 </div>
 <div class="admonition tip" id="tip-0">
 <p class="admonition-title">Tip</p>
@@ -1551,6 +2398,20 @@ Name: year, dtype: float64
 <p>As mentioned above, DataFrames are not typically created by typing their entries by hand, one-by-one. Instead, we usually download a data set in a standard format and read it from disk. One such standard format is <span class="target" id="index-5"></span><strong><a class="reference external" href="../glossary.html#term-csv">CSV</a></strong>, or <em>comma-separated values</em>.</p>
 <p>A CSV file is simply a text file in a certain format. Here are the first few lines of the CSV file containing our wildfire data:</p>
 <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name,year,cause,acres,county
+CAMP,2018,11 - Powerline,153335.5625,Butte
+BUTTE,2015,14 - Unknown,70846.53125,Calaveras
+KING,2014,7 - Arson,97684.546875,El Dorado
+ROUGH,2015,1 - Lightning,151546.8125,Fresno
+MEGRAM,1999,1 - Lightning,125072.53125,Humboldt
+RANCH,2018,14 - Unknown,410202.46875,Lake
+VALLEY ,2015,14 - Unknown,76084.8359375,Lake
+ROCKY  ,2015,9 - Miscellaneous,69438.1640625,Lake
+FORK,1996,7 - Arson,83056.9453125,Lake
+</pre></div>
+</div>
+</div>
 </div>
 <p>As it’s name suggests, a CSV file consists of values, separated by commas. The first line of the file usually contains the column labels. CSV is a widely-used format, and can be read by many pieces of software, including Excel and Google Sheets.</p>
 <p>We can read a CSV file into a <em>babypandas</em> DataFrame using the <code class="docutils literal notranslate"><span class="pre">bpd.read_csv</span></code> function. We give this function a string containing the filepath to the CSV file we want to read. For example, our wildfire data exists in a file called <code class="docutils literal notranslate"><span class="pre">calfire.csv</span></code> contained in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory. We can read it into a DataFrame as follows:</p>
@@ -1561,6 +2422,125 @@ Name: year, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>year</th>
+      <th>cause</th>
+      <th>acres</th>
+      <th>county</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CAMP</td>
+      <td>2018</td>
+      <td>11 - Powerline</td>
+      <td>153335.562500</td>
+      <td>Butte</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>BUTTE</td>
+      <td>2015</td>
+      <td>14 - Unknown</td>
+      <td>70846.531250</td>
+      <td>Calaveras</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>KING</td>
+      <td>2014</td>
+      <td>7 - Arson</td>
+      <td>97684.546875</td>
+      <td>El Dorado</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ROUGH</td>
+      <td>2015</td>
+      <td>1 - Lightning</td>
+      <td>151546.812500</td>
+      <td>Fresno</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MEGRAM</td>
+      <td>1999</td>
+      <td>1 - Lightning</td>
+      <td>125072.531250</td>
+      <td>Humboldt</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>DAY</td>
+      <td>2006</td>
+      <td>5 - Debris</td>
+      <td>161815.656250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>MATILIJA</td>
+      <td>1932</td>
+      <td>9 - Miscellaneous</td>
+      <td>219999.281250</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>THOMAS</td>
+      <td>2017</td>
+      <td>9 - Miscellaneous</td>
+      <td>281790.875000</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>SIMI FIRE</td>
+      <td>2003</td>
+      <td>14 - Unknown</td>
+      <td>107570.398438</td>
+      <td>Ventura</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>COUNTY</td>
+      <td>2018</td>
+      <td>14 - Unknown</td>
+      <td>89831.148438</td>
+      <td>Yolo</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 5 columns</p>
+</div></div></div>
 </div>
 <p>Modifying the DataFrame will not affect the data on disk in any way.</p>
 <div class="margin sidebar">

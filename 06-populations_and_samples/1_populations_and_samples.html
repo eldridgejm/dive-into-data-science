@@ -33,8 +33,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
@@ -735,7 +735,7 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.95
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.025
 </pre></div>
 </div>
 </div>
@@ -753,13 +753,12 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6.28 ,  1.725,  2.07 ,  3.425, 11.925,  8.92 ,  3.49 ,  7.62 ,
-        2.125,  1.08 ,  0.3  ,  4.225,  5.795,  0.75 ,  3.565,  5.545,
-        3.55 ,  5.52 ,  6.4  ,  4.25 , 13.   ,  0.875,  5.895,  1.125,
-        1.975,  2.5  ,  2.535,  2.125,  2.55 ,  0.25 ,  3.965,  3.875,
-        3.88 ,  1.   ,  2.24 ,  2.05 ,  1.41 ,  3.4  ,  6.75 ,  4.   ,
-        4.375,  3.7  ,  3.175,  5.75 ,  1.27 ,  2.385,  1.42 ,  1.585,
-        4.435,  2.2  ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.375, 2.125, 4.175, 1.225, 1.45 , 3.11 , 2.655, 2.295, 1.075,
+       2.525, 2.425, 2.395, 1.615, 2.72 , 5.85 , 5.375, 9.75 , 1.74 ,
+       1.02 , 0.3  , 2.27 , 3.53 , 2.2  , 1.005, 1.325, 3.4  , 2.775,
+       2.375, 4.24 , 4.375, 5.26 , 4.   , 1.96 , 0.825, 0.8  , 1.525,
+       1.655, 1.955, 2.1  , 5.75 , 1.5  , 1.06 , 2.65 , 2.875, 2.185,
+       4.96 , 3.75 , 3.5  , 0.87 , 2.05 ])
 </pre></div>
 </div>
 </div>
@@ -815,6 +814,40 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>WEIGHT</th>
+      <th>LENGTH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6125</th>
+      <td>20196126</td>
+      <td>0.795</td>
+      <td>25.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And if we want to specify a sample size, we can just pass in the size as the first argument without needing any keywords. Remember that <code class="docutils literal notranslate"><span class="pre">replace=False</span></code> is the default behavior for sampling from tables.</p>
 <div class="cell docutils container">
@@ -824,6 +857,101 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>WEIGHT</th>
+      <th>LENGTH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2059</th>
+      <td>20192060</td>
+      <td>1.375</td>
+      <td>30.3</td>
+    </tr>
+    <tr>
+      <th>4324</th>
+      <td>20194325</td>
+      <td>9.405</td>
+      <td>57.4</td>
+    </tr>
+    <tr>
+      <th>1131</th>
+      <td>20191132</td>
+      <td>2.250</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>695</th>
+      <td>20190696</td>
+      <td>1.700</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>6925</th>
+      <td>20196926</td>
+      <td>0.305</td>
+      <td>19.5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1737</th>
+      <td>20191738</td>
+      <td>2.935</td>
+      <td>39.3</td>
+    </tr>
+    <tr>
+      <th>2770</th>
+      <td>20192771</td>
+      <td>4.375</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>2211</th>
+      <td>20192212</td>
+      <td>4.625</td>
+      <td>43.8</td>
+    </tr>
+    <tr>
+      <th>5590</th>
+      <td>20195591</td>
+      <td>3.070</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>2228</th>
+      <td>20192229</td>
+      <td>2.000</td>
+      <td>28.8</td>
+    </tr>
+  </tbody>
+</table>
+<p>50 rows × 3 columns</p>
+</div></div></div>
 </div>
 </div>
 </div>
@@ -837,6 +965,12 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 <span class="n">sample</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;WEIGHT&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/1_populations_and_samples_36_1.png" src="../_images/1_populations_and_samples_36_1.png" />
 </div>
 </div>
 <p>Each time we take a sample, we’ll mostly end up collecting a different group of fish. As such, each time we collect an empirical sample distribution, it’ll look a bit different.</p>
@@ -870,6 +1004,9 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_populations_and_samples_39_0.png" src="../_images/1_populations_and_samples_39_0.png" />
+</div>
 </div>
 <div class="section" id="sample-distributions-converge-to-the-population-distribution">
 <h4>Sample distributions converge to the population distribution<a class="headerlink" href="#sample-distributions-converge-to-the-population-distribution" title="Permalink to this headline">¶</a></h4>
@@ -880,6 +1017,12 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Frequency&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/1_populations_and_samples_41_1.png" src="../_images/1_populations_and_samples_41_1.png" />
+</div>
 </div>
 <p>We may have gotten close, we may have been quite wrong, depending on <em>which sample we pulled</em>. Notice that there is a lot of disparity between each sample distribution, and a varying amount of disparity between the population distribution and each sample distribution.</p>
 <p>Here’s where sample size starts to matter. Let’s increase the number of fish we measure from fifty to one-hundred.</p>
@@ -889,6 +1032,9 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_populations_and_samples_43_0.png" src="../_images/1_populations_and_samples_43_0.png" />
+</div>
 </div>
 <p>Quite a bit better, right? And it’s still tremendously less work than measuring the entire population of fish.</p>
 <p>As we increase sample size, sample distributions will increasingly resemble the population distribution they come from.</p>
@@ -897,6 +1043,9 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_five_samples</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1_populations_and_samples_45_0.png" src="../_images/1_populations_and_samples_45_0.png" />
 </div>
 </div>
 </div>
