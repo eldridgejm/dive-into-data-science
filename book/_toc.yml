@@ -24,7 +24,6 @@
 - file: 03-visualization/intro
 - file: 03-visualization/scatter
 - file: 03-visualization/line
-- file: 03-visualization/bar
 - file: 03-visualization/histogram
 
 - header: Advanced Data Manipulation
