@@ -2,4 +2,5 @@ jupyter-book==0.7
 jupyter_contrib_nbextensions
 matplotlib
 sphinx-tabs
+sphinxcontrib-bibtex==1.0
 git+git://github.com/eldridgejm/babypandas
