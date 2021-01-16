@@ -1,4 +1,5 @@
 - file: front
+  numbered: true
 
 - header: Getting Started
 - file: 01-getting_started/tools
