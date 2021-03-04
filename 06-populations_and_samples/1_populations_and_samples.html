@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Populations and Samples &#8212; Dive into Data Science</title>
     
-  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,21 +26,18 @@
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pagestyle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -49,12 +46,9 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
-    <script src="../_static/sphinx_tabs/tabs.js"></script>
+    <script src="../_static/tabs.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -62,6 +56,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Parameters and statistics" href="2_parameters_and_statistics.html" />
@@ -338,21 +334,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -370,7 +366,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -389,13 +385,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -420,11 +416,11 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -509,6 +505,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -551,24 +548,9 @@
 <p>For example, we proposed a model for the population of U.S. birthdays, which assumes that every birthday is equally likely and thus the population distribution is <em>uniform</em>. (Remember that we’re ignoring leap years for simplicity – sorry!)</p>
 <p><img alt="" src="../_images/uniform-birthdays.png" /></p>
 <div class="sphinx-tabs docutils container">
-<div class="ui top attached tabular menu sphinx-menu docutils container">
-<div class="active item sphinx-data-tab-0-0 docutils container">
-<div class="docutils container">
-<p>Question</p>
-</div>
-</div>
-<div class="item sphinx-data-tab-0-1 docutils container">
-<div class="docutils container">
-<p>Answer</p>
-</div>
-</div>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-0 active docutils container">
-<p>At the time of this writing, the United States populace is approximately <span class="math notranslate nohighlight">\(330,221,340\)</span> people. Let’s call the population size <span class="math notranslate nohighlight">\(N\)</span>. Under the assumptions of our model, each of the 365 days in a year is assumed to be equally likely <span class="math notranslate nohighlight">\(P(\text{day})=\frac{1}{365}\)</span>.</p>
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Question</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Answer</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>At the time of this writing, the United States populace is approximately <span class="math notranslate nohighlight">\(330,221,340\)</span> people. Let’s call the population size <span class="math notranslate nohighlight">\(N\)</span>. Under the assumptions of our model, each of the 365 days in a year is assumed to be equally likely <span class="math notranslate nohighlight">\(P(\text{day})=\frac{1}{365}\)</span>.</p>
 <p>By using a frequentist approach to probability, <span class="math notranslate nohighlight">\(P(\text{day})=\frac{\text{# people with this birthday}}{N}\)</span>, can you calculate the number of people in the U.S. with a birthday on any given day?</p>
-</div>
-<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-0-1 docutils container">
-<div class="math notranslate nohighlight">
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
 N &amp;= 320,221,340 \\
@@ -579,8 +561,7 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 &amp;= 904,716 \\
 \end{aligned}
 \end{split}\]</div>
-</div>
-</div>
+</div></div>
 <p>This distribution is purely the result of assumptions from our model!</p>
 <p>Perhaps the distribution of U.S. birthdays actually looks totally different, like a wave <img alt="" src="../_images/wave-birthdays.png" />, or a U <img alt="" src="../_images/u-birthdays.png" />, or it could possess gaps where mysteriously no one has a birthday <img alt="" src="../_images/missing-birthdays.png" />. (Do you actually <em>know</em> anyone born on March 19th? Yeah, nor do I.)</p>
 <p>The truth is: we don’t know, and we’ll never know what the <em>true</em> population distribution is for most measurements since it’s infeasible to collect data on every individual in the population!</p>
@@ -757,7 +738,7 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.75
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.55
 </pre></div>
 </div>
 </div>
@@ -775,13 +756,13 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.5  ,  5.175,  2.575,  3.34 , 15.   ,  3.925,  7.2  ,  3.45 ,
-        1.5  ,  6.12 ,  1.745,  4.75 ,  7.625,  1.99 ,  2.875,  2.86 ,
-        6.   ,  1.   ,  2.4  ,  3.25 ,  1.25 ,  7.945,  2.65 ,  3.95 ,
-        0.5  ,  3.2  ,  1.14 ,  3.29 ,  5.625,  1.25 ,  9.43 ,  4.25 ,
-        4.17 ,  2.31 ,  1.25 ,  2.2  ,  1.5  ,  3.185,  2.64 ,  6.43 ,
-        2.5  ,  5.395,  3.23 ,  2.85 ,  4.595,  2.64 ,  4.375,  1.25 ,
-        1.955,  1.3  ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.01 ,  3.565,  1.375,  5.5  ,  5.89 , 14.3  ,  8.845,  0.115,
+        3.75 , 12.   ,  4.205,  5.75 ,  2.8  ,  5.   ,  2.   ,  4.   ,
+        0.5  , 17.25 ,  9.22 ,  4.   ,  3.65 ,  6.   ,  0.895,  0.6  ,
+        1.425,  2.43 ,  3.25 ,  1.   ,  4.5  ,  5.75 ,  1.59 ,  2.235,
+        2.61 ,  5.425,  4.275,  6.2  ,  6.75 ,  2.33 ,  4.59 ,  3.5  ,
+        3.075,  2.75 ,  6.5  ,  1.5  ,  1.38 ,  1.115,  3.875,  3.75 ,
+        0.93 ,  9.   ])
 </pre></div>
 </div>
 </div>
@@ -863,10 +844,10 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
   </thead>
   <tbody>
     <tr>
-      <th>5931</th>
-      <td>20195932</td>
-      <td>1.78</td>
-      <td>34.7</td>
+      <th>3330</th>
+      <td>20193331</td>
+      <td>3.105</td>
+      <td>41.9</td>
     </tr>
   </tbody>
 </table>
@@ -906,34 +887,34 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
   </thead>
   <tbody>
     <tr>
-      <th>6739</th>
-      <td>20196740</td>
-      <td>0.960</td>
-      <td>27.9</td>
+      <th>4448</th>
+      <td>20194449</td>
+      <td>4.115</td>
+      <td>53.9</td>
     </tr>
     <tr>
-      <th>6428</th>
-      <td>20196429</td>
-      <td>1.080</td>
-      <td>28.0</td>
+      <th>5141</th>
+      <td>20195142</td>
+      <td>10.250</td>
+      <td>54.5</td>
     </tr>
     <tr>
-      <th>2080</th>
-      <td>20192081</td>
-      <td>2.125</td>
-      <td>36.8</td>
+      <th>3979</th>
+      <td>20193980</td>
+      <td>8.370</td>
+      <td>52.6</td>
     </tr>
     <tr>
-      <th>296</th>
-      <td>20190297</td>
-      <td>3.015</td>
-      <td>38.0</td>
+      <th>4125</th>
+      <td>20194126</td>
+      <td>1.180</td>
+      <td>29.8</td>
     </tr>
     <tr>
-      <th>6755</th>
-      <td>20196756</td>
-      <td>0.650</td>
-      <td>22.5</td>
+      <th>5533</th>
+      <td>20195534</td>
+      <td>16.250</td>
+      <td>64.5</td>
     </tr>
     <tr>
       <th>...</th>
@@ -942,34 +923,34 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
       <td>...</td>
     </tr>
     <tr>
-      <th>2571</th>
-      <td>20192572</td>
-      <td>3.265</td>
-      <td>40.4</td>
+      <th>2130</th>
+      <td>20192131</td>
+      <td>5.200</td>
+      <td>38.5</td>
     </tr>
     <tr>
-      <th>3895</th>
-      <td>20193896</td>
-      <td>1.450</td>
-      <td>28.5</td>
+      <th>2799</th>
+      <td>20192800</td>
+      <td>3.695</td>
+      <td>40.2</td>
     </tr>
     <tr>
-      <th>5097</th>
-      <td>20195098</td>
-      <td>1.010</td>
-      <td>26.3</td>
+      <th>6610</th>
+      <td>20196611</td>
+      <td>0.375</td>
+      <td>19.7</td>
     </tr>
     <tr>
-      <th>5435</th>
-      <td>20195436</td>
-      <td>3.490</td>
-      <td>40.3</td>
+      <th>3589</th>
+      <td>20193590</td>
+      <td>2.300</td>
+      <td>30.3</td>
     </tr>
     <tr>
-      <th>4822</th>
-      <td>20194823</td>
-      <td>1.975</td>
-      <td>30.4</td>
+      <th>6762</th>
+      <td>20196763</td>
+      <td>0.535</td>
+      <td>22.5</td>
     </tr>
   </tbody>
 </table>
@@ -1108,15 +1089,15 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="../05-probability_and_simulation/probability_and_simulation.html" title="previous page"><span class="section-number">1. </span>Probability and simulation</a>
     <a class='right-next' id="next-link" href="2_parameters_and_statistics.html" title="next page"><span class="section-number">2. </span>Parameters and statistics</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1135,7 +1116,7 @@ P(\text{day}) &amp;= \frac{1}{365} = \frac{\text{# people with this birthday}}{N
     </div>
 
     
-  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

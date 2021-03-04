@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. All Terms and Tips &#8212; Dive into Data Science</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,21 +26,18 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="_static/pagestyle.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/jupytertip.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pagestyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -50,9 +47,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -336,21 +331,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -368,7 +363,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -387,19 +382,19 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -424,6 +419,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -436,15 +432,15 @@
 <div class="section" id="glossary-of-terms">
 <h2><span class="section-number">2.1. </span>Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary">
-<dt id="term-boolean">boolean</dt><dd><p>The data type for logical truthiness or falseiness. Often arises from comparisons. Has the type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
+<dt id="term-boolean">boolean<a class="headerlink" href="#term-boolean" title="Permalink to this term">¶</a></dt><dd><p>The data type for logical truthiness or falseiness. Often arises from comparisons. Has the type <code class="docutils literal notranslate"><span class="pre">bool</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">bool(0)</span></code></p>
 <p><a class="reference external" href="./genindex.html#B">All references →</a></p>
 </dd>
-<dt id="term-boolean-array">boolean array</dt><dd><p>An array that exclusive stores only boolean (True-False) values in it. Usually used for <a class="reference external" href="./querying.html#index-2">Querying →</a></p>
+<dt id="term-boolean-array">boolean array<a class="headerlink" href="#term-boolean-array" title="Permalink to this term">¶</a></dt><dd><p>An array that exclusive stores only boolean (True-False) values in it. Usually used for <a class="reference external" href="./querying.html#index-2">Querying →</a></p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">True]</span></code></p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-csv">csv</dt><dd><p>Stands for <em>comma-separated values</em></p>
+<dt id="term-csv">csv<a class="headerlink" href="#term-csv" title="Permalink to this term">¶</a></dt><dd><p>Stands for <em>comma-separated values</em></p>
 <p>A format to represent data with columns separated by commas and each row stored in a new line.</p>
 <p>E.g.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>  <span class="p">,</span> <span class="n">Height</span><span class="p">,</span> <span class="n">Weight</span>
@@ -454,31 +450,31 @@
 </div>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-dataframe">dataframe</dt><dd><p>Data represented in a tabular form.</p>
+<dt id="term-dataframe">dataframe<a class="headerlink" href="#term-dataframe" title="Permalink to this term">¶</a></dt><dd><p>Data represented in a tabular form.</p>
 <p>Different frameworks have different names for tabular data. <code class="docutils literal notranslate"><span class="pre">babypandas</span></code> calls them <strong>dataframe</strong> and supports a wide range of operations for the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object including methods like <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> and <code class="docutils literal notranslate"><span class="pre">.drop()</span></code></p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-dot-notation">dot notation</dt><dd><p>Writing a ‘dot’ <code class="docutils literal notranslate"><span class="pre">.</span></code> after an object in order to access that object’s methods or attributes.</p>
+<dt id="term-dot-notation">dot notation<a class="headerlink" href="#term-dot-notation" title="Permalink to this term">¶</a></dt><dd><p>Writing a ‘dot’ <code class="docutils literal notranslate"><span class="pre">.</span></code> after an object in order to access that object’s methods or attributes.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">&quot;a</span> <span class="pre">string&quot;.title()</span></code>, <code class="docutils literal notranslate"><span class="pre">my_array.shape</span></code></p>
 <p><a class="reference external" href="./genindex.html#D">All references →</a></p>
 </dd>
-<dt id="term-float">float</dt><dd><p>The data type for numbers <em>with</em> a decimal component. Can be written in scientific notation. Has the type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<dt id="term-float">float<a class="headerlink" href="#term-float" title="Permalink to this term">¶</a></dt><dd><p>The data type for numbers <em>with</em> a decimal component. Can be written in scientific notation. Has the type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">4.00000</span></code>, <code class="docutils literal notranslate"><span class="pre">1e2</span></code>, <code class="docutils literal notranslate"><span class="pre">float('1.60982')</span></code></p>
 <p><a class="reference external" href="./genindex.html#F">All references →</a></p>
 </dd>
-<dt id="term-index">index</dt><dd><p>The positional label of an item in a sequence.</p>
+<dt id="term-index">index<a class="headerlink" href="#term-index" title="Permalink to this term">¶</a></dt><dd><p>The positional label of an item in a sequence.</p>
 <p>The index of the first item in an array is zero, the index of the second item is one, and so on.</p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-integer">integer</dt><dd><p>The data type for numbers without a decimal component. Has the type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<dt id="term-integer">integer<a class="headerlink" href="#term-integer" title="Permalink to this term">¶</a></dt><dd><p>The data type for numbers without a decimal component. Has the type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">-1230589672983</span></code>, <code class="docutils literal notranslate"><span class="pre">int('4')</span></code>.</p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-keyword-argument">keyword argument</dt><dd><p>Arguments written in the form <code class="docutils literal notranslate"><span class="pre">argument_name=argument_value</span></code> are called keyword arguments.</p>
+<dt id="term-keyword-argument">keyword argument<a class="headerlink" href="#term-keyword-argument" title="Permalink to this term">¶</a></dt><dd><p>Arguments written in the form <code class="docutils literal notranslate"><span class="pre">argument_name=argument_value</span></code> are called keyword arguments.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">by='acres'</span></code>, <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code></p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-method-chaining">method chaining</dt><dd><p>Applying two or more methods, one after the other, in one line of code is called method chaining.</p>
+<dt id="term-method-chaining">method chaining<a class="headerlink" href="#term-method-chaining" title="Permalink to this term">¶</a></dt><dd><p>Applying two or more methods, one after the other, in one line of code is called method chaining.</p>
 <p>Think of it as taking the output of one method and directly feeding it into the next method without storing it into an intermediate variable.</p>
 <p>.g.
 ``</p>
@@ -488,11 +484,11 @@
 <p>``</p>
 <p>All references →](./genindex.html#I)</p>
 </dd>
-<dt id="term-query">query</dt><dd><p>Creating a new table by selecting only certain rows from an existing table which satisfy some condition is called a query.</p>
+<dt id="term-query">query<a class="headerlink" href="#term-query" title="Permalink to this term">¶</a></dt><dd><p>Creating a new table by selecting only certain rows from an existing table which satisfy some condition is called a query.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">populations[populations.get('Population')</span> <span class="pre">&gt;</span> <span class="pre">1_000_000]</span></code></p>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-shape">shape</dt><dd><p>the count of the number of dimensions along with the number of values stored across each dimension of an n-dimensional array. Similar to the shape of a matrix that you learned in linear algebra.</p>
+<dt id="term-shape">shape<a class="headerlink" href="#term-shape" title="Permalink to this term">¶</a></dt><dd><p>the count of the number of dimensions along with the number of values stored across each dimension of an n-dimensional array. Similar to the shape of a matrix that you learned in linear algebra.</p>
 <p>E.g.</p>
 <ul>
 <li><p>1-d array. Shape: (3,)
@@ -508,11 +504,11 @@
 </ul>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-string">string</dt><dd><p>The data type for text. Has the type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<dt id="term-string">string<a class="headerlink" href="#term-string" title="Permalink to this term">¶</a></dt><dd><p>The data type for text. Has the type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
 <p>E.g. <code class="docutils literal notranslate"><span class="pre">'single'</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;double</span> <span class="pre">quotes&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">'escaping</span> <span class="pre">isn\'t</span> <span class="pre">bad'</span></code>, <code class="docutils literal notranslate"><span class="pre">str(1.0)</span></code></p>
 <p><a class="reference external" href="./genindex.html#S">All references →</a></p>
 </dd>
-<dt id="term-table-index">table index</dt><dd><p>The index of each row in a dataframe/table.</p>
+<dt id="term-table-index">table index<a class="headerlink" href="#term-table-index" title="Permalink to this term">¶</a></dt><dd><p>The index of each row in a dataframe/table.</p>
 <p>Table index can be treated as the “first column” of a dataframe but usually treated as a special data type by most data manipulation frameworks for rapid indexing and querying. Indices are typically numeric and unique but not necessarily. Another common type of index are time-series.</p>
 <p>E.g.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Index</span><span class="o">**</span><span class="p">,</span> <span class="n">Name</span>  <span class="p">,</span> <span class="n">Height</span><span class="p">,</span> <span class="n">Weight</span>
@@ -522,7 +518,7 @@
 </div>
 <p><a class="reference external" href="./genindex.html#I">All references →</a></p>
 </dd>
-<dt id="term-web-scraping">web scraping</dt><dd><p>Extracting data from websites, often by using code to parse the  loaded HTML as a string then converting certain snippets of that string into numbers.</p>
+<dt id="term-web-scraping">web scraping<a class="headerlink" href="#term-web-scraping" title="Permalink to this term">¶</a></dt><dd><p>Extracting data from websites, often by using code to parse the  loaded HTML as a string then converting certain snippets of that string into numbers.</p>
 <p><a class="reference external" href="./genindex.html#W">All references →</a></p>
 </dd>
 </dl>
@@ -715,15 +711,15 @@ number_of_seconds_in_a_year
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="how_to_read.html" title="previous page"><span class="section-number">1. </span>How To Read This Book</a>
     <a class='right-next' id="next-link" href="genindex.html" title="next page"><span class="section-number">3. </span>Index</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -742,7 +738,7 @@ number_of_seconds_in_a_year
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     
