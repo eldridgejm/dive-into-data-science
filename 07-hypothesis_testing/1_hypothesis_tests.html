@@ -531,10 +531,10 @@
 <p>This teetering act between belief in a model versus the reality contained in a sample (albeit subject to random chance) is a tough but common problem present far beyond just statistics classes.</p>
 <div class="section" id="swain-v-alabama">
 <h3><span class="section-number">1.1.1. </span>Swain v. Alabama<a class="headerlink" href="#swain-v-alabama" title="Permalink to this headline">¶</a></h3>
-<p>The U.S. judicial system operates with a constitutional right that potential jurors for a court case are drawn representatively from the local population. (In U.S. courts, a pool of potential jurors is first drawn from the population fairly, and then the final jurors are selected manually by the involved parties).</p>
-<p>We can think of the constitutional right as establishing a model that the jury pool is drawn from the population of eligible jurors in the county.</p>
-<p>In Alabama 1964, this model was called into question by Robert Swain. As a black man, Swain was convicted by an all white jury, and sentenced to death. While appealing his sentence, Swain argued that the jury pool was not representative of his peers. Of the <span class="math notranslate nohighlight">\(100\)</span> potential jurors pooled, only <span class="math notranslate nohighlight">\(8\)</span> (<span class="math notranslate nohighlight">\(8\%\)</span>) were black – a sizable deviation from the <span class="math notranslate nohighlight">\(26\%\)</span> of eligible black jurors in the county. This case was soon elevated to the U.S. Supreme Court, <em>Swain v. Alabama</em>, calling into question the existence of bias in the jury pooling process. The Supreme Court eventually denied the appeal and the claim of bias. But should they have?</p>
-<p>That disparity between what is expected from a model versus what’s realized in a sample makes us feel uneasy. Quantifying that uneasiness is exactly what we’ll accomplish with a Hypothesis Test.</p>
+<p>The U.S. judicial system operates with a constitutional right that potential jurors for a court case are drawn representatively from the local population. (In U.S. courts, a pool of potential jurors is first drawn from the population fairly, and then the final jurors are selected manually by the involved parties). We can think of the constitutional right as establishing a model that the jury pool is drawn from the population of eligible jurors in the county.</p>
+<p>Tragically, this model is often a fiction, as the 1965 case of Robert Swain vs. Alabama shows. As a Black man, Swain was convicted by an all white jury and sentenced to death. While appealing his sentence, Swain argued that the jury pool was not representative of his peers. Of the <span class="math notranslate nohighlight">\(100\)</span> potential jurors pooled, only <span class="math notranslate nohighlight">\(8\)</span> (<span class="math notranslate nohighlight">\(8\%\)</span>) were Black – a sizable deviation from the <span class="math notranslate nohighlight">\(26\%\)</span> of eligible Black jurors in the county. This case was soon elevated to the U.S. Supreme Court, Swain v. Alabama. The Supreme Court eventually denied the appeal and the claim of bias, concluding that the disparity between the demographics of the greater population and the jury was “small” and “reflects no studied attempt” to exclude Black people from the jury – in other words, the court said it was due to chance. This explanation might strike you as unlikely – in fact, as the analyses of this section will show, the chance of seeing such a biased jury by pure chance is effectively zero.</p>
+<p>Swain’s case is an important example of the grave consequences that can result from an inability to reason about uncertainty. In the most optimistic view, the Supreme Court’s decision came simply from ignorance of basic probability and statistics. In this light, had they even minimal training in reasoning about randomness, their decision would have been different. But in another view, the Supreme Court knowingly upheld a racist system by using chance as an excuse. In this sense, the court exploited the public’s lack of training in reasoning about uncertainty in order to perpetuate and legitimize a racist system. So while promoting basic education in data science is of course not a direct antidote to racism itself, it is an antitode to the pernicious statistical arguments too-often used to justify it.</p>
+<p>We now turn to the task of showing how the Supreme Court’s decision can be refuted with a basic understanding of statistics.</p>
 </div>
 </div>
 <div class="section" id="the-guiding-question">
@@ -562,18 +562,18 @@
 <div class="section" id="declaring-our-hypotheses">
 <h3><span class="section-number">1.3.1. </span>Declaring our hypotheses<a class="headerlink" href="#declaring-our-hypotheses" title="Permalink to this headline">¶</a></h3>
 <p>Let’s declare our hypotheses for the Swain v. Alabama case.</p>
-<p>Our model and likewise our <strong>null hypothesis</strong> assumes that the jury pool was drawn from a population of <span class="math notranslate nohighlight">\(26\%\)</span> black residents and <span class="math notranslate nohighlight">\(74\%\)</span> non-black residents. We just happened to sample a low value like <span class="math notranslate nohighlight">\(8\%\)</span> purely due to random chance.</p>
-<p>Our <strong>alternative hypothesis</strong> is that the null is false, low values like <span class="math notranslate nohighlight">\(8\%\)</span> were sampled because the jury pool was essentially drawn from a population less than <span class="math notranslate nohighlight">\(26\%\)</span> black.</p>
+<p>Our model and likewise our <strong>null hypothesis</strong> assumes that the jury pool was drawn from a population of <span class="math notranslate nohighlight">\(26\%\)</span> Black residents and <span class="math notranslate nohighlight">\(74\%\)</span> non-black residents. We just happened to sample a low value like <span class="math notranslate nohighlight">\(8\%\)</span> purely due to random chance.</p>
+<p>Our <strong>alternative hypothesis</strong> is that the null is false, low values like <span class="math notranslate nohighlight">\(8\%\)</span> were sampled because the jury pool was essentially drawn from a population less than <span class="math notranslate nohighlight">\(26\%\)</span> Black.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Though an alternative hypothesis can claim <em>how</em> a model is wrong – for instance in this case we’re claiming that the samples were taken from a population with a <em>lower</em> proportion of black members than the model assumes – we are not claiming specifically <em>why</em> this is the case.</p>
-<p>While something like biased sampling could lead to the alternative hypothesis being more likely, something else like the county census reporting the wrong amount of black residents could also be an underlying cause – both of these might produce the same numerical differences between our model and sample.</p>
+<p>Though an alternative hypothesis can claim <em>how</em> a model is wrong – for instance in this case we’re claiming that the samples were taken from a population with a <em>lower</em> proportion of Black members than the model assumes – we are not claiming specifically <em>why</em> this is the case.</p>
+<p>While something like biased sampling could lead to the alternative hypothesis being more likely, something else like the county census reporting the wrong amount of Black residents could also be an underlying cause – both of these might produce the same numerical differences between our model and sample.</p>
 </div>
 </div>
 </div>
 <div class="section" id="simulating-new-observations">
 <h2><span class="section-number">1.4. </span>Simulating new observations<a class="headerlink" href="#simulating-new-observations" title="Permalink to this headline">¶</a></h2>
-<p>At the onset of our question, there’s a lot of uncertainty about which hypothesis to believe in. Therefore, we turn to the powers of <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-probabilitie">probabilities</a></strong>! It seems really unlikely that a population that is <span class="math notranslate nohighlight">\(26\%\)</span> black could produce sample proportions that are really low, like <span class="math notranslate nohighlight">\(8\%\)</span>. But <em>how</em> unlikely?</p>
+<p>At the onset of our question, there’s a lot of uncertainty about which hypothesis to believe in. Therefore, we turn to the powers of <span class="target" id="index-3"></span><strong><a class="reference external" href="../glossary.html#term-probabilitie">probabilities</a></strong>! It seems really unlikely that a population that is <span class="math notranslate nohighlight">\(26\%\)</span> Black could produce sample proportions that are really low, like <span class="math notranslate nohighlight">\(8\%\)</span>. But <em>how</em> unlikely?</p>
 <p>We can use our simulation skills to help solve this question. By simply generating tons of random new observations using our null assumptions, we can see how likely it is for our model to produce strange samples like the one we observed.</p>
 <p>Since we’re generating these new sample statistics for the purpose of using them in a hypothesis test, they’re called <span class="target" id="index-4"></span><strong><a class="reference external" href="../glossary.html#term-test-statistic">test statistics</a></strong>. And, since we’re operating under the population assumptions in order to create these samples, this entire process is called <strong>generating test statistics <em>under the null</em></strong>.</p>
 <p>We start by using our model to define a population we can sample from. In this case, we can specify a probability distribution.</p>
@@ -597,7 +597,7 @@
 </div>
 </div>
 </div>
-<p>And the <strong>test statistic</strong> we’re interested in is the proportion of black members in the jury pool.</p>
+<p>And the <strong>test statistic</strong> we’re interested in is the proportion of Black members in the jury pool.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">jury_pool</span> <span class="o">==</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -606,7 +606,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.28
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.22
 </pre></div>
 </div>
 </div>
@@ -636,7 +636,7 @@
 <span class="c1"># These bins will look visually centered around each possible proportion</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span><span class="o">+</span><span class="mf">0.005</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">simulated_proportions</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulated sample proportions of black members under the null&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulated sample proportions of Black members under the null&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +644,7 @@
 <img alt="../_images/1_hypothesis_tests_16_0.png" src="../_images/1_hypothesis_tests_16_0.png" />
 </div>
 </div>
-<p>Each proportion we simulated was the result of drawing <span class="math notranslate nohighlight">\(100\)</span> people from a population that was <span class="math notranslate nohighlight">\(26\%\)</span> black. Naturally, lots of our simulated proportions were equal to <span class="math notranslate nohighlight">\(0.26\)</span> – but not exactly. This distribution shows us that our simulated proportions can range anywhere from about <span class="math notranslate nohighlight">\(0.1\)</span> to <span class="math notranslate nohighlight">\(0.45\)</span>, but the distribution is <em>centered</em> around <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
+<p>Each proportion we simulated was the result of drawing <span class="math notranslate nohighlight">\(100\)</span> people from a population that was <span class="math notranslate nohighlight">\(26\%\)</span> Black. Naturally, lots of our simulated proportions were equal to <span class="math notranslate nohighlight">\(0.26\)</span> – but not exactly. This distribution shows us that our simulated proportions can range anywhere from about <span class="math notranslate nohighlight">\(0.1\)</span> to <span class="math notranslate nohighlight">\(0.45\)</span>, but the distribution is <em>centered</em> around <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
 </div>
 <div class="section" id="could-our-observed-value-have-come-from-the-model">
 <h2><span class="section-number">1.5. </span>Could our observed value have come from the model?<a class="headerlink" href="#could-our-observed-value-have-come-from-the-model" title="Permalink to this headline">¶</a></h2>
@@ -664,7 +664,7 @@
 </div>
 </div>
 <p>Our original observation is off-the-charts low… literally!</p>
-<p>Remember that our alternative hypothesis is that the jury pool was truly sampled with less than a <span class="math notranslate nohighlight">\(26\%\)</span> black population – in other words, the alternative hypothesis supposes that the true sampling distribution should be shifted left, centered around something lower than <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
+<p>Remember that our alternative hypothesis is that the jury pool was truly sampled with less than a <span class="math notranslate nohighlight">\(26\%\)</span> Black population – in other words, the alternative hypothesis supposes that the true sampling distribution should be shifted left, centered around something lower than <span class="math notranslate nohighlight">\(0.26\)</span>.</p>
 <p>We started off by wanting to quantify how likely it is that such a ‘strange’ observation could have come from our model. Since our alternative hypothesis stipulates that low values are considered strange, we can calculate the probably of simulating a value as strange (or stranger) than the one we observed as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -683,11 +683,11 @@ P(\text{simulated values} \leq \text{observed value})
 </div>
 </div>
 </div>
-<p>Turns out Swain had a good reason to feel uneasy about the numbers he saw. It is <em>extremely rare</em> for a population that is <span class="math notranslate nohighlight">\(26\%\)</span> black to produce a sample of <span class="math notranslate nohighlight">\(100\)</span> people that happens to be only <span class="math notranslate nohighlight">\(8\%\)</span> black.</p>
+<p>Turns out Swain had a good reason to feel uneasy about the numbers he saw. It is <em>extremely rare</em> for a population that is <span class="math notranslate nohighlight">\(26\%\)</span> Black to produce a sample of <span class="math notranslate nohighlight">\(100\)</span> people that happens to be only <span class="math notranslate nohighlight">\(8\%\)</span> Black.</p>
 <p>It is not impossible (and our empirical simulation is just computing <em>estimate</em> probabilities, remember?), but our empirical probability of our observation arising from the null assumptions is so rare that we’re going to ‘reject’ those assumptions. The jury pool for Swain’s case clearly did <em>not</em> look like it came directly from a random sample of a <span class="math notranslate nohighlight">\(26\%\)</span> black population.</p>
 <div class="section" id="a-two-sided-alternative">
 <h3><span class="section-number">1.5.1. </span>A two-sided alternative<a class="headerlink" href="#a-two-sided-alternative" title="Permalink to this headline">¶</a></h3>
-<p>Truly, if we were the U.S. Department of Justice and wanted to check for bias in the jury pooling process, we would be interested in checking for <em>any</em> bias in <em>either</em> direction – that is, our <strong>alternative hypothesis</strong> would be that the proportion of black members in population the jury pool is selected from is either greater or less than <span class="math notranslate nohighlight">\(26\%\)</span>. This produces a two-sided alternative hypothesis.</p>
+<p>Truly, if we were the U.S. Department of Justice and wanted to check for bias in the jury pooling process, we would be interested in checking for <em>any</em> bias in <em>either</em> direction – that is, our <strong>alternative hypothesis</strong> would be that the proportion of Black members in population the jury pool is selected from is either greater or less than <span class="math notranslate nohighlight">\(26\%\)</span>. This produces a two-sided alternative hypothesis.</p>
 <div class="math notranslate nohighlight">
 \[
 H_1: P(\text{black}) \neq 0.26
@@ -708,7 +708,7 @@ H_1: |P(\text{black}) - 0.26| &gt; 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0001
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 </pre></div>
 </div>
 </div>
