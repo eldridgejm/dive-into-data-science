@@ -532,12 +532,12 @@
 <div class="section" id="swain-v-alabama">
 <h3><span class="section-number">1.1.1. </span>Swain v. Alabama<a class="headerlink" href="#swain-v-alabama" title="Permalink to this headline">¶</a></h3>
 <p>The U.S. judicial system operates with a constitutional right that potential jurors for a court case are drawn representatively from the local population. We can think of the constitutional right as establishing a model that the jury pool is drawn randomly from the population of eligible jurors in the county.</p>
-<p>Tragically, this model is often a fiction, as the 1965 case of Robert Swain vs. Alabama shows. As a Black man, Swain was convicted by an all-white jury and sentenced to death. Swain’s conviction cannot be interpreted without considering the numerous instances in which the American criminal justice system has been deliberately and maliciously used as a weapon to inflict violence upon innocent Black Americans – all under legal pretenses. Swain’s plight brings to mind the disturbing cases of the <a class="reference external" href="https://www.npr.org/2019/01/11/684540515/accused-of-florida-rape-70-years-ago-4-black-men-get-posthumous-pardons">Groveland Four</a> and the <a class="reference external" href="https://nmaahc.si.edu/blog/scottsboro-boys">Scottsboro Boys</a> in which Black men and boys were falsely accused and subsequently imprisoned, sentenced to death, or murdered.
+<p>Tragically, this model is often a fiction, as the 1965 case of Robert Swain vs. Alabama shows. As a Black man, Swain was convicted by an all-white jury and sentenced to death. Swain’s conviction cannot be interpreted without considering the numerous instances in which the American criminal justice system has been deliberately and maliciously used as a weapon to inflict violence upon innocent Black Americans under legal pretenses. Swain’s plight brings to mind the disturbing cases of the <a class="reference external" href="https://www.npr.org/2019/01/11/684540515/accused-of-florida-rape-70-years-ago-4-black-men-get-posthumous-pardons">Groveland Four</a> and the <a class="reference external" href="https://nmaahc.si.edu/blog/scottsboro-boys">Scottsboro Boys</a> in which Black men and boys were falsely accused and subsequently imprisoned, sentenced to death, or murdered.
 In all three cases, defendents were tried by all-white juries.</p>
 <p>Swain appealed his conviction by arguing that the all-white jury in his trial was chosen unconstitutionally.
 Of the <span class="math notranslate nohighlight">\(100\)</span> potential jurors pooled, only <span class="math notranslate nohighlight">\(8\)</span> (<span class="math notranslate nohighlight">\(8\%\)</span>) were Black – a sizable deviation from the <span class="math notranslate nohighlight">\(26\%\)</span> of eligible Black jurors in the county. This case was soon elevated to the U.S. Supreme Court, Swain v. Alabama. The Supreme Court eventually denied the appeal and the claim of bias, concluding that the disparity between the demographics of the greater population and the jury was “small” and “reflects no studied attempt” to exclude Black people from the jury – in other words, the court said the all-white jury was due to chance. This explanation might strike you as unlikely – in fact, as the analyses of this section will show, the chance of seeing such a biased jury panel by pure chance is effectively zero.</p>
 <p>Swain’s appeal is an important example of the grave consequences that can result from an inability to reason about uncertainty. In the most optimistic view, the Supreme Court’s decision came simply from ignorance of basic probability and statistics. In this light, had they even minimal training in reasoning about randomness, their decision would have been different and Swain’s conviction would have been overturned. But in a less charitable  view, the Supreme Court knowingly upheld a racist system by using random chance as an excuse. In this sense, the court exploited the public’s lack of experience in reasoning about uncertainty in order to perpetuate and legitimize a racist system.</p>
-<p>A populace armed with the ability to reason about uncertaintly is not easily swayed by defenses of racism that attribute injustic to random chance. With that in mind, we now turn to the task of showing how the Supreme Court’s decision can be refuted with a simple statistical argument.</p>
+<p>A populace armed with the ability to reason about uncertainty is not easily swayed by defenses of racism that attribute injustice to random chance. With that in mind, we now turn to the task of showing how the Supreme Court’s decision can be refuted with a simple statistical argument.</p>
 </div>
 </div>
 <div class="section" id="the-guiding-question">
@@ -609,7 +609,7 @@ Of the <span class="math notranslate nohighlight">\(100\)</span> potential juror
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.31
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.23
 </pre></div>
 </div>
 </div>
@@ -711,7 +711,7 @@ H_1: |P(\text{black}) - 0.26| &gt; 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0002
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0001
 </pre></div>
 </div>
 </div>
